@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor}
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
 \newcommand{\mts}{\mbox{\normalfont\itshape MyTaxiService\ }}
@@ -29,7 +29,7 @@
 
 
 
-\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``myTaxiService''}
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``\mts''}
 \author{Alessandro Baldassari (mat. 841561) \and Alberto Bendin (mat. 841734) \and Francesco Giarola (mat. xxxxxx)}
 
 
@@ -104,12 +104,15 @@
 	
 	\subsection{Scope} \mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
 	This optimization is obtained thanks to the real-time interaction and feedback of all the parties involved in the service: taxi passengers can choose and book the ride, and the system will forward the request to the nearest available taxi drivers who can decide to take over the call; in this case the system will notify the client with the code of the incoming taxi and the waiting-time.
-	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue.
-	Additional features of the application are the possibility for the passengers to reserve a ride at least two hours in advance, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service.
+	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue. If the taxi confirms, then the system will send a confirmation to the passenger. If not, then the system will forward the request to the second in queue and will move the first taxi in the last position of the queue.
+	Additional features of the application are the possibility for the passengers to reserve a ride with an advance of at least two hours, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service. The system confirms the reservation to the user and allocates a taxi to the request 10 minutes before the meeting time with the user. If more people are willing to share a ride from the same zone going in the same direction, then the system arranges the route for the taxi driver and defines the fee for every passenger informing all the users involved. 
 	
-	\subsection{Actors}
+			
+	\subsection{Identifying Stackeholders} The main direct stakeholders for this project are the government of the city and the taxi company which together have promoted the renewal of the software that manages the taxi service in the city. Of course once the system will be up and running the final stakeholders will be the users of the service that will provide an essential feedback on the new system.
+	
+	\subsection{Identifying Actors}
 		\begin{itemize}
-			\item Clients: are the final users the taxi service is offered to. They can book the ride choosing among different options, for instance date and time, origin and destination places and the possibility of sharing the trip with other customers.
+			\item Clients: are the final users the taxi service is offered to. They can book the ride choosing among different options, for instance date and time, origin and destination locations and the possibility of sharing the trip with other customers.
 			\item Taxi Drivers: represent the other category of users of the application, they can accept a call for a service or turn it down, thus allowing the whole system to be synchronized, fast and efficient; moreover the system keeps the coordinates of the taxis automatically updated.
 		\end{itemize}
 	
@@ -118,34 +121,43 @@
 			\item {[}G1{]} The user can ask for a taxi simply providing his/her own position.
 			\item {[}G2{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.
 			\item {[}G3{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination, the willingness to share the ride.
-			\item {[}G4{]} The user can delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)
-			\item {[}G???????{]} Multiple goals: The user can sign up and login to the service, become a registered user and keep track of the favorite routes, favorite payment method????Link credit card???? Do we need this?? Maybe to pay the fee in case the user decides to delete a reservation???? Mandatory registration or possibility of unregistered user???
+			\item {[}G4{]} The user is notified when a taxi has answered his/her request and is informed about the waiting time and possibly the fee if the ride is shared.
+			\item {[}G5{]} \textcolor{red}{The user can delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)}
+			\item {[}G???????{]} \textcolor{red}{Multiple goals: The user can sign up and login to the service, become a registered user and keep track of the favorite routes, favorite payment method????Link credit card???? Do we need this?? Maybe to pay the fee in case the user decides to delete a reservation???? Mandatory registration or possibility of unregistered user???}
 		\end{itemize}
 		List of the goals of \mts application for taxi drivers:
 		\begin{itemize}
-			\item {[}G5{]} The user is notified by the system when there is a client nearby waiting for a taxi.
-			\item {[}G6{]} The user can take in charge or reject the requests received as notification.
-			\item {[}G7{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
-			\item {[}G???????{]} Multiple goals: the user can sign up and login to the service, become a registered driver, binding his/her taxi license and taxi number to the user, maybe used to control the taxi fleet, plan maintenance...?????????
+			\item {[}G6{]} The user is notified by the system when there is a client nearby waiting for a taxi.
+			\item {[}G7{]} The user can take in charge or reject the requests received as notification.
+			\item {[}G8{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
+			\item {[}G???????{]} \textcolor{red}{Multiple goals: the user can sign up and login to the service, become a registered driver, binding his/her taxi license and taxi number to the user, maybe used to control the taxi fleet, plan maintenance...?????????}
 		\end{itemize}
 		Other goals of \mts application:
 		\begin{itemize}
-			\item {[}G8{]} The system is able to map the requests of the clients according to their location.
-			\item {[}G9{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
-			\item {[}G10{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules.
+			\item {[}G9{]} The system is able to map the requests of the clients according to their location.
+			\item {[}G10{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
+			\item {[}G11{]} \textcolor{red}{The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules. (Is this a goal??)}
 		\end{itemize}
+
+	
+	\subsection{Proposed system}
+	The enterprise web application is going to be developed from scratch, and will also provide the counterpart mobile version for all the main smartphone OSs on the market nowadays. It will be composed of a server, which runs the business logic, generates dynamic web pages and access to the DBMS and on the other side there will be several clients who interact with the server using a web browser or the mobile application.
 	
 	\subsection{Definitions, acronyms, and abbreviations}
 	
 	\subsubsection{Definitions}
 		\begin{itemize}
 			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
-			\item Taxi driver (or Taxi owner): is the user of the application that together with the back-end system makes the service functional and constantly updated, he/she controls the work which is assigned to himself/herself accepting or rejecting the proposals of clients that the system forwards. 
+			\item Taxi driver (or Taxi owner): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
+			\item Ride: is a single taxi ride from a location to another one.
+			\item Location: are the GPS coordinates (or the street address) to unequivocally identify a place. It could be the position of a taxi, the origin or destination of a ride.
 		\end{itemize}
 		
 	\subsubsection{Acronyms}
 	\begin{itemize}
 		\item RASD: Requirements Analysis and Specification Document.
+		\item DBMS: DataBase Management System.
+		\item OS: Operating Systems.
 	\end{itemize}
 	
 		\subsubsection{Abbreviations}
