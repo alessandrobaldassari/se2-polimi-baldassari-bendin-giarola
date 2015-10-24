@@ -29,7 +29,7 @@
 
 
 
-\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``\mts''}
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``{\em MyTaxyService}''}
 \author{Alessandro Baldassari (mat. 841561) \and Alberto Bendin (mat. 841734) \and Francesco Giarola (mat. xxxxxx)}
 
 
@@ -102,7 +102,8 @@
 	This document could be used as a contractual agreement between the costumer
 	and the entity who develops the application.
 	
-	\subsection{Scope} \mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
+	\subsection{Scope} \label{sec:scope}
+	\mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
 	This optimization is obtained thanks to the real-time interaction and feedback of all the parties involved in the service: taxi passengers can choose and book the ride, and the system will forward the request to the nearest available taxi drivers who can decide to take over the call; in this case the system will notify the client with the code of the incoming taxi and the waiting-time.
 	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue. If the taxi confirms, then the system will send a confirmation to the passenger. If not, then the system will forward the request to the second in queue and will move the first taxi in the last position of the queue.
 	Additional features of the application are the possibility for the passengers to reserve a ride with an advance of at least two hours, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service. The system confirms the reservation to the user and allocates a taxi to the request 10 minutes before the meeting time with the user. If more people are willing to share a ride from the same zone going in the same direction, then the system arranges the route for the taxi driver and defines the fee for every passenger informing all the users involved. 
@@ -116,7 +117,8 @@
 			\item Taxi Drivers: represent the other category of users of the application, they can accept a call for a service or turn it down, thus allowing the whole system to be synchronized, fast and efficient; moreover the system keeps the coordinates of the taxis automatically updated.
 		\end{itemize}
 	
-	\subsection{Goals} List of the goals of \mts application for taxi passengers:
+	\subsection{Goals} \label{sec:goals}
+	List of the goals of \mts application for taxi passengers:
 		\begin{itemize}
 			\item {[}G1{]} The user can ask for a taxi simply providing his/her own position.
 			\item {[}G2{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.
@@ -138,7 +140,8 @@
 			\item {[}G10{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
 			\item {[}G11{]} \textcolor{red}{The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules. (Is this a goal??)}
 		\end{itemize}
-
+		
+	\subsection{Domain Properties} \textcolor{red}{which are our domain properties?}
 	
 	\subsection{Proposed system}
 	The enterprise web application is going to be developed from scratch, and will also provide the counterpart mobile version for all the main smartphone OSs on the market nowadays. It will be composed of a server, which runs the business logic, generates dynamic web pages and access to the DBMS and on the other side there will be several clients who interact with the server using a web browser or the mobile application.
@@ -157,7 +160,10 @@
 	\begin{itemize}
 		\item RASD: Requirements Analysis and Specification Document.
 		\item DBMS: DataBase Management System.
+		\item DB: DataBase.
 		\item OS: Operating Systems.
+		\item API: Application Programming Interface.
+		\item HW: HardWare.
 	\end{itemize}
 	
 		\subsubsection{Abbreviations}
@@ -180,19 +186,37 @@
 			\item Section 3: Specific Requirements, this part lists requirements, typical scenarios	and use cases, together with UML diagrams to provide a more easy-to-read insight at the several functionalities of the software.
 		\end{itemize}
 	
-	
+	\pagebreak %\newpage 
 	
 	\section{Overall description}
 	
-	\subsection{Product perspective}
+	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained,. It has no interface for administration because it is entirely user based. The application does not provide any interface or API for integration with future projects.
 	
-	\subsection{Product functions}
+	\subsection{Product functions} The function summary that is necessary for this part can be taken directly from the section of the higher-level specification in the first part of this document {\em Scope} (see section~\ref{sec:scope}) and {\em Goals} (see section~\ref{sec:goals}).
 	
-	\subsection{User characteristics}
+	\subsection{User characteristics} No technical expertise is required to the intended users of the new service. Part of the developers' effort are invested exactly in designing a user-friendly, self-explanatory interface, yet keeping a modern look and feel to assure an innovative user experience that fully exploits the power of present web and mobile technologies.  
 	
 	\subsection{Constraints}
 	
+	\subsubsection{Regulatory Policies \& Safety and security} \mts fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences. The mobile application only requires basic permissions.
+	
+	\subsubsection{Hardware limitations} \mts does not require any particular HW feature, except for the minimum requirements that the browser and/or the mobile phone must meet to support the latest policies for surfing the web safely.
+	
+	\subsubsection{Interfaces to other applications} \mts only requires access to Internet, as stated before it meets all the latest regulations for secure transmission of personal data over the web. It may use cookies, if the user accepts it.
+	
+	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working	with the DB and when dealing with all the operations done by the user after the connection.
+	
 	\subsection{Assumptions and dependencies}
+		\begin{itemize}
+			\item There is neither an administrator nor a privileged user. The only authorized entity able to modify the functionality of the application is the software house itself, possibly to add new functionalities or to fix some problems on behalf of the taxi company. \textcolor{red}{On the contrary, do we want to add a supervisor functionality?? Maybe a sort of command and control center that monitors the whole system??? But is it an administrator or only a passive monitor activity??}
+			\item There are no dependencies between users.
+			\item Passengers are not allowed to book overlapping taxi rides.
+			\item The system notifies the taxi driver allocated to a request if the correspondent poassenger has deleted the reservation.
+			\item The awaiting passenger is notified by the system if the taxi is delayed for any reason.
+			\item The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the new taxi fare.
+			\item The web application and the mobile counterpart share the same functionalities.
+			\item When a passenger books a ride s/he is given a code that identifies her/him.
+		\end{itemize}
 	
 	
 	

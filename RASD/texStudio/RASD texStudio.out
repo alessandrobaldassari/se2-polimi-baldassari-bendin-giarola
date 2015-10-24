@@ -4,36 +4,41 @@
 \BOOKMARK [2][-]{subsection.0.1.3}{Identifying Stackeholders}{section.0.1}% 4
 \BOOKMARK [2][-]{subsection.0.1.4}{Identifying Actors}{section.0.1}% 5
 \BOOKMARK [2][-]{subsection.0.1.5}{Goals}{section.0.1}% 6
-\BOOKMARK [2][-]{subsection.0.1.6}{Proposed system}{section.0.1}% 7
-\BOOKMARK [2][-]{subsection.0.1.7}{Definitions, acronyms, and abbreviations}{section.0.1}% 8
-\BOOKMARK [3][-]{subsubsection.0.1.7.1}{Definitions}{subsection.0.1.7}% 9
-\BOOKMARK [3][-]{subsubsection.0.1.7.2}{Acronyms}{subsection.0.1.7}% 10
-\BOOKMARK [3][-]{subsubsection.0.1.7.3}{Abbreviations}{subsection.0.1.7}% 11
-\BOOKMARK [2][-]{subsection.0.1.8}{Reference Documents}{section.0.1}% 12
-\BOOKMARK [2][-]{subsection.0.1.9}{Overview}{section.0.1}% 13
-\BOOKMARK [1][-]{section.0.2}{Overall description}{}% 14
-\BOOKMARK [2][-]{subsection.0.2.1}{Product perspective}{section.0.2}% 15
-\BOOKMARK [2][-]{subsection.0.2.2}{Product functions}{section.0.2}% 16
-\BOOKMARK [2][-]{subsection.0.2.3}{User characteristics}{section.0.2}% 17
-\BOOKMARK [2][-]{subsection.0.2.4}{Constraints}{section.0.2}% 18
-\BOOKMARK [2][-]{subsection.0.2.5}{Assumptions and dependencies}{section.0.2}% 19
-\BOOKMARK [1][-]{section.0.3}{Specific requirements}{}% 20
-\BOOKMARK [2][-]{subsection.0.3.1}{External Interface Requirements}{section.0.3}% 21
-\BOOKMARK [3][-]{subsubsection.0.3.1.1}{User Interfaces}{subsection.0.3.1}% 22
-\BOOKMARK [3][-]{subsubsection.0.3.1.2}{Hardware Interfaces}{subsection.0.3.1}% 23
-\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Software Interfaces}{subsection.0.3.1}% 24
-\BOOKMARK [3][-]{subsubsection.0.3.1.4}{Communication Interfaces}{subsection.0.3.1}% 25
-\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 26
-\BOOKMARK [3][-]{subsubsection.0.3.2.1}{User Class 1}{subsection.0.3.2}% 27
-\BOOKMARK [3][-]{subsubsection.0.3.2.2}{User Class 2}{subsection.0.3.2}% 28
-\BOOKMARK [2][-]{subsection.0.3.3}{Performance Requirements}{section.0.3}% 29
-\BOOKMARK [2][-]{subsection.0.3.4}{Design Constraints}{section.0.3}% 30
-\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Standards compliance}{subsection.0.3.4}% 31
-\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Hardware limitations}{subsection.0.3.4}% 32
-\BOOKMARK [2][-]{subsection.0.3.5}{Software System Attributes}{section.0.3}% 33
-\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Reliability}{subsection.0.3.5}% 34
-\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Availability}{subsection.0.3.5}% 35
-\BOOKMARK [3][-]{subsubsection.0.3.5.3}{Security}{subsection.0.3.5}% 36
-\BOOKMARK [3][-]{subsubsection.0.3.5.4}{Maintainability}{subsection.0.3.5}% 37
-\BOOKMARK [3][-]{subsubsection.0.3.5.5}{Portability}{subsection.0.3.5}% 38
-\BOOKMARK [2][-]{subsection.0.3.6}{Other Requirements}{section.0.3}% 39
+\BOOKMARK [2][-]{subsection.0.1.6}{Domain Properties}{section.0.1}% 7
+\BOOKMARK [2][-]{subsection.0.1.7}{Proposed system}{section.0.1}% 8
+\BOOKMARK [2][-]{subsection.0.1.8}{Definitions, acronyms, and abbreviations}{section.0.1}% 9
+\BOOKMARK [3][-]{subsubsection.0.1.8.1}{Definitions}{subsection.0.1.8}% 10
+\BOOKMARK [3][-]{subsubsection.0.1.8.2}{Acronyms}{subsection.0.1.8}% 11
+\BOOKMARK [3][-]{subsubsection.0.1.8.3}{Abbreviations}{subsection.0.1.8}% 12
+\BOOKMARK [2][-]{subsection.0.1.9}{Reference Documents}{section.0.1}% 13
+\BOOKMARK [2][-]{subsection.0.1.10}{Overview}{section.0.1}% 14
+\BOOKMARK [1][-]{section.0.2}{Overall description}{}% 15
+\BOOKMARK [2][-]{subsection.0.2.1}{Product perspective}{section.0.2}% 16
+\BOOKMARK [2][-]{subsection.0.2.2}{Product functions}{section.0.2}% 17
+\BOOKMARK [2][-]{subsection.0.2.3}{User characteristics}{section.0.2}% 18
+\BOOKMARK [2][-]{subsection.0.2.4}{Constraints}{section.0.2}% 19
+\BOOKMARK [3][-]{subsubsection.0.2.4.1}{Regulatory Policies \046 Safety and security}{subsection.0.2.4}% 20
+\BOOKMARK [3][-]{subsubsection.0.2.4.2}{Hardware limitations}{subsection.0.2.4}% 21
+\BOOKMARK [3][-]{subsubsection.0.2.4.3}{Interfaces to other applications}{subsection.0.2.4}% 22
+\BOOKMARK [3][-]{subsubsection.0.2.4.4}{Parallel operation}{subsection.0.2.4}% 23
+\BOOKMARK [2][-]{subsection.0.2.5}{Assumptions and dependencies}{section.0.2}% 24
+\BOOKMARK [1][-]{section.0.3}{Specific requirements}{}% 25
+\BOOKMARK [2][-]{subsection.0.3.1}{External Interface Requirements}{section.0.3}% 26
+\BOOKMARK [3][-]{subsubsection.0.3.1.1}{User Interfaces}{subsection.0.3.1}% 27
+\BOOKMARK [3][-]{subsubsection.0.3.1.2}{Hardware Interfaces}{subsection.0.3.1}% 28
+\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Software Interfaces}{subsection.0.3.1}% 29
+\BOOKMARK [3][-]{subsubsection.0.3.1.4}{Communication Interfaces}{subsection.0.3.1}% 30
+\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 31
+\BOOKMARK [3][-]{subsubsection.0.3.2.1}{User Class 1}{subsection.0.3.2}% 32
+\BOOKMARK [3][-]{subsubsection.0.3.2.2}{User Class 2}{subsection.0.3.2}% 33
+\BOOKMARK [2][-]{subsection.0.3.3}{Performance Requirements}{section.0.3}% 34
+\BOOKMARK [2][-]{subsection.0.3.4}{Design Constraints}{section.0.3}% 35
+\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Standards compliance}{subsection.0.3.4}% 36
+\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Hardware limitations}{subsection.0.3.4}% 37
+\BOOKMARK [2][-]{subsection.0.3.5}{Software System Attributes}{section.0.3}% 38
+\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Reliability}{subsection.0.3.5}% 39
+\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Availability}{subsection.0.3.5}% 40
+\BOOKMARK [3][-]{subsubsection.0.3.5.3}{Security}{subsection.0.3.5}% 41
+\BOOKMARK [3][-]{subsubsection.0.3.5.4}{Maintainability}{subsection.0.3.5}% 42
+\BOOKMARK [3][-]{subsubsection.0.3.5.5}{Portability}{subsection.0.3.5}% 43
+\BOOKMARK [2][-]{subsection.0.3.6}{Other Requirements}{section.0.3}% 44
