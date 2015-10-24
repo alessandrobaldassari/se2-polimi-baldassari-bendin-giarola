@@ -1,0 +1,228 @@
+\documentclass[a4paper,11pt]{report} %article
+
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace}
+
+%command to substitute "{\em MyTaxyService}" with "\mts"
+\newcommand{\mts}{\mbox{\normalfont\itshape MyTaxiService\ }}
+
+
+
+%tOC style: sections bold 
+\usepackage[subfigure]{tocloft}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}% page numbers in bold
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+%to keep the links of the TOC invisible
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+%to center the title "Contents" of the TOC
+%\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+%\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+
+
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``myTaxiService''}
+\author{Alessandro Baldassari (mat. 841561) \and Alberto Bendin (mat. 841734) \and Francesco Giarola (mat. xxxxxx)}
+
+
+\hyphenation{MyTaxyService}
+
+
+\begin{document}
+	
+	%fIRSTPAGE
+	
+	%pOLIMI-LOGO
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=1\linewidth]{"C:/Users/alber/Dropbox/Software Engineering 2/Project/polimi-logo"}
+	%	\caption{}
+		\label{fig:polimi-logo}
+	\end{figure}
+	
+	\maketitle
+		
+	
+	%bLANK-PAGE
+%	\afterpage{
+%		\thispagestyle{empty}
+%		\clearpage\null\newpage
+%	}
+
+%	\clearpage
+	\thispagestyle{empty}
+%	\phantom{a}
+%	\vfill
+	\clearpage\mbox{}\clearpage
+%	\newpage
+%	\centering[This page intentionally left blank]
+%	\vfill
+%	\addtocounter{page}{-1}
+	
+	
+	
+	%to number the section from 1 instead of 0.1 with the report class, without using the article class. Avoid the forced use of chapters to number from 1. Tailored for REPORT class!!!
+	\renewcommand*\thesection{\arabic{section}}
+	\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}}
+	\renewcommand*\thesubsubsection{%
+		\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
+	}
+	\setcounter{secnumdepth}{3}
+	\setcounter{tocdepth}{3}
+		
+	
+	%to change the page numbering from roman in the toc to arabic
+	\pagenumbering{roman}
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	
+	
+	%to insert the writing "Page" above page numbers in the TOC
+	\addtocontents{toc}{~\hfill\textrm{Page}\par}
+	
+	\section{Introduction}
+	
+	\subsection{Purpose} The purpose of this document is to describe in a complete and sound way
+	the \mts application that will be developed and the application domain in which it will run.\\
+	The intended audience for this document are the developers and programmers
+	who have to implement the application, system and requirement
+	analysts who want to integrate \mts with their system or software,
+	testers who have to determine whether the requirements have been satisfied in
+	the application implementation, projects managers who have to plan, estimate
+	and control the analysis and development processes and finally the users themselves.
+	This document could be used as a contractual agreement between the costumer
+	and the entity who develops the application.
+	
+	\subsection{Scope} \mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
+	This optimization is obtained thanks to the real-time interaction and feedback of all the parties involved in the service: taxi passengers can choose and book the ride, and the system will forward the request to the nearest available taxi drivers who can decide to take over the call; in this case the system will notify the client with the code of the incoming taxi and the waiting-time.
+	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue.
+	Additional features of the application are the possibility for the passengers to reserve a ride at least two hours in advance, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service.
+	
+	\subsection{Actors}
+		\begin{itemize}
+			\item Clients: are the final users the taxi service is offered to. They can book the ride choosing among different options, for instance date and time, origin and destination places and the possibility of sharing the trip with other customers.
+			\item Taxi Drivers: represent the other category of users of the application, they can accept a call for a service or turn it down, thus allowing the whole system to be synchronized, fast and efficient; moreover the system keeps the coordinates of the taxis automatically updated.
+		\end{itemize}
+	
+	\subsection{Goals} List of the goals of \mts application for taxi passengers:
+		\begin{itemize}
+			\item {[}G1{]} The user can ask for a taxi simply providing his/her own position.
+			\item {[}G2{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.
+			\item {[}G3{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination, the willingness to share the ride.
+			\item {[}G4{]} The user can delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)
+			\item {[}G???????{]} Multiple goals: The user can sign up and login to the service, become a registered user and keep track of the favorite routes, favorite payment method????Link credit card???? Do we need this?? Maybe to pay the fee in case the user decides to delete a reservation???? Mandatory registration or possibility of unregistered user???
+		\end{itemize}
+		List of the goals of \mts application for taxi drivers:
+		\begin{itemize}
+			\item {[}G5{]} The user is notified by the system when there is a client nearby waiting for a taxi.
+			\item {[}G6{]} The user can take in charge or reject the requests received as notification.
+			\item {[}G7{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
+			\item {[}G???????{]} Multiple goals: the user can sign up and login to the service, become a registered driver, binding his/her taxi license and taxi number to the user, maybe used to control the taxi fleet, plan maintenance...?????????
+		\end{itemize}
+		Other goals of \mts application:
+		\begin{itemize}
+			\item {[}G8{]} The system is able to map the requests of the clients according to their location.
+			\item {[}G9{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
+			\item {[}G10{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules.
+		\end{itemize}
+	
+	\subsection{Definitions, acronyms, and abbreviations}
+	
+	\subsubsection{Definitions}
+		\begin{itemize}
+			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
+			\item Taxi driver (or Taxi owner): is the user of the application that together with the back-end system makes the service functional and constantly updated, he/she controls the work which is assigned to himself/herself accepting or rejecting the proposals of clients that the system forwards. 
+		\end{itemize}
+		
+	\subsubsection{Acronyms}
+	\begin{itemize}
+		\item RASD: Requirements Analysis and Specification Document.
+	\end{itemize}
+	
+		\subsubsection{Abbreviations}
+		\begin{itemize}
+			\item {[}G$n${]}: $n$\textsuperscript{th} goal.
+			\item {[}R$n${]}: $n$\textsuperscript{th} functional requirement.
+			\item {[}D$n${]}: $n$\textsuperscript{th} domain assumption.
+		\end{itemize}
+	
+	\subsection{Reference Documents}
+		\begin{itemize}
+			\item Specification document: MyTaxiService project
+			\item IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements	Specifications.
+		\end{itemize}
+	
+	\subsection{Overview}
+		\begin{itemize}
+			\item Section 1: Introduction, it gives a brief description of the purpose, functionalities and goals of the application.
+			\item Section 2: Overall Description, focuses more in-depth on features of the software, constraints and assumptions.
+			\item Section 3: Specific Requirements, this part lists requirements, typical scenarios	and use cases, together with UML diagrams to provide a more easy-to-read insight at the several functionalities of the software.
+		\end{itemize}
+	
+	
+	
+	\section{Overall description}
+	
+	\subsection{Product perspective}
+	
+	\subsection{Product functions}
+	
+	\subsection{User characteristics}
+	
+	\subsection{Constraints}
+	
+	\subsection{Assumptions and dependencies}
+	
+	
+	
+	\section{Specific requirements}
+	
+	\subsection{External Interface Requirements}
+	
+	\subsubsection{User Interfaces}
+	
+	\subsubsection{Hardware Interfaces}
+	
+	\subsubsection{Software Interfaces}
+	
+	\subsubsection{Communication Interfaces}
+	
+	\subsection{Functional Requirements}
+	
+	\subsubsection{User Class 1}
+	
+	\subsubsection{User Class 2}
+	
+	\subsection{Performance Requirements}
+	
+	\subsection{Design Constraints}
+	
+	\subsubsection{Standards compliance}
+	
+	\subsubsection{Hardware limitations}
+	
+	\subsection{Software System Attributes}
+	
+	\subsubsection{Reliability}
+	
+	\subsubsection{Availability}
+	
+	\subsubsection{Security}
+	
+	\subsubsection{Maintainability}
+
+	\subsubsection{Portability}
+	
+	\subsection{Other Requirements}
+	
+	
+\end{document}
