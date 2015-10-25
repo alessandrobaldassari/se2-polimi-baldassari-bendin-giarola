@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption}
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
 \newcommand{\mts}{\mbox{\normalfont\itshape MyTaxiService\ }}
@@ -75,8 +75,8 @@
 	\renewcommand*\thesubsubsection{%
 		\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
 	}
-	\setcounter{secnumdepth}{3}
-	\setcounter{tocdepth}{3}
+	\setcounter{secnumdepth}{4}
+	\setcounter{tocdepth}{4}
 		
 	
 	%to change the page numbering from roman in the toc to arabic
@@ -164,6 +164,11 @@
 		\item OS: Operating Systems.
 		\item API: Application Programming Interface.
 		\item HW: HardWare.
+		\item TCP: Transmission Control Protocol.
+		\item HTTP: Hypertext Transfer Protocol.
+		\item HTTPS: HTTP over SSL/HTTP Secure.
+		\item SSL: Secure Sockets Layer.
+		
 	\end{itemize}
 	
 		\subsubsection{Abbreviations}
@@ -211,26 +216,48 @@
 			\item There is neither an administrator nor a privileged user. The only authorized entity able to modify the functionality of the application is the software house itself, possibly to add new functionalities or to fix some problems on behalf of the taxi company. \textcolor{red}{On the contrary, do we want to add a supervisor functionality?? Maybe a sort of command and control center that monitors the whole system??? But is it an administrator or only a passive monitor activity??}
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
-			\item The system notifies the taxi driver allocated to a request if the correspondent poassenger has deleted the reservation.
+			\item The system notifies the taxi driver allocated to a request if the correspondent passenger has deleted the reservation.
 			\item The awaiting passenger is notified by the system if the taxi is delayed for any reason.
-			\item The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the new taxi fare.
+			\item The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the new taxi fare. \textcolor{red}{Which is the type of notification? SMS? email? app functionality?}
 			\item The web application and the mobile counterpart share the same functionalities.
 			\item When a passenger books a ride s/he is given a code that identifies her/him.
+			\item The waiting time for the passenger before the taxi arrival is computed using the actual position of the allocated taxi, but it can vary depending on the traffic.
 		\end{itemize}
 	
-	
+	\pagebreak
 	
 	\section{Specific requirements}
 	
-	\subsection{External Interface Requirements}
+	\subsection{External Interface Requirements} 
 	
-	\subsubsection{User Interfaces}
+	\subsubsection{User Interfaces} Shown below are some mock-ups that preview the user interface of the main features the system shall provide.
 	
-	\subsubsection{Hardware Interfaces}
+	\paragraph{Sign-up} This page allows the choice between two sections: the sign up as client and the sign up for taxi drivers.
 	
-	\subsubsection{Software Interfaces}
+	\paragraph{Login} This page allows the choice between two sections: the login as client and the login for taxi drivers.
 	
-	\subsubsection{Communication Interfaces}
+	\pagebreak
+	
+	\paragraph{Call a taxi} The user can ask for a taxi providing the pickup location through a complete address \textcolor{red}{or through the GPS coordinates in the mobile app, in the latter case the phone must have the built-in GPS turned on. The user can also choose from an history of ``recent addresses''.}
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{../../MockUps/RASD/BookARide}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Plan a ride} The user can plan a ride in advance providing the pickup and drop off locations, the date and time, the willingness to share the ride.
+	
+	\paragraph{Your reservations} The user can see both the active reservations and the past ones. The user can edit the active reservations within the established time frame before the meeting time.
+	
+	\paragraph{Your profile} The user can edit the personal profile modifying the password, phone number, email address, payment method.
+	
+	\paragraph{Your work} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system. There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. \textcolor{red}{does the system also offer a sat nav function to the driver? in this case do we need two pages, one to accept the job and one related to the current work and map?}
+	
+	\subsubsection{Hardware Interfaces} \mts does not require and does not support any additional HW interface, it is enough a compatible smartphones or any supported browser on a computer.
+	
+	\subsubsection{Software Interfaces} \textcolor{red}{do we have to pretend to use sql, java ee....???}
+	
+	\subsubsection{Communication Interfaces} \mts uses the TCP transport protocol and HTTP/HTTP over SSL application layer protocol to guarantee the top of the line security on the matter of transmission of private data.
 	
 	\subsection{Functional Requirements}
 	

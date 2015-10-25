@@ -25,20 +25,27 @@
 \BOOKMARK [1][-]{section.0.3}{Specific requirements}{}% 25
 \BOOKMARK [2][-]{subsection.0.3.1}{External Interface Requirements}{section.0.3}% 26
 \BOOKMARK [3][-]{subsubsection.0.3.1.1}{User Interfaces}{subsection.0.3.1}% 27
-\BOOKMARK [3][-]{subsubsection.0.3.1.2}{Hardware Interfaces}{subsection.0.3.1}% 28
-\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Software Interfaces}{subsection.0.3.1}% 29
-\BOOKMARK [3][-]{subsubsection.0.3.1.4}{Communication Interfaces}{subsection.0.3.1}% 30
-\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 31
-\BOOKMARK [3][-]{subsubsection.0.3.2.1}{User Class 1}{subsection.0.3.2}% 32
-\BOOKMARK [3][-]{subsubsection.0.3.2.2}{User Class 2}{subsection.0.3.2}% 33
-\BOOKMARK [2][-]{subsection.0.3.3}{Performance Requirements}{section.0.3}% 34
-\BOOKMARK [2][-]{subsection.0.3.4}{Design Constraints}{section.0.3}% 35
-\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Standards compliance}{subsection.0.3.4}% 36
-\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Hardware limitations}{subsection.0.3.4}% 37
-\BOOKMARK [2][-]{subsection.0.3.5}{Software System Attributes}{section.0.3}% 38
-\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Reliability}{subsection.0.3.5}% 39
-\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Availability}{subsection.0.3.5}% 40
-\BOOKMARK [3][-]{subsubsection.0.3.5.3}{Security}{subsection.0.3.5}% 41
-\BOOKMARK [3][-]{subsubsection.0.3.5.4}{Maintainability}{subsection.0.3.5}% 42
-\BOOKMARK [3][-]{subsubsection.0.3.5.5}{Portability}{subsection.0.3.5}% 43
-\BOOKMARK [2][-]{subsection.0.3.6}{Other Requirements}{section.0.3}% 44
+\BOOKMARK [4][-]{paragraph.0.3.1.1.1}{Sign-up}{subsubsection.0.3.1.1}% 28
+\BOOKMARK [4][-]{paragraph.0.3.1.1.2}{Login}{subsubsection.0.3.1.1}% 29
+\BOOKMARK [4][-]{paragraph.0.3.1.1.3}{Call a taxi}{subsubsection.0.3.1.1}% 30
+\BOOKMARK [4][-]{paragraph.0.3.1.1.4}{Plan a ride}{subsubsection.0.3.1.1}% 31
+\BOOKMARK [4][-]{paragraph.0.3.1.1.5}{Your reservations}{subsubsection.0.3.1.1}% 32
+\BOOKMARK [4][-]{paragraph.0.3.1.1.6}{Your profile}{subsubsection.0.3.1.1}% 33
+\BOOKMARK [4][-]{paragraph.0.3.1.1.7}{Your work}{subsubsection.0.3.1.1}% 34
+\BOOKMARK [3][-]{subsubsection.0.3.1.2}{Hardware Interfaces}{subsection.0.3.1}% 35
+\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Software Interfaces}{subsection.0.3.1}% 36
+\BOOKMARK [3][-]{subsubsection.0.3.1.4}{Communication Interfaces}{subsection.0.3.1}% 37
+\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 38
+\BOOKMARK [3][-]{subsubsection.0.3.2.1}{User Class 1}{subsection.0.3.2}% 39
+\BOOKMARK [3][-]{subsubsection.0.3.2.2}{User Class 2}{subsection.0.3.2}% 40
+\BOOKMARK [2][-]{subsection.0.3.3}{Performance Requirements}{section.0.3}% 41
+\BOOKMARK [2][-]{subsection.0.3.4}{Design Constraints}{section.0.3}% 42
+\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Standards compliance}{subsection.0.3.4}% 43
+\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Hardware limitations}{subsection.0.3.4}% 44
+\BOOKMARK [2][-]{subsection.0.3.5}{Software System Attributes}{section.0.3}% 45
+\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Reliability}{subsection.0.3.5}% 46
+\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Availability}{subsection.0.3.5}% 47
+\BOOKMARK [3][-]{subsubsection.0.3.5.3}{Security}{subsection.0.3.5}% 48
+\BOOKMARK [3][-]{subsubsection.0.3.5.4}{Maintainability}{subsection.0.3.5}% 49
+\BOOKMARK [3][-]{subsubsection.0.3.5.5}{Portability}{subsection.0.3.5}% 50
+\BOOKMARK [2][-]{subsection.0.3.6}{Other Requirements}{section.0.3}% 51
