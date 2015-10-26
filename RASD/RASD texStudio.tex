@@ -127,10 +127,6 @@
 		\item {[}G4{]} The system has to allocate a taxi for each request or reservation.
 		\item {[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.
 		\item {[}G6{]} The system hat to offer public APIs to enable the possibility to develop additional services on top of the basic ones.
-		\item \st{{[}G?{]}The system has to answer to a taxi request by informing the passenger about the code of the taxi and the waiting time.}
-		\item \st{{[}G?{]} The system is able to map the requests of the clients according to their location.}
-		\item \st{{[}G?{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.}
-		\item \st{{[}G?{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules to guarantee a fair management of the queues.}
 	\end{itemize}
 	List of the goals of \mts application for taxi passengers:
 		\begin{itemize}
@@ -143,21 +139,12 @@
 			\item {[}G13{]} The passenger shall be able to enable taxi sharing option.
 			\item {[}G14{]} The passenger shall be able to join a shared reservation.
 			\item {[}G15{]} The passenger shall be able to see historical data on his taxi rides.
-			\item \st{{[}G?{]} The user can ask for a taxi simply providing his/her own position.}
-			\item \st{{[}G?{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.}
-			\item \st{{[}G?{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination, the willingness to share the ride.}
-			\item \st{{[}G?{]} The user is notified when a taxi has answered his/her request and is informed about the waiting time and possibly the fee if the ride is shared.}
-			\item \st{{[}G?{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)}
-			\item \st{{[}G?{]} The user can keep track of the favorite routes, favorite payment method? Link credit card? Maybe to pay the fee in case the user decides to delete a reservation?}
 		\end{itemize}
 		List of the goals of \mts application for taxi drivers:
 		\begin{itemize}
 			\item {[}G16{]} Taxi drivers shall be able to log in to the service.
 			\item {[}G17{]} Taxi drivers shall use a mobile application to inform the system about their availability.
 			\item {[}G18{]} Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.
-			\item \st{{[}G?{]} The user is notified by the system when there is a client nearby waiting for a taxi.}
-			\item \st{{[}G?{]} The user can take in charge or reject the requests received as notification.}
-			\item \st{{[}G?{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).}
 		\end{itemize}
 		
 		
@@ -237,18 +224,16 @@
 	
 	\subsection{Assumptions and dependencies}
 		\begin{itemize}
-			\item Taxi drivers are already inserted in the system by the administrator.
-			\item The rides can be shared only if booked in advance.
+			\item Entitled taxi drivers are already inserted in the system by the administrator.
+			\item The rides that can be shared are only the reserved ones.
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
-			\item The login page for the users is unique, but according to the role of the user they will be offered the page for the passenger or the employee.
-			\item There is neither an administrator nor a privileged user. The only authorized entity able to modify the functionality of the application is the software house itself, possibly to add new functionalities or to fix some problems on behalf of the taxi company. \textcolor{red}{On the contrary, do we want to add a supervisor functionality?? Maybe a sort of command and control center that monitors the whole system??? But is it an administrator or only a passive monitor activity??}
+			\item The login page for the users is unique, but according to the role of the user they will be automatically redirected to the pertinent page for the passenger or the employee.
+			\item There is an administrator who is the only authorized entity able to add entries and modify some functionalities of the application on behalf of the taxi company. S/he is a supervisor in a sort of command and control center that monitors the whole system.
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
-			\item The system notifies the taxi driver allocated to a request if the correspondent passenger has deleted the reservation.
-			\item The awaiting passenger is notified by the system if the taxi is delayed for any reason.
-			\item The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the new taxi fare. \textcolor{red}{Which is the type of notification? SMS? email? app functionality?}
+			\item Passengers must link an electronic payment method that will be used to pay in advance; the system is able to freeze an amount of money on the credit line in order to pay for the ride once it has been completed, or to pay the fees due to the cancellation of a reservation beyond the established time frame.
+			\item Passengers always have enough money to pay the taxi fare and the payment data provided are valid. (\textcolor{red}{even because there is no way to predict where the passenger will go when s/he calls for an immediate pickup, the nthere is no way to predict the final fare!})
 			\item The web application and the mobile counterpart share the same functionalities.
-			\item When a passenger books a ride s/he is given a code that identifies her/him.
 			\item The waiting time for the passenger before the taxi arrival is computed using the actual position of the allocated taxi, but it can vary depending on the traffic.
 		\end{itemize}
 	
@@ -261,13 +246,13 @@
 	\subsubsection{User Interfaces} Shown below are some mock-ups that preview the user interface of the main features the system shall provide.
 	
 	\pagebreak
-	\paragraph{Sign-up} This page allows the choice between two sections: the sign up as client and the sign up for taxi drivers.
+	\paragraph{Sign-up} This page presents the sign up form for the clients. The user will need to provide his personal data, home and email addresses, phone number, favorite payment option.
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/Signup}
 	\end{center}
 	\pagebreak
 	
-	\paragraph{Login} This page allows the choice between two sections: the login as client and the login for taxi drivers.
+	\paragraph{Login} This page shows the login form for the final users.
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/Login}
 	\end{center}
@@ -286,16 +271,19 @@
 	\end{center}
 	\pagebreak
 	
-	\paragraph{Your reservations} The user can see both the active reservations and the past ones. The user can edit the active reservations within the established time frame before the meeting time.
+	\paragraph{Your reservations} The user can see both the active reservations and the past ones. S/he can edit the active reservations within the established time frame before the meeting time.
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/YourReservations}
 	\end{center}
 	\pagebreak
 	
-	\paragraph{Your profile} The user can edit the personal profile modifying the password, phone number, email address, payment method.
+	\paragraph{Your profile} The user can edit the personal profile modifying the password, phone number, email address, permanent address, payment method.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/AccountPage}
+	\end{center}
 	\pagebreak
 	
-	\paragraph{Your work} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system. There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. \textcolor{red}{does the system also offer a sat nav function to the driver? in this case do we need two pages, one to accept the job and one related to the current work and map?}
+	\paragraph{Your work} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''. \textcolor{red}{There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. Does the system also offer a sat nav function to the driver?}
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/DriverPage}
 	\end{center}
@@ -309,10 +297,140 @@
 	
 	\subsection{Functional Requirements}
 	
-	\subsubsection{User Class 1}
+	\subsubsection{{[}G1{]} The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}
+	\begin{itemize}
+		\item {[}R1{]} The system must offer the same functionalities in both the cases.
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
 	
-	\subsubsection{User Class 2}
+	\subsubsection{{[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone.}
+	\begin{itemize}
+		\item {[}R1{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules to guarantee a fair management of the queues.
+		\item {[}R2{]} If the taxi driver on top of the queue accepts a job then the system allocates the taxi for the specific request and therefore updates the queue.
+		\item {[}R3{]} If the taxi driver on top of the queue rejects the job then the system updates the queue placing the second taxi as first and the one that rejected the job in the last position of the queue of the same zone.
+		\item {[}D1{]}
+	\end{itemize}
+		
+	\subsubsection{{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}
+	\begin{itemize}
+		\item {[}R1{]} The mobile phone must have the GPS. \textcolor{red}{(HW requirement or assumption? maybe given by the company...)}
+		\item {[}R2{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
+		\item {[}D1{]} The GPS coordinates are always available and correct.
+	\end{itemize}
 	
+	\subsubsection{{[}G4{]} The system has to allocate a taxi for each request or reservation.}
+	\begin{itemize}
+		\item {[}R1{]} In the event of a request the system allocates a taxi as soon as a driver in the corresponding zone is available and accepts the job.
+		\item {[}R2{]} In the event of a reservation the system allocates the taxi 10 minutes before the meeting time with the client.
+		\item {[}D1{]}
+	\end{itemize}
+		
+	\subsubsection{{[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}
+	\begin{itemize}
+		\item {[}R1{]} The awaiting passenger is notified by the system if the taxi is delayed for any reason.
+		\item {[}R2{]} The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the recomputed taxi fare. \textcolor{red}{Which is the type of notification? SMS? email? app functionality?}
+		\item {[}R3{]} The system notifies the taxi driver allocated to a request if the correspondent passenger has deleted the reservation.
+		\item {[}D1{]}
+	\end{itemize}
+		
+	\subsubsection{{[}G6{]} The system hat to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}
+	\begin{itemize}
+		\item {[}R1{]}
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+		
+	\subsubsection{{[}G7{]} The passenger shall be able to sign up to the service.}
+	\begin{itemize}
+		\item {[}R1{]} The user cannot register more than one time.
+		\item {[}R2{]} The user must choose a username not already used by someone else.
+		\item {[}R3{]} Unregistered users can only see the sign up and login page.
+		\item {[}D1{]} The email address used for the registration must be valid.
+	\end{itemize}
+		
+	\subsubsection{{[}G8{]} The passenger shall be able to log in to the service.}
+	\begin{itemize}
+		\item {[}R1{]} If the user has not the correct login information cannot access the system.
+		\item {[}R2{]} 
+		\item {[}D1{]}
+	\end{itemize}
+		
+	\subsubsection{{[}G9{]} The passenger shall be able to request a taxi.}
+	\begin{itemize}
+		\item {[}R1{]} The user can ask for a taxi simply providing his/her own position.
+		\item {[}R2{]} The system has to answer to a taxi request by informing the passenger about the code of the taxi and the waiting time.
+		\item {[}R3{]} The system is able to map the requests of the clients according to their location.
+		\item {[}R4{]} When a passenger books a ride s/he is given a code that identifies her/him.
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G10{]} The passenger shall be able to delete a taxi request.}
+	\begin{itemize}
+		\item {[}R1{]} The cancellation of a ride could imply a fee automatically collected by the system using the user's preferred payment method.
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}
+	\begin{itemize}
+		\item {[}R1{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination, the willingness to share the ride.
+		\item {[}R2{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G12{]} The passenger shall be able to modify and delete a taxi reservation.}
+	\begin{itemize}
+		\item {[}R1{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G13{]} The passenger shall be able to enable taxi sharing option.}
+	\begin{itemize}
+		\item {[}R1{]} This is only valid for reservations booked in advance.
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G14{]} The passenger shall be able to join a shared reservation.}
+	\begin{itemize}
+		\item {[}R1{]} This is only valid for reservations booked in advance.
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}
+	\begin{itemize}
+		\item {[}R1{]} The user can keep track of the favorite routes, favorite payment method? Link credit card? Maybe to pay the fee in case the user decides to delete a reservation?
+		\item {[}R2{]} The user can select locations from past rides to plan new ones.
+		\item {[}D1{]}
+	\end{itemize}
+
+	\subsubsection{{[}G16{]} Taxi drivers shall be able to log in to the service.}
+	\begin{itemize}
+		\item {[}R1{]}
+		\item {[}R2{]}
+		\item {[}D1{]} Only legally employed taxi drivers have the login information to access the system.
+	\end{itemize}
+	
+	\subsubsection{{[}G17{]} Taxi drivers shall use a mobile application to inform the system about their availability.}
+	\begin{itemize}
+		\item {[}R1{]} The user is notified by the system when there is a client nearby waiting for a taxi.
+		\item {[}R2{]}
+		\item {[}D1{]}
+	\end{itemize}
+	
+	\subsubsection{{[}G18{]} Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.}
+	\begin{itemize}
+		\item {[}R1{]} The user can take in charge or reject the requests received as notification.
+		\item {[}R2{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
+		\item {[}D1{]}
+	\end{itemize}					
+		
+	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used for a first domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
+	managed directly by the application.
+		
 	\subsection{Performance Requirements}
 	
 	\subsection{Design Constraints}
@@ -325,7 +443,7 @@
 	
 	\subsubsection{Reliability}
 	
-	\subsubsection{Availability}
+	\subsubsection{Availability} The server must be available 24/7.
 	
 	\subsubsection{Security}
 	
