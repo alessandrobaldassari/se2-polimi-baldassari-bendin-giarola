@@ -3,7 +3,7 @@
 \usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul}
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
-\newcommand{\mts}{\mbox{\normalfont\itshape MyTaxiService\ }}
+\newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService\ }}
 
 
 
@@ -29,7 +29,7 @@
 
 
 
-\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``{\em MyTaxyService}''}
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``{\em myTaxyService}''}
 \author{Alessandro Baldassari (mat. 841561) \and Alberto Bendin (mat. 841734) \and Francesco Giarola (mat. 840554)}
 
 
@@ -107,7 +107,7 @@
 	\mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
 	This optimization is obtained thanks to the real-time interaction and feedback of all the parties involved in the service: taxi passengers can choose and book the ride, and the system will forward the request to the nearest available taxi drivers who can decide to take over the call; in this case the system will notify the client with the code of the incoming taxi and the waiting-time.
 	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue. If the taxi confirms, then the system will send a confirmation to the passenger. If not, then the system will forward the request to the second in queue and will move the first taxi in the last position of the queue.
-	Additional features of the application are the possibility for the passengers to reserve a ride with an advance of at least two hours, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service. The system confirms the reservation to the user and allocates a taxi to the request 10 minutes before the meeting time with the user. If more people are willing to share a ride from the same zone going in the same direction, then the system arranges the route for the taxi driver and defines the fee for every passenger informing all the users involved. 
+	Additional features of the application are the possibility for the passengers to reserve a ride with an advance of at least two hours, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service. The system confirms the reservation to the user and allocates a taxi to the request 10 minutes before the meeting time with the user. If more people are willing to share a ride from the same zone going in the same direction, then the system arranges the route for the taxi driver and defines the fare for every passenger informing all the users involved. 
 	
 			
 	\subsection{Identifying Stackeholders} The main direct stakeholders for this project are the government of the city and the taxi company which together have promoted the renewal of the software that manages the taxi service in the city. Of course once the system will be up and running the final stakeholders will be the users of the service that will provide an essential feedback on the new system.
@@ -126,7 +126,7 @@
 		\item {[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.
 		\item {[}G4{]} The system has to allocate a taxi for each request or reservation.
 		\item {[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.
-		\item {[}G6{]} The system hat to offer public APIs to enable the possibility to develop additional services on top of the basic ones.
+		\item {[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.
 	\end{itemize}
 	List of the goals of \mts application for taxi passengers:
 		\begin{itemize}
@@ -146,6 +146,12 @@
 			\item {[}G17{]} Taxi drivers shall use a mobile application to inform the system about their availability.
 			\item {[}G18{]} Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.
 		\end{itemize}
+		List of the goals of \mts application for the administrator:
+		\begin{itemize}
+			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system DB.
+			\item {[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
+		\end{itemize}
+		
 		
 		
 	\subsection{Proposed system}
@@ -206,7 +212,7 @@
 	
 	\section{Overall description}
 	
-	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained,. It has no interface for administration because it is entirely user based. The application does not provide any interface or API for integration with future projects.
+	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained. It has the interface for an administration, except for that feature it is entirely user based. The application does provide some API for integration with future projects.
 	
 	\subsection{Product functions} The function summary that is necessary for this part can be taken directly from the section of the higher-level specification in the first part of this document {\em Scope} (see section~\ref{sec:scope}) and {\em Goals} (see section~\ref{sec:goals}).
 	
@@ -214,11 +220,11 @@
 	
 	\subsection{Constraints}
 	
-	\subsubsection{Regulatory Policies \& Safety and security} \mts fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences. The mobile application only requires basic permissions.
+	\subsubsection{Regulatory Policies \& Safety and security} \mts fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences and the browser can request to detect the user's position. The mobile application only requires basic permissions. 
 	
-	\subsubsection{Hardware limitations} \mts does not require any particular HW feature, except for the minimum requirements that the browser and/or the mobile phone must meet to support the latest policies for surfing the web safely.
+	\subsubsection{Hardware limitations} \mts does not require any particular HW feature, except for the minimum requirements that the browser and/or the mobile phone must meet to support the latest policies for surfing the web safely. Besides the mobile phone must have the integrated GPS module to enable the user to select his/her own location without having to type the address manually.
 	
-	\subsubsection{Interfaces to other applications} \mts only requires access to Internet, as stated before it meets all the latest regulations for secure transmission of personal data over the web. It may use cookies, if the user accepts it.
+	\subsubsection{Interfaces to other applications} \mts only requires access to Internet, as stated before it meets all the latest regulations for secure transmission of personal data over the web. It may use cookies or the modules to access the user's position, if the user accepts it.
 	
 	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working	with the DB and when dealing with all the operations done by the user after the connection.
 	
@@ -232,7 +238,7 @@
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
 			\item Passengers must link an electronic payment method that will be used to pay in advance; the system is able to freeze an amount of money on the credit line in order to pay for the ride once it has been completed, or to pay the fees due to the cancellation of a reservation beyond the established time frame.
-			\item Passengers always have enough money to pay the taxi fare and the payment data provided are valid. (\textcolor{red}{even because there is no way to predict where the passenger will go when s/he calls for an immediate pickup, the nthere is no way to predict the final fare!})
+			\item Passengers always have enough money to pay the taxi fare and the payment data provided are valid, without the need to be verified.
 			\item The web application and the mobile counterpart share the same functionalities.
 			\item The waiting time for the passenger before the taxi arrival is computed using the actual position of the allocated taxi, but it can vary depending on the traffic.
 		\end{itemize}
@@ -283,11 +289,17 @@
 	\end{center}
 	\pagebreak
 	
-	\paragraph{Your work} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''. \textcolor{red}{There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. Does the system also offer a sat nav function to the driver?}
+	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''. \textcolor{red}{There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. Does the system also offer a sat nav function to the driver?}
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/DriverPage}
 	\end{center}
 	\pagebreak
+	
+	\paragraph{Administrator panel} The administrator's home page: s/he can monitor the whole system or manage taxi drivers inserting new employees in the system DB or modifying/deleting existing ones.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/AdminPage}
+	\end{center}
+	\pagebreak	
 	
 	\subsubsection{Hardware Interfaces} \mts does not require and does not support any additional HW interface, it is enough a compatible smartphones or any supported browser on a computer.
 	
@@ -314,7 +326,7 @@
 		
 	\subsubsection{{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}
 	\begin{itemize}
-		\item {[}R1{]} The mobile phone must have the GPS. \textcolor{red}{(HW requirement or assumption? maybe given by the company...)}
+		\item {[}R1{]} The mobile phone must have the GPS.
 		\item {[}R2{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
 		\item {[}D1{]} The GPS coordinates are always available and correct.
 	\end{itemize}
@@ -346,6 +358,7 @@
 		\item {[}R1{]} The user cannot register more than one time.
 		\item {[}R2{]} The user must choose a username not already used by someone else.
 		\item {[}R3{]} Unregistered users can only see the sign up and login page.
+		\item {[}R4{]} The user must fill in all the mandatory fields of the proposed form to successfully complete the registration process, some of those are the phone number and the data of the credit card.
 		\item {[}D1{]} The email address used for the registration must be valid.
 	\end{itemize}
 		
@@ -367,9 +380,9 @@
 	
 	\subsubsection{{[}G10{]} The passenger shall be able to delete a taxi request.}
 	\begin{itemize}
-		\item {[}R1{]} The cancellation of a ride could imply a fee automatically collected by the system using the user's preferred payment method.
+		\item {[}R1{]} \textcolor{red}{(do we need this goal??)}
 		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}D1{]} There is the assumption (and hope) that the user will eventually wait for the taxi, since the taxi is usually immediately allocated and there is no handle-time in which the user can make up his/her own mind and retire the request without penalty fee like in the case of the reservation in advance; therefore in this case there is no penalty fee.
 	\end{itemize}
 	
 	\subsubsection{{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}
@@ -381,28 +394,28 @@
 	
 	\subsubsection{{[}G12{]} The passenger shall be able to modify and delete a taxi reservation.}
 	\begin{itemize}
-		\item {[}R1{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi. (???maybe only with a constraint eg. 30 minutes in advance, there is however a booking fee??)
+		\item {[}R1{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi.
 		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}D1{]} If the user deletes a reservation in the last 10 minutes before the meeting time (the taxi has already been allocated), then there is a fixed penalty fee automatically deducted from the user's credit card.
 	\end{itemize}
 	
 	\subsubsection{{[}G13{]} The passenger shall be able to enable taxi sharing option.}
 	\begin{itemize}
-		\item {[}R1{]} This is only valid for reservations booked in advance.
+		\item {[}R1{]} 
 		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}D1{]} This is only valid for reservations booked in advance.
 	\end{itemize}
 	
 	\subsubsection{{[}G14{]} The passenger shall be able to join a shared reservation.}
 	\begin{itemize}
-		\item {[}R1{]} This is only valid for reservations booked in advance.
+		\item {[}R1{]} 
 		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}D1{]} This is only valid for reservations booked in advance.
 	\end{itemize}
 	
 	\subsubsection{{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}
 	\begin{itemize}
-		\item {[}R1{]} The user can keep track of the favorite routes, favorite payment method? Link credit card? Maybe to pay the fee in case the user decides to delete a reservation?
+		\item {[}R1{]} The user can keep track of the recent routes and addresses.
 		\item {[}R2{]} The user can select locations from past rides to plan new ones.
 		\item {[}D1{]}
 	\end{itemize}
@@ -426,10 +439,36 @@
 		\item {[}R1{]} The user can take in charge or reject the requests received as notification.
 		\item {[}R2{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
 		\item {[}D1{]}
-	\end{itemize}					
+	\end{itemize}	
+					
+	\subsubsection{{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system DB.}
+	\begin{itemize}
+		\item {[}R1{]} 
+		\item {[}R2{]} 
+		\item {[}D1{]} The administrator only inserts in the system already verified entitled taxi drivers.
+	\end{itemize}	
+	
+	\subsubsection{{[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}
+	\begin{itemize}
+		\item {[}R1{]} 
+		\item {[}R2{]} 
+		\item {[}D1{]}
+	\end{itemize}							
 		
-	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used for a first domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
+	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used as an additional domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
 	managed directly by the application.
+	
+	\subsection{Scenarios}
+	
+	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic contested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the line of credit of the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob is taken to his destination and the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit line. 
+	
+	\subsubsection{Scenario 2} Alice has just moved to Milan and hasn’t got any car. For this reason, she looks on the Internet to understand which options she has to move around the city with public transports and she finds {\em myTaxyService}'s website that presents the taxi service. She decides to sign up to be able to make use of the service, so she provides her personal data including the data of her credit card. Once the 2-step verification process is successfully completed she logins with the credentials chosen during the registration process. She is now operative and wants to try out the service, so she enters the booking page to make a reservation for the next day. She fills in the pickup address with her own and the destination field with the museum she wants to visit and sets the date and time, enabling the shared ride choice and finally submits the request. The system confirms the reservation process went through. 
+	
+	\subsubsection{Scenario 3} Alice is invited to her friend’s Bob birthday party held the next evening at Bob’s house, so she logins to the {\em myTaxyService}'s website to reserve a taxi for tomorrow night. Unfortunately, she doesn’t recall her friend’s address, but she remembers that the previous week they took a taxi together to his house, so she browses the history of her own reservation and from there recognizes Bob’s house address, then Alice uses it as drop off location and completes the reservation. Unluckily the following morning Bob phones to Alice and warns her that the party is postponed indefinitely due to bad weather forecast. Alice then decides to delete the reservation for taxi for the night, so she logins to the website and cancel the booking without paying any fees.
+	
+	\subsubsection{Scenario 4} Mike is a taxi driver in Milan and its company relies on \mts for the management of the work. He received the access codes to the system once he had been employed. Now every morning he starts his daily work routine by starting the \mts app on his phone and heading to the assigned zone with his taxi to pick up the first client. He switches on the ``availability’’ to work and starts receiving job proposals. Mike accepts them almost always; he only takes the liberty to switch off the system for a 30-minute lunch break. Often it happens that he has to pick up two clients in the same area for a shared ride because they are headed in the same direction. The shared ride feature has been having an huge approval among the clients since the implementation of the \mts application. At the end of the day Mike stops the flow of job proposals setting the ``availability’’ back again to off and returns to his family at home.
+	
+	\subsubsection{Scenario 5} Jack is the manager of the taxi company in Milan and therefore he is the administrator of the \mts system. He spends his days monitoring the activity of the system thanks to the supervision functionality of the system. He can access it anytime anywhere thanks to the double interface for web browser and mobile application. Of course he prefers the bigger monitor of his computer when he’s in the office with respect to the small display of the smartphone, but he is more relaxed knowing that he is notified if something goes wrong even when he is outside the office. Often it happens that he needs to insert in the system new just employed drivers; in that case he collects all the information about the person and register the user with the specific functionalities for the drivers.
 		
 	\subsection{Performance Requirements}
 	
