@@ -187,6 +187,7 @@
 		\item HTTP: Hypertext Transfer Protocol.
 		\item HTTPS: HTTP over SSL/HTTP Secure.
 		\item SSL: Secure Sockets Layer.
+		\item DMZ: Demilitarized Zone.
 		
 	\end{itemize}
 	
@@ -226,7 +227,7 @@
 	
 	\subsubsection{Hardware limitations} \mts requires a computer or a smartphone connected to the internet. The mobile application requires the GPS module.   
 	
-	\subsubsection{Interfaces to other applications} \mts requires to access to the Internet and to the Google Maps APIs to provide map services.
+	\subsubsection{Interfaces to other applications} \mts requires to access the Internet and the Google Maps APIs to provide map visualizations and map-related services.
 	
 	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working with the DB and when dealing with all the operations done by the user after the connection.
 	
@@ -238,7 +239,7 @@
 			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
-			\item Passengers pay only using their valid credit or debit card by linking it to their user profile.
+			\item Passengers pay only using their valid credit or debit card by linking it to their own profile.
 			\item Passengers always have enough money to pay the taxi fare.
 			\item The web application and the mobile counterpart share the same functionalities.
 			\item The waiting time can vary depending on the current traffic condition.
@@ -266,7 +267,7 @@
 	\pagebreak
 	
 	\pagebreak
-	\paragraph{Call a taxi} The user can ask for a taxi providing the pickup location through a complete address \textcolor{red}{or through the GPS coordinates in the mobile app, in the latter case the phone must have the built-in GPS turned on. The user can also choose from an history of ``recent addresses''.}
+	\paragraph{Call a taxi} The user can ask for a taxi providing the pickup location through a complete address or through the automatic detection of his/her location thanks to the browser or the GPS. The user can also choose from an history of ``recent addresses''.
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/CallATaxi}
 	\end{center}
@@ -381,7 +382,7 @@
 	
 	\subsubsection{{[}G10{]} The passenger shall be able to delete a taxi request.}
 	\begin{itemize}
-		\item {[}R1{]} \textcolor{red}{(do we need this goal??)}
+		\item {[}R1{]}
 		\item {[}R2{]}
 		\item {[}D1{]} There is the assumption (and hope) that the user will eventually wait for the taxi, since the taxi is usually immediately allocated and there is no handle-time in which the user can make up his/her own mind and retire the request without penalty fee like in the case of the reservation in advance; therefore in this case there is no penalty fee.
 	\end{itemize}
@@ -457,7 +458,7 @@
 	\end{itemize}							
 		
 	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used as an additional domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
-	managed directly by the application.
+	managed directly by the application.\\\textcolor{red}{INSERT SCHEMA HERE}
 	
 	\subsection{Scenarios}
 	
@@ -470,28 +471,66 @@
 	\subsubsection{Scenario 4} Mike is a taxi driver in Milan and its company relies on \mts for the management of the work. He received the access codes to the system once he had been employed. Now every morning he starts his daily work routine by starting the \mts app on his phone and heading to the assigned zone with his taxi to pick up the first client. He switches on the ``availability’’ to work and starts receiving job proposals. Mike accepts them almost always; he only takes the liberty to switch off the system for a 30-minute lunch break. Often it happens that he has to pick up two clients in the same area for a shared ride because they are headed in the same direction. The shared ride feature has been having an huge approval among the clients since the implementation of the \mts application. At the end of the day Mike stops the flow of job proposals setting the ``availability’’ back again to off and returns to his family at home.
 	
 	\subsubsection{Scenario 5} Jack is the manager of the taxi company in Milan and therefore he is the administrator of the \mts system. He spends his days monitoring the activity of the system thanks to the supervision functionality of the system. He can access it anytime anywhere thanks to the double interface for web browser and mobile application. Of course he prefers the bigger monitor of his computer when he’s in the office with respect to the small display of the smartphone, but he is more relaxed knowing that he is notified if something goes wrong even when he is outside the office. Often it happens that he needs to insert in the system new just employed drivers; in that case he collects all the information about the person and register the user with the specific functionalities for the drivers.
+	
+	\subsection{UML Models}
+	
+	\subsubsection{Use Case}
+	\renewcommand{\arraystretch}{1.5}
+	\setlength{\tabcolsep}{6pt}
+	\paragraph{Visitor registers to \mts}
+	
+	\begin{center}
+		\begin{tabular}{| l | p{10cm} |}\hline
+			Actor & Visitor\\\hline
+			Goal & {[}G7{]} \\\hline
+			Input Condition & NULL\\\hline
+			Event Flow & \begin{enumerate}
+							\item Visitor on the home page clicks on the ``Sign up'' button to start the registration process.
+							\item Visitor fills in at least all mandatory fields.
+							\item Visitors clicks on the ``confirm'' button.
+							\item The application will save the data in the DB.
+						\end{enumerate}\\\hline
+			Output Condition & Visitor successfully ends the registration process and
+								becomes a registered user. From now on s/he can login to
+								the application using her/his credentials and start
+								using \mts.\\\hline
+			Exceptions & {\begin{enumerate}
+							\item The visitor is already a registered user.
+							\item One or more mandatory fields are not valid or missing.
+							\item The username chosen is already used by another user.
+							\item The email chosen is already associated to another user.
+						\end{enumerate} All exceptions are handled alerting the visitor of the
+						problem and the application goes back to the point 2 of	event flow}\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
 		
-	\subsection{Performance Requirements}
+	\subsection{Non Functional Requirements}
 	
-	\subsection{Design Constraints}
+	\subsubsection{Performance Requirements} The service must guarantee an high level of usability, also in terms of processing and response time of the several functions. The objective is to avoid the situation in which the server represents the bottleneck of the entire system when there are many connections at the same time. To prevent this the server must be correctly chosen and calibrated to handle a large amount of connections in situations of heavy loads. 
 	
+	\subsubsection{Design Constraints}
+		
 	\subsubsection{Standards compliance}
 	
 	\subsubsection{Hardware limitations}
 	
-	\subsection{Software System Attributes}
+	\subsubsection{Software System Attributes}
 	
-	\subsubsection{Reliability}
+	\paragraph{Availability \& Reliability} \mts system must be always accessible. The server that hosts the service is online 24/7 and is equipped with an autonomous power supply backup system.
 	
-	\subsubsection{Availability} The server must be available 24/7.
+	\paragraph{Security} \mts offers a high grade of privacy and security thanks to the protocols that it enforces. As already stated above it requires a 2-factor verification process during the registration; in this way the account is confirmed by two codes that are sent to both the provided email address and phone number. In this way it's verified that  all the means used to communicate with the user really belong to him/her. The application also guarantees an appropriate level of confidentiality and integrity of the sensitive data exchanged on the Web with the server. The DB on the server is behind a DMZ in which is located the web server; firewalls with different rules are used to separate the different ``zones'' of access rights and permissions in the network.
 	
-	\subsubsection{Security}
-	
-	\subsubsection{Maintainability}
+	\paragraph{Maintainability} The software itself does not require any particular periodic update, unless the taxi company wants to add some functionalities. The only feature that could require some maintenance are the APIs offered by the system, but again, in this document and all the other ones related to \mts that will be attached, future developers can find all what they could need to understand how the system works and then how to update some sections of the software. 
 
-	\subsubsection{Portability}
+	\paragraph{Portability}
 	
 	\subsection{Other Requirements}
+	
+	\pagebreak
+	
+	\section{Alloy}
 	
 	
 \end{document}

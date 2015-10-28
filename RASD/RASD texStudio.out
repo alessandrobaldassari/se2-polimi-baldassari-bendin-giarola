@@ -63,14 +63,18 @@
 \BOOKMARK [3][-]{subsubsection.0.3.4.3}{Scenario 3}{subsection.0.3.4}% 63
 \BOOKMARK [3][-]{subsubsection.0.3.4.4}{Scenario 4}{subsection.0.3.4}% 64
 \BOOKMARK [3][-]{subsubsection.0.3.4.5}{Scenario 5}{subsection.0.3.4}% 65
-\BOOKMARK [2][-]{subsection.0.3.5}{Performance Requirements}{section.0.3}% 66
-\BOOKMARK [2][-]{subsection.0.3.6}{Design Constraints}{section.0.3}% 67
-\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Standards compliance}{subsection.0.3.6}% 68
-\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Hardware limitations}{subsection.0.3.6}% 69
-\BOOKMARK [2][-]{subsection.0.3.7}{Software System Attributes}{section.0.3}% 70
-\BOOKMARK [3][-]{subsubsection.0.3.7.1}{Reliability}{subsection.0.3.7}% 71
-\BOOKMARK [3][-]{subsubsection.0.3.7.2}{Availability}{subsection.0.3.7}% 72
-\BOOKMARK [3][-]{subsubsection.0.3.7.3}{Security}{subsection.0.3.7}% 73
-\BOOKMARK [3][-]{subsubsection.0.3.7.4}{Maintainability}{subsection.0.3.7}% 74
-\BOOKMARK [3][-]{subsubsection.0.3.7.5}{Portability}{subsection.0.3.7}% 75
-\BOOKMARK [2][-]{subsection.0.3.8}{Other Requirements}{section.0.3}% 76
+\BOOKMARK [2][-]{subsection.0.3.5}{UML Models}{section.0.3}% 66
+\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Use Case}{subsection.0.3.5}% 67
+\BOOKMARK [4][-]{paragraph.0.3.5.1.1}{Visitor registers to myTaxiService }{subsubsection.0.3.5.1}% 68
+\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 69
+\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 70
+\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Design Constraints}{subsection.0.3.6}% 71
+\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Standards compliance}{subsection.0.3.6}% 72
+\BOOKMARK [3][-]{subsubsection.0.3.6.4}{Hardware limitations}{subsection.0.3.6}% 73
+\BOOKMARK [3][-]{subsubsection.0.3.6.5}{Software System Attributes}{subsection.0.3.6}% 74
+\BOOKMARK [4][-]{paragraph.0.3.6.5.1}{Availability \046 Reliability}{subsubsection.0.3.6.5}% 75
+\BOOKMARK [4][-]{paragraph.0.3.6.5.2}{Security}{subsubsection.0.3.6.5}% 76
+\BOOKMARK [4][-]{paragraph.0.3.6.5.3}{Maintainability}{subsubsection.0.3.6.5}% 77
+\BOOKMARK [4][-]{paragraph.0.3.6.5.4}{Portability}{subsubsection.0.3.6.5}% 78
+\BOOKMARK [2][-]{subsection.0.3.7}{Other Requirements}{section.0.3}% 79
+\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 80
