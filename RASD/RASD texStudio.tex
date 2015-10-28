@@ -116,6 +116,8 @@
 		\begin{itemize}
 			\item Clients: are the final users the taxi service is offered to. They can book the ride choosing among different options, for instance date and time, origin and destination locations and the possibility of sharing the trip with other customers.
 			\item Taxi Drivers: represent the other category of users of the application, they can accept a call for a service or turn it down, thus allowing the whole system to be synchronized, fast and efficient; moreover the system keeps the coordinates of the taxis automatically updated.
+			
+			\item Administrator: is the system manager. He supervises the city zones and their taxi queue. He is able to manage the list of taxi drivers in the system.
 		\end{itemize}
 	
 	\subsection{Goals} \label{sec:goals}
@@ -212,7 +214,7 @@
 	
 	\section{Overall description}
 	
-	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained. It has the interface for an administration, except for that feature it is entirely user based. The application does provide some API for integration with future projects.
+	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained. It has the interface for an administration, except for that feature it is entirely user based. The application does provide some APIs for integration with future projects.
 	
 	\subsection{Product functions} The function summary that is necessary for this part can be taken directly from the section of the higher-level specification in the first part of this document {\em Scope} (see section~\ref{sec:scope}) and {\em Goals} (see section~\ref{sec:goals}).
 	
@@ -222,25 +224,24 @@
 	
 	\subsubsection{Regulatory Policies \& Safety and security} \mts fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences and the browser can request to detect the user's position. The mobile application only requires basic permissions. 
 	
-	\subsubsection{Hardware limitations} \mts does not require any particular HW feature, except for the minimum requirements that the browser and/or the mobile phone must meet to support the latest policies for surfing the web safely. Besides the mobile phone must have the integrated GPS module to enable the user to select his/her own location without having to type the address manually.
+	\subsubsection{Hardware limitations} \mts requires a computer or a smartphone connected to the internet. The mobile application requires the GPS module.   
 	
-	\subsubsection{Interfaces to other applications} \mts only requires access to Internet, as stated before it meets all the latest regulations for secure transmission of personal data over the web. It may use cookies or the modules to access the user's position, if the user accepts it.
+	\subsubsection{Interfaces to other applications} \mts requires to access to the Internet and to the Google Maps APIs to provide map services.
 	
-	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working	with the DB and when dealing with all the operations done by the user after the connection.
+	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working with the DB and when dealing with all the operations done by the user after the connection.
 	
 	\subsection{Assumptions and dependencies}
 		\begin{itemize}
-			\item Entitled taxi drivers are already inserted in the system by the administrator.
+			\item Entitled taxi drivers are inserted in the system by the administrator.
 			\item The rides that can be shared are only the reserved ones.
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
-			\item The login page for the users is unique, but according to the role of the user they will be automatically redirected to the pertinent page for the passenger or the employee.
-			\item There is an administrator who is the only authorized entity able to add entries and modify some functionalities of the application on behalf of the taxi company. S/he is a supervisor in a sort of command and control center that monitors the whole system.
+			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
-			\item Passengers must link an electronic payment method that will be used to pay in advance; the system is able to freeze an amount of money on the credit line in order to pay for the ride once it has been completed, or to pay the fees due to the cancellation of a reservation beyond the established time frame.
-			\item Passengers always have enough money to pay the taxi fare and the payment data provided are valid, without the need to be verified.
+			\item Passengers pay only using their valid credit or debit card by linking it to their user profile.
+			\item Passengers always have enough money to pay the taxi fare.
 			\item The web application and the mobile counterpart share the same functionalities.
-			\item The waiting time for the passenger before the taxi arrival is computed using the actual position of the allocated taxi, but it can vary depending on the traffic.
+			\item The waiting time can vary depending on the current traffic condition.
 		\end{itemize}
 	
 %	\pagebreak
@@ -460,7 +461,7 @@
 	
 	\subsection{Scenarios}
 	
-	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic contested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the line of credit of the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob is taken to his destination and the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit line. 
+	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic congested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the line of credit of the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob is taken to his destination and the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit line. 
 	
 	\subsubsection{Scenario 2} Alice has just moved to Milan and hasn’t got any car. For this reason, she looks on the Internet to understand which options she has to move around the city with public transports and she finds {\em myTaxyService}'s website that presents the taxi service. She decides to sign up to be able to make use of the service, so she provides her personal data including the data of her credit card. Once the 2-step verification process is successfully completed she logins with the credentials chosen during the registration process. She is now operative and wants to try out the service, so she enters the booking page to make a reservation for the next day. She fills in the pickup address with her own and the destination field with the museum she wants to visit and sets the date and time, enabling the shared ride choice and finally submits the request. The system confirms the reservation process went through. 
 	
