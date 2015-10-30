@@ -165,6 +165,7 @@
 		\begin{itemize}
 			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
 			\item Taxi driver (or Taxi owner): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
+			\item Guest (or Visitor): is a non-registered user.
 			\item Ride: is a single taxi ride from a location to another one.
 			\item Shared ride: a ride shared with other passengers arranged by the system; in this way clients that have common taxi lines can shrink the cost of the single ride.
 			\item Location: are the GPS coordinates (or the street address) to unequivocally identify a place. It could be the position of a taxi, the origin or destination of a ride.
@@ -234,6 +235,7 @@
 	\subsection{Assumptions and dependencies}
 		\begin{itemize}
 			\item Entitled taxi drivers are inserted in the system by the administrator.
+			\item Taxi zones are predetermined by the city government and will never change in the system time horizon.
 			\item The rides that can be shared are only the reserved ones.
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
 			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
@@ -291,7 +293,7 @@
 	\end{center}
 	\pagebreak
 	
-	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''. \textcolor{red}{There is also the possibility to inform the system about an ``emergency situation'' and the impossibility to carry out the scheduled jobs. Does the system also offer a sat nav function to the driver?}
+	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''.
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{Pictures/DriverPage}
 	\end{center}
@@ -305,7 +307,7 @@
 	
 	\subsubsection{Hardware Interfaces} \mts does not require and does not support any additional HW interface, it is enough a compatible smartphones or any supported browser on a computer.
 	
-	\subsubsection{Software Interfaces} \textcolor{red}{do we have to pretend to use sql, java ee....???}
+%	\subsubsection{Software Interfaces} \textcolor{red}{do we have to pretend to use sql, java ee....???}
 	
 	\subsubsection{Communication Interfaces} \mts uses the TCP transport protocol and HTTP/HTTP over SSL application layer protocol to guarantee the top of the line security on the matter of transmission of private data.
 	
@@ -313,9 +315,7 @@
 	
 	\subsubsection{{[}G1{]} The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}
 	\begin{itemize}
-		\item {[}R1{]} The system must offer the same functionalities in both the cases.
-		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}D1{]} The system must offer the same functionalities to the final user in both cases.
 	\end{itemize}
 	
 	\subsubsection{{[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone.}
@@ -323,78 +323,76 @@
 		\item {[}R1{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules to guarantee a fair management of the queues.
 		\item {[}R2{]} If the taxi driver on top of the queue accepts a job then the system allocates the taxi for the specific request and therefore updates the queue.
 		\item {[}R3{]} If the taxi driver on top of the queue rejects the job then the system updates the queue placing the second taxi as first and the one that rejected the job in the last position of the queue of the same zone.
-		\item {[}D1{]}
+		\item {[}D1{]} Each taxi queue will never be empty.
 	\end{itemize}
 		
 	\subsubsection{{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}
 	\begin{itemize}
-		\item {[}R1{]} The mobile phone must have the GPS.
-		\item {[}R2{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
+		\item {[}R1{]} The system is able to map the position of the taxi fleet and assign each taxi to a predetermined zone of the city according to its position.
 		\item {[}D1{]} The GPS coordinates are always available and correct.
 	\end{itemize}
 	
 	\subsubsection{{[}G4{]} The system has to allocate a taxi for each request or reservation.}
 	\begin{itemize}
-		\item {[}R1{]} In the event of a request the system allocates a taxi as soon as a driver in the corresponding zone is available and accepts the job.
-		\item {[}R2{]} In the event of a reservation the system allocates the taxi 10 minutes before the meeting time with the client.
-		\item {[}D1{]}
+		\item {[}R1{]} In case of a request the system allocates a taxi as soon as a driver in the corresponding zone accepts the job.
+		\item {[}R2{]} In case of a reservation the system allocates the taxi 10 minutes before the meeting time with the client.
+		\item {[}D1{]} There is always at least one available taxi.
 	\end{itemize}
 		
 	\subsubsection{{[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}
 	\begin{itemize}
 		\item {[}R1{]} The awaiting passenger is notified by the system if the taxi is delayed for any reason.
-		\item {[}R2{]} The passenger is notified when other passengers sharing the same ride join the ride or cancel the reservation; the user is also updated with the recomputed taxi fare. \textcolor{red}{Which is the type of notification? SMS? email? app functionality?}
+		\item {[}R2{]} The passenger is notified when other passengers sharing the same route join the ride or cancel the reservation; the user is also updated with the recomputed taxi fare.
 		\item {[}R3{]} The system notifies the taxi driver allocated to a request if the correspondent passenger has deleted the reservation.
-		\item {[}D1{]}
+		\item {[}R4{]} The system allows passengers to choose the type of notification they will receive among text message, email and mobile push notification.
+		\item {[}D1{]} The taxi driver will always receive only mobile push notifications.
+		\item {[}D2{]} The user will provide his preference on at least one type of notification.
 	\end{itemize}
 		
-	\subsubsection{{[}G6{]} The system hat to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}
+	\subsubsection{{[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}
 	\begin{itemize}
-		\item {[}R1{]}
-		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}R1{]} The system offers APIs to third party applications using web APIs as technology.
+		\item {[}R2{]} The system replies using current industry standards.
+		\item {[}D1{]} Access to APIs functionalities is provided only using the HTTPS protocol.
 	\end{itemize}
 		
 	\subsubsection{{[}G7{]} The passenger shall be able to sign up to the service.}
 	\begin{itemize}
-		\item {[}R1{]} The user cannot register more than one time.
+		\item {[}R1{]} The user cannot register more than once.
 		\item {[}R2{]} The user must choose a username not already used by someone else.
 		\item {[}R3{]} Unregistered users can only see the sign up and login page.
-		\item {[}R4{]} The user must fill in all the mandatory fields of the proposed form to successfully complete the registration process, some of those are the phone number and the data of the credit card.
-		\item {[}D1{]} The email address used for the registration must be valid.
+		\item {[}R4{]} The user must fill in all the mandatory fields of the proposed form to successfully complete the registration process.
+		\item {[}D1{]} Phone number, email address and credit card data used for the registration are mandatory and must be valid.
 	\end{itemize}
 		
 	\subsubsection{{[}G8{]} The passenger shall be able to log in to the service.}
 	\begin{itemize}
-		\item {[}R1{]} If the user has not the correct login information cannot access the system.
-		\item {[}R2{]} 
-		\item {[}D1{]}
+		\item {[}R1{]} If the user hasn't the correct login information cannot access the system.
+		\item {[}R2{]} If the user provides correct credentials the system will grant him/her the access.
+		\item {[}D1{]} The system does not implement a retrieve password mechanism.
 	\end{itemize}
 		
 	\subsubsection{{[}G9{]} The passenger shall be able to request a taxi.}
 	\begin{itemize}
 		\item {[}R1{]} The user can ask for a taxi simply providing his/her own position.
-		\item {[}R2{]} The system has to answer to a taxi request by informing the passenger about the code of the taxi and the waiting time.
-		\item {[}R3{]} The system is able to map the requests of the clients according to their location.
-		\item {[}R4{]} When a passenger books a ride s/he is given a code that identifies her/him.
-		\item {[}D1{]}
+		\item {[}R2{]} The system is able to dispatch the request of the client to the right queue according to his/her position.
+		\item {[}R3{]} The system has to answer a taxi request by informing the passenger about the code of the taxi and the waiting time.
+		\item {[}R4{]} When a passenger books a ride s/he is given a code that uniquely identifies her/him in front of the taxi driver.
 	\end{itemize}
 	
 	\subsubsection{{[}G10{]} The passenger shall be able to delete a taxi request.}
 	\begin{itemize}
-		\item {[}R1{]}
-		\item {[}R2{]}
-		\item {[}D1{]} There is the assumption (and hope) that the user will eventually wait for the taxi, since the taxi is usually immediately allocated and there is no handle-time in which the user can make up his/her own mind and retire the request without penalty fee like in the case of the reservation in advance; therefore in this case there is no penalty fee.
+		\item {[}R1{]} The passenger can withdraw the request within 30 seconds after the call.
+		\item {[}R2{]} A penalty fee is automatically collected if the user deletes the request after the allowed time frame.
+		\item {[}D1{]} Passengers always wait for the requested taxi.
 	\end{itemize}
 	
 	\subsubsection{{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}
 	\begin{itemize}
-		\item {[}R1{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination, the willingness to share the ride.
-		\item {[}R2{]} The user can plan the trip and preview the fare of the ride and decide whether to call a taxi.
-		\item {[}D1{]}
+		\item {[}R1{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination.
 	\end{itemize}
 	
-	\subsubsection{{[}G12{]} The passenger shall be able to modify and delete a taxi reservation.}
+	\subsubsection{{[}G12{]} The passenger shall be able to modify or delete a taxi reservation.}
 	\begin{itemize}
 		\item {[}R1{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi.
 		\item {[}R2{]}
@@ -462,9 +460,9 @@
 	
 	\subsection{Scenarios}
 	
-	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic congested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the line of credit of the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob is taken to his destination and the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit line. 
+	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic congested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob exhibits the identification code to the taxi driver and is taken to his destination; finally the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit card. 
 	
-	\subsubsection{Scenario 2} Alice has just moved to Milan and hasn’t got any car. For this reason, she looks on the Internet to understand which options she has to move around the city with public transports and she finds {\em myTaxyService}'s website that presents the taxi service. She decides to sign up to be able to make use of the service, so she provides her personal data including the data of her credit card. Once the 2-step verification process is successfully completed she logins with the credentials chosen during the registration process. She is now operative and wants to try out the service, so she enters the booking page to make a reservation for the next day. She fills in the pickup address with her own and the destination field with the museum she wants to visit and sets the date and time, enabling the shared ride choice and finally submits the request. The system confirms the reservation process went through. 
+	\subsubsection{Scenario 2} Alice has just moved to Milan and hasn’t got any car. For this reason, she looks on the Internet to understand which options she has to move around the city with public transports and she finds {\em myTaxyService}'s website that presents the taxi service. She decides to sign up to make use of the service, so she provides her personal data including the data of her credit card and selects ``email'' as notification option. Once the 2-step verification process is successfully completed she logins with the credentials chosen during the registration process. She is now operative and wants to try out the service, so she enters the booking page to make a reservation for the next day. She fills in the pickup address with her own and the destination field with the museum she wants to visit and sets the date and time, enabling the shared ride choice and finally submits the request. The system confirms the reservation process went through. 
 	
 	\subsubsection{Scenario 3} Alice is invited to her friend’s Bob birthday party held the next evening at Bob’s house, so she logins to the {\em myTaxyService}'s website to reserve a taxi for tomorrow night. Unfortunately, she doesn’t recall her friend’s address, but she remembers that the previous week they took a taxi together to his house, so she browses the history of her own reservation and from there recognizes Bob’s house address, then Alice uses it as drop off location and completes the reservation. Unluckily the following morning Bob phones to Alice and warns her that the party is postponed indefinitely due to bad weather forecast. Alice then decides to delete the reservation for taxi for the night, so she logins to the website and cancel the booking without paying any fees.
 	
@@ -480,29 +478,178 @@
 	\paragraph{Visitor registers to \mts}
 	
 	\begin{center}
-		\begin{tabular}{| l | p{10cm} |}\hline
+		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Visitor\\\hline
 			Goal & {[}G7{]} \\\hline
 			Input Condition & NULL\\\hline
 			Event Flow & \begin{enumerate}
-							\item Visitor on the home page clicks on the ``Sign up'' button to start the registration process.
+							\item Visitor on the home page clicks on ``Sign up''.
 							\item Visitor fills in at least all mandatory fields.
-							\item Visitors clicks on the ``confirm'' button.
-							\item The application will save the data in the DB.
-						\end{enumerate}\\\hline
-			Output Condition & Visitor successfully ends the registration process and
+							\item Visitor clicks on the ``confirm'' button.
+							\item The application saves the data in the DB.
+						 \end{enumerate}\\\hline
+			Output Condition & Visitor successfully completes the registration process and
 								becomes a registered user. From now on s/he can login to
-								the application using her/his credentials and start
-								using \mts.\\\hline
+								the application using her/his credentials and use \mts.\\\hline
 			Exceptions & {\begin{enumerate}
 							\item The visitor is already a registered user.
 							\item One or more mandatory fields are not valid or missing.
 							\item The username chosen is already used by another user.
 							\item The email chosen is already associated to another user.
-						\end{enumerate} All exceptions are handled alerting the visitor of the
-						problem and the application goes back to the point 2 of	event flow}\\\hline
+						  \end{enumerate} All exceptions are handled alerting the visitor of the
+						problem and the application goes back to the point 2 of	event flow.}\\\hline
 		\end{tabular}
 	\end{center}
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/UseCaseRegistration}
+	\end{center}
+	\pagebreak	
+	
+	\paragraph{Visitor logins to \mts}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Visitor, user\\\hline
+			Goal & {[}G8{]} \\\hline
+			Input Condition & The user must be already registered.\\\hline
+			Event Flow & \begin{enumerate}
+							\item \mts shows the login page.
+							\item Visitor completes the form inserting correct username and password.
+						 \end{enumerate}\\\hline
+			Output Condition & \begin{enumerate}
+									\item \mts verifies the credential of the visitor and if correct shows the home page for the registered user.
+									\item Visitor is promoted to registered user.
+							   \end{enumerate}\\\hline
+			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Passenger requests a taxi}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G9{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & The user requests a taxi using any of the options to provide his/her own location.\\\hline
+			Output Condition & \begin{enumerate}
+									\item \mts starts the process in order to find a taxi for the user.
+									\item Once the system has allocated a taxi it notifies the user.
+							   \end{enumerate}\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\pagebreak
+	
+	\paragraph{Passenger cancels a request for a taxi}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User, Taxi driver\\\hline
+			Goal & {[}G10{]} \\\hline
+			Input Condition & \begin{enumerate}
+								\item The user must be already logged in.
+								\item The user must have a pending request for a taxi.
+						   	  \end{enumerate} \\\hline
+			Event Flow & The user deletes the pending ride.\\\hline
+			Output Condition & \mts notifies the corresponding taxi driver that the job is canceled.\\\hline
+			Exceptions & If the cancellation has been made after the allowed time frame the system applies a penalty fee to the user.\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Passenger creates a reservation for a taxi}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G11{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters.\\\hline
+			Output Condition & \begin{enumerate}
+									\item \mts records the new reservation in its DB.
+									\item The system notifies the user of the successful reservation.
+							   \end{enumerate}\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Passenger edits a reservation for a taxi}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G12{]} \\\hline
+			Input Condition & \begin{enumerate}
+									\item The user must be already logged in.
+									\item The user must have an active reservation.
+							  \end{enumerate}\\\hline
+			Event Flow & The user modifies some parameters of his/her reservation, possibly also deleting the it.\\\hline
+			Output Condition & \begin{enumerate}
+									\item \mts records the changes in the reservation in its DB.
+									\item The system notifies the user of the successful changes.
+						   	   \end{enumerate}\\\hline
+			Exceptions & The system collects the penalty fee if the user deleted the ride beyond the allowed time-frame.\\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\pagebreak
+	
+	\paragraph{Passenger reserves a ride with shared option}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G13{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters, in particular enabling the sharing of the ride.\\\hline
+			Output Condition & \begin{enumerate}
+				\item \mts records the changes in the reservation in its DB.
+				\item The system notifies the user of the successful reservation.
+			\end{enumerate}\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\pagebreak
+	
+	\paragraph{Passenger joins a shared ride}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G14{]} \\\hline
+			Input Condition & \begin{enumerate}
+				\item The users involved in the shared ride must be already logged in.
+				\item The users must have an active reservation in which they have expressly accepted the shared ride option.
+				\item The active reservation must have the same origin and destination for all the users.
+			\end{enumerate}\\\hline
+			Event Flow & The system recognizes the possible shared rides and insert them in the DB.\\\hline
+			Output Condition & All the users involved are notified about the matching of users for shared rides, therefore they are updated on the situation of the shared ride.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\pagebreak
+	
+	\paragraph{Passenger checks the history of his/her own requests}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & User\\\hline
+			Goal & {[}G15{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & The user accesses the page of the history of his/her own rides.\\\hline
+			Output Condition & The system returns the result of the corresponding query on the DB to the user.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\pagebreak
+	
+	\subsubsection{Class Diagrams}
+	
+	\pagebreak
+	
+	\subsubsection{State Machine Diagrams}
 	
 	\pagebreak
 		

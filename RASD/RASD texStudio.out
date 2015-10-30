@@ -33,48 +33,57 @@
 \BOOKMARK [4][-]{paragraph.0.3.1.1.7}{Manage jobs}{subsubsection.0.3.1.1}% 33
 \BOOKMARK [4][-]{paragraph.0.3.1.1.8}{Administrator panel}{subsubsection.0.3.1.1}% 34
 \BOOKMARK [3][-]{subsubsection.0.3.1.2}{Hardware Interfaces}{subsection.0.3.1}% 35
-\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Software Interfaces}{subsection.0.3.1}% 36
-\BOOKMARK [3][-]{subsubsection.0.3.1.4}{Communication Interfaces}{subsection.0.3.1}% 37
-\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 38
-\BOOKMARK [3][-]{subsubsection.0.3.2.1}{[G1] The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}{subsection.0.3.2}% 39
-\BOOKMARK [3][-]{subsubsection.0.3.2.2}{[G2] The system has to guarantee a fair management of the queues in each taxi zone.}{subsection.0.3.2}% 40
-\BOOKMARK [3][-]{subsubsection.0.3.2.3}{[G3] The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}{subsection.0.3.2}% 41
-\BOOKMARK [3][-]{subsubsection.0.3.2.4}{[G4] The system has to allocate a taxi for each request or reservation.}{subsection.0.3.2}% 42
-\BOOKMARK [3][-]{subsubsection.0.3.2.5}{[G5] The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}{subsection.0.3.2}% 43
-\BOOKMARK [3][-]{subsubsection.0.3.2.6}{[G6] The system hat to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}{subsection.0.3.2}% 44
-\BOOKMARK [3][-]{subsubsection.0.3.2.7}{[G7] The passenger shall be able to sign up to the service.}{subsection.0.3.2}% 45
-\BOOKMARK [3][-]{subsubsection.0.3.2.8}{[G8] The passenger shall be able to log in to the service.}{subsection.0.3.2}% 46
-\BOOKMARK [3][-]{subsubsection.0.3.2.9}{[G9] The passenger shall be able to request a taxi.}{subsection.0.3.2}% 47
-\BOOKMARK [3][-]{subsubsection.0.3.2.10}{[G10] The passenger shall be able to delete a taxi request.}{subsection.0.3.2}% 48
-\BOOKMARK [3][-]{subsubsection.0.3.2.11}{[G11] The passenger shall be able to create a reservation for a taxi ride.}{subsection.0.3.2}% 49
-\BOOKMARK [3][-]{subsubsection.0.3.2.12}{[G12] The passenger shall be able to modify and delete a taxi reservation.}{subsection.0.3.2}% 50
-\BOOKMARK [3][-]{subsubsection.0.3.2.13}{[G13] The passenger shall be able to enable taxi sharing option.}{subsection.0.3.2}% 51
-\BOOKMARK [3][-]{subsubsection.0.3.2.14}{[G14] The passenger shall be able to join a shared reservation.}{subsection.0.3.2}% 52
-\BOOKMARK [3][-]{subsubsection.0.3.2.15}{[G15] The passenger shall be able to see historical data on his taxi rides.}{subsection.0.3.2}% 53
-\BOOKMARK [3][-]{subsubsection.0.3.2.16}{[G16] Taxi drivers shall be able to log in to the service.}{subsection.0.3.2}% 54
-\BOOKMARK [3][-]{subsubsection.0.3.2.17}{[G17] Taxi drivers shall use a mobile application to inform the system about their availability.}{subsection.0.3.2}% 55
-\BOOKMARK [3][-]{subsubsection.0.3.2.18}{[G18] Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.}{subsection.0.3.2}% 56
-\BOOKMARK [3][-]{subsubsection.0.3.2.19}{[G19] The administrator shall be able to add, edit and delete taxi drivers in the system DB.}{subsection.0.3.2}% 57
-\BOOKMARK [3][-]{subsubsection.0.3.2.20}{[G20] The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}{subsection.0.3.2}% 58
-\BOOKMARK [2][-]{subsection.0.3.3}{The world and the machine}{section.0.3}% 59
-\BOOKMARK [2][-]{subsection.0.3.4}{Scenarios}{section.0.3}% 60
-\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Scenario 1}{subsection.0.3.4}% 61
-\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Scenario 2}{subsection.0.3.4}% 62
-\BOOKMARK [3][-]{subsubsection.0.3.4.3}{Scenario 3}{subsection.0.3.4}% 63
-\BOOKMARK [3][-]{subsubsection.0.3.4.4}{Scenario 4}{subsection.0.3.4}% 64
-\BOOKMARK [3][-]{subsubsection.0.3.4.5}{Scenario 5}{subsection.0.3.4}% 65
-\BOOKMARK [2][-]{subsection.0.3.5}{UML Models}{section.0.3}% 66
-\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Use Case}{subsection.0.3.5}% 67
-\BOOKMARK [4][-]{paragraph.0.3.5.1.1}{Visitor registers to myTaxiService }{subsubsection.0.3.5.1}% 68
-\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 69
-\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 70
-\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Design Constraints}{subsection.0.3.6}% 71
-\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Standards compliance}{subsection.0.3.6}% 72
-\BOOKMARK [3][-]{subsubsection.0.3.6.4}{Hardware limitations}{subsection.0.3.6}% 73
-\BOOKMARK [3][-]{subsubsection.0.3.6.5}{Software System Attributes}{subsection.0.3.6}% 74
-\BOOKMARK [4][-]{paragraph.0.3.6.5.1}{Availability \046 Reliability}{subsubsection.0.3.6.5}% 75
-\BOOKMARK [4][-]{paragraph.0.3.6.5.2}{Security}{subsubsection.0.3.6.5}% 76
-\BOOKMARK [4][-]{paragraph.0.3.6.5.3}{Maintainability}{subsubsection.0.3.6.5}% 77
-\BOOKMARK [4][-]{paragraph.0.3.6.5.4}{Portability}{subsubsection.0.3.6.5}% 78
-\BOOKMARK [2][-]{subsection.0.3.7}{Other Requirements}{section.0.3}% 79
-\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 80
+\BOOKMARK [3][-]{subsubsection.0.3.1.3}{Communication Interfaces}{subsection.0.3.1}% 36
+\BOOKMARK [2][-]{subsection.0.3.2}{Functional Requirements}{section.0.3}% 37
+\BOOKMARK [3][-]{subsubsection.0.3.2.1}{[G1] The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}{subsection.0.3.2}% 38
+\BOOKMARK [3][-]{subsubsection.0.3.2.2}{[G2] The system has to guarantee a fair management of the queues in each taxi zone.}{subsection.0.3.2}% 39
+\BOOKMARK [3][-]{subsubsection.0.3.2.3}{[G3] The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}{subsection.0.3.2}% 40
+\BOOKMARK [3][-]{subsubsection.0.3.2.4}{[G4] The system has to allocate a taxi for each request or reservation.}{subsection.0.3.2}% 41
+\BOOKMARK [3][-]{subsubsection.0.3.2.5}{[G5] The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}{subsection.0.3.2}% 42
+\BOOKMARK [3][-]{subsubsection.0.3.2.6}{[G6] The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}{subsection.0.3.2}% 43
+\BOOKMARK [3][-]{subsubsection.0.3.2.7}{[G7] The passenger shall be able to sign up to the service.}{subsection.0.3.2}% 44
+\BOOKMARK [3][-]{subsubsection.0.3.2.8}{[G8] The passenger shall be able to log in to the service.}{subsection.0.3.2}% 45
+\BOOKMARK [3][-]{subsubsection.0.3.2.9}{[G9] The passenger shall be able to request a taxi.}{subsection.0.3.2}% 46
+\BOOKMARK [3][-]{subsubsection.0.3.2.10}{[G10] The passenger shall be able to delete a taxi request.}{subsection.0.3.2}% 47
+\BOOKMARK [3][-]{subsubsection.0.3.2.11}{[G11] The passenger shall be able to create a reservation for a taxi ride.}{subsection.0.3.2}% 48
+\BOOKMARK [3][-]{subsubsection.0.3.2.12}{[G12] The passenger shall be able to modify or delete a taxi reservation.}{subsection.0.3.2}% 49
+\BOOKMARK [3][-]{subsubsection.0.3.2.13}{[G13] The passenger shall be able to enable taxi sharing option.}{subsection.0.3.2}% 50
+\BOOKMARK [3][-]{subsubsection.0.3.2.14}{[G14] The passenger shall be able to join a shared reservation.}{subsection.0.3.2}% 51
+\BOOKMARK [3][-]{subsubsection.0.3.2.15}{[G15] The passenger shall be able to see historical data on his taxi rides.}{subsection.0.3.2}% 52
+\BOOKMARK [3][-]{subsubsection.0.3.2.16}{[G16] Taxi drivers shall be able to log in to the service.}{subsection.0.3.2}% 53
+\BOOKMARK [3][-]{subsubsection.0.3.2.17}{[G17] Taxi drivers shall use a mobile application to inform the system about their availability.}{subsection.0.3.2}% 54
+\BOOKMARK [3][-]{subsubsection.0.3.2.18}{[G18] Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.}{subsection.0.3.2}% 55
+\BOOKMARK [3][-]{subsubsection.0.3.2.19}{[G19] The administrator shall be able to add, edit and delete taxi drivers in the system DB.}{subsection.0.3.2}% 56
+\BOOKMARK [3][-]{subsubsection.0.3.2.20}{[G20] The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}{subsection.0.3.2}% 57
+\BOOKMARK [2][-]{subsection.0.3.3}{The world and the machine}{section.0.3}% 58
+\BOOKMARK [2][-]{subsection.0.3.4}{Scenarios}{section.0.3}% 59
+\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Scenario 1}{subsection.0.3.4}% 60
+\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Scenario 2}{subsection.0.3.4}% 61
+\BOOKMARK [3][-]{subsubsection.0.3.4.3}{Scenario 3}{subsection.0.3.4}% 62
+\BOOKMARK [3][-]{subsubsection.0.3.4.4}{Scenario 4}{subsection.0.3.4}% 63
+\BOOKMARK [3][-]{subsubsection.0.3.4.5}{Scenario 5}{subsection.0.3.4}% 64
+\BOOKMARK [2][-]{subsection.0.3.5}{UML Models}{section.0.3}% 65
+\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Use Case}{subsection.0.3.5}% 66
+\BOOKMARK [4][-]{paragraph.0.3.5.1.1}{Visitor registers to myTaxiService }{subsubsection.0.3.5.1}% 67
+\BOOKMARK [4][-]{paragraph.0.3.5.1.2}{Visitor logins to myTaxiService }{subsubsection.0.3.5.1}% 68
+\BOOKMARK [4][-]{paragraph.0.3.5.1.3}{Passenger requests a taxi}{subsubsection.0.3.5.1}% 69
+\BOOKMARK [4][-]{paragraph.0.3.5.1.4}{Passenger cancels a request for a taxi}{subsubsection.0.3.5.1}% 70
+\BOOKMARK [4][-]{paragraph.0.3.5.1.5}{Passenger creates a reservation for a taxi}{subsubsection.0.3.5.1}% 71
+\BOOKMARK [4][-]{paragraph.0.3.5.1.6}{Passenger edits a reservation for a taxi}{subsubsection.0.3.5.1}% 72
+\BOOKMARK [4][-]{paragraph.0.3.5.1.7}{Passenger reserves a ride with shared option}{subsubsection.0.3.5.1}% 73
+\BOOKMARK [4][-]{paragraph.0.3.5.1.8}{Passenger joins a shared ride}{subsubsection.0.3.5.1}% 74
+\BOOKMARK [4][-]{paragraph.0.3.5.1.9}{Passenger checks the history of his/her own requests}{subsubsection.0.3.5.1}% 75
+\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Class Diagrams}{subsection.0.3.5}% 76
+\BOOKMARK [3][-]{subsubsection.0.3.5.3}{State Machine Diagrams}{subsection.0.3.5}% 77
+\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 78
+\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 79
+\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Design Constraints}{subsection.0.3.6}% 80
+\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Standards compliance}{subsection.0.3.6}% 81
+\BOOKMARK [3][-]{subsubsection.0.3.6.4}{Hardware limitations}{subsection.0.3.6}% 82
+\BOOKMARK [3][-]{subsubsection.0.3.6.5}{Software System Attributes}{subsection.0.3.6}% 83
+\BOOKMARK [4][-]{paragraph.0.3.6.5.1}{Availability \046 Reliability}{subsubsection.0.3.6.5}% 84
+\BOOKMARK [4][-]{paragraph.0.3.6.5.2}{Security}{subsubsection.0.3.6.5}% 85
+\BOOKMARK [4][-]{paragraph.0.3.6.5.3}{Maintainability}{subsubsection.0.3.6.5}% 86
+\BOOKMARK [4][-]{paragraph.0.3.6.5.4}{Portability}{subsubsection.0.3.6.5}% 87
+\BOOKMARK [2][-]{subsection.0.3.7}{Other Requirements}{section.0.3}% 88
+\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 89
