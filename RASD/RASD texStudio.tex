@@ -145,12 +145,12 @@
 		List of the goals of \mts application for taxi drivers:
 		\begin{itemize}
 			\item {[}G16{]} Taxi drivers shall be able to log in to the service.
-			\item {[}G17{]} Taxi drivers shall use a mobile application to inform the system about their availability.
-			\item {[}G18{]} Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.
+			\item {[}G17{]} Taxi drivers must inform the system about their availability.
+			\item {[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.
 		\end{itemize}
 		List of the goals of \mts application for the administrator:
 		\begin{itemize}
-			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system DB.
+			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.
 			\item {[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
 		\end{itemize}
 		
@@ -164,8 +164,9 @@
 	\subsubsection{Definitions}
 		\begin{itemize}
 			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
-			\item Taxi driver (or Taxi owner): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
+			\item Taxi driver (or Taxi owner, employee): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
 			\item Guest (or Visitor): is a non-registered user.
+			\item Administrator: manages the system on behalf of the taxi company and of the government of the city.
 			\item Ride: is a single taxi ride from a location to another one.
 			\item Shared ride: a ride shared with other passengers arranged by the system; in this way clients that have common taxi lines can shrink the cost of the single ride.
 			\item Location: are the GPS coordinates (or the street address) to unequivocally identify a place. It could be the position of a taxi, the origin or destination of a ride.
@@ -174,6 +175,7 @@
 			\item Zone: the city is divided in several zones to better allocate and coordinate the taxi fleet.
 			\item Request: it is intended as a real time call of a passenger that simply provides his/her own pickup position for an immediate service, without previous reservation.
 			\item Reservation: it is a previously planned ride, for which the client can specify the date and time, the origin and destination, the willingness to share the ride.
+			\item Locations provided buy users are always correct.
 		\end{itemize}
 		
 	\subsubsection{Acronyms}
@@ -237,6 +239,7 @@
 			\item Entitled taxi drivers are inserted in the system by the administrator.
 			\item Taxi zones are predetermined by the city government and will never change in the system time horizon.
 			\item The rides that can be shared are only the reserved ones.
+			\item Passengers that want to share the ride can be matched only if they share the same pick up and destination zone.
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
 			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
 			\item There are no dependencies between users.
@@ -245,6 +248,9 @@
 			\item Passengers always have enough money to pay the taxi fare.
 			\item The web application and the mobile counterpart share the same functionalities.
 			\item The waiting time can vary depending on the current traffic condition.
+			\item The taxi fleet is composed of only one model of car, thus all the cars have the same capacity.
+			\item When a taxi is mobilized, it will reach the pick up location in the shortest possible time.
+			\item All the actions performed by a taxi driver during working hours will be performed through the mobile application.
 		\end{itemize}
 	
 %	\pagebreak
@@ -295,7 +301,7 @@
 	
 	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''.
 	\begin{center}
-		\includegraphics[width=0.9\linewidth]{Pictures/DriverPage}
+		\includegraphics[width=0.5\linewidth]{Pictures/DriverPage}
 	\end{center}
 	\pagebreak
 	
@@ -336,6 +342,7 @@
 	\begin{itemize}
 		\item {[}R1{]} In case of a request the system allocates a taxi as soon as a driver in the corresponding zone accepts the job.
 		\item {[}R2{]} In case of a reservation the system allocates the taxi 10 minutes before the meeting time with the client.
+		\item {[}R2{]} The system computes the matching of people in shared rides taking into account the number of passengers from each reservation; the total number of passengers cannot exceed the capacity of the taxi.
 		\item {[}D1{]} There is always at least one available taxi.
 	\end{itemize}
 		
@@ -369,7 +376,7 @@
 	\begin{itemize}
 		\item {[}R1{]} If the user hasn't the correct login information cannot access the system.
 		\item {[}R2{]} If the user provides correct credentials the system will grant him/her the access.
-		\item {[}D1{]} The system does not implement a retrieve password mechanism.
+		\item {[}D1{]} The system does not implement a password retrieval mechanism.
 	\end{itemize}
 		
 	\subsubsection{{[}G9{]} The passenger shall be able to request a taxi.}
@@ -378,6 +385,8 @@
 		\item {[}R2{]} The system is able to dispatch the request of the client to the right queue according to his/her position.
 		\item {[}R3{]} The system has to answer a taxi request by informing the passenger about the code of the taxi and the waiting time.
 		\item {[}R4{]} When a passenger books a ride s/he is given a code that uniquely identifies her/him in front of the taxi driver.
+		\item {[}D1{]} The user knows that the capacity of the taxi is 4 passengers.
+		\item {[}D1{]} If there are more than 4 passengers the user has to make two or more requests.
 	\end{itemize}
 	
 	\subsubsection{{[}G10{]} The passenger shall be able to delete a taxi request.}
@@ -389,70 +398,66 @@
 	
 	\subsubsection{{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}
 	\begin{itemize}
-		\item {[}R1{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination.
+		\item {[}R1{]} The user can customize the reservation, specifying the date and time of the ride, the origin and destination and the number of passengers.
 	\end{itemize}
 	
 	\subsubsection{{[}G12{]} The passenger shall be able to modify or delete a taxi reservation.}
 	\begin{itemize}
-		\item {[}R1{]} The user can check his/her own reservations and possibly edit or delete a reservation for a taxi.
-		\item {[}R2{]}
+		\item {[}R1{]} The user can check his/her own reservations and edit or delete them.
 		\item {[}D1{]} If the user deletes a reservation in the last 10 minutes before the meeting time (the taxi has already been allocated), then there is a fixed penalty fee automatically deducted from the user's credit card.
 	\end{itemize}
 	
 	\subsubsection{{[}G13{]} The passenger shall be able to enable taxi sharing option.}
 	\begin{itemize}
-		\item {[}R1{]} 
-		\item {[}R2{]}
+		\item {[}R1{]} The user can enable the sharing of a reservation.
 		\item {[}D1{]} This is only valid for reservations booked in advance.
 	\end{itemize}
 	
 	\subsubsection{{[}G14{]} The passenger shall be able to join a shared reservation.}
 	\begin{itemize}
-		\item {[}R1{]} 
-		\item {[}R2{]}
+		\item {[}R1{]} The system computes the matching of people in shared rides taking into account the number of passengers from each reservation; the total number of passengers cannot exceed the capacity of the taxi.
 		\item {[}D1{]} This is only valid for reservations booked in advance.
+		\item {[}D2{]} Passengers sharing a ride will be matched only if they share the same pick up and destination zone.
 	\end{itemize}
 	
 	\subsubsection{{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}
 	\begin{itemize}
-		\item {[}R1{]} The user can keep track of the recent routes and addresses.
+		\item {[}R1{]} The system keeps track of the recent routes and addresses.
 		\item {[}R2{]} The user can select locations from past rides to plan new ones.
-		\item {[}D1{]}
 	\end{itemize}
 
 	\subsubsection{{[}G16{]} Taxi drivers shall be able to log in to the service.}
 	\begin{itemize}
-		\item {[}R1{]}
-		\item {[}R2{]}
-		\item {[}D1{]} Only legally employed taxi drivers have the login information to access the system.
+		\item {[}R1{]} If the user hasn't the correct login information cannot access the system.
+		\item {[}R2{]} If the user provides correct credentials the system will grant him/her the access.
+		\item {[}D1{]} The system does not implement a password retrieval mechanism.
+		\item {[}D2{]} Only legally employed taxi drivers have the login information to access the system.
 	\end{itemize}
 	
-	\subsubsection{{[}G17{]} Taxi drivers shall use a mobile application to inform the system about their availability.}
+	\subsubsection{{[}G17{]} Taxi drivers must inform the system about their availability.}
 	\begin{itemize}
-		\item {[}R1{]} The user is notified by the system when there is a client nearby waiting for a taxi.
-		\item {[}R2{]}
-		\item {[}D1{]}
+		\item {[}R1{]} The system allows taxi drivers to set their availability.
+		\item {[}R2{]} The system allows to specify the reason of the unavailability.
+		\item {[}D1{]} All the actions performed by a taxi driver during working hours will be performed through the mobile application.
+		\item {[}D2{]} Taxi drivers always remember to switch their availability.
 	\end{itemize}
 	
-	\subsubsection{{[}G18{]} Taxi drivers shall use a mobile application to confirm that they are going to take care of a certain call.}
+	\subsubsection{{[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.}
 	\begin{itemize}
-		\item {[}R1{]} The user can take in charge or reject the requests received as notification.
-		\item {[}R2{]} The user can cancel a service that has already taken in charge and notify the system, specifying the reason for the emergency (eg. engine failure).
-		\item {[}D1{]}
+		\item {[}R1{]} The system allows taxi drivers to accept or reject a call.
+		\item {[}D1{]} Taxi drivers always remember to accept or reject a call.
 	\end{itemize}	
 					
-	\subsubsection{{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system DB.}
+	\subsubsection{{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}
 	\begin{itemize}
-		\item {[}R1{]} 
-		\item {[}R2{]} 
+		\item {[}R1{]} The system allows to the administrator to add, edit and delete taxis.
 		\item {[}D1{]} The administrator only inserts in the system already verified entitled taxi drivers.
 	\end{itemize}	
 	
 	\subsubsection{{[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}
 	\begin{itemize}
-		\item {[}R1{]} 
-		\item {[}R2{]} 
-		\item {[}D1{]}
+		\item {[}R1{]} The system allows to the administrator to have a glance view of the system situation.
+		\item {[}D1{]} The visualization is read only.
 	\end{itemize}							
 		
 	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used as an additional domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
@@ -501,14 +506,15 @@
 		\end{tabular}
 	\end{center}
 	\begin{center}
-		\includegraphics[width=0.9\linewidth]{Pictures/UseCaseRegistration}
+		\includegraphics[width=0.9\linewidth]{Pictures/UCRegistration}
+		\includegraphics[width=0.9\linewidth]{Pictures/SDRegistration}
 	\end{center}
 	\pagebreak	
 	
 	\paragraph{Visitor logins to \mts}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & Visitor, user\\\hline
+			Actor & Visitor, Passenger\\\hline
 			Goal & {[}G8{]} \\\hline
 			Input Condition & The user must be already registered.\\\hline
 			Event Flow & \begin{enumerate}
@@ -516,7 +522,7 @@
 							\item Visitor completes the form inserting correct username and password.
 						 \end{enumerate}\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts verifies the credential of the visitor and if correct shows the home page for the registered user.
+									\item \mts verifies the credentials of the visitor and if correct shows the home page for the registered user.
 									\item Visitor is promoted to registered user.
 							   \end{enumerate}\\\hline
 			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
@@ -528,7 +534,7 @@
 	\paragraph{Passenger requests a taxi}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G9{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user requests a taxi using any of the options to provide his/her own location.\\\hline
@@ -545,7 +551,7 @@
 	\paragraph{Passenger cancels a request for a taxi}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User, Taxi driver\\\hline
+			Actor & Passenger, Taxi driver\\\hline
 			Goal & {[}G10{]} \\\hline
 			Input Condition & \begin{enumerate}
 								\item The user must be already logged in.
@@ -562,7 +568,7 @@
 	\paragraph{Passenger creates a reservation for a taxi}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G11{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters.\\\hline
@@ -579,7 +585,7 @@
 	\paragraph{Passenger edits a reservation for a taxi}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G12{]} \\\hline
 			Input Condition & \begin{enumerate}
 									\item The user must be already logged in.
@@ -599,7 +605,7 @@
 	\paragraph{Passenger reserves a ride with shared option}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G13{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters, in particular enabling the sharing of the ride.\\\hline
@@ -616,7 +622,7 @@
 	\paragraph{Passenger joins a shared ride}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G14{]} \\\hline
 			Input Condition & \begin{enumerate}
 				\item The users involved in the shared ride must be already logged in.
@@ -634,7 +640,7 @@
 	\paragraph{Passenger checks the history of his/her own requests}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & User\\\hline
+			Actor & Passenger\\\hline
 			Goal & {[}G15{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user accesses the page of the history of his/her own rides.\\\hline
@@ -644,6 +650,99 @@
 	\end{center}	
 	
 	\pagebreak
+	
+	\paragraph{Taxi driver logins to \mts}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Taxi driver\\\hline
+			Goal & {[}G16{]} \\\hline
+			Input Condition & The user must be already registered (inserted in the system by the administrator).\\\hline
+			Event Flow & \begin{enumerate}
+				\item \mts shows the login page.
+				\item The user completes the form inserting correct username and password.
+			\end{enumerate}\\\hline
+			Output Condition & \begin{enumerate}
+				\item \mts verifies the credentials of the employee and if correct shows the home page for the registered user.
+				\item Visitor is promoted to registered user.
+			\end{enumerate}\\\hline
+			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Taxi driver sets his/her availability with the mobile application}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Taxi driver\\\hline
+			Goal & {[}G17{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & \begin{enumerate}
+				\item \mts shows the home page for the driver.
+				\item The user sets his/her own availability to receive job proposals as s/he prefers.
+			\end{enumerate}\\\hline
+			Output Condition & The system receives the setting of the user and operates accordingly.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{Taxi driver accepts or rejects a job with the mobile application}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Taxi driver\\\hline
+			Goal & {[}G18{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & \begin{enumerate}
+				\item \mts shows the home page for the driver.
+				\item \mts notifies the user about a job proposal that could fit him/her.	
+				\item The user chooses whether accepting or rejecting the proposal.
+			\end{enumerate}\\\hline
+			Output Condition & The system receives the setting of the user and operates accordingly.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{System administrator manages the drivers list}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Administrator\\\hline
+			Goal & {[}G19{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & \begin{enumerate}
+				\item \mts shows the home page for the administrator.
+				\item The user accesses the function to manage the taxi drivers.	
+				\item The system shows the list of drivers.
+				\item The user decides to add, modify or delete a driver.
+			\end{enumerate}\\\hline
+			Output Condition & The system receives the setting of the user and operates accordingly.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	
+	\paragraph{System administrator monitors the situation from the control center view}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Actor & Administrator\\\hline
+			Goal & {[}G20{]} \\\hline
+			Input Condition & The user must be already logged in.\\\hline
+			Event Flow & \begin{enumerate}
+				\item \mts shows the home page for the administrator.
+				\item The user accesses system monitor.	
+			\end{enumerate}\\\hline
+			Output Condition & The system shows the current situation of the service.\\\hline
+			Exceptions & NULL\\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak		
+	
+	\pagebreak	
 	
 	\subsubsection{Class Diagrams}
 	
