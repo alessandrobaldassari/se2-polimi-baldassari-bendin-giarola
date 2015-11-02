@@ -2,94 +2,94 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.0.1}
 \contentsline {subsection}{\numberline {1.1}Purpose}{1}{subsection.0.1.1}
 \contentsline {subsection}{\numberline {1.2}Scope}{1}{subsection.0.1.2}
-\contentsline {subsection}{\numberline {1.3}Identifying Stackeholders}{2}{subsection.0.1.3}
-\contentsline {subsection}{\numberline {1.4}Identifying Actors}{2}{subsection.0.1.4}
+\contentsline {subsection}{\numberline {1.3}Identifying Stackeholders}{1}{subsection.0.1.3}
+\contentsline {subsection}{\numberline {1.4}Identifying Actors}{1}{subsection.0.1.4}
 \contentsline {subsection}{\numberline {1.5}Goals}{2}{subsection.0.1.5}
 \contentsline {subsection}{\numberline {1.6}Proposed system}{3}{subsection.0.1.6}
-\contentsline {subsection}{\numberline {1.7}Definitions, acronyms, and abbreviations}{4}{subsection.0.1.7}
-\contentsline {subsubsection}{\numberline {1.7.1}Definitions}{4}{subsubsection.0.1.7.1}
-\contentsline {subsubsection}{\numberline {1.7.2}Acronyms}{5}{subsubsection.0.1.7.2}
-\contentsline {subsubsection}{\numberline {1.7.3}Abbreviations}{5}{subsubsection.0.1.7.3}
-\contentsline {subsection}{\numberline {1.8}Reference Documents}{5}{subsection.0.1.8}
-\contentsline {subsection}{\numberline {1.9}Overview}{5}{subsection.0.1.9}
-\contentsline {section}{\numberline {2}Overall description}{6}{section.0.2}
-\contentsline {subsection}{\numberline {2.1}Product perspective}{6}{subsection.0.2.1}
-\contentsline {subsection}{\numberline {2.2}Product functions}{6}{subsection.0.2.2}
-\contentsline {subsection}{\numberline {2.3}User characteristics}{6}{subsection.0.2.3}
-\contentsline {subsection}{\numberline {2.4}Constraints}{6}{subsection.0.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Regulatory Policies \& Safety and security}{6}{subsubsection.0.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Hardware limitations}{6}{subsubsection.0.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Interfaces to other applications}{6}{subsubsection.0.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Parallel operation}{7}{subsubsection.0.2.4.4}
-\contentsline {subsection}{\numberline {2.5}Assumptions and dependencies}{7}{subsection.0.2.5}
-\contentsline {section}{\numberline {3}Specific requirements}{8}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{8}{subsection.0.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{8}{subsubsection.0.3.1.1}
-\contentsline {paragraph}{\numberline {3.1.1.1}Sign-up}{9}{paragraph.0.3.1.1.1}
-\contentsline {paragraph}{\numberline {3.1.1.2}Login}{10}{paragraph.0.3.1.1.2}
-\contentsline {paragraph}{\numberline {3.1.1.3}Call a taxi}{11}{paragraph.0.3.1.1.3}
-\contentsline {paragraph}{\numberline {3.1.1.4}Plan a ride}{12}{paragraph.0.3.1.1.4}
-\contentsline {paragraph}{\numberline {3.1.1.5}Your reservations}{13}{paragraph.0.3.1.1.5}
-\contentsline {paragraph}{\numberline {3.1.1.6}Your profile}{14}{paragraph.0.3.1.1.6}
-\contentsline {paragraph}{\numberline {3.1.1.7}Manage jobs}{15}{paragraph.0.3.1.1.7}
-\contentsline {paragraph}{\numberline {3.1.1.8}Administrator panel}{16}{paragraph.0.3.1.1.8}
-\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{17}{subsubsection.0.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Communication Interfaces}{17}{subsubsection.0.3.1.3}
-\contentsline {subsection}{\numberline {3.2}Functional Requirements}{17}{subsection.0.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}{[}G1{]} The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}{17}{subsubsection.0.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}{[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone.}{17}{subsubsection.0.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}{17}{subsubsection.0.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}{[}G4{]} The system has to allocate a taxi for each request or reservation.}{18}{subsubsection.0.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}{[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}{18}{subsubsection.0.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}{[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}{18}{subsubsection.0.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}{[}G7{]} The passenger shall be able to sign up to the service.}{19}{subsubsection.0.3.2.7}
-\contentsline {subsubsection}{\numberline {3.2.8}{[}G8{]} The passenger shall be able to log in to the service.}{19}{subsubsection.0.3.2.8}
-\contentsline {subsubsection}{\numberline {3.2.9}{[}G9{]} The passenger shall be able to request a taxi.}{19}{subsubsection.0.3.2.9}
-\contentsline {subsubsection}{\numberline {3.2.10}{[}G10{]} The passenger shall be able to delete a taxi request.}{19}{subsubsection.0.3.2.10}
-\contentsline {subsubsection}{\numberline {3.2.11}{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}{20}{subsubsection.0.3.2.11}
-\contentsline {subsubsection}{\numberline {3.2.12}{[}G12{]} The passenger shall be able to modify or delete a taxi reservation.}{20}{subsubsection.0.3.2.12}
-\contentsline {subsubsection}{\numberline {3.2.13}{[}G13{]} The passenger shall be able to enable taxi sharing option.}{20}{subsubsection.0.3.2.13}
-\contentsline {subsubsection}{\numberline {3.2.14}{[}G14{]} The passenger shall be able to join a shared reservation.}{20}{subsubsection.0.3.2.14}
-\contentsline {subsubsection}{\numberline {3.2.15}{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}{20}{subsubsection.0.3.2.15}
-\contentsline {subsubsection}{\numberline {3.2.16}{[}G16{]} Taxi drivers shall be able to log in to the service.}{21}{subsubsection.0.3.2.16}
-\contentsline {subsubsection}{\numberline {3.2.17}{[}G17{]} Taxi drivers must inform the system about their availability.}{21}{subsubsection.0.3.2.17}
-\contentsline {subsubsection}{\numberline {3.2.18}{[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.}{21}{subsubsection.0.3.2.18}
-\contentsline {subsubsection}{\numberline {3.2.19}{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}{21}{subsubsection.0.3.2.19}
-\contentsline {subsubsection}{\numberline {3.2.20}{[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}{21}{subsubsection.0.3.2.20}
-\contentsline {subsection}{\numberline {3.3}The world and the machine}{22}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Scenarios}{22}{subsection.0.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Scenario 1}{22}{subsubsection.0.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Scenario 2}{22}{subsubsection.0.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Scenario 3}{23}{subsubsection.0.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Scenario 4}{23}{subsubsection.0.3.4.4}
-\contentsline {subsubsection}{\numberline {3.4.5}Scenario 5}{23}{subsubsection.0.3.4.5}
-\contentsline {subsection}{\numberline {3.5}UML Models}{24}{subsection.0.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Use Case}{24}{subsubsection.0.3.5.1}
-\contentsline {paragraph}{\numberline {3.5.1.1}Visitor registers to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService\ }}{24}{paragraph.0.3.5.1.1}
-\contentsline {paragraph}{\numberline {3.5.1.2}Visitor logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService\ }}{26}{paragraph.0.3.5.1.2}
-\contentsline {paragraph}{\numberline {3.5.1.3}Passenger requests a taxi}{27}{paragraph.0.3.5.1.3}
-\contentsline {paragraph}{\numberline {3.5.1.4}Passenger cancels a request for a taxi}{28}{paragraph.0.3.5.1.4}
-\contentsline {paragraph}{\numberline {3.5.1.5}Passenger creates a reservation for a taxi}{29}{paragraph.0.3.5.1.5}
-\contentsline {paragraph}{\numberline {3.5.1.6}Passenger edits a reservation for a taxi}{30}{paragraph.0.3.5.1.6}
-\contentsline {paragraph}{\numberline {3.5.1.7}Passenger reserves a ride with shared option}{31}{paragraph.0.3.5.1.7}
-\contentsline {paragraph}{\numberline {3.5.1.8}Passenger joins a shared ride}{32}{paragraph.0.3.5.1.8}
-\contentsline {paragraph}{\numberline {3.5.1.9}Passenger checks the history of his/her own requests}{33}{paragraph.0.3.5.1.9}
-\contentsline {paragraph}{\numberline {3.5.1.10}Taxi driver logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService\ }}{34}{paragraph.0.3.5.1.10}
-\contentsline {paragraph}{\numberline {3.5.1.11}Taxi driver sets his/her availability with the mobile application}{35}{paragraph.0.3.5.1.11}
-\contentsline {paragraph}{\numberline {3.5.1.12}Taxi driver accepts or rejects a job with the mobile application}{36}{paragraph.0.3.5.1.12}
-\contentsline {paragraph}{\numberline {3.5.1.13}System administrator manages the drivers list}{37}{paragraph.0.3.5.1.13}
-\contentsline {paragraph}{\numberline {3.5.1.14}System administrator monitors the situation from the control center view}{38}{paragraph.0.3.5.1.14}
-\contentsline {subsubsection}{\numberline {3.5.2}Class Diagrams}{39}{subsubsection.0.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}State Machine Diagrams}{40}{subsubsection.0.3.5.3}
-\contentsline {subsection}{\numberline {3.6}Non Functional Requirements}{41}{subsection.0.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}Performance Requirements}{41}{subsubsection.0.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Design Constraints}{41}{subsubsection.0.3.6.2}
-\contentsline {subsubsection}{\numberline {3.6.3}Standards compliance}{41}{subsubsection.0.3.6.3}
-\contentsline {subsubsection}{\numberline {3.6.4}Hardware limitations}{41}{subsubsection.0.3.6.4}
-\contentsline {subsubsection}{\numberline {3.6.5}Software System Attributes}{41}{subsubsection.0.3.6.5}
-\contentsline {paragraph}{\numberline {3.6.5.1}Availability \& Reliability}{41}{paragraph.0.3.6.5.1}
-\contentsline {paragraph}{\numberline {3.6.5.2}Security}{41}{paragraph.0.3.6.5.2}
-\contentsline {paragraph}{\numberline {3.6.5.3}Maintainability}{41}{paragraph.0.3.6.5.3}
-\contentsline {paragraph}{\numberline {3.6.5.4}Portability}{41}{paragraph.0.3.6.5.4}
-\contentsline {subsection}{\numberline {3.7}Other Requirements}{42}{subsection.0.3.7}
-\contentsline {section}{\numberline {4}Alloy}{43}{section.0.4}
+\contentsline {subsection}{\numberline {1.7}Definitions, acronyms, and abbreviations}{3}{subsection.0.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Definitions}{3}{subsubsection.0.1.7.1}
+\contentsline {subsubsection}{\numberline {1.7.2}Acronyms}{4}{subsubsection.0.1.7.2}
+\contentsline {subsubsection}{\numberline {1.7.3}Abbreviations}{4}{subsubsection.0.1.7.3}
+\contentsline {subsection}{\numberline {1.8}Reference Documents}{4}{subsection.0.1.8}
+\contentsline {subsection}{\numberline {1.9}Overview}{4}{subsection.0.1.9}
+\contentsline {section}{\numberline {2}Overall description}{5}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Product perspective}{5}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Product functions}{5}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}User characteristics}{5}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Constraints}{5}{subsection.0.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Regulatory Policies \& Safety and security}{5}{subsubsection.0.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Hardware limitations}{5}{subsubsection.0.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Interfaces to other applications}{5}{subsubsection.0.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Parallel operation}{5}{subsubsection.0.2.4.4}
+\contentsline {subsection}{\numberline {2.5}Assumptions and dependencies}{5}{subsection.0.2.5}
+\contentsline {section}{\numberline {3}Specific requirements}{6}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{6}{subsection.0.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{6}{subsubsection.0.3.1.1}
+\contentsline {paragraph}{\numberline {3.1.1.1}Sign-up}{7}{paragraph.0.3.1.1.1}
+\contentsline {paragraph}{\numberline {3.1.1.2}Login}{8}{paragraph.0.3.1.1.2}
+\contentsline {paragraph}{\numberline {3.1.1.3}Call a taxi}{9}{paragraph.0.3.1.1.3}
+\contentsline {paragraph}{\numberline {3.1.1.4}Plan a ride}{10}{paragraph.0.3.1.1.4}
+\contentsline {paragraph}{\numberline {3.1.1.5}Your reservations}{11}{paragraph.0.3.1.1.5}
+\contentsline {paragraph}{\numberline {3.1.1.6}Your profile}{12}{paragraph.0.3.1.1.6}
+\contentsline {paragraph}{\numberline {3.1.1.7}Manage jobs}{13}{paragraph.0.3.1.1.7}
+\contentsline {paragraph}{\numberline {3.1.1.8}Administrator panel}{14}{paragraph.0.3.1.1.8}
+\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{15}{subsubsection.0.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Communication Interfaces}{15}{subsubsection.0.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Functional Requirements}{15}{subsection.0.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}{[}G1{]} The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.}{15}{subsubsection.0.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}{[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone.}{15}{subsubsection.0.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}{15}{subsubsection.0.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}{[}G4{]} The system has to allocate a taxi for each request or reservation.}{15}{subsubsection.0.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}{[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.}{16}{subsubsection.0.3.2.5}
+\contentsline {subsubsection}{\numberline {3.2.6}{[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.}{16}{subsubsection.0.3.2.6}
+\contentsline {subsubsection}{\numberline {3.2.7}{[}G7{]} The passenger shall be able to sign up to the service.}{16}{subsubsection.0.3.2.7}
+\contentsline {subsubsection}{\numberline {3.2.8}{[}G8{]} The passenger shall be able to log in to the service.}{16}{subsubsection.0.3.2.8}
+\contentsline {subsubsection}{\numberline {3.2.9}{[}G9{]} The passenger shall be able to request a taxi.}{16}{subsubsection.0.3.2.9}
+\contentsline {subsubsection}{\numberline {3.2.10}{[}G10{]} The passenger shall be able to delete a taxi request.}{17}{subsubsection.0.3.2.10}
+\contentsline {subsubsection}{\numberline {3.2.11}{[}G11{]} The passenger shall be able to create a reservation for a taxi ride.}{17}{subsubsection.0.3.2.11}
+\contentsline {subsubsection}{\numberline {3.2.12}{[}G12{]} The passenger shall be able to modify or delete a taxi reservation.}{17}{subsubsection.0.3.2.12}
+\contentsline {subsubsection}{\numberline {3.2.13}{[}G13{]} The passenger shall be able to enable taxi sharing option.}{17}{subsubsection.0.3.2.13}
+\contentsline {subsubsection}{\numberline {3.2.14}{[}G14{]} The passenger shall be able to join a shared reservation.}{17}{subsubsection.0.3.2.14}
+\contentsline {subsubsection}{\numberline {3.2.15}{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}{17}{subsubsection.0.3.2.15}
+\contentsline {subsubsection}{\numberline {3.2.16}{[}G16{]} Taxi drivers shall be able to log in to the service.}{18}{subsubsection.0.3.2.16}
+\contentsline {subsubsection}{\numberline {3.2.17}{[}G17{]} Taxi drivers must inform the system about their availability.}{18}{subsubsection.0.3.2.17}
+\contentsline {subsubsection}{\numberline {3.2.18}{[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.}{18}{subsubsection.0.3.2.18}
+\contentsline {subsubsection}{\numberline {3.2.19}{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}{18}{subsubsection.0.3.2.19}
+\contentsline {subsubsection}{\numberline {3.2.20}{[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}{18}{subsubsection.0.3.2.20}
+\contentsline {subsection}{\numberline {3.3}The world and the machine}{18}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Scenarios}{19}{subsection.0.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Scenario 1}{19}{subsubsection.0.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Scenario 2}{19}{subsubsection.0.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Scenario 3}{19}{subsubsection.0.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Scenario 4}{19}{subsubsection.0.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.5}Scenario 5}{20}{subsubsection.0.3.4.5}
+\contentsline {subsection}{\numberline {3.5}UML Models}{20}{subsection.0.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Use Case}{20}{subsubsection.0.3.5.1}
+\contentsline {paragraph}{\numberline {3.5.1.1}Visitor registers to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{22}{paragraph.0.3.5.1.1}
+\contentsline {paragraph}{\numberline {3.5.1.2}Visitor logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{24}{paragraph.0.3.5.1.2}
+\contentsline {paragraph}{\numberline {3.5.1.3}Passenger requests a taxi}{25}{paragraph.0.3.5.1.3}
+\contentsline {paragraph}{\numberline {3.5.1.4}Passenger cancels a request for a taxi}{26}{paragraph.0.3.5.1.4}
+\contentsline {paragraph}{\numberline {3.5.1.5}Passenger creates a reservation for a taxi}{27}{paragraph.0.3.5.1.5}
+\contentsline {paragraph}{\numberline {3.5.1.6}Passenger edits a reservation for a taxi}{28}{paragraph.0.3.5.1.6}
+\contentsline {paragraph}{\numberline {3.5.1.7}Passenger reserves a ride with shared option}{29}{paragraph.0.3.5.1.7}
+\contentsline {paragraph}{\numberline {3.5.1.8}Passenger joins a shared ride}{30}{paragraph.0.3.5.1.8}
+\contentsline {paragraph}{\numberline {3.5.1.9}Passenger checks the history of his/her own requests}{31}{paragraph.0.3.5.1.9}
+\contentsline {paragraph}{\numberline {3.5.1.10}Taxi driver logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{32}{paragraph.0.3.5.1.10}
+\contentsline {paragraph}{\numberline {3.5.1.11}Taxi driver sets his/her availability with the mobile application}{33}{paragraph.0.3.5.1.11}
+\contentsline {paragraph}{\numberline {3.5.1.12}Taxi driver accepts or rejects a job with the mobile application}{34}{paragraph.0.3.5.1.12}
+\contentsline {paragraph}{\numberline {3.5.1.13}System administrator manages the drivers list}{35}{paragraph.0.3.5.1.13}
+\contentsline {paragraph}{\numberline {3.5.1.14}System administrator monitors the situation from the control center view}{36}{paragraph.0.3.5.1.14}
+\contentsline {subsubsection}{\numberline {3.5.2}Class Diagrams}{38}{subsubsection.0.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}State Machine Diagrams}{39}{subsubsection.0.3.5.3}
+\contentsline {subsection}{\numberline {3.6}Non Functional Requirements}{40}{subsection.0.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Performance Requirements}{40}{subsubsection.0.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Design Constraints}{40}{subsubsection.0.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.3}Standards compliance}{40}{subsubsection.0.3.6.3}
+\contentsline {subsubsection}{\numberline {3.6.4}Hardware limitations}{40}{subsubsection.0.3.6.4}
+\contentsline {subsubsection}{\numberline {3.6.5}Software System Attributes}{40}{subsubsection.0.3.6.5}
+\contentsline {paragraph}{\numberline {3.6.5.1}Availability \& Reliability}{40}{paragraph.0.3.6.5.1}
+\contentsline {paragraph}{\numberline {3.6.5.2}Security}{40}{paragraph.0.3.6.5.2}
+\contentsline {paragraph}{\numberline {3.6.5.3}Maintainability}{40}{paragraph.0.3.6.5.3}
+\contentsline {paragraph}{\numberline {3.6.5.4}Portability}{40}{paragraph.0.3.6.5.4}
+\contentsline {subsection}{\numberline {3.7}Other Requirements}{40}{subsection.0.3.7}
+\contentsline {section}{\numberline {4}Alloy}{41}{section.0.4}

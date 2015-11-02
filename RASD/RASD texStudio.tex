@@ -1,11 +1,40 @@
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat}
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
-\newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService\ }}
+\newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
 
+%\geometry{
+%	a4paper,
+%	total={170mm,257mm},
+%	left=25mm,
+%	top=25mm,
+%	bottom=25mm,
+%	right=25mm
+%}
 
+\geometry{margin=1in}
+
+%\pagestyle{fancy}
+%%\fancyfoot[R,LE ]{\thepage} 
+%%\fancyhead[RO,LE]{\thepage}
+%
+%\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+%\renewcommand{\footrulewidth}{\iffloatpage{0pt}{0.4pt}}
+
+\fancyhead{}
+%\fancyhead[LE,RO]{\iffloatpage{}{\slshape\rightmark}}
+%\fancyhead[LO,RE]{\iffloatpage{}{\slshape\leftmark}}
+\fancyhead[C]{\iffloatpage{}{\slshape\rightmark}}
+
+\fancyfoot{}
+\fancyfoot[C]{\iffloatpage{}{\thepage}}
+\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\renewcommand{\footrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\ #1}}
 
 %tOC style: sections bold 
 \usepackage[subfigure]{tocloft}
@@ -30,11 +59,11 @@
 
 
 \title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``{\em myTaxyService}''}
-\author{Alessandro Baldassari (mat. 841561) \and Alberto Bendin (mat. 841734) \and Francesco Giarola (mat. 840554)}
+\author{Alessandro Baldassari (mat. 841561) \\ Alberto Bendin (mat. 841734) \\ Francesco Giarola (mat. 840554)}
 
 
-\hyphenation{MyTaxyService}
 
+\hyphenation{myTaxyService}
 
 \begin{document}
 	
@@ -93,10 +122,10 @@
 	\section{Introduction}
 	
 	\subsection{Purpose} The purpose of this document is to describe in a complete and sound way
-	the \mts application that will be developed and the application domain in which it will run.\\
+	the  application that will be developed and the domain in which it will run.\\
 	The intended audience for this document are the developers and programmers
 	who have to implement the application, system and requirement
-	analysts who want to integrate \mts with their system or software,
+	analysts who want to integrate \mts{} with their system or software,
 	testers who have to determine whether the requirements have been satisfied in
 	the application implementation, projects managers who have to plan, estimate
 	and control the analysis and development processes and finally the users themselves.
@@ -104,7 +133,7 @@
 	and the entity who develops the application.
 	
 	\subsection{Scope} \label{sec:scope}
-	\mts is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
+	\mts{} is a new web and mobile application conceived to provide an immediate and user-friendly access to the taxi service of a large city; it aims at an overall improvement of the quality of the service offered.\\
 	This optimization is obtained thanks to the real-time interaction and feedback of all the parties involved in the service: taxi passengers can choose and book the ride, and the system will forward the request to the nearest available taxi drivers who can decide to take over the call; in this case the system will notify the client with the code of the incoming taxi and the waiting-time.
 	The	system	guarantees a fair management of taxi queues. In particular, the city is divided in taxi zones and each zone is associated with its taxi queue. The system automatically computes the distribution of taxis in the various zones based on the GPS information it receives from each taxi. When a taxi is available, its identifier is stored in the queue of taxis in the corresponding zone. When a request arrives from a certain zone, the system forwards it to the taxis in the corresponding zone according to their order in the queue. If the taxi confirms, then the system will send a confirmation to the passenger. If not, then the system will forward the request to the second in queue and will move the first taxi in the last position of the queue.
 	Additional features of the application are the possibility for the passengers to reserve a ride with an advance of at least two hours, choosing the origin and destination, and the option to possibly share the ride with someone else, thus dividing the cost of the service. The system confirms the reservation to the user and allocates a taxi to the request 10 minutes before the meeting time with the user. If more people are willing to share a ride from the same zone going in the same direction, then the system arranges the route for the taxi driver and defines the fare for every passenger informing all the users involved. 
@@ -121,7 +150,7 @@
 		\end{itemize}
 	
 	\subsection{Goals} \label{sec:goals}
-	System goals of \mts application:
+	System goals of \mts{} application:
 	\begin{itemize}
 		\item {[}G1{]} The system has to guarantee to the user the possibility to access the service either through a web application or a mobile application.
 		\item {[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone.
@@ -130,7 +159,7 @@
 		\item {[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and reservations in which they are involved.
 		\item {[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones.
 	\end{itemize}
-	List of the goals of \mts application for taxi passengers:
+	List of the goals of \mts{} application for taxi passengers:
 		\begin{itemize}
 			\item {[}G7{]} The passenger shall be able to sign up to the service.
 			\item {[}G8{]} The passenger shall be able to log in to the service.
@@ -142,13 +171,13 @@
 			\item {[}G14{]} The passenger shall be able to join a shared reservation.
 			\item {[}G15{]} The passenger shall be able to see historical data on his taxi rides.
 		\end{itemize}
-		List of the goals of \mts application for taxi drivers:
+		List of the goals of \mts{} application for taxi drivers:
 		\begin{itemize}
 			\item {[}G16{]} Taxi drivers shall be able to log in to the service.
 			\item {[}G17{]} Taxi drivers must inform the system about their availability.
 			\item {[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.
 		\end{itemize}
-		List of the goals of \mts application for the administrator:
+		List of the goals of \mts{} application for the administrator:
 		\begin{itemize}
 			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.
 			\item {[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
@@ -218,7 +247,7 @@
 	
 	\section{Overall description}
 	
-	\subsection{Product perspective} \mts is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained. It has the interface for an administration, except for that feature it is entirely user based. The application does provide some APIs for integration with future projects.
+	\subsection{Product perspective} \mts{} is a web and mobile application which is not integrated with	any other existing system, it is independent and totally self-contained. It has the interface for an administration, except for that feature it is entirely user based. The application does provide some APIs for integration with future projects.
 	
 	\subsection{Product functions} The function summary that is necessary for this part can be taken directly from the section of the higher-level specification in the first part of this document {\em Scope} (see section~\ref{sec:scope}) and {\em Goals} (see section~\ref{sec:goals}).
 	
@@ -226,13 +255,13 @@
 	
 	\subsection{Constraints}
 	
-	\subsubsection{Regulatory Policies \& Safety and security} \mts fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences and the browser can request to detect the user's position. The mobile application only requires basic permissions. 
+	\subsubsection{Regulatory Policies \& Safety and security} \mts{} fulfills all the required policies that regulate the public transportation, in particular the taxi-related ones. Besides it enforces all the requested security and privacy-connected regulations for web based transmission of information; it can make use of cookies to memorize some users' preferences and the browser can request to detect the user's position. The mobile application only requires basic permissions. 
 	
-	\subsubsection{Hardware limitations} \mts requires a computer or a smartphone connected to the internet. The mobile application requires the GPS module.   
+	\subsubsection{Hardware limitations} \mts{} requires a computer or a smartphone connected to the internet. The mobile application requires the GPS module.   
 	
-	\subsubsection{Interfaces to other applications} \mts requires to access the Internet and the Google Maps APIs to provide map visualizations and map-related services.
+	\subsubsection{Interfaces to other applications} \mts{} requires to access the Internet and the Google Maps APIs to provide map visualizations and map-related services.
 	
-	\subsubsection{Parallel operation} \mts supports parallel operations from different users when working with the DB and when dealing with all the operations done by the user after the connection.
+	\subsubsection{Parallel operation} \mts{} supports parallel operations from different users when working with the DB and when dealing with all the operations done by the user after the connection.
 	
 	\subsection{Assumptions and dependencies}
 		\begin{itemize}
@@ -251,6 +280,7 @@
 			\item The taxi fleet is composed of only one model of car, thus all the cars have the same capacity.
 			\item When a taxi is mobilized, it will reach the pick up location in the shortest possible time.
 			\item All the actions performed by a taxi driver during working hours will be performed through the mobile application.
+			\item \textcolor{red}{Taxi drivers are assigned the zone by the system}
 		\end{itemize}
 	
 %	\pagebreak
@@ -301,7 +331,7 @@
 	
 	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''.
 	\begin{center}
-		\includegraphics[width=0.5\linewidth]{Pictures/DriverPage}
+		\includegraphics[width=0.4\linewidth]{Pictures/DriverPage}
 	\end{center}
 	\pagebreak
 	
@@ -311,11 +341,11 @@
 	\end{center}
 	\pagebreak	
 	
-	\subsubsection{Hardware Interfaces} \mts does not require and does not support any additional HW interface, it is enough a compatible smartphones or any supported browser on a computer.
+	\subsubsection{Hardware Interfaces} \mts{} does not require and does not support any additional HW interface, it is enough a compatible smartphones or any supported browser on a computer.
 	
 %	\subsubsection{Software Interfaces} \textcolor{red}{do we have to pretend to use sql, java ee....???}
 	
-	\subsubsection{Communication Interfaces} \mts uses the TCP transport protocol and HTTP/HTTP over SSL application layer protocol to guarantee the top of the line security on the matter of transmission of private data.
+	\subsubsection{Communication Interfaces} \mts{} uses the TCP transport protocol and HTTP/HTTP over SSL application layer protocol to guarantee the top of the line security on the matter of transmission of private data.
 	
 	\subsection{Functional Requirements}
 	
@@ -460,27 +490,51 @@
 		\item {[}D1{]} The visualization is read only.
 	\end{itemize}							
 		
-	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used as an additional domain analysis of \mts application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
+	\subsection{The world and the machine} ``The World \& The Machine''	model by M. Jackson \& P. Zave has been used as an additional domain analysis of \mts{} application. This approach identifies the portion of ``The World'' affected by ``The Machine'', the portion of system to be developed, and the intersection (``Shared Phenomena'') between the world and the application, that are all world information known or
 	managed directly by the application.\\\textcolor{red}{INSERT SCHEMA HERE}
 	
 	\subsection{Scenarios}
 	
-	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic congested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob exhibits the identification code to the taxi driver and is taken to his destination; finally the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit card. 
+	\subsubsection{Scenario 1} Bob lives in Milan, a very crowded and traffic congested city, for this reason he decided not to buy a car. When he needs to move around the city he finds very convenient the taxi service, less crowded than other public transport means. By now he has learned how to use all the different functionalities offered by \mts{} mobile application. Whenever and wherever he needs he simply start the application on his mobile phone and he requests a taxi in a matter of seconds simply providing his location through the built-in GPS of his smartphone. In a very short time, usually no more than a couple of minutes, he receives the notification that confirms the take on responsibility of his call with the code of the incoming taxi and the estimated waiting time. Meanwhile the system reserves on the credit card he linked the minimum fee in case of cancellation. Once the taxi arrives Bob exhibits the identification code to the taxi driver and is taken to his destination; finally the system automatically computes the fare based on the distance covered and deducts the correct amount of money from his credit card. 
 	
 	\subsubsection{Scenario 2} Alice has just moved to Milan and hasn’t got any car. For this reason, she looks on the Internet to understand which options she has to move around the city with public transports and she finds {\em myTaxyService}'s website that presents the taxi service. She decides to sign up to make use of the service, so she provides her personal data including the data of her credit card and selects ``email'' as notification option. Once the 2-step verification process is successfully completed she logins with the credentials chosen during the registration process. She is now operative and wants to try out the service, so she enters the booking page to make a reservation for the next day. She fills in the pickup address with her own and the destination field with the museum she wants to visit and sets the date and time, enabling the shared ride choice and finally submits the request. The system confirms the reservation process went through. 
 	
 	\subsubsection{Scenario 3} Alice is invited to her friend’s Bob birthday party held the next evening at Bob’s house, so she logins to the {\em myTaxyService}'s website to reserve a taxi for tomorrow night. Unfortunately, she doesn’t recall her friend’s address, but she remembers that the previous week they took a taxi together to his house, so she browses the history of her own reservation and from there recognizes Bob’s house address, then Alice uses it as drop off location and completes the reservation. Unluckily the following morning Bob phones to Alice and warns her that the party is postponed indefinitely due to bad weather forecast. Alice then decides to delete the reservation for taxi for the night, so she logins to the website and cancel the booking without paying any fees.
 	
-	\subsubsection{Scenario 4} Mike is a taxi driver in Milan and its company relies on \mts for the management of the work. He received the access codes to the system once he had been employed. Now every morning he starts his daily work routine by starting the \mts app on his phone and heading to the assigned zone with his taxi to pick up the first client. He switches on the ``availability’’ to work and starts receiving job proposals. Mike accepts them almost always; he only takes the liberty to switch off the system for a 30-minute lunch break. Often it happens that he has to pick up two clients in the same area for a shared ride because they are headed in the same direction. The shared ride feature has been having an huge approval among the clients since the implementation of the \mts application. At the end of the day Mike stops the flow of job proposals setting the ``availability’’ back again to off and returns to his family at home.
+	\subsubsection{Scenario 4} Mike is a taxi driver in Milan and its company relies on \mts{} for the management of the work. He received the access codes to the system once he had been employed. Now every morning he starts his daily work routine by starting the \mts{} app on his phone and heading to the assigned zone with his taxi to pick up the first client. He switches on the ``availability’’ to work and starts receiving job proposals. Mike accepts them almost always; he only takes the liberty to switch off the system for a 30-minute lunch break. Often it happens that he has to pick up two clients in the same area for a shared ride because they are headed in the same direction. The shared ride feature has been having an huge approval among the clients since the implementation of the \mts{} application. At the end of the day Mike stops the flow of job proposals setting the ``availability’’ back again to off and returns to his family at home.
 	
-	\subsubsection{Scenario 5} Jack is the manager of the taxi company in Milan and therefore he is the administrator of the \mts system. He spends his days monitoring the activity of the system thanks to the supervision functionality of the system. He can access it anytime anywhere thanks to the double interface for web browser and mobile application. Of course he prefers the bigger monitor of his computer when he’s in the office with respect to the small display of the smartphone, but he is more relaxed knowing that he is notified if something goes wrong even when he is outside the office. Often it happens that he needs to insert in the system new just employed drivers; in that case he collects all the information about the person and register the user with the specific functionalities for the drivers.
+	\subsubsection{Scenario 5} Jack is the manager of the taxi company in Milan and therefore he is the administrator of the \mts{} system. He spends his days monitoring the activity of the system thanks to the supervision functionality of the system. He can access it anytime anywhere thanks to the double interface for web browser and mobile application. Of course he prefers the bigger monitor of his computer when he’s in the office with respect to the small display of the smartphone, but he is more relaxed knowing that he is notified if something goes wrong even when he is outside the office. Often it happens that he needs to insert in the system new just employed drivers; in that case he collects all the information about the person and register the user with the specific functionalities for the drivers.
 	
 	\subsection{UML Models}
 	
 	\subsubsection{Use Case}
+	
+	\pagebreak
+%	\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Pictures/UCWholeSystem}}
+%	\begin{figure}[h]
+%		\centering
+%	%	\begin{center}
+%			%			\centerline{\includegraphics[width=1.4\linewidth]{Pictures/ClassDiagram}}
+%%			\vspace*{-2.5cm}
+%			\includegraphics[width=0.95\linewidth]{Pictures/UCWholeSystem}
+%					
+%	%	\end{center}
+%	\end{figure}
+
+	\noindent%
+	\begin{minipage}{\linewidth}% to keep image and caption on one page
+%		\thispagestyle{empty}
+%		\vspace*{-2.5cm}
+		\vspace*{-0.7cm}
+		\makebox[\linewidth]{%        to center the image
+			\includegraphics[keepaspectratio=true,scale=0.62]{Pictures/UCWholeSystem}}
+	\end{minipage}
+	
+	
+	
 	\renewcommand{\arraystretch}{1.5}
 	\setlength{\tabcolsep}{6pt}
-	\paragraph{Visitor registers to \mts}
+	\paragraph{Visitor registers to \mts{}}
 	
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
@@ -495,7 +549,7 @@
 						 \end{enumerate}\\\hline
 			Output Condition & Visitor successfully completes the registration process and
 								becomes a registered user. From now on s/he can login to
-								the application using her/his credentials and use \mts.\\\hline
+								the application using her/his credentials and use \mts{}.\\\hline
 			Exceptions & {\begin{enumerate}
 							\item The visitor is already a registered user.
 							\item One or more mandatory fields are not valid or missing.
@@ -505,24 +559,61 @@
 						problem and the application goes back to the point 2 of	event flow.}\\\hline
 		\end{tabular}
 	\end{center}
-	\begin{center}
-		\includegraphics[width=0.9\linewidth]{Pictures/UCRegistration}
-		\includegraphics[width=0.9\linewidth]{Pictures/SDRegistration}
-	\end{center}
-	\pagebreak	
+%	\begin{center}
+%		\includegraphics[width=0.9\linewidth]{Pictures/UCRegistration}
+%		\includegraphics[width=0.9\linewidth]{Pictures/SDRegistration}
+%	\end{center}
+
+%		\newgeometry{left=1cm,bottom=1cm,right=1cm,top=1cm}
+
+%	\includepdf{Pictures/ClassDiagram.pdf}
+	\pagebreak
+\afterpage{}
+
+%	\begin{figure}[p]
+%		\begin{center}
+%			\vspace*{-2.5cm}
+%			\includegraphics[width=0.95\linewidth]{Pictures/UCRegistration}
+%			\includegraphics[width=0.95\linewidth]{Pictures/SDRegistration}
+%		\end{center}
+%	\end{figure}
 	
-	\paragraph{Visitor logins to \mts}
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.65]{Pictures/UCRegistration}}
+		\end{minipage}
+		
+		\vspace*{0.6cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.67]{Pictures/SDRegistration}}
+		\end{minipage}
+		
+		
+		
+		
+
+
+	\pagebreak	
+
+	
+	\paragraph{Visitor logins to \mts{}}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Visitor, Passenger\\\hline
 			Goal & {[}G8{]} \\\hline
 			Input Condition & The user must be already registered.\\\hline
 			Event Flow & \begin{enumerate}
-							\item \mts shows the login page.
+							\item \mts{} shows the login page.
 							\item Visitor completes the form inserting correct username and password.
 						 \end{enumerate}\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts verifies the credentials of the visitor and if correct shows the home page for the registered user.
+									\item \mts{} verifies the credentials of the visitor and if correct shows the home page for the registered user.
 									\item Visitor is promoted to registered user.
 							   \end{enumerate}\\\hline
 			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
@@ -539,7 +630,7 @@
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user requests a taxi using any of the options to provide his/her own location.\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts starts the process in order to find a taxi for the user.
+									\item \mts{} starts the process in order to find a taxi for the user.
 									\item Once the system has allocated a taxi it notifies the user.
 							   \end{enumerate}\\\hline
 			Exceptions & NULL\\\hline
@@ -558,7 +649,7 @@
 								\item The user must have a pending request for a taxi.
 						   	  \end{enumerate} \\\hline
 			Event Flow & The user deletes the pending ride.\\\hline
-			Output Condition & \mts notifies the corresponding taxi driver that the job is canceled.\\\hline
+			Output Condition & \mts{} notifies the corresponding taxi driver that the job is canceled.\\\hline
 			Exceptions & If the cancellation has been made after the allowed time frame the system applies a penalty fee to the user.\\\hline
 		\end{tabular}
 	\end{center}
@@ -573,7 +664,7 @@
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters.\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts records the new reservation in its DB.
+									\item \mts{} records the new reservation in its DB.
 									\item The system notifies the user of the successful reservation.
 							   \end{enumerate}\\\hline
 			Exceptions & NULL\\\hline
@@ -593,7 +684,7 @@
 							  \end{enumerate}\\\hline
 			Event Flow & The user modifies some parameters of his/her reservation, possibly also deleting the it.\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts records the changes in the reservation in its DB.
+									\item \mts{} records the changes in the reservation in its DB.
 									\item The system notifies the user of the successful changes.
 						   	   \end{enumerate}\\\hline
 			Exceptions & The system collects the penalty fee if the user deleted the ride beyond the allowed time-frame.\\\hline
@@ -610,7 +701,7 @@
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user fills in the form for the reservation of a ride customizing the parameters, in particular enabling the sharing of the ride.\\\hline
 			Output Condition & \begin{enumerate}
-				\item \mts records the changes in the reservation in its DB.
+				\item \mts{} records the changes in the reservation in its DB.
 				\item The system notifies the user of the successful reservation.
 			\end{enumerate}\\\hline
 			Exceptions & NULL\\\hline
@@ -651,18 +742,18 @@
 	
 	\pagebreak
 	
-	\paragraph{Taxi driver logins to \mts}
+	\paragraph{Taxi driver logins to \mts{}}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Taxi driver\\\hline
 			Goal & {[}G16{]} \\\hline
 			Input Condition & The user must be already registered (inserted in the system by the administrator).\\\hline
 			Event Flow & \begin{enumerate}
-				\item \mts shows the login page.
+				\item \mts{} shows the login page.
 				\item The user completes the form inserting correct username and password.
 			\end{enumerate}\\\hline
 			Output Condition & \begin{enumerate}
-				\item \mts verifies the credentials of the employee and if correct shows the home page for the registered user.
+				\item \mts{} verifies the credentials of the employee and if correct shows the home page for the registered user.
 				\item Visitor is promoted to registered user.
 			\end{enumerate}\\\hline
 			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
@@ -678,7 +769,7 @@
 			Goal & {[}G17{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
-				\item \mts shows the home page for the driver.
+				\item \mts{} shows the home page for the driver.
 				\item The user sets his/her own availability to receive job proposals as s/he prefers.
 			\end{enumerate}\\\hline
 			Output Condition & The system receives the setting of the user and operates accordingly.\\\hline
@@ -695,8 +786,8 @@
 			Goal & {[}G18{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
-				\item \mts shows the home page for the driver.
-				\item \mts notifies the user about a job proposal that could fit him/her.	
+				\item \mts{} shows the home page for the driver.
+				\item \mts{} notifies the user about a job proposal that could fit him/her.	
 				\item The user chooses whether accepting or rejecting the proposal.
 			\end{enumerate}\\\hline
 			Output Condition & The system receives the setting of the user and operates accordingly.\\\hline
@@ -713,7 +804,7 @@
 			Goal & {[}G19{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
-				\item \mts shows the home page for the administrator.
+				\item \mts{} shows the home page for the administrator.
 				\item The user accesses the function to manage the taxi drivers.	
 				\item The system shows the list of drivers.
 				\item The user decides to add, modify or delete a driver.
@@ -732,7 +823,7 @@
 			Goal & {[}G20{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
-				\item \mts shows the home page for the administrator.
+				\item \mts{} shows the home page for the administrator.
 				\item The user accesses system monitor.	
 			\end{enumerate}\\\hline
 			Output Condition & The system shows the current situation of the service.\\\hline
@@ -744,7 +835,49 @@
 	
 	\pagebreak	
 	
+	
+%		\newgeometry{left=1cm,bottom=1cm,right=1cm,top=1cm}
+
+
 	\subsubsection{Class Diagrams}
+%	\thispagestyle{empty}
+%%	\includepdf{Pictures/ClassDiagram.pdf}
+%	\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Pictures/ClassDiagram}}	
+%		\vspace*{0.6cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/ClassDiagram}}
+		\end{minipage}	
+
+%\begin{figure}
+%	\begin{center}
+%		\subsubsection{Class Diagrams}
+%		\includegraphics[width=\paperwidth,height=\paperheight]{Pictures/ClassDiagram}
+%	\end{center}
+%\end{figure}	
+	
+	
+%	\afterpage{\clearpage}
+%	\vfill
+%		\begin{center}
+%%			\centerline{\includegraphics[width=1.4\linewidth]{Pictures/ClassDiagram}}
+%			\includegraphics[width=1\linewidth]{Pictures/ClassDiagram}
+%		\end{center}
+%		\vfill
+
+%	\begin{figure}[p]
+%%		\vspace*{-3cm}
+%%		\hspace*{-1cm}
+%		\centering
+%		\makebox[\linewidth]{
+%		\includegraphics[width=1.3\linewidth]{Pictures/ClassDiagram}
+%		}
+%	\end{figure}
+%	\restoregeometry
+	
 	
 	\pagebreak
 	
@@ -764,11 +897,11 @@
 	
 	\subsubsection{Software System Attributes}
 	
-	\paragraph{Availability \& Reliability} \mts system must be always accessible. The server that hosts the service is online 24/7 and is equipped with an autonomous power supply backup system.
+	\paragraph{Availability \& Reliability} \mts{} system must be always accessible. The server that hosts the service is online 24/7 and is equipped with an autonomous power supply backup system.
 	
-	\paragraph{Security} \mts offers a high grade of privacy and security thanks to the protocols that it enforces. As already stated above it requires a 2-factor verification process during the registration; in this way the account is confirmed by two codes that are sent to both the provided email address and phone number. In this way it's verified that  all the means used to communicate with the user really belong to him/her. The application also guarantees an appropriate level of confidentiality and integrity of the sensitive data exchanged on the Web with the server. The DB on the server is behind a DMZ in which is located the web server; firewalls with different rules are used to separate the different ``zones'' of access rights and permissions in the network.
+	\paragraph{Security} \mts{} offers a high grade of privacy and security thanks to the protocols that it enforces. As already stated above it requires a 2-factor verification process during the registration; in this way the account is confirmed by two codes that are sent to both the provided email address and phone number. In this way it's verified that  all the means used to communicate with the user really belong to him/her. The application also guarantees an appropriate level of confidentiality and integrity of the sensitive data exchanged on the Web with the server. The DB on the server is behind a DMZ in which is located the web server; firewalls with different rules are used to separate the different ``zones'' of access rights and permissions in the network.
 	
-	\paragraph{Maintainability} The software itself does not require any particular periodic update, unless the taxi company wants to add some functionalities. The only feature that could require some maintenance are the APIs offered by the system, but again, in this document and all the other ones related to \mts that will be attached, future developers can find all what they could need to understand how the system works and then how to update some sections of the software. 
+	\paragraph{Maintainability} The software itself does not require any particular periodic update, unless the taxi company wants to add some functionalities. The only feature that could require some maintenance are the APIs offered by the system, but again, in this document and all the other ones related to \mts{} that will be attached, future developers can find all what they could need to understand how the system works and then how to update some sections of the software. 
 
 	\paragraph{Portability}
 	
