@@ -194,7 +194,7 @@
 		\begin{itemize}
 			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
 			\item Taxi driver (or Taxi owner, employee): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
-			\item Guest (or Visitor): is a non-registered user.
+			\item Guest (or Guest): is a non-registered user.
 			\item Administrator: manages the system on behalf of the taxi company and of the government of the city.
 			\item Ride: is a single taxi ride from a location to another one.
 			\item Shared ride: a ride shared with other passengers arranged by the system; in this way clients that have common taxi lines can shrink the cost of the single ride.
@@ -263,6 +263,8 @@
 	
 	\subsubsection{Parallel operation} \mts{} supports parallel operations from different users when working with the DB and when dealing with all the operations done by the user after the connection.
 	
+	\pagebreak
+	
 	\subsection{Assumptions and dependencies}
 		\begin{itemize}
 			\item Entitled taxi drivers are inserted in the system by the administrator.
@@ -280,7 +282,7 @@
 			\item The taxi fleet is composed of only one model of car, thus all the cars have the same capacity.
 			\item When a taxi is mobilized, it will reach the pick up location in the shortest possible time.
 			\item All the actions performed by a taxi driver during working hours will be performed through the mobile application.
-			\item \textcolor{red}{Taxi drivers are assigned the zone by the system}
+			\item Taxi drivers are assigned the zone by the system.
 		\end{itemize}
 	
 %	\pagebreak
@@ -359,7 +361,7 @@
 		\item {[}R1{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules to guarantee a fair management of the queues.
 		\item {[}R2{]} If the taxi driver on top of the queue accepts a job then the system allocates the taxi for the specific request and therefore updates the queue.
 		\item {[}R3{]} If the taxi driver on top of the queue rejects the job then the system updates the queue placing the second taxi as first and the one that rejected the job in the last position of the queue of the same zone.
-		\item {[}D1{]} Each taxi queue will never be empty.
+		\item {[}D1{]} Each taxi queue is never empty.
 	\end{itemize}
 		
 	\subsubsection{{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}
@@ -505,11 +507,12 @@
 	
 	\subsubsection{Scenario 5} Jack is the manager of the taxi company in Milan and therefore he is the administrator of the \mts{} system. He spends his days monitoring the activity of the system thanks to the supervision functionality of the system. He can access it anytime anywhere thanks to the double interface for web browser and mobile application. Of course he prefers the bigger monitor of his computer when he’s in the office with respect to the small display of the smartphone, but he is more relaxed knowing that he is notified if something goes wrong even when he is outside the office. Often it happens that he needs to insert in the system new just employed drivers; in that case he collects all the information about the person and register the user with the specific functionalities for the drivers.
 	
+	\pagebreak
+	
 	\subsection{UML Models}
 	
 	\subsubsection{Use Case}
 	
-	\pagebreak
 %	\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Pictures/UCWholeSystem}}
 %	\begin{figure}[h]
 %		\centering
@@ -525,38 +528,38 @@
 	\begin{minipage}{\linewidth}% to keep image and caption on one page
 %		\thispagestyle{empty}
 %		\vspace*{-2.5cm}
-		\vspace*{-0.7cm}
+%		\vspace*{-0.7cm}
 		\makebox[\linewidth]{%        to center the image
 			\includegraphics[keepaspectratio=true,scale=0.62]{Pictures/UCWholeSystem}}
 	\end{minipage}
 	
-	
+	\pagebreak
 	
 	\renewcommand{\arraystretch}{1.5}
 	\setlength{\tabcolsep}{6pt}
-	\paragraph{Visitor registers to \mts{}}
+	\paragraph{Guest registers to \mts{}}
 	
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & Visitor\\\hline
+			Actor & Guest\\\hline
 			Goal & {[}G7{]} \\\hline
 			Input Condition & NULL\\\hline
 			Event Flow & \begin{enumerate}
-							\item Visitor on the home page clicks on ``Sign up''.
-							\item Visitor fills in at least all mandatory fields.
-							\item Visitor clicks on the ``confirm'' button.
+							\item Guest on the home page clicks on ``Sign up''.
+							\item Guest fills in at least all mandatory fields.
+							\item Guest clicks on the ``confirm'' button.
 							\item The application saves the data in the DB.
 						 \end{enumerate}\\\hline
-			Output Condition & Visitor successfully completes the registration process and
+			Output Condition & Guest successfully completes the registration process and
 								becomes a registered user. From now on s/he can login to
 								the application using her/his credentials and use \mts{}.\\\hline
 			Exceptions & {\begin{enumerate}
-							\item The visitor is already a registered user.
+							\item The guest is already a registered user.
 							\item One or more mandatory fields are not valid or missing.
 							\item The username chosen is already used by another user.
 							\item The email chosen is already associated to another user.
-						  \end{enumerate} All exceptions are handled alerting the visitor of the
-						problem and the application goes back to the point 2 of	event flow.}\\\hline
+						  \end{enumerate} All exceptions are handled alerting the guest of the
+						problem through an error message.}\\\hline
 		\end{tabular}
 	\end{center}
 %	\begin{center}
@@ -585,13 +588,13 @@
 				\includegraphics[keepaspectratio=true,scale=0.65]{Pictures/UCRegistration}}
 		\end{minipage}
 		
-		\vspace*{0.6cm}
+		\vspace*{0.5cm}
 		
 		\noindent%
 		\begin{minipage}{\linewidth}
 			\vspace*{-0.7cm}
 			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.67]{Pictures/SDRegistration}}
+				\includegraphics[keepaspectratio=true,scale=0.73]{Pictures/SDRegistration}}
 		\end{minipage}
 		
 		
@@ -602,24 +605,41 @@
 	\pagebreak	
 
 	
-	\paragraph{Visitor logins to \mts{}}
+	\paragraph{Guest logins to \mts{}}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & Visitor, Passenger\\\hline
+			Actor & Guest, Passenger\\\hline
 			Goal & {[}G8{]} \\\hline
 			Input Condition & The user must be already registered.\\\hline
 			Event Flow & \begin{enumerate}
 							\item \mts{} shows the login page.
-							\item Visitor completes the form inserting correct username and password.
+							\item Guest completes the form inserting correct username and password.
 						 \end{enumerate}\\\hline
 			Output Condition & \begin{enumerate}
-									\item \mts{} verifies the credentials of the visitor and if correct shows the home page for the registered user.
-									\item Visitor is promoted to registered user.
+									\item \mts{} verifies the credentials of the guest and if correct shows the home page for the registered user.
+									\item Guest is promoted to registered user.
 							   \end{enumerate}\\\hline
-			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
+			Exceptions & If username and/or password are incorrect the system notifies this to the guest through an error message.\\\hline
 		\end{tabular}
 	\end{center}
 	
+	\pagebreak
+	\noindent%
+	\begin{minipage}{\linewidth}
+		\vspace*{-0.7cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.62]{Pictures/UCLogin}}
+	\end{minipage}
+		
+	\vspace*{0.6cm}
+		
+	\noindent%
+	\begin{minipage}{\linewidth}
+		\vspace*{-0.7cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.73]{Pictures/SDLogin}}
+	\end{minipage}
+		
 	\pagebreak
 	
 	\paragraph{Passenger requests a taxi}
@@ -636,6 +656,25 @@
 			Exceptions & NULL\\\hline
 		\end{tabular}
 	\end{center}	
+	
+		\pagebreak
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{0.5cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/UCRequest}}
+		\end{minipage}
+		
+		\vspace*{1.3cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.9]{Pictures/SDRequest}}
+		\end{minipage}
+	
+
 	
 	\pagebreak
 	
@@ -754,9 +793,9 @@
 			\end{enumerate}\\\hline
 			Output Condition & \begin{enumerate}
 				\item \mts{} verifies the credentials of the employee and if correct shows the home page for the registered user.
-				\item Visitor is promoted to registered user.
+				\item Guest is promoted to registered user.
 			\end{enumerate}\\\hline
-			Exceptions & If username and/or password are incorrect the system notifies this to the visitor and shows the login page again.\\\hline
+			Exceptions & If username and/or password are incorrect the system notifies this to the guest and shows the login page again.\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -849,7 +888,7 @@
 		\begin{minipage}{\linewidth}
 			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
-			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/ClassDiagram}}
+			\includegraphics[keepaspectratio=true,scale=0.59]{Pictures/ClassDiagram}}
 		\end{minipage}	
 
 %\begin{figure}
