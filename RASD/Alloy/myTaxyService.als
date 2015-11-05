@@ -57,7 +57,8 @@ sig Ride {
 	shared: Boolean,
 	requests: some Request
 }{
-	// Sum of all the reserved seats in a ride must be less or equal to taxi capacity
+	// Sum of all the reserved seats in a ride
+	// must be less or equal to taxi capacity
 }
 
 sig Request {
@@ -75,29 +76,75 @@ sig Request {
 	reservedSeats > 0
 }
 
-// All Users of the system are either Passenger or TaxiDriver or SystemAdministrator
+// All Users of the system are either 
+// Passenger or TaxiDriver or SystemAdministrator
 fact { SystemAdministrator + TaxiDriver + Passenger = RegisteredUser }
 
-// Ride coming from a request have the same value for the share attribute
-fact { all ride: Ride | all req: Request | req in ride.requests and ride.shared = req.shared }
+// Ride coming from a request have the same value 
+// for the share attribute
+fact {	
+			all ride: Ride 
+		|
+			all req: Request
+		|
+				req in ride.requests
+			and	ride.shared = req.shared
+	}
 
-// Ride must have the same originZone and destinationZone of their parent Request
-fact { all ride: Ride | all req: Request | req in ride.requests and ride.originZone = req.originZone and ride.destinationZone = req.destinationZone }
+// Ride must have the same originZone and destinationZone
+// of their parent Request
+fact {
+			all ride: Ride
+		|
+			all req: Request
+		|
+				req in ride.requests
+			and	ride.originZone = req.originZone
+			and	ride.destinationZone = req.destinationZone
+	}
 	
 // Every user has a different email address
-fact { no u1,u2: RegisteredUser | u1 != u2 and u1.email = u2.email }
+fact {
+			no u1,u2: RegisteredUser
+		|
+				u1 != u2
+			and	u1.email = u2.email
+	}
 
 // Every Passenger has a different phone number
-fact { no u1,u2: Passenger | u1 != u2 and u1.phoneNumber = u2.phoneNumber }
+fact {
+			no u1,u2: Passenger
+		|
+				u1 != u2
+			and	u1.phoneNumber = u2.phoneNumber
+	}
 
 // Every Passenger has a different credit card number
-fact { no u1,u2: Passenger | u1 != u2 and u1.creditCardNumber = u2.creditCardNumber }
+fact {
+			no u1,u2: Passenger
+		|
+				u1 != u2
+			and	u1.creditCardNumber = u2.creditCardNumber
+	}
 
 // Every Taxi has a different driver
-fact { no t1,t2: Taxi | t1 != t2 and t1.driver = t2.driver }
+fact {
+			no t1,t2: Taxi
+		|
+				t1 != t2
+			and	t1.driver = t2.driver
+	}
 
 // A Taxi can be in just one queue
-fact { no z1, z2: Zone | all t: Taxi | z1 != z2 and t in z1.queue and t in z2.queue }
+fact {
+			no z1, z2: Zone
+		|
+			all t: Taxi
+		|
+				z1 != z2
+			and	t in z1.queue
+			and	t in z2.queue
+	}
 
 pred show {}
 
