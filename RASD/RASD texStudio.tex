@@ -7,16 +7,12 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
 \usepackage{alloy-style}
-\usepackage[T1]{fontenc}
-
-\lstset{
-	basicstyle=\fontsize{11}{13}\selectfont\ttfamily
-}
-
+\usepackage[T1]{fontenc} %to make | and > appear correctly in alloy code!
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
 \newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
 
+%alternative page margins setting
 %\geometry{
 %	a4paper,
 %	total={170mm,257mm},
@@ -25,21 +21,13 @@
 %	bottom=25mm,
 %	right=25mm
 %}
-
 \geometry{margin=1in}
 
-%\pagestyle{fancy}
-%%\fancyfoot[R,LE ]{\thepage} 
-%%\fancyhead[RO,LE]{\thepage}
-%
-%\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
-%\renewcommand{\footrulewidth}{\iffloatpage{0pt}{0.4pt}}
-
+%header & footer style
 \fancyhead{}
 %\fancyhead[LE,RO]{\iffloatpage{}{\slshape\rightmark}}
 %\fancyhead[LO,RE]{\iffloatpage{}{\slshape\leftmark}}
 \fancyhead[C]{\iffloatpage{}{\slshape\rightmark}}
-
 \fancyfoot{}
 \fancyfoot[C]{\iffloatpage{}{\thepage}}
 \renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
@@ -74,7 +62,7 @@
 \author{Alessandro Baldassari (mat. 841561) \\ Alberto Bendin (mat. 841734) \\ Francesco Giarola (mat. 840554)}
 
 
-
+%to avoid the hyphenation of the name of the software
 \hyphenation{myTaxyService}
 
 \begin{document}
@@ -84,9 +72,7 @@
 	%pOLIMI-LOGO
 	\begin{figure}[t]
 		\centering
-%		\includegraphics[width=1\linewidth]{"C:/Users/alber/Dropbox/Software Engineering 2/Project/polimi-logo"}
-			\includegraphics[width=1\linewidth]{"Pictures/polimi-logo"}
-	%	\caption{}
+		\includegraphics[width=1\linewidth]{"Pictures/polimi-logo"}
 		\label{fig:polimi-logo}
 	\end{figure}
 	
@@ -98,7 +84,6 @@
 %		\thispagestyle{empty}
 %		\clearpage\null\newpage
 %	}
-
 %	\clearpage
 	\thispagestyle{empty}
 %	\phantom{a}
@@ -115,7 +100,7 @@
 	\renewcommand*\thesection{\arabic{section}}
 	\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}}
 	\renewcommand*\thesubsubsection{%
-		\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
+	\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
 	}
 	\setcounter{secnumdepth}{4}
 	\setcounter{tocdepth}{4}
@@ -244,7 +229,7 @@
 	
 	\subsection{Reference Documents}
 		\begin{itemize}
-			\item Specification document: MyTaxiService project
+			\item Specification document: myTaxiService project
 			\item IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements	Specifications.
 		\end{itemize}
 	
@@ -255,7 +240,7 @@
 			\item Section 3: Specific Requirements, this part lists requirements, typical scenarios	and use cases, together with UML diagrams to provide a more easy-to-read insight at the several functionalities of the software.
 		\end{itemize}
 	
-	\pagebreak %\newpage 
+	\pagebreak
 	
 	\section{Overall description}
 	
@@ -539,11 +524,8 @@
 
 	\noindent%
 	\begin{minipage}{\linewidth}% to keep image and caption on one page
-%		\thispagestyle{empty}
-%		\vspace*{-2.5cm}
-%		\vspace*{-0.7cm}
 		\makebox[\linewidth]{%        to center the image
-			\includegraphics[keepaspectratio=true,scale=0.62]{Pictures/UCWholeSystem}}
+		\includegraphics[keepaspectratio=true,scale=0.62]{Pictures/UCWholeSystem}}
 	\end{minipage}
 	
 	\pagebreak
@@ -584,7 +566,7 @@
 
 %	\includepdf{Pictures/ClassDiagram.pdf}
 	\pagebreak
-\afterpage{}
+	\afterpage{}
 
 %	\begin{figure}[p]
 %		\begin{center}
@@ -725,7 +707,7 @@
 	
 	\pagebreak
 	
-	\paragraph{Passenger edits a reservation for a taxi}
+	\paragraph{Passenger edits or deletes a reservation for a taxi}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Passenger\\\hline
@@ -734,7 +716,7 @@
 									\item The user must be already logged in.
 									\item The user must have an active reservation.
 							  \end{enumerate}\\\hline
-			Event Flow & The user modifies some parameters of his/her reservation, possibly also deleting the it.\\\hline
+			Event Flow & The user modifies some parameters of his/her reservation, possibly also deleting it.\\\hline
 			Output Condition & \begin{enumerate}
 									\item \mts{} records the changes in the reservation in its DB.
 									\item The system notifies the user of the successful changes.
@@ -743,6 +725,24 @@
 		\end{tabular}
 	\end{center}	
 	
+	\pagebreak
+	
+	\noindent%
+	\begin{minipage}{\linewidth}
+		\vspace*{-0.7cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.635]{Pictures/UCDeleteReservation}}
+	\end{minipage}
+	
+	\vspace*{0.6cm}
+	
+	\noindent%
+	\begin{minipage}{\linewidth}
+		\vspace*{-0.75cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/SDDeleteReservation}}
+	\end{minipage}	
+
 	\pagebreak
 	
 	\paragraph{Passenger reserves a ride with shared option}
@@ -972,7 +972,13 @@
 	
 	\pagebreak
 	
-	\subsubsection{State Machine Diagrams}
+	\subsubsection{State Machine Diagrams} 
+		\noindent%
+		\begin{minipage}{\linewidth}
+%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.56]{Pictures/STMSharedRideManagement}}
+		\end{minipage}		
 	
 	\pagebreak
 		
