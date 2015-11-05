@@ -1,6 +1,18 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
 \usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat}
+
+%for alloy syntax highlighting
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{alloy-style}
+\usepackage[T1]{fontenc}
+
+\lstset{
+	basicstyle=\fontsize{11}{13}\selectfont\ttfamily
+}
+
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
 \newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
@@ -835,6 +847,24 @@
 		\end{tabular}
 	\end{center}
 	
+	
+	\pagebreak
+	\noindent%
+	\begin{minipage}{\linewidth}
+		\vspace*{-0.5cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.86]{Pictures/UCDriverJobProposal}}
+	\end{minipage}
+	
+	\vspace*{0.5cm}
+	
+			\noindent%
+			\begin{minipage}{\linewidth}
+				\vspace*{-0.7cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.77]{Pictures/SDDriverJobProposal}}
+			\end{minipage}	
+	
 	\pagebreak
 	
 	\paragraph{System administrator manages the drivers list}
@@ -853,6 +883,23 @@
 			Exceptions & NULL\\\hline
 		\end{tabular}
 	\end{center}
+	
+		\pagebreak
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.2cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.75]{Pictures/UCAdminAddDriver}}
+		\end{minipage}
+		
+		\vspace*{1.1cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.96]{Pictures/SDAdminAddDriver}}
+		\end{minipage}	
 	
 	\pagebreak
 	
@@ -952,8 +999,30 @@
 	\subsection{Other Requirements}
 	
 	\pagebreak
-	
+
 	\section{Alloy}
+	\lstinputlisting[language=alloy,basicstyle=\normalsize]{Alloy/myTaxyService.als}
+	
+	\pagebreak
+	
+	\section{Appendix}
+	
+	\subsection{Software and tools used}
+	\begin{itemize}
+		\item TeXstudio 2.10.4 (http://www.texstudio.org/) to redact and format this document.
+		\item Astah Professional 7.0 (http://astah.net/editions/professional): to create Use
+		Cases Diagrams, Sequence Diagrams, Class Diagrams and State Machine	Diagrams.
+		\item Alloy Analyzer 4.2 (http://alloy.mit.edu/alloy/) to prove the consistency of
+		the model.
+		\item Balsamiq Mockups 3.2.4 (http://balsamiq.com/products/mockups/) to create the mockups.
+	\end{itemize}
+	
+	\subsection{Hours of work} The time spent to redact this document:
+	\begin{itemize}
+		\item Baldassari Alessandro: xx hours.
+		\item Bendin Alberto: xx hours.
+		\item Giarola Francesco: xx hours.
+	\end{itemize}
 	
 	
 \end{document}
