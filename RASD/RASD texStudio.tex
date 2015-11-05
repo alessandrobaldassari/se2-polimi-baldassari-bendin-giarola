@@ -8,6 +8,7 @@
 \usepackage{listings}
 \usepackage{alloy-style}
 \usepackage[T1]{fontenc} %to make | and > appear correctly in alloy code!
+\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
 
 %command to substitute "{\em MyTaxyService}" with "\mts"
 \newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
@@ -177,7 +178,7 @@
 		List of the goals of \mts{} application for the administrator:
 		\begin{itemize}
 			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.
-			\item {[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
+			\item {[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
 		\end{itemize}
 		
 		
@@ -973,12 +974,12 @@
 	\pagebreak
 	
 	\subsubsection{State Machine Diagrams} 
-		\noindent%
-		\begin{minipage}{\linewidth}
-%			\vspace*{-0.35cm}
-			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.56]{Pictures/STMSharedRideManagement}}
-		\end{minipage}		
+%		\noindent%
+%		\begin{minipage}{\linewidth}
+%%			\vspace*{-0.35cm}
+%			\makebox[\linewidth]{
+%				\includegraphics[keepaspectratio=true,scale=0.56]{Pictures/STMSharedRideManagement}}
+%		\end{minipage}		
 	
 	\pagebreak
 		
