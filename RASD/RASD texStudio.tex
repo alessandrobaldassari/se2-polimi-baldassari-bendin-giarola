@@ -973,13 +973,38 @@
 	
 	\pagebreak
 	
+%	\vspace*{-1.25cm}
 	\subsubsection{State Machine Diagrams} 
-%		\noindent%
-%		\begin{minipage}{\linewidth}
-%%			\vspace*{-0.35cm}
-%			\makebox[\linewidth]{
-%				\includegraphics[keepaspectratio=true,scale=0.56]{Pictures/STMSharedRideManagement}}
-%		\end{minipage}		
+	
+		\paragraph{Ride creation} The following state machine shows the steps of the process that controls the creation of the ride after the reception of the request or reservations. In particular it shows how the system takes into account the shared ride matching.\\
+		\noindent%
+		\begin{minipage}{\linewidth}
+%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.66]{Pictures/STMRequestAndRideCreation}}
+		\end{minipage}	
+		
+		\vspace*{1.1cm}
+		
+		\paragraph{Modification of the request} The following state machine shows the steps of the process that controls the modification of the ride. In particular it shows the different behavior depending on whether or not the ride has already been created.\\
+		\noindent%
+		\begin{minipage}{\linewidth}
+%			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.666]{Pictures/STMModifyRequest}}
+		\end{minipage}	
+		
+		\pagebreak
+		
+		\paragraph{Cancellation of the request} The following state machine shows the steps of the process that controls the cancellation of the ride. In particular it shows the different behavior depending on whether or not the ride has already been created.\\
+		\vspace*{1.1cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+%			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.64]{Pictures/STMRequestCancellation}}
+		\end{minipage}	`	
 	
 	\pagebreak
 		

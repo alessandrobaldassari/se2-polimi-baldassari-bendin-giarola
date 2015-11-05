@@ -80,18 +80,21 @@
 \BOOKMARK [4][-]{paragraph.0.3.5.1.14}{System administrator monitors the situation from the control center view}{subsubsection.0.3.5.1}% 80
 \BOOKMARK [3][-]{subsubsection.0.3.5.2}{Class Diagrams}{subsection.0.3.5}% 81
 \BOOKMARK [3][-]{subsubsection.0.3.5.3}{State Machine Diagrams}{subsection.0.3.5}% 82
-\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 83
-\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 84
-\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Design Constraints}{subsection.0.3.6}% 85
-\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Standards compliance}{subsection.0.3.6}% 86
-\BOOKMARK [3][-]{subsubsection.0.3.6.4}{Hardware limitations}{subsection.0.3.6}% 87
-\BOOKMARK [3][-]{subsubsection.0.3.6.5}{Software System Attributes}{subsection.0.3.6}% 88
-\BOOKMARK [4][-]{paragraph.0.3.6.5.1}{Availability \046 Reliability}{subsubsection.0.3.6.5}% 89
-\BOOKMARK [4][-]{paragraph.0.3.6.5.2}{Security}{subsubsection.0.3.6.5}% 90
-\BOOKMARK [4][-]{paragraph.0.3.6.5.3}{Maintainability}{subsubsection.0.3.6.5}% 91
-\BOOKMARK [4][-]{paragraph.0.3.6.5.4}{Portability}{subsubsection.0.3.6.5}% 92
-\BOOKMARK [2][-]{subsection.0.3.7}{Other Requirements}{section.0.3}% 93
-\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 94
-\BOOKMARK [1][-]{section.0.5}{Appendix}{}% 95
-\BOOKMARK [2][-]{subsection.0.5.1}{Software and tools used}{section.0.5}% 96
-\BOOKMARK [2][-]{subsection.0.5.2}{Hours of work}{section.0.5}% 97
+\BOOKMARK [4][-]{paragraph.0.3.5.3.1}{Ride creation}{subsubsection.0.3.5.3}% 83
+\BOOKMARK [4][-]{paragraph.0.3.5.3.2}{Modification of the request}{subsubsection.0.3.5.3}% 84
+\BOOKMARK [4][-]{paragraph.0.3.5.3.3}{Cancellation of the request}{subsubsection.0.3.5.3}% 85
+\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 86
+\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 87
+\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Design Constraints}{subsection.0.3.6}% 88
+\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Standards compliance}{subsection.0.3.6}% 89
+\BOOKMARK [3][-]{subsubsection.0.3.6.4}{Hardware limitations}{subsection.0.3.6}% 90
+\BOOKMARK [3][-]{subsubsection.0.3.6.5}{Software System Attributes}{subsection.0.3.6}% 91
+\BOOKMARK [4][-]{paragraph.0.3.6.5.1}{Availability \046 Reliability}{subsubsection.0.3.6.5}% 92
+\BOOKMARK [4][-]{paragraph.0.3.6.5.2}{Security}{subsubsection.0.3.6.5}% 93
+\BOOKMARK [4][-]{paragraph.0.3.6.5.3}{Maintainability}{subsubsection.0.3.6.5}% 94
+\BOOKMARK [4][-]{paragraph.0.3.6.5.4}{Portability}{subsubsection.0.3.6.5}% 95
+\BOOKMARK [2][-]{subsection.0.3.7}{Other Requirements}{section.0.3}% 96
+\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 97
+\BOOKMARK [1][-]{section.0.5}{Appendix}{}% 98
+\BOOKMARK [2][-]{subsection.0.5.1}{Software and tools used}{section.0.5}% 99
+\BOOKMARK [2][-]{subsection.0.5.2}{Hours of work}{section.0.5}% 100
