@@ -56,39 +56,39 @@
 \contentsline {subsubsection}{\numberline {3.2.18}{[}G18{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}{18}{subsubsection.0.3.2.18}
 \contentsline {subsubsection}{\numberline {3.2.19}{[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}{18}{subsubsection.0.3.2.19}
 \contentsline {subsection}{\numberline {3.3}The world and the machine}{18}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Scenarios}{18}{subsection.0.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Scenario 1}{18}{subsubsection.0.3.4.1}
+\contentsline {subsection}{\numberline {3.4}Scenarios}{19}{subsection.0.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Scenario 1}{19}{subsubsection.0.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Scenario 2}{19}{subsubsection.0.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.3}Scenario 3}{19}{subsubsection.0.3.4.3}
 \contentsline {subsubsection}{\numberline {3.4.4}Scenario 4}{19}{subsubsection.0.3.4.4}
-\contentsline {subsubsection}{\numberline {3.4.5}Scenario 5}{19}{subsubsection.0.3.4.5}
-\contentsline {subsection}{\numberline {3.5}UML Models}{20}{subsection.0.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Use Case}{20}{subsubsection.0.3.5.1}
-\contentsline {paragraph}{\numberline {3.5.1.1}Guest registers to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{21}{paragraph.0.3.5.1.1}
-\contentsline {paragraph}{\numberline {3.5.1.2}Guest logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{23}{paragraph.0.3.5.1.2}
-\contentsline {paragraph}{\numberline {3.5.1.3}Passenger requests a taxi}{25}{paragraph.0.3.5.1.3}
-\contentsline {paragraph}{\numberline {3.5.1.4}Passenger cancels a request for a taxi}{27}{paragraph.0.3.5.1.4}
-\contentsline {paragraph}{\numberline {3.5.1.5}Passenger creates a reservation for a taxi}{28}{paragraph.0.3.5.1.5}
-\contentsline {paragraph}{\numberline {3.5.1.6}Passenger edits or deletes a reservation for a taxi}{29}{paragraph.0.3.5.1.6}
-\contentsline {paragraph}{\numberline {3.5.1.7}Passenger reserves a ride with shared option}{31}{paragraph.0.3.5.1.7}
-\contentsline {paragraph}{\numberline {3.5.1.8}Passenger checks the history of his/her own requests}{32}{paragraph.0.3.5.1.8}
-\contentsline {paragraph}{\numberline {3.5.1.9}Taxi driver logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{33}{paragraph.0.3.5.1.9}
-\contentsline {paragraph}{\numberline {3.5.1.10}Taxi driver sets his/her availability with the mobile application}{34}{paragraph.0.3.5.1.10}
-\contentsline {paragraph}{\numberline {3.5.1.11}Taxi driver accepts or rejects a job with the mobile application}{35}{paragraph.0.3.5.1.11}
-\contentsline {paragraph}{\numberline {3.5.1.12}System administrator manages the drivers list}{37}{paragraph.0.3.5.1.12}
-\contentsline {paragraph}{\numberline {3.5.1.13}System administrator monitors the situation from the control center view}{39}{paragraph.0.3.5.1.13}
-\contentsline {subsubsection}{\numberline {3.5.2}Class Diagrams}{40}{subsubsection.0.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}State Machine Diagrams}{41}{subsubsection.0.3.5.3}
-\contentsline {paragraph}{\numberline {3.5.3.1}Ride creation}{41}{paragraph.0.3.5.3.1}
-\contentsline {paragraph}{\numberline {3.5.3.2}Modification of the request}{41}{paragraph.0.3.5.3.2}
-\contentsline {paragraph}{\numberline {3.5.3.3}Cancellation of the request}{42}{paragraph.0.3.5.3.3}
-\contentsline {subsection}{\numberline {3.6}Non Functional Requirements}{43}{subsection.0.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}Performance Requirements}{43}{subsubsection.0.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Software System Attributes}{43}{subsubsection.0.3.6.2}
-\contentsline {paragraph}{\numberline {3.6.2.1}Availability \& Reliability}{43}{paragraph.0.3.6.2.1}
-\contentsline {paragraph}{\numberline {3.6.2.2}Security}{43}{paragraph.0.3.6.2.2}
-\contentsline {paragraph}{\numberline {3.6.2.3}Maintainability}{43}{paragraph.0.3.6.2.3}
-\contentsline {section}{\numberline {4}Alloy}{44}{section.0.4}
-\contentsline {section}{\numberline {5}Appendix}{48}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Software and tools used}{48}{subsection.0.5.1}
-\contentsline {subsection}{\numberline {5.2}Hours of work}{48}{subsection.0.5.2}
+\contentsline {subsubsection}{\numberline {3.4.5}Scenario 5}{20}{subsubsection.0.3.4.5}
+\contentsline {subsection}{\numberline {3.5}UML Models}{21}{subsection.0.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Use Case}{21}{subsubsection.0.3.5.1}
+\contentsline {paragraph}{\numberline {3.5.1.1}Guest registers to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{22}{paragraph.0.3.5.1.1}
+\contentsline {paragraph}{\numberline {3.5.1.2}Guest logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{24}{paragraph.0.3.5.1.2}
+\contentsline {paragraph}{\numberline {3.5.1.3}Passenger requests a taxi}{26}{paragraph.0.3.5.1.3}
+\contentsline {paragraph}{\numberline {3.5.1.4}Passenger cancels a request for a taxi}{28}{paragraph.0.3.5.1.4}
+\contentsline {paragraph}{\numberline {3.5.1.5}Passenger creates a reservation for a taxi}{29}{paragraph.0.3.5.1.5}
+\contentsline {paragraph}{\numberline {3.5.1.6}Passenger edits or deletes a reservation for a taxi}{30}{paragraph.0.3.5.1.6}
+\contentsline {paragraph}{\numberline {3.5.1.7}Passenger reserves a ride with shared option}{32}{paragraph.0.3.5.1.7}
+\contentsline {paragraph}{\numberline {3.5.1.8}Passenger checks the history of his/her own requests}{33}{paragraph.0.3.5.1.8}
+\contentsline {paragraph}{\numberline {3.5.1.9}Taxi driver logins to \unhbox \voidb@x \hbox {\normalfont \itshape myTaxiService}{}}{34}{paragraph.0.3.5.1.9}
+\contentsline {paragraph}{\numberline {3.5.1.10}Taxi driver sets his/her availability with the mobile application}{35}{paragraph.0.3.5.1.10}
+\contentsline {paragraph}{\numberline {3.5.1.11}Taxi driver accepts or rejects a job with the mobile application}{36}{paragraph.0.3.5.1.11}
+\contentsline {paragraph}{\numberline {3.5.1.12}System administrator manages the drivers list}{38}{paragraph.0.3.5.1.12}
+\contentsline {paragraph}{\numberline {3.5.1.13}System administrator monitors the situation from the control center view}{40}{paragraph.0.3.5.1.13}
+\contentsline {subsubsection}{\numberline {3.5.2}Class Diagrams}{41}{subsubsection.0.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}State Machine Diagrams}{42}{subsubsection.0.3.5.3}
+\contentsline {paragraph}{\numberline {3.5.3.1}Ride creation}{42}{paragraph.0.3.5.3.1}
+\contentsline {paragraph}{\numberline {3.5.3.2}Modification of the request}{42}{paragraph.0.3.5.3.2}
+\contentsline {paragraph}{\numberline {3.5.3.3}Cancellation of the request}{43}{paragraph.0.3.5.3.3}
+\contentsline {subsection}{\numberline {3.6}Non Functional Requirements}{44}{subsection.0.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Performance Requirements}{44}{subsubsection.0.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Software System Attributes}{44}{subsubsection.0.3.6.2}
+\contentsline {paragraph}{\numberline {3.6.2.1}Availability \& Reliability}{44}{paragraph.0.3.6.2.1}
+\contentsline {paragraph}{\numberline {3.6.2.2}Security}{44}{paragraph.0.3.6.2.2}
+\contentsline {paragraph}{\numberline {3.6.2.3}Maintainability}{44}{paragraph.0.3.6.2.3}
+\contentsline {section}{\numberline {4}Alloy}{45}{section.0.4}
+\contentsline {section}{\numberline {5}Appendix}{49}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Software and tools used}{49}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}Hours of work}{49}{subsection.0.5.2}
