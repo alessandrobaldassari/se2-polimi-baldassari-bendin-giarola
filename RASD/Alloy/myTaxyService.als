@@ -57,8 +57,7 @@ sig Ride {
 	shared: Boolean,
 	requests: some Request
 }{
-	// Sum of all the reserved seats in a ride
-	// must be less or equal to taxi capacity
+	// Sum of all the reserved seats in a ride must be less or equal to taxi capacity
 }
 
 sig Request {
@@ -76,12 +75,10 @@ sig Request {
 	reservedSeats > 0
 }
 
-// All Users of the system are either 
-// Passenger or TaxiDriver or SystemAdministrator
+// All Users of the system are either Passenger or TaxiDriver or SystemAdministrator
 fact { SystemAdministrator + TaxiDriver + Passenger = RegisteredUser }
 
-// Ride coming from a request have the same value 
-// for the share attribute
+// Ride coming from a request have the same value for the share attribute
 fact {	
 			all ride: Ride 
 		|
@@ -91,8 +88,7 @@ fact {
 			and	ride.shared = req.shared
 	}
 
-// Ride must have the same originZone and destinationZone
-// of their parent Request
+// Ride must have the same originZone and destinationZone of their parent Request
 fact {
 			all ride: Ride
 		|

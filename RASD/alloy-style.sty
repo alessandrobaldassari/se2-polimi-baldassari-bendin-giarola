@@ -88,6 +88,13 @@
 \def\A{%
     \lstinline[language=alloy,basicstyle=\ttfamily,columns=fixed]}
 
+\lstset{
+    %Add this if you want to display border around your code  
+    %frame=single,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}	
+	
 % paragraph
 \lstnewenvironment{alloy}[1][]{%
   \lstset{language=alloy,
