@@ -166,19 +166,18 @@
 			\item {[}G11{]} The passenger shall be able to create a reservation for a taxi ride.
 			\item {[}G12{]} The passenger shall be able to modify and delete a taxi reservation.
 			\item {[}G13{]} The passenger shall be able to enable taxi sharing option.
-			\item {[}G14{]} The passenger shall be able to join a shared reservation.
-			\item {[}G15{]} The passenger shall be able to see historical data on his taxi rides.
+			\item {[}G14{]} The passenger shall be able to see historical data on his taxi rides.
 		\end{itemize}
 		List of the goals of \mts{} application for taxi drivers:
 		\begin{itemize}
-			\item {[}G16{]} Taxi drivers shall be able to log in to the service.
-			\item {[}G17{]} Taxi drivers must inform the system about their availability.
-			\item {[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.
+			\item {[}G15{]} Taxi drivers shall be able to log in to the service.
+			\item {[}G16{]} Taxi drivers must inform the system about their availability.
+			\item {[}G17{]} Taxi drivers must confirm if they are going to take care of a certain call.
 		\end{itemize}
 		List of the goals of \mts{} application for the administrator:
 		\begin{itemize}
-			\item {[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.
-			\item {[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
+			\item {[}G18{]} The administrator shall be able to add, edit and delete taxi drivers in the system.
+			\item {[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.
 		\end{itemize}
 		
 		
@@ -201,7 +200,7 @@
 			\item Queue: the queue of the available taxis in each zone of the city; it is updated by the system, based on the interaction with taxi drivers that can accept or reject the proposals forwarded by the system. 
 			\item Zone: the city is divided in several zones to better allocate and coordinate the taxi fleet.
 			\item Request: it is intended as a real time call of a passenger that simply provides his/her own pickup position for an immediate service, without previous reservation.
-			\item Reservation: it is a previously planned ride, for which the client can specify the date and time, the origin and destination, the willingness to share the ride.
+			\item Reservation: it is a previously planned request, for which the client can specify the date and time, the origin and destination, the willingness to share the ride.
 			\item Locations provided buy users are always correct.
 		\end{itemize}
 		
@@ -268,6 +267,8 @@
 			\item Entitled taxi drivers are inserted in the system by the administrator.
 			\item Taxi zones are predetermined by the city government and will never change in the system time horizon.
 			\item The rides that can be shared are only the reserved ones.
+			\item Passengers sharing a ride will be matched only if they share the same pick up and destination zone.
+			\item Once the ride has been created it's only possible to cancel it; thus if the passenger wants to modify a request he will need to delete the old and create a new one.
 			\item Passengers that want to share the ride can be matched only if they share the same pick up and destination zone.
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
 			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
@@ -441,23 +442,17 @@
 	\subsubsection{{[}G13{]} The passenger shall be able to enable taxi sharing option.}
 	\begin{itemize}
 		\item {[}R1{]} The user can enable the sharing of a reservation.
+		\item {[}R2{]} The system computes the matching of people in shared rides taking into account the number of passengers from each reservation; the total number of passengers cannot exceed the maximum capacity of the taxi.
 		\item {[}D1{]} This is only valid for reservations booked in advance.
 	\end{itemize}
-	
-	\subsubsection{{[}G14{]} The passenger shall be able to join a shared reservation.}
-	\begin{itemize}
-		\item {[}R1{]} The system computes the matching of people in shared rides taking into account the number of passengers from each reservation; the total number of passengers cannot exceed the capacity of the taxi.
-		\item {[}D1{]} This is only valid for reservations booked in advance.
-		\item {[}D2{]} Passengers sharing a ride will be matched only if they share the same pick up and destination zone.
-	\end{itemize}
-	
-	\subsubsection{{[}G15{]} The passenger shall be able to see historical data on his taxi rides.}
+		
+	\subsubsection{{[}G14{]} The passenger shall be able to see historical data on his taxi rides.}
 	\begin{itemize}
 		\item {[}R1{]} The system keeps track of the recent routes and addresses.
 		\item {[}R2{]} The user can select locations from past rides to plan new ones.
 	\end{itemize}
 
-	\subsubsection{{[}G16{]} Taxi drivers shall be able to log in to the service.}
+	\subsubsection{{[}G15{]} Taxi drivers shall be able to log in to the service.}
 	\begin{itemize}
 		\item {[}R1{]} If the user hasn't the correct login information cannot access the system.
 		\item {[}R2{]} If the user provides correct credentials the system will grant him/her the access.
@@ -465,7 +460,7 @@
 		\item {[}D2{]} Only legally employed taxi drivers have the login information to access the system.
 	\end{itemize}
 	
-	\subsubsection{{[}G17{]} Taxi drivers must inform the system about their availability.}
+	\subsubsection{{[}G16{]} Taxi drivers must inform the system about their availability.}
 	\begin{itemize}
 		\item {[}R1{]} The system allows taxi drivers to set their availability.
 		\item {[}R2{]} The system allows to specify the reason of the unavailability.
@@ -473,19 +468,19 @@
 		\item {[}D2{]} Taxi drivers always remember to switch their availability.
 	\end{itemize}
 	
-	\subsubsection{{[}G18{]} Taxi drivers must confirm if they are going to take care of a certain call.}
+	\subsubsection{{[}G17{]} Taxi drivers must confirm if they are going to take care of a certain call.}
 	\begin{itemize}
 		\item {[}R1{]} The system allows taxi drivers to accept or reject a call.
 		\item {[}D1{]} Taxi drivers always remember to accept or reject a call.
 	\end{itemize}	
 					
-	\subsubsection{{[}G19{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}
+	\subsubsection{{[}G18{]} The administrator shall be able to add, edit and delete taxi drivers in the system.}
 	\begin{itemize}
 		\item {[}R1{]} The system allows to the administrator to add, edit and delete taxis.
 		\item {[}D1{]} The administrator only inserts in the system already verified entitled taxi drivers.
 	\end{itemize}	
 	
-	\subsubsection{{[}G20{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}
+	\subsubsection{{[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis.}
 	\begin{itemize}
 		\item {[}R1{]} The system allows to the administrator to have a glance view of the system situation.
 		\item {[}D1{]} The visualization is read only.
@@ -761,23 +756,23 @@
 		\end{tabular}
 	\end{center}	
 	
-	\pagebreak
-	
-	\paragraph{Passenger joins a shared ride}
-	\begin{center}
-		\begin{tabular}{| l | p{9cm} |}\hline
-			Actor & Passenger\\\hline
-			Goal & {[}G14{]} \\\hline
-			Input Condition & \begin{enumerate}
-				\item The users involved in the shared ride must be already logged in.
-				\item The users must have an active reservation in which they have expressly accepted the shared ride option.
-				\item The active reservation must have the same origin and destination for all the users.
-			\end{enumerate}\\\hline
-			Event Flow & The system recognizes the possible shared rides and insert them in the DB.\\\hline
-			Output Condition & All the users involved are notified about the matching of users for shared rides, therefore they are updated on the situation of the shared ride.\\\hline
-			Exceptions & NULL\\\hline
-		\end{tabular}
-	\end{center}	
+%	\pagebreak
+%	
+%	\paragraph{Passenger joins a shared ride}
+%	\begin{center}
+%		\begin{tabular}{| l | p{9cm} |}\hline
+%			Actor & Passenger\\\hline
+%			Goal & {[}G14{]} \\\hline
+%			Input Condition & \begin{enumerate}
+%				\item The users involved in the shared ride must be already logged in.
+%				\item The users must have an active reservation in which they have expressly accepted the shared ride option.
+%				\item The active reservation must have the same origin and destination for all the users.
+%			\end{enumerate}\\\hline
+%			Event Flow & The system recognizes the possible shared rides and insert them in the DB.\\\hline
+%			Output Condition & All the users involved are notified about the matching of users for shared rides, therefore they are updated on the situation of the shared ride.\\\hline
+%			Exceptions & NULL\\\hline
+%		\end{tabular}
+%	\end{center}	
 	
 	\pagebreak
 	
@@ -785,7 +780,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Passenger\\\hline
-			Goal & {[}G15{]} \\\hline
+			Goal & {[}G14{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & The user accesses the page of the history of his/her own rides.\\\hline
 			Output Condition & The system returns the result of the corresponding query on the DB to the user.\\\hline
@@ -799,7 +794,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Taxi driver\\\hline
-			Goal & {[}G16{]} \\\hline
+			Goal & {[}G15{]} \\\hline
 			Input Condition & The user must be already registered (inserted in the system by the administrator).\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the login page.
@@ -819,7 +814,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Taxi driver\\\hline
-			Goal & {[}G17{]} \\\hline
+			Goal & {[}G16{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the home page for the driver.
@@ -836,7 +831,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Taxi driver\\\hline
-			Goal & {[}G18{]} \\\hline
+			Goal & {[}G17{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the home page for the driver.
@@ -872,7 +867,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Administrator\\\hline
-			Goal & {[}G19{]} \\\hline
+			Goal & {[}G18{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the home page for the administrator.
@@ -908,7 +903,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Administrator\\\hline
-			Goal & {[}G20{]} \\\hline
+			Goal & {[}G19{]} \\\hline
 			Input Condition & The user must be already logged in.\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the home page for the administrator.
@@ -1012,12 +1007,12 @@
 	
 	\subsubsection{Performance Requirements} The service must guarantee an high level of usability, also in terms of processing and response time of the several functions. The objective is to avoid the situation in which the server represents the bottleneck of the entire system when there are many connections at the same time. To prevent this the server must be correctly chosen and calibrated to handle a large amount of connections in situations of heavy loads. 
 	
-	\subsubsection{Design Constraints}
-		
-	\subsubsection{Standards compliance}
-	
-	\subsubsection{Hardware limitations}
-	
+%	\subsubsection{Design Constraints}
+%		
+%	\subsubsection{Standards compliance}
+%	
+%	\subsubsection{Hardware limitations}
+%	
 	\subsubsection{Software System Attributes}
 	
 	\paragraph{Availability \& Reliability} \mts{} system must be always accessible. The server that hosts the service is online 24/7 and is equipped with an autonomous power supply backup system.
@@ -1026,9 +1021,9 @@
 	
 	\paragraph{Maintainability} The software itself does not require any particular periodic update, unless the taxi company wants to add some functionalities. The only feature that could require some maintenance are the APIs offered by the system, but again, in this document and all the other ones related to \mts{} that will be attached, future developers can find all what they could need to understand how the system works and then how to update some sections of the software. 
 
-	\paragraph{Portability}
-	
-	\subsection{Other Requirements}
+%	\paragraph{Portability}
+%	
+%	\subsection{Other Requirements}
 	
 	\pagebreak
 
@@ -1051,9 +1046,9 @@
 	
 	\subsection{Hours of work} The time spent to redact this document:
 	\begin{itemize}
-		\item Baldassari Alessandro: xx hours.
-		\item Bendin Alberto: xx hours.
-		\item Giarola Francesco: xx hours.
+		\item Baldassari Alessandro: 35 hours.
+		\item Bendin Alberto: 35 hours.
+		\item Giarola Francesco: 35 hours.
 	\end{itemize}
 	
 	
