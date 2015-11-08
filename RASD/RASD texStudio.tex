@@ -183,7 +183,7 @@
 		
 		
 	\subsection{Proposed system}
-	The enterprise web application is going to be developed from scratch, and will also provide the counterpart mobile version for all the main smartphone OSs on the market nowadays. It will be composed of a server, which runs the business logic, generates dynamic web pages and access to the DBMS and on the other side there will be several clients who interact with the server using a web browser or the mobile application.
+	The enterprise web application is going to be developed from scratch, and will also provide the counterpart mobile version for all the main smartphone OSs on the market nowadays. It will be composed of a server, which runs the business logic, generates dynamic web pages and accesses the DBMS and on the other side there will be several clients who interact with the server using a web browser or the mobile application.
 	
 	\subsection{Definitions, acronyms, and abbreviations}
 	
@@ -191,7 +191,7 @@
 		\begin{itemize}
 			\item Client (or Customer, Taxi passenger): is the user of the application that wants to use the taxi service.
 			\item Taxi driver (or Taxi owner, employee): is the user of the application that together with the back-end system makes the service functional and constantly updated, s/he controls the work which is assigned to herself/himself accepting or rejecting the proposals of clients that the system forwards. 
-			\item Guest (or Guest): is a non-registered user.
+			\item Guest (or Visitor): is a non-registered user.
 			\item Administrator: manages the system on behalf of the taxi company and of the government of the city.
 			\item Ride: is a single taxi ride from a location to another one.
 			\item Shared ride: a ride shared with other passengers arranged by the system; in this way clients that have common taxi lines can shrink the cost of the single ride.
@@ -201,7 +201,6 @@
 			\item Zone: the city is divided in several zones to better allocate and coordinate the taxi fleet.
 			\item Request: it is intended as a real time call of a passenger that simply provides his/her own pickup position for an immediate service, without previous reservation.
 			\item Reservation: it is a previously planned request, for which the client can specify the date and time, the origin and destination, the willingness to share the ride.
-			\item Locations provided buy users are always correct.
 		\end{itemize}
 		
 	\subsubsection{Acronyms}
@@ -269,9 +268,11 @@
 			\item The rides that can be shared are only the reserved ones.
 			\item Passengers sharing a ride will be matched only if they share the same pick up and destination zone.
 			\item Once the ride has been created it's only possible to cancel it; thus if the passenger wants to modify a request he will need to delete the old and create a new one.
-			\item Passengers that want to share the ride can be matched only if they share the same pick up and destination zone.
+			
+			
+			
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
-			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger or the employee.
+			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger, employee or administrator.
 			\item There are no dependencies between users.
 			\item Passengers are not allowed to book overlapping taxi rides.
 			\item Passengers pay only using their valid credit or debit card by linking it to their own profile.
@@ -283,6 +284,7 @@
 			\item All the actions performed by a taxi driver during working hours will be performed through the mobile application.
 			\item Taxi drivers are assigned the zone by the system.
 			\item Each taxi driver is associated with only one taxi.
+			\item Locations provided by users are always correct.
 		\end{itemize}
 	
 %	\pagebreak
@@ -839,7 +841,10 @@
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Actor & Taxi driver\\\hline
 			Goal & {[}G17{]} \\\hline
-			Input Condition & The user must be already logged in.\\\hline
+			Input Condition & \begin{enumerate}
+				\item The user must be already logged in.
+				\item The user's availability must be set to ``on''.
+			\end{enumerate}\\\hline
 			Event Flow & \begin{enumerate}
 				\item \mts{} shows the home page for the driver.
 				\item \mts{} notifies the user about a job proposal that could fit him/her.	
