@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.0.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.0.1.1}{Purpose}{section.0.1}% 2
+\BOOKMARK [2][-]{subsection.0.1.2}{Scope}{section.0.1}% 3
+\BOOKMARK [2][-]{subsection.0.1.3}{Definitions, Acronyms, Abbreviations}{section.0.1}% 4
+\BOOKMARK [2][-]{subsection.0.1.4}{Reference Documents}{section.0.1}% 5
+\BOOKMARK [2][-]{subsection.0.1.5}{Document Structure}{section.0.1}% 6
+\BOOKMARK [1][-]{section.0.2}{Architectural Design}{}% 7
+\BOOKMARK [2][-]{subsection.0.2.1}{Overview}{section.0.2}% 8
+\BOOKMARK [2][-]{subsection.0.2.2}{High level components and their interaction}{section.0.2}% 9
+\BOOKMARK [2][-]{subsection.0.2.3}{Component view}{section.0.2}% 10
+\BOOKMARK [2][-]{subsection.0.2.4}{Deployment view}{section.0.2}% 11
+\BOOKMARK [2][-]{subsection.0.2.5}{Runtime view}{section.0.2}% 12
+\BOOKMARK [2][-]{subsection.0.2.6}{Component interfaces}{section.0.2}% 13
+\BOOKMARK [2][-]{subsection.0.2.7}{Selected architectural styles and patterns}{section.0.2}% 14
+\BOOKMARK [2][-]{subsection.0.2.8}{Other design decisions}{section.0.2}% 15
+\BOOKMARK [1][-]{section.0.3}{Algorithm design}{}% 16
+\BOOKMARK [1][-]{section.0.4}{User Interface Design}{}% 17
+\BOOKMARK [1][-]{section.0.5}{Requirements Traceability}{}% 18
+\BOOKMARK [1][-]{section.0.6}{References}{}% 19

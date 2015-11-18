@@ -1,0 +1,134 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[a4paper,11pt]{report} %article
+
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat}
+
+
+%\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
+
+%command to substitute "{\em MyTaxyService}" with "\mts"
+\newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
+\geometry{margin=1in}
+
+%header & footer style
+\fancyhead{}
+\fancyhead[C]{\iffloatpage{}{\slshape\rightmark}}
+\fancyfoot{}
+\fancyfoot[C]{\iffloatpage{}{\thepage}}
+\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\renewcommand{\footrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\ #1}}
+
+%tOC style: sections bold 
+\usepackage[subfigure]{tocloft}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}% page numbers in bold
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+%to keep the links of the TOC invisible
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2: ``{\em myTaxyService}'' \\ \bigskip 
+\textbf{D}esign \textbf{D}ocument}
+\author{Alessandro Baldassari (mat. 841561) \\ Alberto Bendin (mat. 841734) \\ Francesco Giarola (mat. 840554)}
+
+
+%to avoid the hyphenation of the name of the software
+\hyphenation{myTaxyService}
+
+\begin{document}
+	
+	%fIRSTPAGE
+	
+	%pOLIMI-LOGO
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=1\linewidth]{"Pictures/polimi-logo"}
+		\label{fig:polimi-logo}
+	\end{figure}
+	
+	\maketitle
+		
+	
+	%bLANK-PAGE
+	\thispagestyle{empty}
+	\clearpage\mbox{}\clearpage
+
+	
+	
+	
+	%to number the section from 1 instead of 0.1 with the report class, without using the article class. Avoid the forced use of chapters to number from 1. Tailored for REPORT class!!!
+	\renewcommand*\thesection{\arabic{section}}
+	\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}}
+	\renewcommand*\thesubsubsection{%
+	\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
+	}
+	\setcounter{secnumdepth}{4}
+	\setcounter{tocdepth}{4}
+		
+	
+	%to change the page numbering from roman in the toc to arabic
+	\pagenumbering{roman}
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	
+	
+	%to insert the writing "Page" above page numbers in the TOC
+	\addtocontents{toc}{~\hfill\textrm{Page}\par}
+	
+	\section{Introduction}
+	
+	\subsection{Purpose} This document presents the architecture on which \mts{} will be developed; it describes the decisions taken during the design process and justifies them. The whole design process is described including also the improvements and modifications to provide additional valuable informations in case of future changes of the architecture structure.
+	
+	\subsection{Scope} Accordingly to the definition of the architecture design this document will focus on the non functional requirements of \mts{}. 
+	Since the system architecture  defines constraints on the implementation this document will  be  used to provide fundamental guidelines in the development phase of \mts{}.
+	
+	\subsection{Definitions, Acronyms, Abbreviations}
+	
+	\subsection{Reference Documents}
+	\begin{itemize}
+		\item Specification document: myTaxiService project
+		\item Template for the Design Document
+		\item IEEE Std 1016™-2009 - IEEE Standard on Design Descriptions
+		\item Requirements Analysis and Specification Document for \mts{}
+	\end{itemize}
+	
+	\subsection{Document Structure}
+	
+	\section{Architectural Design}
+	
+	\subsection{Overview}
+	
+	\subsection{High level components and their interaction}
+	
+	\subsection{Component view}
+	
+	\subsection{Deployment view}
+	
+	\subsection{Runtime view}
+	
+	\subsection{Component interfaces}
+	
+	\subsection{Selected architectural styles and patterns}
+	
+	\subsection{Other design decisions}
+
+	\section{Algorithm design}
+	
+	\section{User Interface Design}
+	
+	\section{Requirements Traceability}
+	
+	\section{References}
+\end{document}
