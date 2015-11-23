@@ -44,7 +44,8 @@
 
 
 %to set the nested bullet lists style
-\renewcommand{\labelitemii}{$\circ$}
+%\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemii}{}
 \renewcommand{\labelitemiii}{$\diamond$}
 
 %to avoid the hyphenation of the name of the software
@@ -128,7 +129,7 @@
 	\subsection{Document Structure} This  document  specifies  the  architecture  of  the  system  using  different levels of detail. It also describes the architectural decisions and justifies them. The design was  developed  in  a  top-­‐down  way, then the  document  reflects this approach.
 	The document is organized in the following sections:
 	\begin{enumerate}
-		\item Introduction
+		\item Introduction\\
 		Provides a synopsis of the architectural descriptions.
 		\item Architectural design
 		\item Algorithm design
@@ -147,9 +148,9 @@
 				\includegraphics[keepaspectratio=true,scale=0.57]{Pictures/4tier}}
 		\end{minipage}	
 		\begin{enumerate}
-			\item \textbf{Client Tier}: contains Application Clients and Web Browsers and it is the layer designed to interact directly with the actors. As our project will be a web application the client will use a web browser to access pages;
-			\item \textbf{Web Tier}: contains the Servlets and Dynamic Web Pages that needs to be elaborated. This tier receives the requests from the client tier and forwards the pieces of data collected to the business tier waiting for processed data to be sent to the client tier, eventually formatted;
-			\item \textbf{Business Tier}: contains the Java Beans, which contain the business logic of the application, and Java Persistence Entities;
+			\item \textbf{Client Tier}: contains Application Clients and Web Browsers and it is the layer designed to interact directly with the actors. This project is a web and mobile application, then the client will use a web browser or a smartphone to access pages.
+			\item \textbf{Web Tier}: contains the Servlets and Dynamic Web Pages that needs to be elaborated. This tier receives the requests from the client tier and forwards the pieces of data collected to the business tier waiting for processed data to be sent to the client tier, eventually formatted.
+			\item \textbf{Business Tier}: contains the Java Beans, which contain the business logic of the application, and Java Persistence Entities.
 			\item \textbf{EIS Tier}: contains the data source. In our case, it is the database allowed to store all the relevant data and to retrieve them.									
 		\end{enumerate}
 	We can also consider the second and third tier together, in this case the architecture becomes a three-tier one with \textit{client tier}, \textit{business logic tier} and \textit{persistence tier}.\\
@@ -158,77 +159,107 @@
 	\subsection{High level components and their interaction} 
 	
 	\subsubsection{Identifying sub-systems} We separate the functionalities of our system into these functional areas:
+%	\begin{itemize}
+%		\item Sign-up
+%		\item Login
+%		\item User sub-system
+%			\begin{itemize}
+%				\item Passengers
+%				\begin{itemize}
+%					\item New request manager
+%					\item New reservation manager
+%					\item Rides manager
+%					\begin{itemize}
+%						\item Active rides
+%						\item History
+%					\end{itemize}
+%					\item Profile manager
+%					\item Notification manager
+%				\end{itemize}
+%				\item Taxi drivers
+%				\begin{itemize}
+%					\item Availability manager
+%					\item Jobs manager
+%					\item Notification manager
+%				\end{itemize}
+%				\item Administrator
+%				\begin{itemize}
+%					\item Drivers manager
+%					\begin{itemize}
+%						\item Add driver
+%						\item Edit driver
+%						\item Delete driver
+%					\end{itemize}
+%				\end{itemize}
+%			\end{itemize}
+%	\end{itemize}
 	\begin{itemize}
-		\item Sign-up
-		\item Login
-		\item User sub-system
+		\item myTaxiService
 			\begin{itemize}
-				\item Passengers
-				\begin{itemize}
-					\item New request manager
-					\item New reservation manager
-					\item Rides manager
-					\begin{itemize}
-						\item Active rides
-						\item History
-					\end{itemize}
-					\item Profile manager
-					\item Notification manager
-				\end{itemize}
-				\item Taxi drivers
-				\begin{itemize}
-					\item Availability manager
-					\item Jobs manager
-					\item Notification manager
-				\end{itemize}
-				\item Administrator
-				\begin{itemize}
-					\item Drivers manager
-					\begin{itemize}
-						\item Add driver
-						\item Edit driver
-						\item Delete driver
-					\end{itemize}
-				\end{itemize}
+				\item This component describes the system we were asked to implement.
+			\end{itemize} 
+		\item Users
+			\begin{itemize}
+				\item This component represents in general the users that will use the service.
+			\end{itemize}
+		\item Notification service
+			\begin{itemize}
+				\item This component represents the notification mechanism our system will use (text-messages, emails and push notifications).
+			\end{itemize}
+		\item Payment service
+			\begin{itemize}
+				\item This component represents the external service in charge of managing the payments.
+			\end{itemize}
+		\item Third party apps
+			\begin{itemize}
+				\item This component represents in general the external apps that can possibly connect to the system via our public web APIs.
 			\end{itemize}
 	\end{itemize}
-	The following schema shows the above-mentioned division of the system.\\
+	\hspace{2cm} The following schema shows the above-mentioned components and their interaction.\\
 		\begin{minipage}{\linewidth}
 			\vspace*{0.35cm}
 			\makebox[\linewidth]{
-			\includegraphics[keepaspectratio=true,scale=0.83]{Pictures/VisioSystemComponentsColors}}
+			\includegraphics[keepaspectratio=true,scale=0.83]{Pictures/VisioSystemComponentsHighLevel}}
 		\end{minipage}
 	
-	\subsubsection{General Package design}
-	In this section the general design schemas are presented specifying the basic relations between packages, use cases and users. \\
-	Each layer contains a set of functionalities satisfying the correspondent requirements. Thus we find a mapping between the use cases and the package design of the system.  
-	Considering the three-tier view of the architecture three packages are identified: 
-	\begin{itemize}
-		\item User UI: this  package  is  in  charge  of  interacting  with  the  user; it  obtains  the  user  requests, sends these to the business logic package, obtains the information needed from the latter and displays them to the user accordingly. In general the package contains the user interfaces.
-		\item Business  logic: this package is in charge of receiving and processing the User UI package requests, accessing the Persistence package when needed and sending a response accordingly. 
-		\item Persistence: this package is in charge of managing the data request from the Business logic package.
-	\end{itemize}
-	The  main  users:  Administrator,  passengers  and  taxi  drivers  directly  access the  User  UI  package  but  cannot see the other packages. \\
-	\begin{minipage}{\linewidth}
-%		\vspace*{-0.35cm}
-		\makebox[\linewidth]{
-		\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/Packages}}
-	\end{minipage}	
+%	\subsubsection{General Package design}
+%	In this section the general design schemas are presented specifying the basic relations between packages, use cases and users. \\
+%	Each layer contains a set of functionalities satisfying the correspondent requirements. Thus we find a mapping between the use cases and the package design of the system.  
+%	Considering the three-tier view of the architecture three packages are identified: 
+%	\begin{itemize}
+%		\item User UI: this  package  is  in  charge  of  interacting  with  the  user; it  obtains  the  user  requests, sends these to the business logic package, obtains the information needed from the latter and displays them to the user accordingly. In general the package contains the user interfaces.
+%		\item Business  logic: this package is in charge of receiving and processing the User UI package requests, accessing the Persistence package when needed and sending a response accordingly. 
+%		\item Persistence: this package is in charge of managing the data request from the Business logic package.
+%	\end{itemize}
+%	The  main  users:  Administrator,  passengers  and  taxi  drivers  directly  access the  User  UI  package  but  cannot see the other packages. \\
+%	\begin{minipage}{\linewidth}
+%%		\vspace*{-0.35cm}
+%		\makebox[\linewidth]{
+%		\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/Packages}}
+%	\end{minipage}	
 	
 	
 	\subsection{Component view}
-	The inner packages are described as follows:\\
-	\begin{itemize}
-		\item User UI:	this set of sub-packages is responsible for encapsulating the user's actions and forwarding information requests to the Business Logic sub-packages.
-		\item Business logic: this set of sub-packages is responsible for handling requests from the User UI package, processing them and sending back a response. These packages may access the Persistence package.
-		\item Persistence: this set of sub-packages contains the data model for the system. It accepts requests from the Business Logic package.
-	\end{itemize}
-	A more detailed view of the system:\\
+%	The inner packages are described as follows:\\
+%	\begin{itemize}
+%		\item User UI:	this set of sub-packages is responsible for encapsulating the user's actions and forwarding information requests to the Business Logic sub-packages.
+%		\item Business logic: this set of sub-packages is responsible for handling requests from the User UI package, processing them and sending back a response. These packages may access the Persistence package.
+%		\item Persistence: this set of sub-packages contains the data model for the system. It accepts requests from the Business Logic package.
+%	\end{itemize}
+%	A more detailed view of the system:\\
+%	\begin{minipage}{\linewidth}
+%%		\vspace*{-0.35cm}
+%		\makebox[\linewidth]{
+%		\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/PackagesDetails}}
+%	\end{minipage}
+
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
-		\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/PackagesDetails}}
-	\end{minipage}
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/ComponentView}}
+	\end{minipage}	
+
+	
 	
 	\subsection{Deployment view}
 	
