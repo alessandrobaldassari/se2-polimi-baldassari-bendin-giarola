@@ -9,16 +9,19 @@
 \contentsline {subsection}{\numberline {2.1}Overview}{2}{subsection.0.2.1}
 \contentsline {subsection}{\numberline {2.2}High level components and their interaction}{3}{subsection.0.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Identifying sub-systems}{3}{subsubsection.0.2.2.1}
-\contentsline {subsection}{\numberline {2.3}Component view}{4}{subsection.0.2.3}
-\contentsline {subsection}{\numberline {2.4}Deployment view}{5}{subsection.0.2.4}
-\contentsline {subsection}{\numberline {2.5}Runtime view}{5}{subsection.0.2.5}
-\contentsline {subsection}{\numberline {2.6}Component interfaces}{5}{subsection.0.2.6}
-\contentsline {subsection}{\numberline {2.7}Selected architectural styles and patterns}{5}{subsection.0.2.7}
-\contentsline {subsection}{\numberline {2.8}Other design decisions}{5}{subsection.0.2.8}
-\contentsline {section}{\numberline {3}Algorithm design}{5}{section.0.3}
-\contentsline {section}{\numberline {4}User Interface Design}{5}{section.0.4}
-\contentsline {section}{\numberline {5}Requirements Traceability}{5}{section.0.5}
-\contentsline {section}{\numberline {6}References}{5}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{5}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{5}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{5}{subsection.0.7.2}
+\contentsline {subsubsection}{\numberline {2.2.2}General Package design}{4}{subsubsection.0.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Component view}{5}{subsection.0.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Design Level Model}{5}{subsubsection.0.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Detailed Package Design}{6}{subsubsection.0.2.3.2}
+\contentsline {subsection}{\numberline {2.4}Deployment view}{8}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Runtime view}{8}{subsection.0.2.5}
+\contentsline {subsection}{\numberline {2.6}Component interfaces}{8}{subsection.0.2.6}
+\contentsline {subsection}{\numberline {2.7}Selected architectural styles and patterns}{8}{subsection.0.2.7}
+\contentsline {subsection}{\numberline {2.8}Other design decisions}{8}{subsection.0.2.8}
+\contentsline {section}{\numberline {3}Algorithm design}{8}{section.0.3}
+\contentsline {section}{\numberline {4}User Interface Design}{8}{section.0.4}
+\contentsline {section}{\numberline {5}Requirements Traceability}{8}{section.0.5}
+\contentsline {section}{\numberline {6}References}{8}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{8}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{8}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{8}{subsection.0.7.2}
