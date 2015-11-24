@@ -1,0 +1,29 @@
+We do not have a detailed description of the content of each section. I presented them quickly during the last lab. I try to provide some suggestions here, but you should reason on your own and make your own idea on what you should include in each section. 
+Section 4.B: here you can introduce the high level components of your architecture (in our basic example in the slides about design you find these in slide 7) and describe the main interaction between them (no details here. You can say why some components talk to each other, why, if the communication is synchronous or asynchronous, any other info you think is useful at this point). 
+Section 4.C: here you have a refinement of what you have in Section 4.B and identify sub-components. For instance, the diagram in slide 6 could be a diagram showing a  component view
+Section 4.D: this is what you have in slide 8, that is, the identification of the artifact that need to be deployed to have the system working
+Section 4.E: this is what you have in slide 9 plus sequence diagrams describing the way components behave in order to accomplish a certain activity
+Section 4.F: here you define the interfaces of your components, that is, which operations they offer to the external world, their meaning, any input and output parameter (name, possible set of values/type)
+Section 4.G and 4.H are meant to include any explanation of the choices you have made and of their rationale. 
+
+Section 5 contains the definition of any algorithm that you think it is important to describe for your system
+
+Section 6 and 7 contain a short explanation. 
+
+
+MVC
+explicit client-server architecture
+architecture event-driven for taxi availability, for requests....asynchronous
+multi-thread to manage the queues in the zones, to manage the creation of the taxi
+
+
+
+patterns di creazione:
+-factory methods: utenti,  taxi, ride, request. (builder per request+decorator che la trasforma in ride?)
+pattern structural:
+-facade??
+
+pattern behavioral:
+-chain of responsibility for turning the request into a ride
+-iterator for taxi queue
+-observer for taxi availability change
