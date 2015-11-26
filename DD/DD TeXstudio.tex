@@ -115,8 +115,15 @@
 		\item RASD: Requirements Analysis and Specification Document
 		\item ER: Entity Relationship
 		\item EIS: Enterprise Information System
+		\item API: Application Programming Interface
 	\end{itemize}
 	The following definitions are used in this document:
+	\begin{itemize}
+		\item Thin client: is a computer that depends heavily on another computer (its server) to fulfill its computational roles.
+		\item Fat server: is a type of server that provides most of the functionality to a client's machine within a client/server computing architecture.
+		\item Event-driven architecture:  is a software architecture pattern promoting the production, detection, consumption of, and reaction to events, that is a change of state of an object.
+		\item Availability: is the ``status'' of a taxi driver, s/he can be available to take care of new jobs, thus the system should forward compatible requests, or can be unavailable, or occupied, busy, meaning that the taxi is temporarily off line with respect to the system, meaning that the system should not consider that taxi for requests assignment. The availability is set to ``off'' also when the taxi is carrying passengers.
+	\end{itemize}
 	
 	\subsection{Reference Documents}
 	\begin{itemize}
@@ -141,7 +148,9 @@
 	
 	\section{Architectural Design}
 	
-	\subsection{Overview} This  section  of  the  design  document  provides  a  general  description  of  the  design  of  the  system  and  its  processes;  it includes  the  general  design  context,  the  general  approach  and  describes  the overall design.\\JEE has a ``four-tier'' architecture divided as shown in the picture below:\\
+	\subsection{Overview} This  section  of  the  design  document  provides  a  general  description  of  the  design  of  the  system  and  its  processes;  it includes  the  general  design  context,  the  general  approach  and  describes  the overall design.\\
+	The architectural style adopted by \mts{} is the well-known ``client-server'', where the client is a ``thin client'' and the server is a ``fat server''. The architecture is ``event-driven'', thus the interaction between the components takes place through events, in other words asynchronous triggers. \\	
+	JEE has a ``four-tier'' architecture divided as shown in the picture below:\\
 		\begin{minipage}{\linewidth}
 %			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
@@ -292,12 +301,75 @@
 	\subsection{Component interfaces}
 	
 	\subsection{Selected architectural styles and patterns}
+
+	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
+	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
+	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All of these message-events are carried out by the notification manager as notifications.\\
+	\textcolor{red}{Decisions list:\begin{itemize}
+			\item patterns
+		\end{itemize}}	
 	
 	\subsection{Other design decisions}
 
 	\section{Algorithm design}
+	\textcolor{red}{Algorithms list:\begin{itemize}
+			\item Queue managing when driver accept/rejects a job
+			\item fee managing
+		\end{itemize}}
 	
 	\section{User Interface Design}
+	This section is the same featured in the RASD.\\
+	Shown below are some mock-ups that preview the user interface of the main features the system shall provide.
+	
+	\pagebreak
+	\paragraph{Sign-up} This page presents the sign up form for the clients. The user will need to provide his/her personal data, home and email addresses, phone number, favorite payment option, favorite notification type.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/Signup}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Login} This page shows the login form for the final users.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/Login}
+	\end{center}
+	\pagebreak
+	
+	\pagebreak
+	\paragraph{Call a taxi} The user can ask for a taxi providing the pickup location through a complete address or through the automatic detection of his/her location thanks to the browser or the GPS. The user can also choose from an history of ``recent addresses''.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/CallATaxi}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Plan a ride} The user can plan a ride in advance providing the pickup and drop off locations, the date and time, the willingness to share the ride and the number of passengers.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/PlanAndBookARide}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Your reservations} The user can see both the active reservations and the past ones. S/he can edit the active reservations within the established time frame before the meeting time.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/YourReservations}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Your profile} The user can edit the personal profile modifying the password, phone number, email address, permanent address, payment method and notification type.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/AccountPage}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Manage jobs} The taxi driver's home page: s/he can accept or reject the requests forwarded by the system and set her/his own ``availability''.
+	\begin{center}
+		\includegraphics[width=0.4\linewidth]{Pictures/DriverPage}
+	\end{center}
+	\pagebreak
+	
+	\paragraph{Administrator panel} The administrator's home page: s/he can monitor the whole system or manage taxi drivers inserting new employees in the system DB or modifying/deleting existing ones.
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{Pictures/AdminPage}
+	\end{center}
+	\pagebreak	
 	
 	\section{Requirements Traceability}
 	
