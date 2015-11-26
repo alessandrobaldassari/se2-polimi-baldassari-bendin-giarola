@@ -18,17 +18,22 @@
 \BOOKMARK [2][-]{subsection.0.2.7}{Selected architectural styles and patterns}{section.0.2}% 18
 \BOOKMARK [2][-]{subsection.0.2.8}{Other design decisions}{section.0.2}% 19
 \BOOKMARK [1][-]{section.0.3}{Algorithm design}{}% 20
-\BOOKMARK [1][-]{section.0.4}{User Interface Design}{}% 21
-\BOOKMARK [2][-]{paragraph.0.4.0.0.1}{Sign-up}{section.0.4}% 22
-\BOOKMARK [3][-]{paragraph.0.4.0.0.2}{Login}{paragraph.0.4.0.0.1}% 23
-\BOOKMARK [4][-]{paragraph.0.4.0.0.3}{Call a taxi}{paragraph.0.4.0.0.2}% 24
-\BOOKMARK [4][-]{paragraph.0.4.0.0.4}{Plan a ride}{paragraph.0.4.0.0.2}% 25
-\BOOKMARK [4][-]{paragraph.0.4.0.0.5}{Your reservations}{paragraph.0.4.0.0.2}% 26
-\BOOKMARK [4][-]{paragraph.0.4.0.0.6}{Your profile}{paragraph.0.4.0.0.2}% 27
-\BOOKMARK [4][-]{paragraph.0.4.0.0.7}{Manage jobs}{paragraph.0.4.0.0.2}% 28
-\BOOKMARK [4][-]{paragraph.0.4.0.0.8}{Administrator panel}{paragraph.0.4.0.0.2}% 29
-\BOOKMARK [1][-]{section.0.5}{Requirements Traceability}{}% 30
-\BOOKMARK [1][-]{section.0.6}{References}{}% 31
-\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 32
-\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 33
-\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 34
+\BOOKMARK [2][-]{subsection.0.3.1}{Queue managing and taxi assignment}{section.0.3}% 21
+\BOOKMARK [2][-]{subsection.0.3.2}{Zone assignment}{section.0.3}% 22
+\BOOKMARK [2][-]{subsection.0.3.3}{Taxi availability}{section.0.3}% 23
+\BOOKMARK [2][-]{subsection.0.3.4}{Ride creation}{section.0.3}% 24
+\BOOKMARK [2][-]{subsection.0.3.5}{Payment}{section.0.3}% 25
+\BOOKMARK [1][-]{section.0.4}{User Interface Design}{}% 26
+\BOOKMARK [2][-]{paragraph.0.4.0.0.1}{Sign-up}{section.0.4}% 27
+\BOOKMARK [3][-]{paragraph.0.4.0.0.2}{Login}{paragraph.0.4.0.0.1}% 28
+\BOOKMARK [4][-]{paragraph.0.4.0.0.3}{Call a taxi}{paragraph.0.4.0.0.2}% 29
+\BOOKMARK [4][-]{paragraph.0.4.0.0.4}{Plan a ride}{paragraph.0.4.0.0.2}% 30
+\BOOKMARK [4][-]{paragraph.0.4.0.0.5}{Your reservations}{paragraph.0.4.0.0.2}% 31
+\BOOKMARK [4][-]{paragraph.0.4.0.0.6}{Your profile}{paragraph.0.4.0.0.2}% 32
+\BOOKMARK [4][-]{paragraph.0.4.0.0.7}{Manage jobs}{paragraph.0.4.0.0.2}% 33
+\BOOKMARK [4][-]{paragraph.0.4.0.0.8}{Administrator panel}{paragraph.0.4.0.0.2}% 34
+\BOOKMARK [1][-]{section.0.5}{Requirements Traceability}{}% 35
+\BOOKMARK [1][-]{section.0.6}{References}{}% 36
+\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 37
+\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 38
+\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 39

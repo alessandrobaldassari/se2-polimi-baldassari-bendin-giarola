@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -312,10 +312,53 @@
 	\subsection{Other design decisions}
 
 	\section{Algorithm design}
-	\textcolor{red}{Algorithms list:\begin{itemize}
-			\item Queue managing when driver accept/rejects a job
-			\item fee managing
-		\end{itemize}}
+	Here are some distinctive algorithms of \mts{} presented with both pseudocode and flowchart diagrams.
+	\subsection{Queue managing and taxi assignment}
+	This algorithm depicts what happens when the system assigns a ride to a driver. It sends the proposal to the first driver of the queue in the zone where the client is located; if the driver accepts the job s/he is removed from the queue and the assignation is completed, otherwise the system forwards the request to the second driver in the queue and places the first one at the bottom of the queue. This is repeated until a driver accepts the job. \\
+	\lstinputlisting[language=C]{Pseudocode/QueueManager.c}
+	\begin{minipage}{\linewidth}
+%			\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/QueueManager}}
+	\end{minipage}
+	
+	\pagebreak;
+	
+	\subsection{Zone assignment}
+	This algorithm depicts what happens when the system assigns the taxi to a specific zone according to the taxi's current position obtained through the GPS sensor of the driver's phone. When the taxi is assigned it enters the queue at the bottom.\\
+	\lstinputlisting[language=C]{Pseudocode/QueueManager.c}
+	\begin{minipage}{\linewidth}
+%			\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/ZoneAssignment}}
+	\end{minipage}	
+	
+	\subsection{Taxi availability}
+	This algorithm depicts what happens when the driver switches his/her own availability. If s/he turns it \textit{on} then the system will proceed with the zone assignment according to the position, while if the driver switches the availability \textit{off} the system will simply remove him/her from the current queue.\\
+	\lstinputlisting[language=C]{Pseudocode/Availability.c}
+	\begin{minipage}{\linewidth}
+%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/Availability}}
+	\end{minipage}		
+	
+	\subsection{Ride creation}
+	This algorithm depicts what happens when the system creates a ride based on a request or a reservation; this happens 30 seconds after the arrival of the request and 10 minutes before the meeting time for the reservation. For the request the process is straightforward and it involves the taxi allocation and the notification to all the users involved; the same is for the reservation without the sharing option. On the contrary when a ride is reserved with the possibility of sharing the trip the system must look for possible matches with same pick up and drop off zone and same date and time; if any compatible match is found then the system computes the total number of passengers. If there is enough room on the taxi for all the passengers then a shared ride is created, otherwise the system proceeds with the standard ride.\\
+	\lstinputlisting[language=C]{Pseudocode/RideCreation.c}
+	\begin{minipage}{\linewidth}
+%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/RideCreation}}
+	\end{minipage}		
+	
+	\subsection{Payment}
+	This algorithm represents the way the system deducts money from the passenger's credit card. Basically it can collect the standard fare computed on the distance covered on the taxi or a penalty fee. The latter is only applied when the user deletes (or modifies) a request/reservation beyond the allowed time frame, that is within 30 seconds after the application for the request and until 10 minutes before the meeting time for the reservation. A cancellation within the allowed time window does not involve any penalty fine.\\
+	\lstinputlisting[language=C]{Pseudocode/Payment.c}
+	\begin{minipage}{\linewidth}
+%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/Payment}}
+	\end{minipage}	
 	
 	\section{User Interface Design}
 	This section is the same featured in the RASD.\\
