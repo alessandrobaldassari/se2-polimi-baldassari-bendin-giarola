@@ -97,16 +97,16 @@
 	\subsection{Purpose} This document presents the architecture on which \mts{} will be developed; it describes the decisions taken during the design process and justifies them. The whole design process is described including also the improvements and modifications to provide additional valuable informations in case of future changes of the architecture structure.
 	
 	\subsection{Scope} Accordingly to the definition of the architecture design this document will focus on the non functional requirements of \mts{}. 
-	Since the system architecture  defines constraints on the implementation this document will  be  used to provide fundamental guidelines in the development phase of \mts{}.\\ \newline
-	The system architecture will be organized in three categories corresponding to the functionalities of the different users: passengers, drivers and administrator.
-	\begin{itemize}
-		\item \textbf{Passengers} \\
-		The system allows the user to sign up, login, request or reserve a taxi with the customization of the ride. 
-		\item \textbf{Taxi drivers} \\
-		The system allows the user to login, set the ``availability'' and accept or reject jobs.
-		\item \textbf{Administrator} \\
-		The system allows the user to login, manage the drivers' list and supervise the system itself.
-	\end{itemize}
+	Since the system architecture  defines constraints on the implementation this document will  be  used to provide fundamental guidelines in the development phase of \mts{}.
+%	The system architecture will be organized in three categories corresponding to the functionalities of the different users: passengers, drivers and administrator.
+%	\begin{itemize}
+%		\item \textbf{Passengers} \\
+%		The system allows the user to sign up, login, request or reserve a taxi with the customization of the ride. 
+%		\item \textbf{Taxi drivers} \\
+%		The system allows the user to login, set the ``availability'' and accept or reject jobs.
+%		\item \textbf{Administrator} \\
+%		The system allows the user to login, manage the drivers' list and supervise the system itself.
+%	\end{itemize}
 	
 	\subsection{Definitions, Acronyms, Abbreviations}
 	The following acronyms are used in this document:
@@ -165,77 +165,45 @@
 	When the second and third tier are considered together the architecture becomes a ``three-tier'' with \textit{client tier}, \textit{business logic tier} and \textit{persistence tier}.\\
 	To design the system a top-­‐down approach is used. After the identification of the main three layers, the system is decomposed in components that capture subsets of related functionalities. For each component is specified the role in the architecture and its interactions with the rest of the system. 
 	
-	\subsection{High level components and their interaction} 
-	
 	\subsubsection{Identifying sub-systems} The functionalities of \mts{} are divided into these functional areas:
-%	\begin{itemize}
-%		\item Sign-up
-%		\item Login
-%		\item User sub-system
-%			\begin{itemize}
-%				\item Passengers
-%				\begin{itemize}
-%					\item New request manager
-%					\item New reservation manager
-%					\item Rides manager
-%					\begin{itemize}
-%						\item Active rides
-%						\item History
-%					\end{itemize}
-%					\item Profile manager
-%					\item Notification manager
-%				\end{itemize}
-%				\item Taxi drivers
-%				\begin{itemize}
-%					\item Availability manager
-%					\item Jobs manager
-%					\item Notification manager
-%				\end{itemize}
-%				\item Administrator
-%				\begin{itemize}
-%					\item Drivers manager
-%					\begin{itemize}
-%						\item Add driver
-%						\item Edit driver
-%						\item Delete driver
-%					\end{itemize}
-%				\end{itemize}
-%			\end{itemize}
-%	\end{itemize}
-
+	
 	\begin{itemize}
 		\renewcommand{\labelitemii}{}
 		\item myTaxiService
-			\begin{itemize}
-				\item This component describes the system that is going to be developed.
-			\end{itemize} 
+		\begin{itemize}
+			\item This component describes the system that is going to be developed.
+		\end{itemize} 
 		\item Users
-			\begin{itemize}
-				\item This component represents all the users that will use the service.
-			\end{itemize}
+		\begin{itemize}
+			\item This component represents all the users that will use the service.
+		\end{itemize}
 		\item Notification service
-			\begin{itemize}
-				\item This component represents the notification mechanism that the system will use (text-messages, emails and push notifications).
-			\end{itemize}
+		\begin{itemize}
+			\item This component represents the notification mechanism that the system will use (text-messages, emails and push notifications).
+		\end{itemize}
 		\item Payment service
-			\begin{itemize}
-				\item This component represents the external service in charge of managing the payments.
-			\end{itemize}
+		\begin{itemize}
+			\item This component represents the external service in charge of managing the payments.
+		\end{itemize}
 		\item Third party apps
-			\begin{itemize}
-				\item This component represents generally the external apps that can possibly connect to the system via our public web APIs.
-			\end{itemize}
+		\begin{itemize}
+			\item This component represents generally the external apps that can possibly connect to the system via our public web APIs.
+		\end{itemize}
 	\end{itemize}
 	\renewcommand{\labelitemii}{$\circ$}
 	The following schema shows the above-mentioned components and their interaction.\\
-		\begin{minipage}{\linewidth}
-			\vspace*{0.35cm}
-			\makebox[\linewidth]{
+	\begin{minipage}{\linewidth}
+		\vspace*{0.35cm}
+		\makebox[\linewidth]{
 			\includegraphics[keepaspectratio=true,scale=0.83]{Pictures/VisioSystemComponentsHighLevel}}
-			\vspace{0.35cm}
-		\end{minipage}
-	 
-	The ``notification service'', ``payment service'' and ``third party apps'' are external components that are not part of the \mts{} system, therefore they will not be discussed.
+		\vspace{0.35cm}
+	\end{minipage}
+	
+	The ``notification service'', ``payment service'' and ``third party apps'' are external components that are not part of the \mts{} system.	
+	
+	\subsection{High level components and their interaction} 
+	
+
 	
 	\subsubsection{General Package design}
 	Considering the three-tier view of the architecture three packages are identified: 
@@ -251,14 +219,26 @@
 		\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/Packages}}
 	\end{minipage}	
 	
+	\subsubsection{Detailed Package Design}
+	The inner packages are described as follows:\\
+	\begin{itemize}
+		\item User UI:	this set of sub-packages is responsible for encapsulating the user's actions and forwarding information requests to the Business Logic sub-packages.
+		\item Business logic: this set of sub-packages is responsible for handling requests from the User UI package, processing them and sending back a response. These packages may access the Persistence package.
+		\item Persistence: this set of sub-packages contains the data model for the system. It accepts requests from the Business Logic package.
+	\end{itemize}
+	A more detailed view of the system:\\
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/PackagesDetails}}
+	\end{minipage}
 	
-	\subsection{Component view}
-	\subsubsection{Design Level Model}
+	\subsubsection{High Level Component View}
 	The picture below represents the main components and interfaces of \mts{}.\\
 	\begin{minipage}{\linewidth}
-%		\vspace*{-0.35cm}
+		%		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
-		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/ComponentView}}
+			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/HighLevelComponent}}
 	\end{minipage}		
 	From the diagram above it is evident that:
 	\begin{itemize}
@@ -274,25 +254,7 @@
 		\item The connection between the ``\textit{TaxiDriver}'' and the ``\textit{Zone}''and  ``\textit{RideManagerImpl}'' classes enables the system to keep track of the availability of the taxi drivers and allows the drivers to accept or reject job proposals.
 	\end{itemize}	
 	
-	
-	
-	\subsubsection{Detailed Package Design}
-	The inner packages are described as follows:\\
-	\begin{itemize}
-		\item User UI:	this set of sub-packages is responsible for encapsulating the user's actions and forwarding information requests to the Business Logic sub-packages.
-		\item Business logic: this set of sub-packages is responsible for handling requests from the User UI package, processing them and sending back a response. These packages may access the Persistence package.
-		\item Persistence: this set of sub-packages contains the data model for the system. It accepts requests from the Business Logic package.
-	\end{itemize}
-	A more detailed view of the system:\\
-	\begin{minipage}{\linewidth}
-%		\vspace*{-0.35cm}
-		\makebox[\linewidth]{
-		\includegraphics[keepaspectratio=true,scale=0.8]{Pictures/PackagesDetails}}
-	\end{minipage}
-
-
-
-	
+	\subsection{Component view}	
 	
 	\subsection{Deployment view}
 	

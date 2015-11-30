@@ -1,0 +1,11 @@
+Patterns:
+
+Facade:
+-account
+-request manager
+
+Singleton:
+-account manager
+-taxi manager
+-payment manager
+-notification manager

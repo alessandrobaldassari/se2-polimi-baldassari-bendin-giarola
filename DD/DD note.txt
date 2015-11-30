@@ -19,7 +19,7 @@ multi-thread to manage the queues in the zones, to manage the creation of the ta
 
 
 patterns di creazione:
--factory methods: utenti,  taxi, ride, request. (builder per request+decorator che la trasforma in ride?)
+-factory methods: utenti,  taxi, ride, request. NO> (builder per request+decorator che la trasforma in ride?)
 pattern structural:
 -facade??
 
@@ -27,3 +27,16 @@ pattern behavioral:
 -chain of responsibility for turning the request into a ride
 -iterator for taxi queue
 -observer for taxi availability change
+
+-singleton: notification, payment, taxi, account manager
+
+multithreading:
+concorrenza tra accessi (request) che sono gestiti come threads che condividono accesso ai singleton
+istanza viene creata ad arrivo request e muore alla fine...ogni request gestita a se stante per il ciclo di vita della request.
+
+Pool di zone perchè sono finite le zone
+
+
+bilanciamento code
+algoritmo per coda non vuota-->correzione assunzione rasd cde mai vuote in realtà garantita dal sistema
+algoritmo prendere da code vicine gli ultimi solo quando utente mette availability su on

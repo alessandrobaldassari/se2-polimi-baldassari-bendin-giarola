@@ -3,16 +3,16 @@
 \contentsline {subsection}{\numberline {1.1}Purpose}{1}{subsection.0.1.1}
 \contentsline {subsection}{\numberline {1.2}Scope}{1}{subsection.0.1.2}
 \contentsline {subsection}{\numberline {1.3}Definitions, Acronyms, Abbreviations}{1}{subsection.0.1.3}
-\contentsline {subsection}{\numberline {1.4}Reference Documents}{2}{subsection.0.1.4}
+\contentsline {subsection}{\numberline {1.4}Reference Documents}{1}{subsection.0.1.4}
 \contentsline {subsection}{\numberline {1.5}Document Structure}{2}{subsection.0.1.5}
 \contentsline {section}{\numberline {2}Architectural Design}{2}{section.0.2}
 \contentsline {subsection}{\numberline {2.1}Overview}{2}{subsection.0.2.1}
-\contentsline {subsection}{\numberline {2.2}High level components and their interaction}{3}{subsection.0.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Identifying sub-systems}{3}{subsubsection.0.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}General Package design}{4}{subsubsection.0.2.2.2}
-\contentsline {subsection}{\numberline {2.3}Component view}{5}{subsection.0.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Design Level Model}{5}{subsubsection.0.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Detailed Package Design}{6}{subsubsection.0.2.3.2}
+\contentsline {subsubsection}{\numberline {2.1.1}Identifying sub-systems}{3}{subsubsection.0.2.1.1}
+\contentsline {subsection}{\numberline {2.2}High level components and their interaction}{4}{subsection.0.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}General Package design}{4}{subsubsection.0.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Detailed Package Design}{5}{subsubsection.0.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}High Level Component View}{7}{subsubsection.0.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Component view}{8}{subsection.0.2.3}
 \contentsline {subsection}{\numberline {2.4}Deployment view}{8}{subsection.0.2.4}
 \contentsline {subsection}{\numberline {2.5}Runtime view}{8}{subsection.0.2.5}
 \contentsline {subsection}{\numberline {2.6}Component interfaces}{8}{subsection.0.2.6}
