@@ -1,4 +1,5 @@
-for (every taxi available && not assigned in any zone)
+for (every taxi with availability == WAITING && !(assigned in any zone))
 	detect taxi position;
-	assign taxi to closest zone;
+	nearby queues length analysis;
+	select the shortest queue;
 	insert taxi at bottom of the queue;

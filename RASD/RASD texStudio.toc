@@ -82,6 +82,7 @@
 \contentsline {paragraph}{\numberline {3.5.3.1}Ride creation}{42}{paragraph.0.3.5.3.1}
 \contentsline {paragraph}{\numberline {3.5.3.2}Modification of the request}{42}{paragraph.0.3.5.3.2}
 \contentsline {paragraph}{\numberline {3.5.3.3}Cancellation of the request}{43}{paragraph.0.3.5.3.3}
+\contentsline {paragraph}{\numberline {3.5.3.4}Taxi driver availability}{43}{paragraph.0.3.5.3.4}
 \contentsline {subsection}{\numberline {3.6}Non Functional Requirements}{44}{subsection.0.3.6}
 \contentsline {subsubsection}{\numberline {3.6.1}Performance Requirements}{44}{subsubsection.0.3.6.1}
 \contentsline {subsubsection}{\numberline {3.6.2}Software System Attributes}{44}{subsubsection.0.3.6.2}

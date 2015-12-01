@@ -81,13 +81,14 @@
 \BOOKMARK [4][-]{paragraph.0.3.5.3.1}{Ride creation}{subsubsection.0.3.5.3}% 81
 \BOOKMARK [4][-]{paragraph.0.3.5.3.2}{Modification of the request}{subsubsection.0.3.5.3}% 82
 \BOOKMARK [4][-]{paragraph.0.3.5.3.3}{Cancellation of the request}{subsubsection.0.3.5.3}% 83
-\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 84
-\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 85
-\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Software System Attributes}{subsection.0.3.6}% 86
-\BOOKMARK [4][-]{paragraph.0.3.6.2.1}{Availability \046 Reliability}{subsubsection.0.3.6.2}% 87
-\BOOKMARK [4][-]{paragraph.0.3.6.2.2}{Security}{subsubsection.0.3.6.2}% 88
-\BOOKMARK [4][-]{paragraph.0.3.6.2.3}{Maintainability}{subsubsection.0.3.6.2}% 89
-\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 90
-\BOOKMARK [1][-]{section.0.5}{Appendix}{}% 91
-\BOOKMARK [2][-]{subsection.0.5.1}{Software and tools used}{section.0.5}% 92
-\BOOKMARK [2][-]{subsection.0.5.2}{Hours of work}{section.0.5}% 93
+\BOOKMARK [4][-]{paragraph.0.3.5.3.4}{Taxi driver availability}{subsubsection.0.3.5.3}% 84
+\BOOKMARK [2][-]{subsection.0.3.6}{Non Functional Requirements}{section.0.3}% 85
+\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Performance Requirements}{subsection.0.3.6}% 86
+\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Software System Attributes}{subsection.0.3.6}% 87
+\BOOKMARK [4][-]{paragraph.0.3.6.2.1}{Availability \046 Reliability}{subsubsection.0.3.6.2}% 88
+\BOOKMARK [4][-]{paragraph.0.3.6.2.2}{Security}{subsubsection.0.3.6.2}% 89
+\BOOKMARK [4][-]{paragraph.0.3.6.2.3}{Maintainability}{subsubsection.0.3.6.2}% 90
+\BOOKMARK [1][-]{section.0.4}{Alloy}{}% 91
+\BOOKMARK [1][-]{section.0.5}{Appendix}{}% 92
+\BOOKMARK [2][-]{subsection.0.5.1}{Software and tools used}{section.0.5}% 93
+\BOOKMARK [2][-]{subsection.0.5.2}{Hours of work}{section.0.5}% 94

@@ -122,7 +122,7 @@
 		\item Thin client: is a computer that depends heavily on another computer (its server) to fulfill its computational roles.
 		\item Fat server: is a type of server that provides most of the functionality to a client's machine within a client/server computing architecture.
 		\item Event-driven architecture:  is a software architecture pattern promoting the production, detection, consumption of, and reaction to events, that is a change of state of an object.
-		\item Availability: is the ``status'' of a taxi driver, s/he can be available to take care of new jobs, thus the system should forward compatible requests, or can be unavailable, or occupied, busy, meaning that the taxi is temporarily off line with respect to the system, meaning that the system should not consider that taxi for requests assignment. The availability is set to ``off'' also when the taxi is carrying passengers.
+		\item Availability: is the ``status'' of a taxi driver, s/he can be \textit{waiting} (available) to take care of new jobs, thus the system should forward compatible requests, or can be \textit{offline} (unavailable), meaning that the taxi is temporarily off line with respect to the system, thus the system should not consider that taxi for requests assignment. The driver can also be \textit{working} (busy), as a third ``status'', that is when s/he is carrying passengers.
 	\end{itemize}
 	
 	\subsection{Reference Documents}
@@ -284,11 +284,11 @@
 		\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/QueueManager}}
 	\end{minipage}
 	
-	\pagebreak;
+	\pagebreak
 	
 	\subsection{Zone assignment}
-	This algorithm depicts what happens when the system assigns the taxi to a specific zone according to the taxi's current position obtained through the GPS sensor of the driver's phone. When the taxi is assigned it enters the queue at the bottom.\\
-	\lstinputlisting[language=C]{Pseudocode/QueueManager.c}
+	This algorithm depicts what happens when the system assigns the taxi to a specific zone according to the taxi's current position obtained through the GPS sensor of the driver's phone. In particular all the zones nearby the taxi are analyzed and the zone with the shortest queue is selected. When the taxi is assigned it enters the queue at the bottom.\\
+	\lstinputlisting[language=C]{Pseudocode/ZoneAssignment.c}
 	\begin{minipage}{\linewidth}
 %			\vspace*{-0.35cm}
 		\makebox[\linewidth]{
@@ -296,7 +296,7 @@
 	\end{minipage}	
 	
 	\subsection{Taxi availability}
-	This algorithm depicts what happens when the driver switches his/her own availability. If s/he turns it \textit{on} then the system will proceed with the zone assignment according to the position, while if the driver switches the availability \textit{off} the system will simply remove him/her from the current queue.\\
+	This algorithm depicts what happens when the driver switches his/her own availability. If s/he turns it \textit{on} (\textit{waiting} to be assigned) then the system will proceed with the zone assignment according to the position, while if the driver switches the availability \textit{offline} the system will simply remove him/her from the current queue.\\
 	\lstinputlisting[language=C]{Pseudocode/Availability.c}
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
@@ -315,6 +315,7 @@
 	
 	\subsection{Payment}
 	This algorithm represents the way the system deducts money from the passenger's credit card. Basically it can collect the standard fare computed on the distance covered on the taxi or a penalty fee. The latter is only applied when the user deletes (or modifies) a request/reservation beyond the allowed time frame, that is within 30 seconds after the application for the request and until 10 minutes before the meeting time for the reservation. A cancellation within the allowed time window does not involve any penalty fine.\\
+	When the ride is carried out successfully the fare is computed on the basis of the type of ride \textit{shared} or regular.\\
 	\lstinputlisting[language=C]{Pseudocode/Payment.c}
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}

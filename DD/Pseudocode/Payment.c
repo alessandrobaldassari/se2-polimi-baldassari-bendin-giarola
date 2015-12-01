@@ -1,10 +1,11 @@
-for (every request || reservation)
-	if (request || reservation deleted before ride generation)
-		collect(nothing); //no penalty fee
+for (every ride status changed)
+	if (ride status == CANCELLED)
+		collect(penalty fee);
 	else
-		ride generated
-		if (ride cancelled)
-			collect(penalty fee);
-		else
-			ride completed;
-			collect(regular fare);
+		get Ride type;
+		if (Ride type == SHARED)
+			compute shared fare;
+		else 
+			compute regular fare;
+		collect(fare);
+	process payment;

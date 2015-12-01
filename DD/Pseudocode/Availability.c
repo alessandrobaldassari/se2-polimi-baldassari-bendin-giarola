@@ -1,5 +1,5 @@
 for (every taxi availability change detected)
-	if (on-->off)
+	if (Availability:WAITING-->Availability:OFFLINE)
 		remove driver from current queue;
 		update queue;
 	else

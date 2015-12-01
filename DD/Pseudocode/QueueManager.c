@@ -1,4 +1,4 @@
-for (every incoming request)
+for (every request turned into a ride)
 	search first taxi in queue;
 	send proposal to taxi;
 	while (job is not accepted) do

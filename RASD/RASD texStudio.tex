@@ -196,7 +196,7 @@
 			\item Ride: is a single taxi ride from a location to another one.
 			\item Shared ride: a ride shared with other passengers arranged by the system; in this way clients that have common taxi lines can shrink the cost of the single ride.
 			\item Location: are the GPS coordinates (or the street address) to unequivocally identify a place. It could be the position of a taxi, the origin or destination of a ride.
-			\item Availability: is the ``status'' of a taxi driver, s/he can be available to take care of new jobs, thus the system should forward compatible requests, or can be unavailable, or occupied, busy, meaning that the taxi is temporarily off line with respect to the system, meaning that the system should not consider that taxi for requests assignment. The availability is set to ``off'' also when the taxi is carrying passengers.
+			\item Availability: is the ``status'' of a taxi driver, s/he can be \textit{waiting} (available) to take care of new jobs, thus the system should forward compatible requests, or can be \textit{offline} (unavailable), meaning that the taxi is temporarily off line with respect to the system, thus the system should not consider that taxi for requests assignment. The driver can also be \textit{working} (busy), as a third ``status'', that is when s/he is carrying passengers.
 			\item Queue: the queue of the available taxis in each zone of the city; it is updated by the system, based on the interaction with taxi drivers that can accept or reject the proposals forwarded by the system. 
 			\item Zone: the city is divided in several zones to better allocate and coordinate the taxi fleet.
 			\item Request: it is intended as a real time call of a passenger that simply provides his/her own pickup position for an immediate service, without previous reservation.
@@ -1011,6 +1011,16 @@
 %			\vspace*{-0.7cm}
 			\makebox[\linewidth]{
 				\includegraphics[keepaspectratio=true,scale=0.64]{Pictures/STMRequestCancellation}}
+		\end{minipage}
+		
+		\paragraph{Taxi driver availability} The following finite state machine shows the possible states of Availability of a driver and the triggers that enable the change of state.\\
+		\vspace*{1.1cm}
+		
+		\noindent%
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.7cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.7]{Pictures/STMAvailability}}
 		\end{minipage}	`	
 	
 	\pagebreak

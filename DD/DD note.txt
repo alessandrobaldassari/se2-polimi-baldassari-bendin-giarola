@@ -26,9 +26,9 @@ pattern structural:
 pattern behavioral:
 -chain of responsibility for turning the request into a ride
 -iterator for taxi queue
--observer for taxi availability change
+-observer for taxi availability change, taxi manager
 
--singleton: notification, payment, taxi, account manager
+-singleton: notification, payment, taxi, account manager, zone manager (che contiene tante istanze di queueManager)
 
 multithreading:
 concorrenza tra accessi (request) che sono gestiti come threads che condividono accesso ai singleton
