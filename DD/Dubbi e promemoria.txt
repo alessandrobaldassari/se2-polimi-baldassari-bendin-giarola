@@ -1,0 +1,13 @@
+dubbi:
+DISEGNO SCREENSHOT AUTISTA DOBBIAMO MODIFICARE UNA AVAILABILITY A 3 BOTTONI? Va bene algoritmo availability che ha 3 stati ma nel flowchart solo 2 uscite?
+
+
+-correggere availability a 3 stati in rasd (è modellizzata come una cosa a 3? o 2 cose booleane?)
+-aggiungere variabile status ride in rasd (e ride type yes boolean) si
+-correggere class diagram rasd
+
+
+-some time assumptions in rasd
+-write about about shared fee percentage calculation
+-price calculation is done by zone distance
+-alloy...

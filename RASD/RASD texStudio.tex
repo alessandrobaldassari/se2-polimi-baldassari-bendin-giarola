@@ -267,10 +267,9 @@
 			\item Taxi zones are predetermined by the city government and will never change in the system time horizon.
 			\item The rides that can be shared are only the reserved ones.
 			\item Passengers sharing a ride will be matched only if they share the same pick up and destination zone.
-			\item Once the ride has been created it's only possible to cancel it; thus if the passenger wants to modify a request he will need to delete the old and create a new one.
-			
-			
-			
+			\item The price of the ride is calculated on the distance between zones, not between addresses.
+			\item The cost of a shared ride is the weighted average computed on the basis of the number of passengers in every reservation.
+			\item Once the ride has been created it's only possible to cancel it; thus if the passenger wants to modify a request he will need to delete the old and create a new one.			
 			\item If the taxi availability is set to ``off'', the system does not consider that particular taxi for jobs assignment.
 			\item The login page for the users is unique, but according to their role they will be automatically redirected to the appropriate page for the passenger, employee or administrator.
 			\item There are no dependencies between users.
@@ -363,7 +362,7 @@
 		\item {[}R1{]} The system is able to control the queue of taxis in every zone and enforce the predetermined priority rules to guarantee a fair management of the queues.
 		\item {[}R2{]} If the taxi driver on top of the queue accepts a job then the system allocates the taxi for the specific request and therefore updates the queue.
 		\item {[}R3{]} If the taxi driver on top of the queue rejects the job then the system updates the queue placing the second taxi as first and the one that rejected the job in the last position of the queue of the same zone.
-		\item {[}D1{]} Each taxi queue is never empty.
+		\item {[}D1{]} Each taxi queue is never empty thanks to the optimized algorithm of taxi assignation to the zones.
 	\end{itemize}
 		
 	\subsubsection{{[}G3{]} The system has to assign each taxi to the correct taxi zone using the GPS coordinates that receives from each taxi.}
@@ -944,7 +943,7 @@
 		\begin{minipage}{\linewidth}
 			\vspace*{-0.27cm}
 			\makebox[\linewidth]{
-			\includegraphics[keepaspectratio=true,scale=0.568]{Pictures/ClassDiagram}}
+			\includegraphics[keepaspectratio=true,scale=0.54]{Pictures/ClassDiagram}}
 		\end{minipage}	
 
 %\begin{figure}
