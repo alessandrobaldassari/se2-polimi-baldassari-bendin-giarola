@@ -11,12 +11,12 @@
 \BOOKMARK [3][-]{subsubsection.0.2.2.1}{General Package design}{subsection.0.2.2}% 11
 \BOOKMARK [3][-]{subsubsection.0.2.2.2}{Detailed Package Design}{subsection.0.2.2}% 12
 \BOOKMARK [3][-]{subsubsection.0.2.2.3}{High Level Component View}{subsection.0.2.2}% 13
-\BOOKMARK [2][-]{subsection.0.2.3}{Component view}{section.0.2}% 14
-\BOOKMARK [2][-]{subsection.0.2.4}{Deployment view}{section.0.2}% 15
-\BOOKMARK [2][-]{subsection.0.2.5}{Runtime view}{section.0.2}% 16
-\BOOKMARK [2][-]{subsection.0.2.6}{Component interfaces}{section.0.2}% 17
-\BOOKMARK [2][-]{subsection.0.2.7}{Selected architectural styles and patterns}{section.0.2}% 18
-\BOOKMARK [2][-]{subsection.0.2.8}{Other design decisions}{section.0.2}% 19
+\BOOKMARK [2][-]{subsection.0.2.3}{Component view and interfaces}{section.0.2}% 14
+\BOOKMARK [3][-]{subsubsection.0.2.3.1}{Account Manager}{subsection.0.2.3}% 15
+\BOOKMARK [2][-]{subsection.0.2.4}{Deployment view}{section.0.2}% 16
+\BOOKMARK [2][-]{subsection.0.2.5}{Runtime view}{section.0.2}% 17
+\BOOKMARK [2][-]{subsection.0.2.6}{Selected architectural styles and patterns}{section.0.2}% 18
+\BOOKMARK [2][-]{subsection.0.2.7}{Other design decisions}{section.0.2}% 19
 \BOOKMARK [1][-]{section.0.3}{Algorithm design}{}% 20
 \BOOKMARK [2][-]{subsection.0.3.1}{Queue managing and taxi assignment}{section.0.3}% 21
 \BOOKMARK [2][-]{subsection.0.3.2}{Zone assignment}{section.0.3}% 22
