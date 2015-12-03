@@ -10,8 +10,8 @@
 -aggiungere agli algoritmi quali sono i componenti che li eseguono FATTO--------------------------
 -link wikipedia FATTO-----------------------------------------------------------------------------
 -document structure FATTO-------------------------------------------------------------------------
--sistemare testo
--commentare high level component view
+-sistemare testo FATTO----------------------------------------------------------------------------
+-commentare high level component view FATTO-------------------------------------------------------
 -mettere tabella requirements traceability
 
 -patterns & multithreading

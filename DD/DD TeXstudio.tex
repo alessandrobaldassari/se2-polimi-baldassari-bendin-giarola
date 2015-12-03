@@ -94,9 +94,9 @@
 	
 	\section{Introduction}
 	
-	\subsection{Purpose} This document presents the architecture on which \mts{} will be developed; it describes the decisions taken during the design process and justifies them. The whole design process is described including also the improvements and modifications to provide additional valuable informations in case of future changes of the architecture structure.
+	\subsection{Purpose} This document presents the architecture on which \mts{} will be developed; it describes the decisions taken during the design process and justifies them. The whole process is reported, including the improvements and modifications, this is to provide additional valuable information in case of future changes of the architecture structure.
 	
-	\subsection{Scope} Accordingly to the definition of the architecture design this document will focus on the non functional requirements of \mts{}. 
+	\subsection{Scope} Accordingly to the definition of the architecture design, this document will focus on the non-functional requirements of \mts{}. 
 	Since the system architecture  defines constraints on the implementation this document will  be  used to provide fundamental guidelines in the development phase of \mts{}.
 %	The system architecture will be organized in three categories corresponding to the functionalities of the different users: passengers, drivers and administrator.
 %	\begin{itemize}
@@ -130,7 +130,7 @@
 		\item Specification document: myTaxiService project
 		\item Template for the Design Document
 		\item IEEE Std 1016™-2009 - IEEE Standard on Design Descriptions
-		\item Requirements Analysis and Specification Document for \mts{}
+		\item Requirements Analysis and Specification Document (RASD) for \mts{}
 	\end{itemize}
 	
 	\subsection{Document Structure} This  document  specifies  the  architecture  of  the  system  using  different levels of detail. It also describes the architectural decisions and justifies them. The design is  developed  in  a  top-­‐down  way, then the  document  reflects this approach.
@@ -139,7 +139,7 @@
 		\item Introduction\\
 		Provides a synopsis of the architectural descriptions.
 		\item Architectural design\\
-		It is the core of the design document, here are presented all the components of the system and the interaction between them.		
+		It is the core of the design document, here are presented all the components of the system and the interaction between them in increasing level of detail starting from an high-level overview.		
 		\item Algorithm design\\
 		Flowchart and pseudocode description of the fundamental algorithms of \mts{}. 
 		\item User interface design\\
@@ -153,7 +153,7 @@
 	
 	\section{Architectural Design}
 	
-	\subsection{Overview} This  section  of  the  design  document  provides  a  general  description  of  the  design  of  the  system  and  its  processes;  it includes  the  general  design  context,  the  general  approach  and  describes  the overall design.\\
+	\subsection{Overview} This  section  of  the  design  document  provides  a  general  description  of  the  design  of  the  system  and  its  processes.\\
 	The architectural style adopted by \mts{} is the well-known ``client-server'', where the client is a ``thin client'' and the server is a ``fat server''. The architecture is ``event-driven'', thus the interaction between the components takes place through events, in other words asynchronous triggers. \\	
 	JEE has a ``four-tier'' architecture divided as shown in the picture below:\\
 		\begin{minipage}{\linewidth}
@@ -162,8 +162,8 @@
 				\includegraphics[keepaspectratio=true,scale=0.57]{Pictures/4tier}}
 		\end{minipage}	
 		\begin{enumerate}
-			\item \textbf{Client Tier}: contains Application Clients and Web Browsers and it is the layer designed to interact directly with the actors. \mts{} is a web and mobile application, then the client will use a web browser or a smartphone to access the pages.
-			\item \textbf{Web Tier}: contains the Servlets and Dynamic Web Pages that need to be elaborated. This tier receives the requests from the client tier and forwards the pieces of data collected to the business tier waiting for processed data to be sent to the client tier, eventually formatted.
+			\item \textbf{Client Tier}: contains Application Clients and Web Browsers and it is the layer designed to interact directly with the users. \mts{} is a web and mobile application, then the client will use a web browser or a smartphone to access the pages.
+			\item \textbf{Web Tier}: contains the Servlets and Dynamic Web Pages that need to be elaborated. This tier receives the requests from the client tier and forwards the pieces of data collected to the business tier; it also works in the opposite direction waiting for processed data correctly formatted to be sent to the client tier.
 			\item \textbf{Business Tier}: contains the Java Beans, which contain the business logic of the application, and Java Persistence Entities.
 			\item \textbf{EIS Tier}: contains the data source. In our case, it is the database allowed to store all the relevant data and to retrieve them.									
 		\end{enumerate}
@@ -217,7 +217,7 @@
 		\item Business  logic: this package is in charge of receiving and processing the User UI's package requests, accessing the Persistence package when needed and sending a response accordingly. 
 		\item Persistence: this package is in charge of managing the data requests from the Business logic package.
 	\end{itemize}
-	The  main  users:  Administrator,  passengers  and  taxi  drivers  directly  access the  User  UI  package  but  cannot see the other packages, as shown in the picture below. \\
+	The  main  users:  administrator,  passengers  and  taxi  drivers  directly  access the  User  UI  package  but  cannot see the other packages, as shown in the picture below. \\
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
@@ -231,7 +231,7 @@
 		\item Business logic: this set of sub-packages is responsible for handling requests from the User UI package, processing them and sending back a response. These packages may access the Persistence package.
 		\item Persistence: this set of sub-packages contains the data model for the system. It accepts requests from the Business Logic package.
 	\end{itemize}
-	A more detailed view of the system:\\
+	A more detailed view of the system from which is evident that all the controllers are part of the business logic:\\
 	\begin{minipage}{\linewidth}
 		%		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
@@ -248,15 +248,13 @@
 	From the diagram above it is evident that:
 	\begin{itemize}
 		\renewcommand{\labelitemi}{$\Rightarrow$}
-		\item The ``\textit{UserManager}'' interface contains all the information related the every user and his/her profile; it also offers the various ``login'', ``sign-up'', ``changePassword'', ``changeNotificationType'' methods. It also enables the administrator to  manage the drivers list.
-		\item The ``\textit{PaymentManager}'' is the interface in charge of exchanging the information about the transaction with the payment service provider.
-		\item The passenger is able to make a request or reservation through the interface ``\textit{RequestManager}'' that is in charge of receiving a complete and customized ride request.
-		\item The ``\textit{RideManager}'' interface communicates with the ``\textit{RequestManager}'' to prepare the physical ride; it communicates with the ``\textit{QueueManager}'' interface to be able to select to which taxi the jobs are proposed and with the ``\textit{NotificationManager}'' to notify all the users involved in ride.
-		\item The ``\textit{QueueManager}'' interface is accompanied by a ``\textit{Zone}'' class to control the sections of the city and their queue of available taxis.
-		\item The three types of users are represented by three respective classes with the same name: ``\textit{Passenger}'', ``\textit{TaxiDriver}'' and ``\textit{Administrator}''.
-		\item The ``\textit{RequestManagerImpl}'' and ``\textit{RideManagerImpl}'' classes accompany their respective interfaces and keep track of the history of rides and request for every users.
-		\item The connection between the ``\textit{Administrator}'' and the ``\textit{Zone}'' class enables the administrator to supervise the situation of all the queues in real-time.
-		\item The connection between the ``\textit{TaxiDriver}'' and the ``\textit{Zone}''and  ``\textit{RideManagerImpl}'' classes enables the system to keep track of the availability of the taxi drivers and allows the drivers to accept or reject job proposals.
+		\item The \textit{AccountManager} is the controller in charge of offering the sign-up functionality to the visitors, the login to all the different types of registered users; it also offers the functions related to the managing of the user's profile like ``changePassword'', ``changeNotificationType'' or ``updateCreditCardData''. It also enables the administrator to  manage the drivers list.
+		\item The \textit{PaymentManager} is the interface in charge of exchanging the information about the transaction with the payment service provider.
+		\item The \textit{RideManager} communicates with the \textit{RequestManager} to prepare the physical ride with the information collected by the latter.
+		\item The \textit{ZoneManager} and \textit{TaxiManager} cooperate to assign the taxi to the zones in a fair way and to allocate drivers for the rides.
+		\item The connection between the \textit{Administrator} and the \textit{ZoneManager} enables the administrator to supervise the situation of all the queues in real-time and the overall system.
+		\item The \textit{NotificationManager} is connected to the \textit{RequestManager} to send passengers confirmation about creation/deletion of requests, it is connected with the ride manager for the same purpose, but in this case it can also warn taxi drivers about the ride they are currently working on.
+		\item The two interfaces \textit{RequestManagerInterface} and \textit{RegisteredUserInterface} use the facade pattern to gather in one unique simpler interface the functionalities offered to the users in both the cases.
 	\end{itemize}	
 	
 	\subsection{Component view and interfaces} Here is a more detailed view of every component with its interfaces.
@@ -591,7 +589,7 @@
 
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
 	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
-	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All of these message-events are carried out by the notification manager as notifications.\\
+	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All these message-events are carried out by the notification manager as notifications.\\
 	\textcolor{red}{Riepilogo veloce a parole :\begin{itemize}
 			\item patterns
 			\item multithreading (componenti fissi vs componenti ad istanze...)
@@ -601,7 +599,7 @@
 
 	\section{Algorithm design}
 	Here are some distinctive algorithms of \mts{} presented with both pseudocode and flowchart diagrams.
-	\subsection{Queue managing and taxi assignment}
+	\subsection{Queue managing and taxi assignment} \label{sec:AlgoQueue}
 	This algorithm depicts what happens when the system assigns a ride to a driver. It sends the proposal to the first driver of the queue in the zone where the client is located; if the driver accepts the job s/he is removed from the queue and the assignation is completed, otherwise the system forwards the request to the second driver in the queue and places the first one at the bottom of the queue. This is repeated until a driver accepts the job. \\
 	This algorithm runs on the QueueManager (selected by the ZoneEngine).\\
 	\lstinputlisting[language=C]{Pseudocode/QueueManager.c}
@@ -713,6 +711,15 @@
 	\pagebreak	
 	
 	\section{Requirements Traceability}
+	The following table shows the mapping between the required functionalities of the system and the components used to implement and satisfy them.
+	\begin{center}
+		\begin{tabular}{| p{7cm} | p{8cm} |}\hline
+			\centerline{\textbf{Goals}} & \centerline{\textbf{Assigned component}} \\\hline
+			The system has to guarantee a fair management of the queues in each taxi zone. & The QueueManager (inner component of ZoneManager) runs the algorithm described in the previous section (see section~\ref{sec:AlgoQueue}) to guarantee a fair management of the queue, with the mechanism previously agreed.\\\hline
+			DA RIEMPIRE & DA RIEMPIRE\\\hline
+			
+		\end{tabular}
+	\end{center} 
 	
 	\section{References}
 	\begin{itemize}
