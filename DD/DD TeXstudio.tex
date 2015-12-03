@@ -307,6 +307,8 @@
 			\end{itemize}\\\hline
 		\end{tabular}
 	\end{center}
+	\bigskip
+	\bigskip
 	
 	ProfileManager:
 	\begin{center}
@@ -325,12 +327,46 @@
 		\end{tabular}
 	\end{center}
 	
+	AccountFactory:
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component controlling the creation \\\hline
+			Responsibilities & This component allows users to edit their profile, for instance to change the password, credit card data, phone number, notifications type. It permits the Administrator to add or edit taxi drivers.\\\hline
+			Interaction & With all the RegisteredUser of the system, with the DB and with the LoginManager component.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item ManageProfile for RegisteredUser
+				\item ManageTaxiDrivers for Administrator
+			\end{itemize}\\\hline
+			Interfaces required & \begin{itemize}
+				\item DB
+				\item LoginVerification for LoginManager
+			\end{itemize}\\\hline
+		\end{tabular}
+	\end{center}
+			
+	\pagebreak
 %	\subsubsection{Request Manager}
 %	\begin{minipage}{\linewidth}
 %		%		\vspace*{-0.35cm}
 %		\makebox[\linewidth]{
 %			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVRequestManager}}
-%	\end{minipage}	
+%	\end{minipage}
+%	ProfileManager:
+%	\begin{center}
+%		\begin{tabular}{| l | p{9cm} |}\hline
+%			Definition & Component controlling the users' profile\\\hline
+%			Responsibilities & This component allows users to edit their profile, for instance to change the password, credit card data, phone number, notifications type. It permits the Administrator to add or edit taxi drivers.\\\hline
+%			Interaction & With all the RegisteredUser of the system, with the DB and with the LoginManager component.\\\hline
+%			Interfaces offered & \begin{itemize}
+%				\item ManageProfile for RegisteredUser
+%				\item ManageTaxiDrivers for Administrator
+%			\end{itemize}\\\hline
+%			Interfaces required & \begin{itemize}
+%				\item DB
+%				\item LoginVerification for LoginManager
+%			\end{itemize}\\\hline
+%		\end{tabular}
+%	\end{center}	
 %	
 %	\subsubsection{Ride Manager}
 %	\begin{minipage}{\linewidth}
@@ -360,12 +396,27 @@
 %			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVZoneManager}}
 %	\end{minipage}
 %	
-%	\subsubsection{Payment Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVPaymentManager}}
-%	\end{minipage}
+	\subsubsection{Payment Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/CVPaymentManager}}
+	\end{minipage}
+	ProfileManager:
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component controlling the payment process\\\hline
+			Responsibilities & This component is in charge of computing the amount of money (fine or fare) owed by each passenger (if the ride is shared). It interacts with the RideManager to receive information about the ride and with the Passenger to collect the money. It uses an interface to process the payment with external services.\\\hline
+			Interaction & With all the Passengers of the system, with the RideManager and with external services.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item Pay for Passenger
+				\item PayRide for RideManager
+			\end{itemize}\\\hline
+			Interfaces required & \begin{itemize}
+				\item PublicPaymentService for communication with external payment services.
+			\end{itemize}\\\hline
+		\end{tabular}
+	\end{center}
 
 	
 	\subsection{Deployment view}
