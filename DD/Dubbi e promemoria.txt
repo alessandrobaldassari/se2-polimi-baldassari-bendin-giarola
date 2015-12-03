@@ -5,3 +5,14 @@
 -aggiungere variabile status ride in rasd (e ride type yes boolean) si
 
 -alloy...
+
+
+-aggiungere agli algoritmi quali sono i componenti che li eseguono
+-patterns
+-link wikipedia
+-sistemare testo
+-commentare high level component view
+-mettere tabella requirements traceability
+-document structure
+-deployment view
+-runtime view (sequence??)

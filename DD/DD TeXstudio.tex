@@ -276,7 +276,7 @@
 	SignUpManager:		
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the visitors' sign up\\\hline
+			Definition & Component controlling the visitors' sign up.\\\hline
 			Responsibilities & This component allows visitors to sign up into \mts{} and become registered users. It connects to the DB to store the credentials and requires and Email interface to verify the sign up procedure through an confirmation link sent via email.\\\hline
 			Interaction & With the visitors, the DB and email service.\\\hline
 			Interfaces offered & \begin{itemize}
@@ -286,6 +286,7 @@
 				\item DB 
 				\item External Email service
 			\end{itemize}\\\hline
+			Pattern & \\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -294,7 +295,7 @@
 	LoginManager:		
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the users' login\\\hline
+			Definition & Component controlling the users' login.\\\hline
 			Responsibilities & This component allows users to login into \mts{}. It connects to the DB to verify the credentials and grants access to the ProfileManager. It offers the possibility to login to the service to third party apps.\\\hline
 			Interaction & With all the users of the system, with the DB and external services (APIs).\\\hline
 			Interfaces offered & \begin{itemize}
@@ -305,6 +306,7 @@
 			Interfaces required & \begin{itemize}
 				\item DB 
 			\end{itemize}\\\hline
+			Pattern & \\\hline
 		\end{tabular}
 	\end{center}
 	\bigskip
@@ -313,7 +315,7 @@
 	ProfileManager:
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the users' profile\\\hline
+			Definition & Component controlling the users' profile.\\\hline
 			Responsibilities & This component allows users to edit their profile, for instance to change the password, credit card data, phone number, notifications type. It permits the Administrator to add or edit taxi drivers.\\\hline
 			Interaction & With all the RegisteredUser of the system, with the DB and with the LoginManager component.\\\hline
 			Interfaces offered & \begin{itemize}
@@ -324,85 +326,125 @@
 				\item DB
 				\item LoginVerification for LoginManager
 			\end{itemize}\\\hline
+			Pattern & \\\hline
 		\end{tabular}
 	\end{center}
 	
+	\pagebreak
 	AccountFactory:
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the creation \\\hline
-			Responsibilities & This component allows users to edit their profile, for instance to change the password, credit card data, phone number, notifications type. It permits the Administrator to add or edit taxi drivers.\\\hline
-			Interaction & With all the RegisteredUser of the system, with the DB and with the LoginManager component.\\\hline
+			Definition & Component which instantiate the users.\\\hline
+			Responsibilities & This component is in charge of the creation of an instance for every logged in user. It is an example of ``Factory method'' pattern.\\\hline
+			Interaction & With the LoginManager and the DB.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item ManageProfile for RegisteredUser
-				\item ManageTaxiDrivers for Administrator
+				\item CreateRegisteredUser for LoginManager
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
 				\item DB
-				\item LoginVerification for LoginManager
 			\end{itemize}\\\hline
+			Pattern & \\\hline
 		\end{tabular}
 	\end{center}
 			
 	\pagebreak
-%	\subsubsection{Request Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVRequestManager}}
-%	\end{minipage}
-%	ProfileManager:
-%	\begin{center}
-%		\begin{tabular}{| l | p{9cm} |}\hline
-%			Definition & Component controlling the users' profile\\\hline
-%			Responsibilities & This component allows users to edit their profile, for instance to change the password, credit card data, phone number, notifications type. It permits the Administrator to add or edit taxi drivers.\\\hline
-%			Interaction & With all the RegisteredUser of the system, with the DB and with the LoginManager component.\\\hline
-%			Interfaces offered & \begin{itemize}
-%				\item ManageProfile for RegisteredUser
-%				\item ManageTaxiDrivers for Administrator
-%			\end{itemize}\\\hline
-%			Interfaces required & \begin{itemize}
-%				\item DB
-%				\item LoginVerification for LoginManager
-%			\end{itemize}\\\hline
-%		\end{tabular}
-%	\end{center}	
-%	
-%	\subsubsection{Ride Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVRideManager}}
-%	\end{minipage}
-%	
-%	\subsubsection{Notification Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVNotificationManager}}
-%	\end{minipage}
-%	
-%	\subsubsection{Taxi Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVTaxiManager}}
-%	\end{minipage}
-%	
-%	\subsubsection{Zone Manager}
-%	\begin{minipage}{\linewidth}
-%		%		\vspace*{-0.35cm}
-%		\makebox[\linewidth]{
-%			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/CVZoneManager}}
-%	\end{minipage}
-%	
+	\subsubsection{Request Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager}}
+	\end{minipage}
+	RequestHandler:
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component receiving the passengers' requests\\\hline
+			Responsibilities & This component receives the requests or reservations of the clients and for each of them starts a ``worker'' that will handle them singularly. It also offers functions to enable users accessing from external services to send in requests.\\\hline
+			Interaction & With all the Passengers from inside the system or external services and with the RequestWorker component to start a thread for every request.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item ManageRequest for Passengers
+				\item PublicAPI for external services
+			\end{itemize}\\\hline
+			Interfaces required & \begin{itemize}
+				\item Assign for RequestWorker
+			\end{itemize}\\\hline
+			Pattern & \\\hline
+		\end{tabular}
+	\end{center}
+	
+	\pagebreak
+	\vspace*{-0.35cm}
+	RequestHandler:
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component maintaining the history of the passengers' requests\\\hline
+			Responsibilities & This component keeps stored in the DB all the information of the past and active requests for every user who can browse his/her history or modify current requests. Of course it accesses the DB.\\\hline
+			Interaction & With all the Passengers, with the RequestWorker component to receive updates from every request and with the DB to stare persistently the data.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item History for Passengers
+				\item Manage for RequestWorker
+			\end{itemize}\\\hline
+			Interfaces required & \begin{itemize}
+				\item DB
+			\end{itemize}\\\hline
+			Pattern & \\\hline
+		\end{tabular}
+	\end{center}		
+	
+	\vspace*{0.35cm}
+	RequestHandler:
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component managing individually the requests of the users\\\hline
+			Responsibilities & There is an instance of this component for every request generated by the users. It manages the communication related to updates of the request with the Notification manager. It is also connected to the RideManager to start the process of creation of the ride at the decided time\\\hline
+			Interaction & With the NotificationManager, with the RideMnager, and with the RequestEngine to store the data about the requests in the DB.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item Assign for RequestHandler
+			\end{itemize}\\\hline
+			Interfaces required & \begin{itemize}
+				\item CreateNotification for NotificationManager
+				\item ManageRide for RideManager
+				\item Manage for RequestEngine
+			\end{itemize}\\\hline
+			Pattern & \\\hline
+		\end{tabular}
+	\end{center}	
+	
+	\subsubsection{Ride Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/CVRideManager}}
+	\end{minipage}
+	
+	\subsubsection{Notification Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/CVNotificationManager}}
+	\end{minipage}
+	
+	\subsubsection{Taxi Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/CVTaxiManager}}
+	\end{minipage}
+	
+	\subsubsection{Zone Manager}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.55]{Pictures/CVZoneManager}}
+	\end{minipage}
+	
+	\pagebreak
 	\subsubsection{Payment Manager}
 	\begin{minipage}{\linewidth}
 		%		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
 			\includegraphics[keepaspectratio=true,scale=0.6]{Pictures/CVPaymentManager}}
 	\end{minipage}
-	ProfileManager:
+	PaymentManager:
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component controlling the payment process\\\hline
@@ -415,6 +457,7 @@
 			Interfaces required & \begin{itemize}
 				\item PublicPaymentService for communication with external payment services.
 			\end{itemize}\\\hline
+			Pattern & \\\hline
 		\end{tabular}
 	\end{center}
 
@@ -428,7 +471,7 @@
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
 	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
 	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All of these message-events are carried out by the notification manager as notifications.\\
-	\textcolor{red}{Decisions list:\begin{itemize}
+	\textcolor{red}{We :\begin{itemize}
 			\item patterns
 		\end{itemize}}	
 	
@@ -545,6 +588,16 @@
 	\section{Requirements Traceability}
 	
 	\section{References}
+	\begin{itemize}
+		\item Testo: \textit{Principi di Ingegneria del Software} 5ed, Roger S. Pressman, McGraw-Hill
+		\item Material from Wikipedia
+		\begin{itemize}
+			\item Factory method pattern: \href{https://en.wikipedia.org/wiki/Factory_method_pattern}{https://en.wikipedia.org/wiki/Factory\_method\_pattern}
+			\item Singleton pattern: \href{https://en.wikipedia.org/wiki/Singleton_pattern}{https://en.wikipedia.org/wiki/Singleton\_pattern}
+			\item Observer pattern: \href{https://en.wikipedia.org/wiki/Observer_pattern}{https://en.wikipedia.org/wiki/Observer\_pattern}
+		\end{itemize}
+	\end{itemize}
+	
 	
 	\section{Appendix}
 	
