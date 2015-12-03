@@ -16,31 +16,31 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Account Manager}{8}{subsubsection.0.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Request Manager}{11}{subsubsection.0.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Ride Manager}{13}{subsubsection.0.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}Notification Manager}{13}{subsubsection.0.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.5}Taxi Manager}{13}{subsubsection.0.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.6}Zone Manager}{14}{subsubsection.0.2.3.6}
-\contentsline {subsubsection}{\numberline {2.3.7}Payment Manager}{15}{subsubsection.0.2.3.7}
-\contentsline {subsection}{\numberline {2.4}Deployment view}{15}{subsection.0.2.4}
-\contentsline {subsection}{\numberline {2.5}Runtime view}{15}{subsection.0.2.5}
-\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{15}{subsection.0.2.6}
-\contentsline {subsection}{\numberline {2.7}Other design decisions}{16}{subsection.0.2.7}
-\contentsline {section}{\numberline {3}Algorithm design}{16}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Queue managing and taxi assignment}{16}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Zone assignment}{18}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Taxi availability}{19}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Ride creation}{20}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Payment}{22}{subsection.0.3.5}
-\contentsline {section}{\numberline {4}User Interface Design}{24}{section.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.1}Sign-up}{25}{paragraph.0.4.0.0.1}
-\contentsline {paragraph}{\numberline {4.0.0.2}Login}{26}{paragraph.0.4.0.0.2}
-\contentsline {paragraph}{\numberline {4.0.0.3}Call a taxi}{27}{paragraph.0.4.0.0.3}
-\contentsline {paragraph}{\numberline {4.0.0.4}Plan a ride}{28}{paragraph.0.4.0.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.5}Your reservations}{29}{paragraph.0.4.0.0.5}
-\contentsline {paragraph}{\numberline {4.0.0.6}Your profile}{30}{paragraph.0.4.0.0.6}
-\contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{31}{paragraph.0.4.0.0.7}
-\contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{32}{paragraph.0.4.0.0.8}
-\contentsline {section}{\numberline {5}Requirements Traceability}{33}{section.0.5}
-\contentsline {section}{\numberline {6}References}{33}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{33}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{33}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{33}{subsection.0.7.2}
+\contentsline {subsubsection}{\numberline {2.3.4}Notification Manager}{16}{subsubsection.0.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Taxi Manager}{17}{subsubsection.0.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Zone Manager}{18}{subsubsection.0.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.7}Payment Manager}{20}{subsubsection.0.2.3.7}
+\contentsline {subsection}{\numberline {2.4}Deployment view}{20}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Runtime view}{20}{subsection.0.2.5}
+\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{20}{subsection.0.2.6}
+\contentsline {subsection}{\numberline {2.7}Other design decisions}{21}{subsection.0.2.7}
+\contentsline {section}{\numberline {3}Algorithm design}{21}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Queue managing and taxi assignment}{21}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Zone assignment}{23}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Taxi availability}{24}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Ride creation}{25}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Payment}{27}{subsection.0.3.5}
+\contentsline {section}{\numberline {4}User Interface Design}{29}{section.0.4}
+\contentsline {paragraph}{\numberline {4.0.0.1}Sign-up}{30}{paragraph.0.4.0.0.1}
+\contentsline {paragraph}{\numberline {4.0.0.2}Login}{31}{paragraph.0.4.0.0.2}
+\contentsline {paragraph}{\numberline {4.0.0.3}Call a taxi}{32}{paragraph.0.4.0.0.3}
+\contentsline {paragraph}{\numberline {4.0.0.4}Plan a ride}{33}{paragraph.0.4.0.0.4}
+\contentsline {paragraph}{\numberline {4.0.0.5}Your reservations}{34}{paragraph.0.4.0.0.5}
+\contentsline {paragraph}{\numberline {4.0.0.6}Your profile}{35}{paragraph.0.4.0.0.6}
+\contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{36}{paragraph.0.4.0.0.7}
+\contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{37}{paragraph.0.4.0.0.8}
+\contentsline {section}{\numberline {5}Requirements Traceability}{38}{section.0.5}
+\contentsline {section}{\numberline {6}References}{38}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{38}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{38}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{38}{subsection.0.7.2}

@@ -16,3 +16,6 @@
 -document structure
 -deployment view
 -runtime view (sequence??)
+
+-il notification manager ha interfaccia esterna push della app, ma quella non è interna al nostro sistema??
+-il DB non dobbiamo metterlo vero, perchè è la business logic solo?
