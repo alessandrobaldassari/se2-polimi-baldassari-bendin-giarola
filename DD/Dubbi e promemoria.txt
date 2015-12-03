@@ -3,17 +3,18 @@
 
 -correggere availability a 3 stati in rasd (è modellizzata come una cosa a 3? o 2 cose booleane?)
 -aggiungere variabile status ride in rasd (e ride type yes boolean) si
-
+-in class diagram aggiungere a Zone una freccia a se stessa per lista "Zone adiacenti" da 1 a molti
 -alloy...
 
 
--aggiungere agli algoritmi quali sono i componenti che li eseguono
--patterns
--link wikipedia
+-aggiungere agli algoritmi quali sono i componenti che li eseguono FATTO--------------------------
+-link wikipedia FATTO-----------------------------------------------------------------------------
+-document structure FATTO-------------------------------------------------------------------------
 -sistemare testo
 -commentare high level component view
 -mettere tabella requirements traceability
--document structure
+
+-patterns & multithreading
 -deployment view
 -runtime view (sequence??)
 

@@ -113,7 +113,7 @@
 	\begin{itemize}
 		\item JEE: Java Enterprise Edition
 		\item RASD: Requirements Analysis and Specification Document
-		\item ER: Entity Relationship
+		\item UI: User Interface
 		\item EIS: Enterprise Information System
 		\item API: Application Programming Interface
 	\end{itemize}
@@ -138,11 +138,16 @@
 	\begin{enumerate}
 		\item Introduction\\
 		Provides a synopsis of the architectural descriptions.
-		\item Architectural design
-		\item Algorithm design
-		\item User interface design
-		\item Requirements traceability
-		\item References
+		\item Architectural design\\
+		It is the core of the design document, here are presented all the components of the system and the interaction between them.		
+		\item Algorithm design\\
+		Flowchart and pseudocode description of the fundamental algorithms of \mts{}. 
+		\item User interface design\\
+		Some mock-ups of the UI to better understand how the functionalities have been implemented from a graphical viewpoint.
+		\item Requirements traceability\\
+		Presents the mapping between the requirements and the components used to satisfy them.
+		\item References\\
+		List of sources for material used in this document: internet links, books.
 		
 	\end{enumerate} 
 	
@@ -587,8 +592,9 @@
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
 	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
 	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All of these message-events are carried out by the notification manager as notifications.\\
-	\textcolor{red}{We :\begin{itemize}
+	\textcolor{red}{Riepilogo veloce a parole :\begin{itemize}
 			\item patterns
+			\item multithreading (componenti fissi vs componenti ad istanze...)
 		\end{itemize}}	
 	
 	\subsection{Other design decisions}
@@ -597,6 +603,7 @@
 	Here are some distinctive algorithms of \mts{} presented with both pseudocode and flowchart diagrams.
 	\subsection{Queue managing and taxi assignment}
 	This algorithm depicts what happens when the system assigns a ride to a driver. It sends the proposal to the first driver of the queue in the zone where the client is located; if the driver accepts the job s/he is removed from the queue and the assignation is completed, otherwise the system forwards the request to the second driver in the queue and places the first one at the bottom of the queue. This is repeated until a driver accepts the job. \\
+	This algorithm runs on the QueueManager (selected by the ZoneEngine).\\
 	\lstinputlisting[language=C]{Pseudocode/QueueManager.c}
 	\begin{minipage}{\linewidth}
 %			\vspace*{-0.35cm}
@@ -608,6 +615,7 @@
 	
 	\subsection{Zone assignment}
 	This algorithm depicts what happens when the system assigns the taxi to a specific zone according to the taxi's current position obtained through the GPS sensor of the driver's phone. In particular all the zones nearby the taxi are analyzed and the zone with the shortest queue is selected. When the taxi is assigned it enters the queue at the bottom.\\
+	This algorithm runs on the ZoneManager and exploits both the ZoneEngine (to select the shortest queue) and the QueueManager (to assign the taxi to the bottom of the queue).\\
 	\lstinputlisting[language=C]{Pseudocode/ZoneAssignment.c}
 	\begin{minipage}{\linewidth}
 %			\vspace*{-0.35cm}
@@ -619,6 +627,7 @@
 	
 	\subsection{Taxi availability}
 	This algorithm depicts what happens when the driver switches his/her own availability. If s/he turns it \textit{on} (\textit{waiting} to be assigned) then the system will proceed with the zone assignment according to the position, while if the driver switches the availability \textit{offline} the system will simply remove him/her from the current queue.\\
+	This algorithm runs on the TaxiManager which detects the availability trigger and relies on the ZoneManager for the update of the queue according to the availability status.\\
 	\lstinputlisting[language=C]{Pseudocode/Availability.c}
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
@@ -630,6 +639,7 @@
 	
 	\subsection{Ride creation}
 	This algorithm depicts what happens when the system creates a ride based on a request or a reservation; this happens 30 seconds after the arrival of the request and 10 minutes before the meeting time for the reservation. For the request the process is straightforward and it involves the taxi allocation and the notification to all the users involved; the same is for the reservation without the sharing option. On the contrary when a ride is reserved with the possibility of sharing the trip the system must look for possible matches with same pick up and drop off zone and same date and time; if any compatible match is found then the system computes the total number of passengers. If there is enough room on the taxi for all the passengers then a shared ride is created, otherwise the system proceeds with the standard ride.\\
+	This algorithm runs on the RideManager which communicates with the RequestManager to analyze matching requests, with the ZoneManager to allocate the taxi and with the NotificationManager to eventually inform all the users (passenger(s) and driver).\\
 	\lstinputlisting[language=C]{Pseudocode/RideCreation.c}
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
@@ -640,6 +650,7 @@
 	\subsection{Payment}
 	This algorithm represents the way the system deducts money from the passenger's credit card. Basically it can collect the standard fare computed on the distance covered on the taxi or a penalty fee. The latter is only applied when the user deletes (or modifies) a request/reservation beyond the allowed time frame, that is within 30 seconds after the application for the request and until 10 minutes before the meeting time for the reservation. A cancellation within the allowed time window does not involve any penalty fine.\\
 	When the ride is carried out successfully the fare is computed on the basis of the type of ride \textit{shared} or regular.\\
+	This algorithm runs on the PaymentManager which communicates with the RideManager.\\
 	\lstinputlisting[language=C]{Pseudocode/Payment.c}
 	\begin{minipage}{\linewidth}
 %		\vspace*{-0.35cm}
@@ -708,9 +719,13 @@
 		\item Testo: \textit{Principi di Ingegneria del Software} 5ed, Roger S. Pressman, McGraw-Hill
 		\item Material from Wikipedia
 		\begin{itemize}
+			\item Thin client: \href{https://en.wikipedia.org/wiki/Thin_client}{https://en.wikipedia.org/wiki/Thin\_client}
+			\item Event-driven architecture: \href{https://en.wikipedia.org/wiki/Event-driven_architecture}{https://en.wikipedia.org/wiki/Event-driven\_architecture}
 			\item Factory method pattern: \href{https://en.wikipedia.org/wiki/Factory_method_pattern}{https://en.wikipedia.org/wiki/Factory\_method\_pattern}
 			\item Singleton pattern: \href{https://en.wikipedia.org/wiki/Singleton_pattern}{https://en.wikipedia.org/wiki/Singleton\_pattern}
 			\item Observer pattern: \href{https://en.wikipedia.org/wiki/Observer_pattern}{https://en.wikipedia.org/wiki/Observer\_pattern}
+			\item Facade pattern: \href{https://en.wikipedia.org/wiki/Facade_pattern}{https://en.wikipedia.org/wiki/Facade\_pattern}
+			
 		\end{itemize}
 	\end{itemize}
 	
@@ -728,8 +743,8 @@
 	
 	\subsection{Hours of work} The time spent to redact this document:
 	\begin{itemize}
-		\item Baldassari Alessandro: 35 hours.
-		\item Bendin Alberto: 35 hours.
-		\item Giarola Francesco: 35 hours.
+		\item Baldassari Alessandro: 30 hours.
+		\item Bendin Alberto: 30 hours.
+		\item Giarola Francesco: 30 hours.
 	\end{itemize}
 \end{document}
