@@ -151,6 +151,7 @@
 		
 	\end{enumerate} 
 	
+	\pagebreak
 	\section{Architectural Design}
 	
 	\subsection{Overview} This  section  of  the  design  document  provides  a  general  description  of  the  design  of  the  system  and  its  processes.\\
@@ -450,7 +451,7 @@
 		\end{tabular}
 	\end{center}		
 	
-	\vspace*{0.35cm}
+	\pagebreak
 	\centerline{RideWorker:}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
@@ -524,7 +525,22 @@
 		%		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
 			\includegraphics[keepaspectratio=true,scale=0.55]{Pictures/CVZoneManager}}
-	\end{minipage} \linebreak
+	\end{minipage}	\linebreak
+	
+	\centerline{QueueManager:}
+	\begin{center}
+		\begin{tabular}{| l | p{9cm} |}\hline
+			Definition & Component controlling the queue of taxis in a single zone of the city.\\\hline
+			Responsibilities & This component runs the algorithm to assign the jobs to its taxis and keeps the management of its queue fair. It receives the tasks to carry out from the ZoneEngine which only selects the correct zone.\\\hline
+			Interaction & With the ZoneEngine.\\\hline
+			Interfaces offered & \begin{itemize}
+				\item ManageTaxi for ZoneEngine
+			\end{itemize}\\\hline
+			Implementation & Multi instance: one instance for each queue\\\hline
+		\end{tabular}
+	\end{center}
+		
+	\pagebreak
 	\centerline{ZoneEngine:}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
@@ -544,19 +560,7 @@
 		\end{tabular}
 	\end{center}
 	
-	\centerline{QueueManager:}
-	\begin{center}
-		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the queue of taxis in a single zone of the city.\\\hline
-			Responsibilities & This component runs the algorithm to assign the jobs to its taxis and keeps the management of its queue fair. It receives the tasks to carry out from the ZoneEngine which only selects the correct zone.\\\hline
-			Interaction & With the ZoneEngine.\\\hline
-			Interfaces offered & \begin{itemize}
-				\item ManageTaxi for ZoneEngine
-			\end{itemize}\\\hline
-			Implementation & Multi instance: one instance for each queue\\\hline
-		\end{tabular}
-	\end{center}	
-	
+
 	\pagebreak
 	\subsubsection{Payment Manager}
 	\begin{minipage}{\linewidth}
@@ -588,10 +592,20 @@
 		%		\vspace*{-0.35cm}
 		\makebox[\linewidth]{
 			\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/DeploymentView}}
-	\end{minipage} \linebreak
-	The diagram above shows which hardware components ("nodes", boxes in the figure) exist in \mts{}:  the web server (``Client'' in the figure) that processes and delivers web pages to clients, an application server (all the ``Managers'' in the figure), a database server (``DB'' in the figure), and which software components run on each node (e.g., web application, database), and how the different pieces are connected.
+	\end{minipage} \\
+
+	\vspace*{+0.35cm}
+	The diagram above shows which hardware components (``nodes'', boxes in the figure) exist in \mts{}:  the web server (``Client'' in the figure) that processes and delivers web pages to clients, an application server (all the ``Managers'' in the figure), a database server (``DB'' in the figure), and which software components run on each node (e.g., web application, database), and how the different pieces are connected.
 	
+	\pagebreak
 	\subsection{Runtime view}
+	The schema below describes the behavior and interaction of the system's building blocks as runtime elements.\\
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.35]{Pictures/RuntimeView}}
+	\end{minipage}
+	The diagram clarifies which are the elements that at runtime exist possibly as multiple instances (on multiple threads) such as ProfileManager (one for each logged in user), RequestWorker (one for each request), RideWorker (one for each active ride), QueueManager (one for each zone of the city) and which are the components running on single processes.
 	
 	\subsection{Selected architectural styles and patterns}
 
