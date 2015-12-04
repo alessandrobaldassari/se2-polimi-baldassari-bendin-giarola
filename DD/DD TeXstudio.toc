@@ -40,7 +40,7 @@
 \contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{37}{paragraph.0.4.0.0.7}
 \contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{38}{paragraph.0.4.0.0.8}
 \contentsline {section}{\numberline {5}Requirements Traceability}{39}{section.0.5}
-\contentsline {section}{\numberline {6}References}{39}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{39}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{39}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{39}{subsection.0.7.2}
+\contentsline {section}{\numberline {6}References}{40}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{40}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{40}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{41}{subsection.0.7.2}

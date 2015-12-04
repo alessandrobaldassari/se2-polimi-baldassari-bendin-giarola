@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -617,7 +617,7 @@
 	
 	\pagebreak
 	
-	\subsection{Zone assignment}
+	\subsection{Zone assignment} \label{sec:AlgoZone}
 	This algorithm depicts what happens when the system assigns the taxi to a specific zone according to the taxi's current position obtained through the GPS sensor of the driver's phone. In particular all the zones nearby the taxi are analyzed and the zone with the shortest queue is selected. When the taxi is assigned it enters the queue at the bottom.\\
 	This algorithm runs on the ZoneManager and exploits both the ZoneEngine (to select the shortest queue) and the QueueManager (to assign the taxi to the bottom of the queue).\\
 	\lstinputlisting[language=C]{Pseudocode/ZoneAssignment.c}
@@ -629,7 +629,7 @@
 	
 	\pagebreak
 	
-	\subsection{Taxi availability}
+	\subsection{Taxi availability} \label{sec:AlgoAvailability}
 	This algorithm depicts what happens when the driver switches his/her own availability. If s/he turns it \textit{on} (\textit{waiting} to be assigned) then the system will proceed with the zone assignment according to the position, while if the driver switches the availability \textit{offline} the system will simply remove him/her from the current queue.\\
 	This algorithm runs on the TaxiManager which detects the availability trigger and relies on the ZoneManager for the update of the queue according to the availability status.\\
 	\lstinputlisting[language=C]{Pseudocode/Availability.c}
@@ -719,17 +719,33 @@
 	\section{Requirements Traceability}
 	The following table shows the mapping between the required functionalities of the system and the components used to implement and satisfy them.
 	\begin{center}
-		\begin{tabular}{| p{7cm} | p{8cm} |}\hline
+		\begin{longtable}{| p{7cm} | p{8cm} |}\hline
 			\centerline{\textbf{Goals}} & \centerline{\textbf{Assigned component}} \\\hline
-			The system has to guarantee a fair management of the queues in each taxi zone. & The QueueManager (inner component of ZoneManager) runs the algorithm described in the previous section (see section~\ref{sec:AlgoQueue}) to guarantee a fair management of the queue, with the mechanism previously agreed.\\\hline
-			DA RIEMPIRE & DA RIEMPIRE\\\hline
+			{[}G2{]} The system has to guarantee a fair management of the queues in each taxi zone. & The QueueManager (inner component of ZoneManager) runs the algorithm described in the previous section (see section~\ref{sec:AlgoQueue}) to guarantee a fair management of the queue, with the mechanism previously agreed.\\\hline
+			{[}G3{]} The system has to assign taxis to the zones in such a way that the queues are never empty. & The ZoneManager runs the algorithm described in the previous section (see section~\ref{sec:AlgoZone}) to guarantee the presence of at least one taxi in every queue.\\\hline
+			{[}G4{]} The system has to allocate a taxi for each request or reservation. & The RideManager is in charge of the taxi assignation for every ride.\\\hline
+			{[}G5{]} The system has to notify the users, both passengers and taxi drivers, about updates on taxi requests and rides in which they are involved. & The NotificationManager receives the updates to be sent to the users from the other components.\\\hline
+			{[}G6{]} The system has to offer public APIs to enable the possibility to develop additional services on top of the basic ones. & The different components offer the PublicAPI interfaces that allow external services to access the system, send requests and view the real-time position of the taxis.\\\hline
+			{[}G7{]} The passenger shall be able to sign up to the service. & The SignUpManager (inner component of AccountManager) offers the SignUp interface to the Visitor.\\\hline
+			{[}G8{]} The passenger shall be able to login to the service. & The LoginManager (inner component of AccountManager) offers the Login interface (through the facade pattern) to satisfy this requirement.\\\hline	
+			{[}G9{]} The passenger shall be able to request a taxi. & The RequestHandler (inner component of RequestManager) offers the ManageRequest interface (through the facade pattern) to the Passenger.\\\hline
+			{[}G10{]} The passenger shall be able to delete a taxi request. & The RequestHandler (inner component of RequestManager) offers the ManageRequest interface (through the facade pattern) to the Passenger.\\\hline	
+			{[}G11{]} The passenger shall be able to create a reservation for a taxi ride. & The RequestHandler (inner component of RequestManager) offers the ManageRequest interface to fulfill this task.\\\hline
+			{[}G12{]} The passenger shall be able to modify or delete a taxi reservation.	& The RequestHandler (inner component of RequestManager) provides the ManageRequest interface to fulfill this task.\\\hline
+			{[}G13{]} The passenger shall be able to enable taxi sharing option. & The RequestHandler (inner component of RequestManager) receives a completely customized reservation.\\\hline
+			{[}G14{]} The passenger shall be able to see historical data on his taxi rides. & The RequestEngine (inner component of RequestManager) offers the History interface to fulfill this requirement.\\\hline
+			{[}G15{]} Taxi drivers shall be able to log in to the service. & The LoginManager (inner component of AccountManager) is in charge of this task.\\\hline	
+			{[}G16{]} Taxi drivers must inform the system about their availability. & The TaxiManager runs the algorithm described in the previous section (see section~\ref{sec:AlgoAvailability}) to guarantee the response of the system according to the driver's availability. It relies on the ZoneManager to assign the taxis to the queues or to the jobs, or to remove them when they are offline.\\\hline
+			{[}G17{]} Taxi drivers must confirm if they are going to take care of a certain call. & The QueueManager (inner component of ZoneManager) is in charge of this task.\\\hline
+			{[}G18{]} The administrator shall be able to add, edit and delete taxi drivers in the system. & The ProfileManager (inner component of AccountManager) offers the ManageTaxiDriver interface to the Administrator.\\\hline
+			{[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis. & The ZoneEngine (inner component of ZoneManager) offers the Monitor interface to the Administrator.\\\hline
 			
-		\end{tabular}
+		\end{longtable}
 	\end{center} 
 	
 	\section{References}
 	\begin{itemize}
-		\item Testo: \textit{Principi di Ingegneria del Software} 5ed, Roger S. Pressman, McGraw-Hill
+		\item Text: \textit{Principi di Ingegneria del Software} 5ed, Roger S. Pressman, McGraw-Hill
 		\item Material from Wikipedia
 		\begin{itemize}
 			\item Thin client: \href{https://en.wikipedia.org/wiki/Thin_client}{https://en.wikipedia.org/wiki/Thin\_client}
