@@ -255,7 +255,7 @@
 		\item The \textit{ZoneManager} and \textit{TaxiManager} cooperate to assign the taxi to the zones in a fair way and to allocate drivers for the rides.
 		\item The connection between the \textit{Administrator} and the \textit{ZoneManager} enables the administrator to supervise the situation of all the queues in real-time and the overall system.
 		\item The \textit{NotificationManager} is connected to the \textit{RequestManager} to send passengers confirmation about creation/deletion of requests, it is connected with the ride manager for the same purpose, but in this case it can also warn taxi drivers about the ride they are currently working on.
-		\item The two interfaces \textit{RequestManagerInterface} and \textit{RegisteredUserInterface} use the facade pattern to gather in one unique simpler interface the functionalities offered to the users in both the cases.
+		\item The two interfaces \textit{RequestManagerInterface} and \textit{RegisteredUserInterface} use the ``facade'' pattern to gather in one unique simpler interface the functionalities offered to the users in both the cases.
 	\end{itemize}	
 	
 	\subsection{Component view and interfaces} Here is a more detailed view of every component with its interfaces.
@@ -280,10 +280,10 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component controlling the visitors' sign up.\\\hline
-			Responsibilities & This component allows visitors to sign up into \mts{} and become registered users. It connects to the DB to store the credentials and requires and Email interface to verify the sign up procedure through an confirmation link sent via email.\\\hline
+			Responsibilities & This component allows visitors to sign up into \mts{} and become registered users. It connects to the DB to store the credentials and requires and Email interface to verify the sign up procedure through a confirmation link sent via email.\\\hline
 			Interaction & With the visitors, the DB and email service.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item Sign up for Visitors
+				\item SignUp for Visitor
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
 				\item DB 
@@ -298,7 +298,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component controlling the users' login.\\\hline
-			Responsibilities & This component allows users to login into \mts{}. It connects to the DB to verify the credentials and grants access to the ProfileManager. It offers the possibility to login to the service to third party apps.\\\hline
+			Responsibilities & This component allows users to login into \mts{}. It is connected to the DB to verify the credentials and grants access to the ProfileManager. It offers the possibility to login to the service to third party apps.\\\hline
 			Interaction & With all the users of the system, with the DB and external services (APIs).\\\hline
 			Interfaces offered & \begin{itemize}
 				\item Login for User
@@ -335,7 +335,7 @@
 	\centerline{AccountFactory:}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component which instantiate the users.\\\hline
+			Definition & Component which instantiates the users.\\\hline
 			Responsibilities & This component is in charge of the creation of an instance for every logged in user. It is an example of ``Factory method'' pattern.\\\hline
 			Interaction & With the LoginManager and the DB.\\\hline
 			Interfaces offered & \begin{itemize}
@@ -359,10 +359,10 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component receiving the passengers' requests.\\\hline
-			Responsibilities & This component receives the requests or reservations of the clients and for each of them starts a ``worker'' that will handle them singularly. It also offers functions to enable users accessing from external services to send in requests.\\\hline
+			Responsibilities & This component receives the requests or reservations of the clients and for each of them starts a ``worker'' that will handle them singularly. It also offers functions to enable the access of users from external services who can then send in requests.\\\hline
 			Interaction & With all the Passengers from inside the system or external services and with the RequestWorker component to start a thread for every request.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item ManageRequest for Passengers
+				\item ManageRequest for Passenger
 				\item PublicAPI for external services
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
@@ -378,10 +378,10 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component maintaining the history of the passengers' requests.\\\hline
-			Responsibilities & This component keeps stored in the DB all the information of the past and active requests for every user who can browse his/her history or modify current requests. Of course it accesses the DB.\\\hline
+			Responsibilities & This component keeps stored in the DB all the information of the past and active requests for every user who can browse his/her own history or modify current requests. Of course it accesses the DB.\\\hline
 			Interaction & With all the Passengers, with the RequestWorker components to receive updates from every request and with the DB to store persistently the data.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item History for Passengers
+				\item History for Passenger
 				\item Manage for RequestWorker
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
@@ -420,7 +420,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component that creates the rides.\\\hline
-			Responsibilities & This component creates the rides from the corresponding requests at the decided time (10 minutes before the meeting time for the reservations), for this reason it communicates with the RequestManager. It later assigns every generated ride to an instance of RideWorker which will handle it singularly.\\\hline
+			Responsibilities & This component creates the rides from the corresponding requests at the decided time (10 minutes before the meeting time for the reservations), for this reason it communicates with the RequestManager. Later it assigns every generated ride to an instance of RideWorker which will handle it singularly.\\\hline
 			Interaction & With the RequestManager and with the RideWorker component to start a thread for every ride.\\\hline
 			Interfaces offered & \begin{itemize}
 				\item ManageRide for RequestManager
@@ -438,10 +438,10 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component maintaining the history of the drivers' rides.\\\hline
-			Responsibilities & This component keeps stored in the DB all the information of the past and active rides for every user who can browse his/her history or modify current rides. Of course it accesses the DB.\\\hline
+			Responsibilities & This component keeps stored in the DB all the information of the past and active rides for every user who can browse his/her own history or modify current rides. Of course it accesses the DB.\\\hline
 			Interaction & With all the drivers, with the RideWorker components to receive updates from every ride and with the DB to store persistently the data.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item History for TaxiDrivers
+				\item History for TaxiDriver
 				\item Manage for RideWorker
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
@@ -481,7 +481,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Component controlling the notifications sent to the users.\\\hline
-			Responsibilities & This component is able to receive a message to be sent to some users with the specification of the mean of communication to be used. For this reason it is connected to the external services managing the dispatching of SMS and Emails.\\\hline
+			Responsibilities & This component is able to receive a message to be sent to some users with the specification of the mean of communication to be used. For this reason it is connected to the external services managing the dispatching of SMS, Emails and in-app push notifications.\\\hline
 			Interaction & With the RequestManager and RideManager to send updates about the request/rides to the passengers involved, with the ZoneManager to send updates to taxi drivers, and with the external services of SMS and Email.\\\hline
 			Interfaces offered & \begin{itemize}
 				\item CreateNotification for RideManager, RequestManager and ZoneManager
@@ -506,7 +506,7 @@
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
 			Definition & Controller of the current situation of every taxi.\\\hline
-			Responsibilities & This components keeps track of all the information about the whole taxi fleet. It can retrieve the position of taxis as well as their availability status and send these to the ZoneManager which uses them to control the queues and assign jobs. Thanks to the information about the location of every taxi, an external service can retrieve the current situation of the taxis spread across the city and possibly show them on a map.\\\hline
+			Responsibilities & This component keeps track of all the information about the whole taxi fleet. It can retrieve the position of taxis as well as their availability status and send these to the ZoneManager which uses them to control the queues and assign jobs. Thanks to the information about the location of every taxi, an external service can retrieve the current situation of the taxis spread across the city and possibly show them on a map.\\\hline
 			Interaction & With the ZoneManager to make available information about taxis, with the DB to store the data and with external services to make these same information available outside the system.\\\hline
 			Interfaces offered & \begin{itemize}
 				\item TaxiStatus for ZoneManager
@@ -611,9 +611,10 @@
 
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
 	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
-	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All these message-events are carried out by the notification manager as notifications.\\
+	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver.\\
+%	 All these message-events are carried out by the NotificationManager as notifications.\\
 	Some well-known software design patterns are used in the design of the system, for instance the ``Singleton'' pattern is used in the engines of the Request, Ride, Zone and Taxi Managers, while the ``Factory'' method pattern is used for the creation of instances for the workers of Account, Request and Ride Managers, respectively for every user, request and ride generated.\\
-	The system is planned to be always fast and responsive, also in case of a high number of requests and accesses to the service at the same time, for this reason multithreading is highly used; parallelization to better employ the powerful server is achieved through the instantiation of multiple processes for the ProfileManager (one for every logged in user), RequestWorker (one for each request), RideWorker (one for each ride) and QueueManager (one for each queue). 
+	The system is planned to be always fast and responsive, also in case of a high number of requests and accesses to the service at the same time, for this reason multithreading is highly used; parallelization to better employ the powerful server is achieved through the instantiation of multiple processes for the ProfileManager (one for every logged in user), RequestWorker (one for each request), RideWorker (one for each ride) and QueueManager (one for each zone of the city). 
 		
 %	\subsection{Other design decisions}
 
@@ -666,7 +667,7 @@
 	\end{minipage}		
 	
 	\subsection{Payment}
-	This algorithm represents the way the system deducts money from the passenger's credit card. Basically it can collect the standard fare computed on the distance covered on the taxi or a penalty fee. The latter is only applied when the user deletes (or modifies) a request/reservation beyond the allowed time frame, that is within 30 seconds after the application for the request and until 10 minutes before the meeting time for the reservation. A cancellation within the allowed time window does not involve any penalty fine.\\
+	This algorithm represents the way the system deducts money from the passenger's credit card. It can collect the standard fare computed on the distance covered on the taxi or a penalty fee. The latter is only applied when the user deletes (or modifies) a request/reservation beyond the allowed time frame, that is within 30 seconds after the application for the request and until 10 minutes before the meeting time for the reservation (basically once the ride is generated if the user deletes it s/he will incur in the penalty fee). A cancellation within the allowed time window does not involve any penalty fine.\\
 	When the ride is carried out successfully the fare is computed on the basis of the type of ride \textit{shared} or regular.\\
 	This algorithm runs on the PaymentManager which communicates with the RideManager.\\
 	\lstinputlisting[language=C]{Pseudocode/Payment.c}
@@ -750,7 +751,7 @@
 			{[}G14{]} The passenger shall be able to see historical data on his taxi rides. & The RequestEngine (inner component of RequestManager) offers the History interface to fulfill this requirement.\\\hline
 			{[}G15{]} Taxi drivers shall be able to log in to the service. & The LoginManager (inner component of AccountManager) is in charge of this task.\\\hline	
 			{[}G16{]} Taxi drivers must inform the system about their availability. & The TaxiManager runs the algorithm described in the previous section (see section~\ref{sec:AlgoAvailability}) to guarantee the response of the system according to the driver's availability. It relies on the ZoneManager to assign the taxis to the queues or to the jobs, or to remove them when they are offline.\\\hline
-			{[}G17{]} Taxi drivers must confirm if they are going to take care of a certain call. & The QueueManager (inner component of ZoneManager) is in charge of this task.\\\hline
+			{[}G17{]} Taxi drivers must confirm if they are going to take care of a certain call. & The QueueManager (inner component of ZoneManager) is in charge of this interaction.\\\hline
 			{[}G18{]} The administrator shall be able to add, edit and delete taxi drivers in the system. & The ProfileManager (inner component of AccountManager) offers the ManageTaxiDriver interface to the Administrator.\\\hline
 			{[}G19{]} The administrator shall be able to manage and supervise the operation of the whole system, including the real-time situation of all the queues and of the taxis. & The ZoneEngine (inner component of ZoneManager) offers the Monitor interface to the Administrator.\\\hline
 			
