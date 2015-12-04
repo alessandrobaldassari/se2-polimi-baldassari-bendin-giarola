@@ -288,7 +288,7 @@
 				\item DB 
 				\item External Email service
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Static class\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -307,7 +307,7 @@
 			Interfaces required & \begin{itemize}
 				\item DB 
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Static class\\\hline
 		\end{tabular}
 	\end{center}
 	\bigskip
@@ -326,7 +326,7 @@
 				\item DB
 				\item LoginVerification for LoginManager
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Multi instance: one for each user session (where session means the entire period of time in which the user is logged in)\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -343,7 +343,7 @@
 			Interfaces required & \begin{itemize}
 				\item DB
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Factory method pattern\\\hline
 		\end{tabular}
 	\end{center}
 			
@@ -367,7 +367,7 @@
 			Interfaces required & \begin{itemize}
 				\item Assign for RequestWorker
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Factory method pattern\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -386,7 +386,7 @@
 			Interfaces required & \begin{itemize}
 				\item DB
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Singleton\\\hline
 		\end{tabular}
 	\end{center}		
 	
@@ -405,7 +405,7 @@
 				\item ManageRide for RideManager
 				\item Manage for RequestEngine
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Multi instance: one for each request\\\hline
 		\end{tabular}
 	\end{center}	
 	
@@ -427,7 +427,7 @@
 			Interfaces required & \begin{itemize}
 				\item Assign for RideWorker
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Factory method pattern\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -446,7 +446,7 @@
 			Interfaces required & \begin{itemize}
 				\item DB
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Singleton\\\hline
 		\end{tabular}
 	\end{center}		
 	
@@ -465,7 +465,7 @@
 				\item AllocateTaxi for ZoneManager
 				\item PayRide for PaymentManager
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Multi instance: one for each ride\\\hline
 		\end{tabular}
 	\end{center}	
 	
@@ -479,20 +479,21 @@
 	\centerline{NotificationManager:}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Controller of the current situation of every taxi.\\\hline
-			Responsibilities & This components keeps track of all the information about the whole taxi fleet. It can retrieve the position of taxis as well as their availability status and send these to the ZoneManager which uses them to control the queues and assign jobs. Thanks to the information about the location of every taxi, an external service can retrieve the current situation of the taxis spread across the city and possibly show them on a map.\\\hline
-			Interaction & With the ZoneManager to make available information about taxis, with the DB to store the data and with external services to make these same information available outside the system.\\\hline
+			Definition & Component controlling the notifications sent to the users.\\\hline
+			Responsibilities & This component is able to receive a message to be sent to some users with the specification of the mean of communication to be used. For this reason it is connected to the external services managing the dispatching of SMS and Emails.\\\hline
+			Interaction & With the RequestManager and RideManager to send updates about the request/rides to the passengers involved, with the ZoneManager to send updates to taxi drivers, and with the external services of SMS and Email.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item TaxiStatus for ZoneManager
-				\item PublicAPI for external services
+				\item CreateNotification for RideManager, RequestManager and ZoneManager
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
-				\item DB
+				\item Push for external services
+				\item SMS for external services
+				\item Email for external services
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Static class\\\hline
 		\end{tabular}
 	\end{center}	
-	
+		
 	\pagebreak
 	\subsubsection{Taxi Manager}
 	\begin{minipage}{\linewidth}
@@ -503,20 +504,20 @@
 	\centerline{TaxiManager:}
 	\begin{center}
 		\begin{tabular}{| l | p{9cm} |}\hline
-			Definition & Component controlling the notifications sent to the users.\\\hline
-			Responsibilities & This component is able to receive a message to be sent to some users with the specification of the mean of communication to be used. For this reason it is connected to the external services managing the dispatching of SMS and Emails.\\\hline
-			Interaction & With the RequestManager and RideManager to send updates about the request/rides to the passengers involved, with the ZoneManager to send updates to taxi drivers, and with the external services of SMS and Email.\\\hline
+			Definition & Controller of the current situation of every taxi.\\\hline
+			Responsibilities & This components keeps track of all the information about the whole taxi fleet. It can retrieve the position of taxis as well as their availability status and send these to the ZoneManager which uses them to control the queues and assign jobs. Thanks to the information about the location of every taxi, an external service can retrieve the current situation of the taxis spread across the city and possibly show them on a map.\\\hline
+			Interaction & With the ZoneManager to make available information about taxis, with the DB to store the data and with external services to make these same information available outside the system.\\\hline
 			Interfaces offered & \begin{itemize}
-				\item CreateNotification for RideManager, RequestManager and ZoneManager
+				\item TaxiStatus for ZoneManager
+				\item PublicAPI for external services
 			\end{itemize}\\\hline
 			Interfaces required & \begin{itemize}
-				\item Push
-				\item SMS for external services
-				\item Email for external services
+				\item DB
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Singleton pattern\\\hline
 		\end{tabular}
 	\end{center}	
+	
 	\pagebreak
 	\subsubsection{Zone Manager}
 	\begin{minipage}{\linewidth}
@@ -539,7 +540,7 @@
 				\item CreateNotification for NotificationManager
 				\item DB
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Singleton\\\hline
 		\end{tabular}
 	\end{center}
 	
@@ -552,7 +553,7 @@
 			Interfaces offered & \begin{itemize}
 				\item ManageTaxi for ZoneEngine
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Multi instance: one instance for each queue\\\hline
 		\end{tabular}
 	\end{center}	
 	
@@ -576,12 +577,17 @@
 			Interfaces required & \begin{itemize}
 				\item PublicPaymentService for communication with external payment services.
 			\end{itemize}\\\hline
-			Pattern & \\\hline
+			Implementation & Static class\\\hline
 		\end{tabular}
 	\end{center}
 
 	
 	\subsection{Deployment view}
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+		\makebox[\linewidth]{
+			\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/DeploymentView}}
+	\end{minipage} \linebreak
 	
 	\subsection{Runtime view}
 	
@@ -730,7 +736,6 @@
 			\item Event-driven architecture: \href{https://en.wikipedia.org/wiki/Event-driven_architecture}{https://en.wikipedia.org/wiki/Event-driven\_architecture}
 			\item Factory method pattern: \href{https://en.wikipedia.org/wiki/Factory_method_pattern}{https://en.wikipedia.org/wiki/Factory\_method\_pattern}
 			\item Singleton pattern: \href{https://en.wikipedia.org/wiki/Singleton_pattern}{https://en.wikipedia.org/wiki/Singleton\_pattern}
-			\item Observer pattern: \href{https://en.wikipedia.org/wiki/Observer_pattern}{https://en.wikipedia.org/wiki/Observer\_pattern}
 			\item Facade pattern: \href{https://en.wikipedia.org/wiki/Facade_pattern}{https://en.wikipedia.org/wiki/Facade\_pattern}
 			
 		\end{itemize}
