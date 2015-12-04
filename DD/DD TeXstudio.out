@@ -22,24 +22,23 @@
 \BOOKMARK [2][-]{subsection.0.2.4}{Deployment view}{section.0.2}% 22
 \BOOKMARK [2][-]{subsection.0.2.5}{Runtime view}{section.0.2}% 23
 \BOOKMARK [2][-]{subsection.0.2.6}{Selected architectural styles and patterns}{section.0.2}% 24
-\BOOKMARK [2][-]{subsection.0.2.7}{Other design decisions}{section.0.2}% 25
-\BOOKMARK [1][-]{section.0.3}{Algorithm design}{}% 26
-\BOOKMARK [2][-]{subsection.0.3.1}{Queue managing and taxi assignment}{section.0.3}% 27
-\BOOKMARK [2][-]{subsection.0.3.2}{Zone assignment}{section.0.3}% 28
-\BOOKMARK [2][-]{subsection.0.3.3}{Taxi availability}{section.0.3}% 29
-\BOOKMARK [2][-]{subsection.0.3.4}{Ride creation}{section.0.3}% 30
-\BOOKMARK [2][-]{subsection.0.3.5}{Payment}{section.0.3}% 31
-\BOOKMARK [1][-]{section.0.4}{User Interface Design}{}% 32
-\BOOKMARK [2][-]{paragraph.0.4.0.0.1}{Sign-up}{section.0.4}% 33
-\BOOKMARK [3][-]{paragraph.0.4.0.0.2}{Login}{paragraph.0.4.0.0.1}% 34
-\BOOKMARK [4][-]{paragraph.0.4.0.0.3}{Call a taxi}{paragraph.0.4.0.0.2}% 35
-\BOOKMARK [4][-]{paragraph.0.4.0.0.4}{Plan a ride}{paragraph.0.4.0.0.2}% 36
-\BOOKMARK [4][-]{paragraph.0.4.0.0.5}{Your reservations}{paragraph.0.4.0.0.2}% 37
-\BOOKMARK [4][-]{paragraph.0.4.0.0.6}{Your profile}{paragraph.0.4.0.0.2}% 38
-\BOOKMARK [4][-]{paragraph.0.4.0.0.7}{Manage jobs}{paragraph.0.4.0.0.2}% 39
-\BOOKMARK [4][-]{paragraph.0.4.0.0.8}{Administrator panel}{paragraph.0.4.0.0.2}% 40
-\BOOKMARK [1][-]{section.0.5}{Requirements Traceability}{}% 41
-\BOOKMARK [1][-]{section.0.6}{References}{}% 42
-\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 43
-\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 44
-\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 45
+\BOOKMARK [1][-]{section.0.3}{Algorithm design}{}% 25
+\BOOKMARK [2][-]{subsection.0.3.1}{Queue managing and taxi assignment}{section.0.3}% 26
+\BOOKMARK [2][-]{subsection.0.3.2}{Zone assignment}{section.0.3}% 27
+\BOOKMARK [2][-]{subsection.0.3.3}{Taxi availability}{section.0.3}% 28
+\BOOKMARK [2][-]{subsection.0.3.4}{Ride creation}{section.0.3}% 29
+\BOOKMARK [2][-]{subsection.0.3.5}{Payment}{section.0.3}% 30
+\BOOKMARK [1][-]{section.0.4}{User Interface Design}{}% 31
+\BOOKMARK [2][-]{paragraph.0.4.0.0.1}{Sign-up}{section.0.4}% 32
+\BOOKMARK [3][-]{paragraph.0.4.0.0.2}{Login}{paragraph.0.4.0.0.1}% 33
+\BOOKMARK [4][-]{paragraph.0.4.0.0.3}{Call a taxi}{paragraph.0.4.0.0.2}% 34
+\BOOKMARK [4][-]{paragraph.0.4.0.0.4}{Plan a ride}{paragraph.0.4.0.0.2}% 35
+\BOOKMARK [4][-]{paragraph.0.4.0.0.5}{Your reservations}{paragraph.0.4.0.0.2}% 36
+\BOOKMARK [4][-]{paragraph.0.4.0.0.6}{Your profile}{paragraph.0.4.0.0.2}% 37
+\BOOKMARK [4][-]{paragraph.0.4.0.0.7}{Manage jobs}{paragraph.0.4.0.0.2}% 38
+\BOOKMARK [4][-]{paragraph.0.4.0.0.8}{Administrator panel}{paragraph.0.4.0.0.2}% 39
+\BOOKMARK [1][-]{section.0.5}{Requirements Traceability}{}% 40
+\BOOKMARK [1][-]{section.0.6}{References}{}% 41
+\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 42
+\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 43
+\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 44

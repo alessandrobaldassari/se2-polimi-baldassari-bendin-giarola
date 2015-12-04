@@ -12,11 +12,11 @@
 -document structure FATTO-------------------------------------------------------------------------
 -sistemare testo FATTO----------------------------------------------------------------------------
 -commentare high level component view FATTO-------------------------------------------------------
--mettere tabella requirements traceability
+-mettere tabella requirements traceability FATTO--------------------------------------------------
 
--patterns & multithreading
+-patterns & multithreading FATTO------------------------------------------------------------------
 -deployment view
 -runtime view (sequence??)
 
--il notification manager ha interfaccia esterna push della app, ma quella non è interna al nostro sistema??
+-il notification manager ha interfaccia esterna push della app, ma quella non è interna al nostro sistema?? no
 -il DB non dobbiamo metterlo vero, perchè è la business logic solo?

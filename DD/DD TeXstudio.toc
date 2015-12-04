@@ -23,7 +23,6 @@
 \contentsline {subsection}{\numberline {2.4}Deployment view}{21}{subsection.0.2.4}
 \contentsline {subsection}{\numberline {2.5}Runtime view}{21}{subsection.0.2.5}
 \contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{21}{subsection.0.2.6}
-\contentsline {subsection}{\numberline {2.7}Other design decisions}{22}{subsection.0.2.7}
 \contentsline {section}{\numberline {3}Algorithm design}{22}{section.0.3}
 \contentsline {subsection}{\numberline {3.1}Queue managing and taxi assignment}{22}{subsection.0.3.1}
 \contentsline {subsection}{\numberline {3.2}Zone assignment}{24}{subsection.0.3.2}

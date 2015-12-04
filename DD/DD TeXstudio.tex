@@ -596,12 +596,10 @@
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
 	For the type of interaction with clients required by the system, the ``thin client'' approach is employed; only a very simple layer of logic is implemented on the client side, for instance the acquisition of coordinated with the GPS sensor and the rendering of the graphical user interface.\\
 	\mts{} relies on an ``event based'' or ``event-driven'' architecture. The system reacts to the change of state of some objects, for instance the switch of ``availability'' for the taxi driver is detected by the zone manager that operates accordingly in the respective queue. Other examples could be the change of state of a request to a modified request that must be taken into account (eg. cancellation of the request), or the consequence of the approval/refusal of a job by a driver. All these message-events are carried out by the notification manager as notifications.\\
-	\textcolor{red}{Riepilogo veloce a parole :\begin{itemize}
-			\item patterns
-			\item multithreading (componenti fissi vs componenti ad istanze...)
-		\end{itemize}}	
-	
-	\subsection{Other design decisions}
+	Some well-known software design patterns are used in the design of the system, for instance the ``Singleton'' pattern is used in the engines of the Request, Ride, Zone and Taxi Managers, while the ``Factory'' method pattern is used for the creation of instances for the workers of Account, Request and Ride Managers, respectively for every user, request and ride generated.\\
+	The system is planned to be always fast and responsive, also in case of a high number of requests and accesses to the service at the same time, for this reason multithreading is highly used; parallelization to better employ the powerful server is achieved through the instantiation of multiple processes for the ProfileManager (one for every logged in user), RequestWorker (one for each request), RideWorker (one for each ride) and QueueManager (one for each queue). 
+		
+%	\subsection{Other design decisions}
 
 	\section{Algorithm design}
 	Here are some distinctive algorithms of \mts{} presented with both pseudocode and flowchart diagrams.
