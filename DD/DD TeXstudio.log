@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.21)  4 DEC 2015 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.21)  4 DEC 2015 14:54
 entering extended mode
 **"DD TeXstudio.tex"
 ("DD TeXstudio.tex"
@@ -927,17 +927,6 @@ File: Pictures/CVPaymentManager.png Graphic file (type png)
 Package pdftex.def Info: Pictures/CVPaymentManager.png used on input line 565.
 (pdftex.def)             Requested size: 287.20319pt x 122.13724pt.
 
-<Pictures/DeploymentView.png, id=361, 1069.8369pt x 795.9336pt>
-File: Pictures/DeploymentView.png Graphic file (type png)
-
-<use Pictures/DeploymentView.png>
-Package pdftex.def Info: Pictures/DeploymentView.png used on input line 589.
-(pdftex.def)             Requested size: 534.91714pt x 397.96582pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--591
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -945,6 +934,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [20 <./Pictures/CVPaymentManager.png>]
+<Pictures/DeploymentView.png, id=366, 1069.8369pt x 795.9336pt>
+File: Pictures/DeploymentView.png Graphic file (type png)
+
+<use Pictures/DeploymentView.png>
+Package pdftex.def Info: Pictures/DeploymentView.png used on input line 590.
+(pdftex.def)             Requested size: 534.91714pt x 397.96582pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -958,18 +954,18 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 607--609
+Underfull \hbox (badness 10000) in paragraph at lines 609--611
 
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 609.
+nput line 611.
 (Pseudocode/QueueManager.c)
 <Pictures/QueueManager.png, id=373, 304.0158pt x 781.7205pt>
 File: Pictures/QueueManager.png Graphic file (type png)
 
 <use Pictures/QueueManager.png>
-Package pdftex.def Info: Pictures/QueueManager.png used on input line 613.
+Package pdftex.def Info: Pictures/QueueManager.png used on input line 615.
 (pdftex.def)             Requested size: 212.8096pt x 547.20062pt.
 
 
@@ -986,7 +982,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [23 <./Pictures/QueueManager.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+Underfull \hbox (badness 10000) in paragraph at lines 621--623
 
  []
 
@@ -995,7 +991,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--621
 File: Pictures/ZoneAssignment.png Graphic file (type png)
 
 <use Pictures/ZoneAssignment.png>
-Package pdftex.def Info: Pictures/ZoneAssignment.png used on input line 625.
+Package pdftex.def Info: Pictures/ZoneAssignment.png used on input line 627.
 (pdftex.def)             Requested size: 217.69984pt x 461.53717pt.
 
 
@@ -1005,7 +1001,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [24 <./Pictures/ZoneAssignment.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 631--633
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
 
  []
 
@@ -1022,7 +1018,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 File: Pictures/Availability.png Graphic file (type png)
 
 <use Pictures/Availability.png>
-Package pdftex.def Info: Pictures/Availability.png used on input line 637.
+Package pdftex.def Info: Pictures/Availability.png used on input line 639.
 (pdftex.def)             Requested size: 251.42561pt x 439.78403pt.
 
 
@@ -1032,7 +1028,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25 <./Pictures/Availability.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
@@ -1045,7 +1041,7 @@ Overfull \hbox (39.78723pt too wide) in paragraph at lines 9--10
 File: Pictures/RideCreation.png Graphic file (type png)
 
 <use Pictures/RideCreation.png>
-Package pdftex.def Info: Pictures/RideCreation.png used on input line 649.
+Package pdftex.def Info: Pictures/RideCreation.png used on input line 651.
 (pdftex.def)             Requested size: 285.15137pt x 682.94685pt.
 
 
@@ -1055,7 +1051,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 653--656
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
@@ -1070,7 +1066,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/Payment.png Graphic file (type png)
 
 <use Pictures/Payment.png>
-Package pdftex.def Info: Pictures/Payment.png used on input line 660.
+Package pdftex.def Info: Pictures/Payment.png used on input line 662.
 (pdftex.def)             Requested size: 353.27744pt x 636.57393pt.
 
 
@@ -1096,13 +1092,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [30]
 
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 668.
+(hyperref)                than one, level fixed on input line 670.
 
 <Pictures/Signup.png, id=471, 653.44125pt x 1024.82875pt>
 File: Pictures/Signup.png Graphic file (type png)
 
 <use Pictures/Signup.png>
-Package pdftex.def Info: Pictures/Signup.png used on input line 670.
+Package pdftex.def Info: Pictures/Signup.png used on input line 672.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1114,13 +1110,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [31 <./Pictures/Signup.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 674.
+(hyperref)                than one, level fixed on input line 676.
 
 <Pictures/Login.png, id=477, 653.44125pt x 1024.82875pt>
 File: Pictures/Login.png Graphic file (type png)
 
 <use Pictures/Login.png>
-Package pdftex.def Info: Pictures/Login.png used on input line 676.
+Package pdftex.def Info: Pictures/Login.png used on input line 678.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1134,7 +1130,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/CallATaxi.png Graphic file (type png)
 
 <use Pictures/CallATaxi.png>
-Package pdftex.def Info: Pictures/CallATaxi.png used on input line 683.
+Package pdftex.def Info: Pictures/CallATaxi.png used on input line 685.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1148,7 +1144,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanAndBookARide.png Graphic file (type png)
 
 <use Pictures/PlanAndBookARide.png>
-Package pdftex.def Info: Pictures/PlanAndBookARide.png used on input line 689.
+Package pdftex.def Info: Pictures/PlanAndBookARide.png used on input line 691.
 (pdftex.def)             Requested size: 407.66833pt x 641.86406pt.
 
 
@@ -1162,7 +1158,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/YourReservations.png Graphic file (type png)
 
 <use Pictures/YourReservations.png>
-Package pdftex.def Info: Pictures/YourReservations.png used on input line 695.
+Package pdftex.def Info: Pictures/YourReservations.png used on input line 697.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1176,7 +1172,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/AccountPage.png Graphic file (type png)
 
 <use Pictures/AccountPage.png>
-Package pdftex.def Info: Pictures/AccountPage.png used on input line 701.
+Package pdftex.def Info: Pictures/AccountPage.png used on input line 703.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1190,7 +1186,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/DriverPage.png Graphic file (type png)
 
 <use Pictures/DriverPage.png>
-Package pdftex.def Info: Pictures/DriverPage.png used on input line 707.
+Package pdftex.def Info: Pictures/DriverPage.png used on input line 709.
 (pdftex.def)             Requested size: 181.18439pt x 368.16415pt.
 
 
@@ -1204,7 +1200,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/AdminPage.png Graphic file (type png)
 
 <use Pictures/AdminPage.png>
-Package pdftex.def Info: Pictures/AdminPage.png used on input line 713.
+Package pdftex.def Info: Pictures/AdminPage.png used on input line 715.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1214,12 +1210,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [38 <./Pictures/AdminPage.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 728--728
+Underfull \hbox (badness 10000) in paragraph at lines 730--730
 \OT1/cmr/m/n/10.95 count-Man-ager) of-fers the Lo-gin in-ter-face
  []
 
 
-Underfull \vbox (badness 10000) detected at line 741
+Underfull \vbox (badness 10000) detected at line 743
  []
 
 
@@ -1236,7 +1232,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [40]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1245,18 +1241,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
  ("DD TeXstudio.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
 Package rerunfilecheck Info: File `"DD TeXstudio".out' has not changed.
 (rerunfilecheck)             Checksum: 01E980322CCCDBF8EC54B584C1B3DD06;3244.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
  ) 
 Here is how much of TeX's memory you used:
  10804 strings out of 493698
  161005 string characters out of 3144411
- 295462 words of memory out of 3000000
+ 295939 words of memory out of 3000000
  13818 multiletter control sequences out of 15000+200000
  11083 words of font info for 38 fonts, out of 3000000 for 9000
  1026 hyphenation exceptions out of 8191
@@ -1270,9 +1266,9 @@ nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "DD TeXstudio.pdf" (45 pages, 3162333 bytes).
+Output written on "DD TeXstudio.pdf" (45 pages, 3163101 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
+ 610 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
  488 words of extra memory for PDF output out of 10000 (max. 10000000)
 
