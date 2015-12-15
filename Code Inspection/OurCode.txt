@@ -2,11 +2,15 @@ https://github.com/alessandrobaldassari/se2-polimi-baldassari-bendin-giarola.git
 Professor: Di Nitto
 Students: Alessandro Baldassari, Alberto Bendin, Francesco Giarola
 Methods:
+
 Name:handleNoAuth( Permissions collection , MapValue m , String name )
 Location:appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/WebPermissionUtil.java
+
 Name:handleConnections( Permissions collection , MapValue m , String name )
 Location:appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/WebPermissionUtil.java
+
 Name:processConstraints( WebBundleDescriptor wbd , PolicyConfiguration pc )
 Location:appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/WebPermissionUtil.java
+
 Name:createWebRoleRefPermission( WebBundleDescriptor wbd , PolicyConfiguration pc )
 Location:appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/WebPermissionUtil.java
