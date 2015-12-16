@@ -1,0 +1,26 @@
+2.
+	- row 509-534 variable "m" in the while loop is used correctly.
+	- row 536-552, 563-571 variable "e" in the if statement is used correctly.
+	- row 540-544, 547-551, 565-569 variable "p" in the while loop is used correctly.
+	
+8.
+	- three and four space are used in an inconsistent way, like in row 490 and 491.
+
+9.
+	- tabs are used like in row 488, also sometimes mixed with spaces, like in row 489.
+	
+10.
+	- row 487 open the method using the "Allman" style, all other blocks follows the "Kernighan and Ritchie" style.
+	
+11.
+	- row 488, 502, 509, 511, 536, 540, 547, 558, 563, 565, 574 --> OK
+
+13.
+	- row 503, 504 the code could have been broken in three lines instead of two. The same can be, more or less, applied to other line facing the same problem.
+	- row 516 even if the code exceeds the length of 80 chars by 2, the line can stay as is.
+	
+14.
+	- all the lines that correctly exceeds 80 chars, never exceeds 120 chars.
+	
+15.
+	- row 503 is wrong written because the line break preceeds the "+" operator

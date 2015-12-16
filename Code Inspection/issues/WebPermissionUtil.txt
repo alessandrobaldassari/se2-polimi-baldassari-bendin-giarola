@@ -1,0 +1,59 @@
+1.
+
+3.
+	- row 65 class "WebPermissionUtil" respects the naming convention.
+	- row 700 class "ConstraintValue" respects the naming convention.
+	- row 882 class "MethodValue" respects the naming convention.
+	- row 971 class "MapValue" respects the naming convention.
+	
+4.
+	- No Interfaces are present in our file.
+	
+5.
+	-  row 379 "handleNoAuth" respects the naming convention.
+	-  row 402 "handleConnections" respects the naming convention.
+	-  row 484 "processConstraints" respects the naming convention.
+	-  row 580 "createWebRoleRefPermission" respects the naming convention.
+
+6.
+	- row 67 variable "logger" respects the naming convention.
+	- row 702 variable "connectKeys" respects the naming convention.
+	- row 708 variable "connectTypeNone" respects the naming convention.
+	- row 709 variable "connectHash" respects the naming convention.
+	- row 716 variable "excluded" respects the naming convention.
+	- row 717 variable "ignoreRoleList" respects the naming convention.
+	- row 718 variable "roleList" respects the naming convention.
+	- row 719 variable "connectSet" respects the naming convention.
+	- row 884 variable "methodNames" respects the naming convention.
+	- row 886 variable "index" respects the naming convention.
+	- row 973 variable "committed" respects the naming convention.
+	- row 975 variable "patternType" respects the naming convention.
+	- row 977 variable "patternLength" respects the naming convention.
+	- row 979 variable "irrelevantByQualifier" respects the naming convention.
+	- row 981 variable "urlPatternSpec" respects the naming convention.
+	- row 983 variable "methodValues" respects the naming convention.
+	- row 986 variable "otherConstraint" respects the naming convention.
+	
+7.
+	- row 73 variable "PT_DEFAULT" respects the naming convention.
+	- row 74 variable "PT_EXTENSION" respects the naming convention.
+	- row 75 variable "PT_PREFIX" respects the naming convention.
+	- row 76 variable "PT_EXACT" respects the naming convention.
+	
+12.
+	- OK foreach section
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
