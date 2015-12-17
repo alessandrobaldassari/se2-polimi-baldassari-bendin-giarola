@@ -42,6 +42,106 @@
 	
 12.
 	- OK foreach section
+	
+16.
+	- OK beacause we don't have any arithmetic expression
+	
+18.
+	- Comments are not adequately used to explain what the code is trying to do, for example in line 484 the method is public and have no comments at all to describe it's behaviour
+	
+19.
+	- rows 593, 595, 724 have been commented without any reason and date for safe remove
+	- rows 1128, 1129, 1130 have been commented with a reason but without any date for safe remove
+	
+20.
+	- Correct beacausethe only public class is WebPermissionUtil, the others (ConstraintValue, MethodValue, MapValue) are not public
+	
+21.
+	- Correct
+	
+22.
+	- No external class or interface is implemeted.
+	
+23.
+	- Javadoc are almost missing for this class.
+	
+24.
+	- Correct
+	
+25.
+	- row 69, the class constructor is before the list of private static variables
+	
+26.
+	- methods are grouped by accessibility instead of functionality.
+	
+27.
+	- Correct
+	
+28.
+	- Correct
+	
+29.
+	- Correct
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 

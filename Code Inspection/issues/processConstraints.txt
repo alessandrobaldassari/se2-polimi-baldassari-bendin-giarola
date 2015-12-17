@@ -24,3 +24,22 @@
 	
 15.
 	- row 503 is wrong written because the line break preceeds the "+" operator
+	
+17.
+	- row 488, the block itself follows the specification, but it should have been indented by one more level
+	- row 541, one level of indention is missing
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
