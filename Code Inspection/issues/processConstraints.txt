@@ -29,6 +29,59 @@
 	- row 488, the block itself follows the specification, but it should have been indented by one more level
 	- row 541, one level of indention is missing
 	
+30.
+
+31. 
+	- Correct
+	
+32.
+	- Correct
+	
+33.
+	- The if statement in row 488 must be posponed till after row 501
+	- row 508 must be preponed to the block of line 509
+	- row 539 must be before row 537
+	- row 564 must be before row 561
+	
+34.
+	- Correct
+	
+35.
+	- Correct
+	
+36.
+	- Correct
+	
+37.
+	- No arrays in the method
+
+38.
+	- Correct
+	
+39.
+
+40.
+	- Correct
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
