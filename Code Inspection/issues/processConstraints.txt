@@ -30,7 +30,8 @@
 	- row 541, one level of indention is missing
 	
 30.
-
+	- row 494, 510, 541, 548, 560, 566 wrong
+	
 31. 
 	- Correct
 	
@@ -59,40 +60,67 @@
 	- Correct
 	
 39.
+	- Correct
 
 40.
 	- Correct
 	
+41.
+	- Correct
 	
+42.
+	- Correct
 	
+43.
+	- Correct
 	
+44.
+	- Correct
+
+45.
+	- Correct
 	
+46.
+	- Correct
+
+47.
+	- No division in the method
 	
+48.
+	- No arithmetic operations in the method
 	
+49.
+	- Correct
 	
+50.
+	- Correct
 	
+51.
+	- Correct
 	
+52.
+	- Correct
 	
+53.
+	- No catch block in the method
 	
+54.
+	- No "switch" statement in the method
 	
+55.
+	- No "switch" statement in the method
 	
+56.
+	- Correct
 	
+57.
+	- No Files are used in the method
 	
+58.
+	- No Files are used in the method	
 	
+59.
+	- No Files are used in the method
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+60.
+	- No Files are used in the method
