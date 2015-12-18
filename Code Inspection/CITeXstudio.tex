@@ -164,15 +164,29 @@ Assignment 3: Code Inspection\\
 		\end{enumerate}
 		
 		\subsection*{Comments}\begin{enumerate}[resume]
-			\item Comments are used to adequately explain what the class, interface, methods, and blocks of code are doing.
-			\item Commented out code contains a reason for being commented out and a date it can be removed from the source file if determined it is no longer needed.
+			\item \textbf{Comments are used to adequately explain what the class, interface, methods, and blocks of code are doing.}\smallskip \\
+				Comments are not adequately used to explain what the code is trying to do, for example in line 484 the method is public and has no comments at all to describe its behavior.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=481,firstline=481,lastline=488,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+			\item \textbf{Commented out code contains a reason for being commented out and a date it can be removed from the source file if determined it is no longer needed.}\smallskip \\
+				Line 724 in the example below has not been commented properly at all; the same is for lines 593 and 595.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=723,firstline=723,lastline=725,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The lines 1128, 1129 and 1130 have been commented out with a reason but without any date for safe remove.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=1120,firstline=1120,lastline=1134,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+
 		\end{enumerate}
 		
 		\subsection*{Java Source Files}\begin{enumerate}[resume]
-			\item Each Java source file contains a single public class or interface.
+			\item \textbf{Each Java source file contains a single public class or interface.}\smallskip \\
+				The rule is respected because the only public class is ``WebPermissionUtil'', the others (``ConstraintValue'', ``MethodValue'', ``MapValue'') are not public classes.
 			\item The public class is the first class or interface in the file.
 			\item Check that the external program interfaces are implemented consistently with what is described in the javadoc.
-			\item Check that the javadoc is complete (i.e., it covers all classes and files part of the set of classes assigned to you).
+			\item \textbf{Check that the javadoc is complete.}\smallskip \\
+				Javadoc are almost missing for this class, as shown in the picture below.\smallskip \\
+				\begin{minipage}{\linewidth}
+					%		\vspace*{-0.35cm}
+					\makebox[\linewidth]{
+						\includegraphics[keepaspectratio=true,scale=0.45]{Pictures/Javadoc}}
+				\end{minipage} \linebreak
 		\end{enumerate}
 		
 		\subsection*{Package and Import Statements}\begin{enumerate}[resume]
@@ -209,7 +223,10 @@ Assignment 3: Code Inspection\\
 		\subsection*{Initialization and Declarations}\begin{enumerate}[resume]
 			\item Check that variables and class members are of the correct type. Check that they have the right visibility (public/private/protected).
 			\item Check that variables are declared in the proper scope.
-			\item Check that constructors are called when a new object is desired.
+			\item \textbf{Check that constructors are called when a new object is desired.}\smallskip \\
+				The following example represents a case in which the declaration (line 494) may be split in declaration and assignment.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=494,firstline=494,lastline=497,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same is for lines: 510, 541, 548, 560, 566.
 			\item Check that all object references are initialized before use.
 			\item Variables are initialized where they are declared, unless dependent upon a computation.
 			\item \textbf{Declarations appear at the beginning of blocks (A block is any code surrounded by curly braces `\texttt{\{}' and `\texttt{\}}'). The exception is a variable can be declared in a \texttt{for} loop.} \smallskip \\
