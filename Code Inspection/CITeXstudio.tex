@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -93,25 +93,201 @@ Assignment 3: Code Inspection\\
 	%to insert the writing "Page" above page numbers in the TOC
 	\addtocontents{toc}{~\hfill\textrm{Page}\par}
 	
-	\section{Classes that were assigned to the group}
+	\section{Classes that were assigned to the group} We were assigned the ``WebPermissionUtil.java'' class, located in the path:\
+	\begin{verbatim}
+		appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/
+	\end{verbatim}
+	\bigskip
+	In particular we had to analyze the methods:
+	\begin{itemize}
+		\item handleNoAuth( Permissions collection , MapValue m , String name )
+		\item handleConnections( Permissions collection , MapValue m , String name )
+		\item processConstraints( WebBundleDescriptor wbd , PolicyConfiguration pc )
+		\item createWebRoleRefPermission( WebBundleDescriptor wbd , PolicyConfiguration pc )
+	\end{itemize}
 	
-	\section{Functional role of assigned set of classes}
+	\section{Functional role of assigned set of classes} This class is used for generating Web permissions based on the deployment descriptor.
 	
-	\section{List of issues found by applying the checklist}
+	\definecolor{aliceblue}{gray}{0.99}
 	
-	\section{Any other problem you have highlighted}
+	\section{List of issues found by applying the checklist} Here are reported only the issues found while analyzing the code with the provided Java code inspection checklist.
+		\subsection*{Naming Conventions}\begin{enumerate}[resume]	
+			\item All class names, interface names, method names, class variables, method variables, and constants used should have meaningful names and do what the name suggests.
+			\item \textbf{If one-character variables are used, they are used only for temporary ``throwaway'' variables, such as those used in for loops.}\smallskip \\
+%				In the following example it is evident that the variable "m" in the while loop is correctly used, since it is only an index to scan the data.
+%				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=509,firstline=509,lastline=534,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+%				\textcolor{red}{This is only one of the one-character variable present in the file, but all of them are just used to cycle in loops. WAIT FOR OTHER METHODS TOO}
+			\item Class names are nouns, in mixed case, with the first letter of each word in capitalized. Examples: \texttt{class Raster}; \texttt{class ImageSprite};
+			\item Interface names should be capitalized like classes.
+			\item Method names should be verbs, with the first letter of each addition word capitalized. Examples: \texttt{getBackground()}; \texttt{computeTemperature()}.
+			\item Class variables, also called attributes, are mixed case, but might begin with an underscore (`\texttt{\_}') followed by a lowercase first letter. All the remaining words in the variable name have their first letter capitalized. Examples: \texttt{\_windowHeight}, \texttt{timeSeriesData}.
+			\item Constants are declared using all uppercase with words separated by an underscore. Examples: \texttt{MIN\_WIDTH}; \texttt{MAX\_HEIGHT}.
+		\end{enumerate}
+		
+		\subsection*{Indention}\begin{enumerate}[resume]
+			\item \textbf{Three or four spaces are used for indentation and done so consistently.}\smallskip \\
+				In the following example three and four spaces are mixed, in the first line a tab and 4 spaces are used, while in the second line there are 2 tabs and 7 spaces.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=490,firstline=490,lastline=491,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
+			\item \textbf{No tabs are used to indent.}\smallskip \\
+				The following example shows how tabs are often used, sometimes mixed with spaces too.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=488,firstline=488,lastline=489,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
+				One should avoid using tabs to indent code also because the interpretation of tabs varies with different IDEs or text editors.
+		\end{enumerate}
+		
+		\subsection*{Braces}\begin{enumerate}[resume]
+			\item \textbf{Consistent bracing style is used, either the preferred ``Allman'' style (first brace goes underneath the opening block) or the ``Kernighan and Ritchie'' style (first brace is on the same line of the instruction that opens the new block).}\smallskip \\
+				In the following example line 487 opens the method using the "Allman" style, all the other blocks follow the "Kernighan and Ritchie" style.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=492,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+			\item All \texttt{if}, \texttt{while}, \texttt{do-while}, \texttt{try-catch}, and \texttt{for} statements that have only one statement to execute are surrounded by curly braces.			
+		\end{enumerate}
+		
+		\subsection*{File Organization}\begin{enumerate}[resume]
+			\item Blank lines and optional comments are used to separate subsections (beginning comments, package/import statements, class/interface declarations which include class variable/attributes declarations, constructors, and methods).
+			\item \textbf{Where practical, line length does not exceed 80 characters.}\smallskip \\
+				In the following example lines 503 and 504 could have been broken in three lines instead of two. The same can be applied to other lines facing the same problem.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=501,firstline=501,lastline=508,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+			\item \textbf{When line length must exceed 80 characters, it does NOT exceed 120 characters.}\smallskip \\
+				All the lines which (even if arguable) reasonably exceed 80 characters never violate the limit of 120 characters.
+		\end{enumerate}
+		
+		\subsection*{Wrapping Lines}\begin{enumerate}[resume]
+			\item \textbf{Line break occurs after a comma or an operator.}\smallskip \\
+				In the following example line 503 is written wrong because the line-break precedes the "+" operator.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=503,firstline=503,lastline=504,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+			\item Higher-level breaks are used.
+			\item \textbf{A new statement is aligned with the beginning of the expression at the same level as the previous line.}\smallskip \\
+				The whole method ``processConstraints'' lacks a level of indentation (is at the same level of the external code); an example of this is the opening of the method itself at line 488 (it is evident when the number of spaces associated to a tab is 4).
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=492,language=Java,frame=single,breaklines=false,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"} \pagebreak
+				Other examples are \texttt{while} loops or \texttt{if} statements at the same level of the upper-level code, like at line 541, where one level of indention is missing.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=539,firstline=539,lastline=544,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same is for line 548 and 564.
+		\end{enumerate}
+		
+		\subsection*{Comments}\begin{enumerate}[resume]
+			\item Comments are used to adequately explain what the class, interface, methods, and blocks of code are doing.
+			\item Commented out code contains a reason for being commented out and a date it can be removed from the source file if determined it is no longer needed.
+		\end{enumerate}
+		
+		\subsection*{Java Source Files}\begin{enumerate}[resume]
+			\item Each Java source file contains a single public class or interface.
+			\item The public class is the first class or interface in the file.
+			\item Check that the external program interfaces are implemented consistently with what is described in the javadoc.
+			\item Check that the javadoc is complete (i.e., it covers all classes and files part of the set of classes assigned to you).
+		\end{enumerate}
+		
+		\subsection*{Package and Import Statements}\begin{enumerate}[resume]
+			\item If any package statements are needed, they should be the first non-comment statements. Import statements follow.
+		\end{enumerate}
+		
+		\subsection*{Class and Interface Declarations}\begin{enumerate}[resume]
+			\item The class or interface declarations shall be in the following order:
+			\begin{enumerate}
+				\item class/interface documentation comment;
+				\item class or interface statement;
+				\item class/interface implementation comment, if necessary;
+				\item class (static) variables;
+				\begin{enumerate}
+					\item first public class variables;
+					\item next protected class variables;
+					\item next package level (no access modifier);
+					\item last private class variables.
+				\end{enumerate}
+				\item instance variables;
+				\begin{enumerate}
+					\item first public instance variables;
+					\item next protected instance variables;
+					\item next package level (no access modifier);
+					\item last private instance variables.
+				\end{enumerate}
+				\item constructors;
+				\item methods.
+			\end{enumerate}
+			\item Methods are grouped by functionality rather than by scope or accessibility.
+			\item Check that the code is free of duplicates, long methods, big classes, breaking encapsulation, as well as if coupling and cohesion are adequate.
+		\end{enumerate}
+		
+		\subsection*{Initialization and Declarations}\begin{enumerate}[resume]
+			\item Check that variables and class members are of the correct type. Check that they have the right visibility (public/private/protected).
+			\item Check that variables are declared in the proper scope.
+			\item Check that constructors are called when a new object is desired.
+			\item Check that all object references are initialized before use.
+			\item Variables are initialized where they are declared, unless dependent upon a computation.
+			\item \textbf{Declarations appear at the beginning of blocks (A block is any code surrounded by curly braces `\texttt{\{}' and `\texttt{\}}'). The exception is a variable can be declared in a \texttt{for} loop.} \smallskip \\
+				In the following example the \texttt{if} statement at line 488 must be postponed till after line 501 and line 508 must be put before the block of line 509.
+				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=508,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same is for:
+				\begin{itemize}
+					\item line 539 must be before line 537
+					\item line 564 must be before line 561
+				\end{itemize}
+		\end{enumerate}
+		
+		\subsection*{Method Calls}\begin{enumerate}[resume]
+			\item Check that parameters are presented in the correct order.
+			\item Check that the correct method is being called, or should it be a different method with a similar name.
+			\item Check that method returned values are used properly.
+		\end{enumerate}
+		
+		\subsection*{Arrays}\begin{enumerate}[resume]
+			\item Check that there are no off-by-one errors in array indexing (that is, all required array elements are correctly accessed through the index).
+			\item Check that all array (or other collection) indexes have been prevented from going out-of-bounds.
+			\item Check that constructors are called when a new array item is desired.
+		\end{enumerate}
+		
+		\subsection*{Object Comparison}\begin{enumerate}[resume]
+			\item Check that all objects (including Strings) are compared with \texttt{equals} and not with \texttt{==}.
+		\end{enumerate}
+		
+		\subsection*{Output Format}\begin{enumerate}[resume]
+			\item Check that displayed output is free of spelling and grammatical errors.
+			\item Check that error messages are comprehensive and provide guidance as to how to correct the problem.
+			\item Check that the output is formatted correctly in terms of line stepping and spacing.
+		\end{enumerate}
+		
+		\subsection*{Computation, Comparisons and Assignments}\begin{enumerate}[resume]
+			\item Check that the implementation avoids ``brutish programming'': (see \url{http://users.csc.calpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html}). 
+			\item Check order of computation/evaluation, operator precedence and parenthesizing.
+			\item Check the liberal use of parenthesis is used to avoid operator precedence problems.
+			\item Check that all denominators of a division are prevented from being zero.
+			\item Check that integer arithmetic, especially division, are used appropriately to avoid causing unexpected truncation/rounding.
+			\item Check that the comparison and Boolean operators are correct.
+			\item Check throw-catch expressions, and check that the error condition is actually legitimate.
+			\item Check that the code is free of any implicit type conversions.
+		\end{enumerate}
+		
+		\subsection*{Exceptions}\begin{enumerate}[resume]
+			\item Check that the relevant exceptions are caught.
+			\item Check that the appropriate action are taken for each catch block.
+		\end{enumerate}
+		
+		\subsection*{Flow of Control}\begin{enumerate}[resume]
+			\item In a \texttt{switch} statement, check that all cases are addressed by break or return.
+			\item Check that all switch statements have a default branch.
+			\item Check that all loops are correctly formed, with the appropriate initialization, increment and termination expressions.
+		\end{enumerate}
+		
+		\subsection*{Files}\begin{enumerate}[resume]
+			\item Check that all files are properly declared and opened.
+			\item Check that all files are closed properly, even in the case of an error.
+			\item Check that EOF conditions are detected and handled correctly.
+			\item Check that all file exceptions are caught and dealt with accordingly.
+		\end{enumerate}
+		
 	
-	\section{Additional Material}
+	\subsection{Any other problem you have highlighted}
 	
-	\section{Appendix}
+	\subsection{Additional Material}
+	Reference to the checklist provided and to the code version.
 	
-	\subsection{Software and tools used}
+	\subsection{Appendix}
+	
+	\subsubsection{Software and tools used}
 		\begin{itemize}
 			\item TeXstudio 2.10.4 (\href{http://www.texstudio.org/}{http://www.texstudio.org/}) to redact and format this document.
 			\item NetBeans 8.1 (\href{https://netbeans.org/}{https://netbeans.org/}) to download, inspect and edit the code.
 		\end{itemize}
 		
-	\subsection{Hours of work} The time spent to redact this document:
+	\subsubsection{Hours of work} The time spent to redact this document:
 		\begin{itemize}
 			\item Baldassari Alessandro: 30 hours.
 			\item Bendin Alberto: 30 hours.
