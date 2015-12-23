@@ -26,93 +26,94 @@
 	- WRONG: the whole method lacks one level of indentation, from line 381 to 399
 
 30.
-	- WRONG: line 382, 384, 
+	- WRONG: line 382, 384 declaration may be split in declaration and assignment
 	
 31. 
-	CORRECT
+	- CORRECT
 	
 32.
-
+	- CORRECT
 	
 33.
-
+	- CORRECT
 	
 34.
-
+	- CORRECT
 	
 35.
-
+	- CORRECT
 	
 36.
-
+	- CORRECT??? (Line 391 else is really needed? The return of line 392 too?)
 	
 37.
-
+	- CORRECT: no arrays in the method
 
 38.
-
+	- CORRECT: no arrays in the method
 	
 39.
-
+	- CORRECT: no arrays in the method
 
 40.
-
+	- CORRECT: no comparisons made in the method
 	
 41.
-
+	- CORRECT
 	
 42.
-
+	- CORRECT: no error messages in the method
 	
 43.
-
+	- CORRECT
 	
 44.
-
+	- CORRECT
 
 45.
-
+	- CORRECT
 	
 46.
-
+	- CORRECT
 
 47.
-
+	- CORRECT: no divisions in the method
 	
 48.
-
+	- CORRECT: no arithmetic operations in the method
 	
 49.
-
+	- CORRECT
 	
 50.
-
+	- CORRECT: no throw-catch expressions in the method
 	
 51.
-
+	- CORRECT
 	
 52.
-
+	- CORRECT
 	
 53.
-
+	- CORRECT: no catch blocks in the method
 	
 54.
-
+	- CORRECT: no "switch" statements in the method
 	
 55.
-
+	- CORRECT: no "switch" statements in the method
 	
 56.
-
+	- CORRECT: no loops in the methods
 	
 57.
-
+	- CORRECT: No Files are used in the method
 	
 58.
-
+	- CORRECT: No Files are used in the method
 	
 59.
-
+	- CORRECT: No Files are used in the method
 	
 60.
+	- CORRECT: No Files are used in the method

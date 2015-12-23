@@ -108,7 +108,21 @@ Assignment 3: Code Inspection\\
 		\item createWebRoleRefPermission( WebBundleDescriptor wbd , PolicyConfiguration pc )
 	\end{itemize}
 	
-	\section{Functional role of assigned set of classes} This class is used for generating Web permissions based on the deployment descriptor.
+	\section{Functional role of assigned set of classes} 
+	The class ``WebPermissionUtil'' generates web permissions and it is part of the set of classes that manages all the security decisions required to allow the access to a resource. In particular it fulfills the role of utility class specialized in parsing and managing the policy configurations related to web-onnection security and permissions.\\
+	Evidences of the functional role of the class are already present in the path and name of its own package:\\
+	\texttt{appserver/security/core-ee/src/main/java/com/sun/enterprise/security/web/integration/}\bigskip \\ 
+	Moreover after an exhaustive search of all the usages of the class in the call hierarchy, we found out that the only caller is the ``WebSecurityManager'', and both a code inspection of the latter and its own javadoc (image below) had confirmed the role of ``WebPermissionUtil'' class.
+	\begin{minipage}{\linewidth}
+		%		\vspace*{-0.35cm}
+%		\captionof{figure}{WebSecurityManager's javadoc}
+		\centering
+		\title{WebSecurityManager's javadoc}\smallskip\\
+		\makebox[\linewidth][c]{
+			\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/JavadocWebSecurityManager}}
+	\end{minipage} \linebreak
+	
+	
 	
 	\definecolor{aliceblue}{gray}{0.99}
 	
@@ -245,7 +259,7 @@ Assignment 3: Code Inspection\\
 			\item Check that all object references are initialized before use.
 			\item Variables are initialized where they are declared, unless dependent upon a computation.
 			\item \textbf{Declarations appear at the beginning of blocks (A block is any code surrounded by curly braces `\texttt{\{}' and `\texttt{\}}'). The exception is a variable can be declared in a \texttt{for} loop.} \smallskip \\
-				In the following example the \texttt{if} statement at line 488 must be postponed till after line 501 and line 508 must be put before the block of line 509.
+				In the following example the \texttt{if} statement at line 488 must be postponed till after line 501 and line 508 must be put before the block of line 502.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=508,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
 				The same is for:
 				\begin{itemize}
@@ -308,9 +322,7 @@ Assignment 3: Code Inspection\\
 	
 	\section{Any other problem you have highlighted}
 	
-	\section{Additional Material}
-	Reference to the checklist provided and to the code version.
-	
+
 	\section{Appendix}
 	
 	\subsection{Software and tools used}
@@ -322,8 +334,8 @@ Assignment 3: Code Inspection\\
 		
 	\subsection{Hours of work} The time spent to redact this document:
 		\begin{itemize}
-			\item Baldassari Alessandro: 25 hours.
-			\item Bendin Alberto: 25 hours.
-			\item Giarola Francesco: 25 hours.
+			\item Baldassari Alessandro: 20 hours.
+			\item Bendin Alberto: 20 hours.
+			\item Giarola Francesco: 20 hours.
 		\end{itemize}
 \end{document}
