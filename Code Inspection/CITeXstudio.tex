@@ -131,6 +131,11 @@ Assignment 3: Code Inspection\\
 			\setcounter{enumi}{1}	
 %			\item All class names, interface names, method names, class variables, method variables, and constants used should have meaningful names and do what the name suggests.
 			\item \textbf{If one-character variables are used, they are used only for temporary ``throwaway'' variables, such as those used in for loops.}\smallskip \\
+				At line 379 the variable "\texttt{m}" should have been named with a more meaningful name since it is not a throwaway variable: \\
+				\begin{minipage}{\linewidth}
+				\lstinputlisting[title=abstract from method ``handleNoAuth'',numbers=left,firstnumber=379,firstline=379,lastline=386,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				\end{minipage}
+			
 %				In the following example it is evident that the variable "m" in the while loop is correctly used, since it is only an index to scan the data.
 %				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=509,firstline=509,lastline=534,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
 %				\textcolor{red}{This is only one of the one-character variable present in the file, but all of them are just used to cycle in loops. WAIT FOR OTHER METHODS TOO}
@@ -146,10 +151,14 @@ Assignment 3: Code Inspection\\
 			\item \textbf{Three or four spaces are used for indentation and done so consistently.}\smallskip \\
 				In the following example three and four spaces are mixed, in the first line a tab and 4 spaces are used, while in the second line there are 2 tabs and 7 spaces.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=490,firstline=490,lastline=491,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
+				Another example is at line 380 where there are 3 tabs and 5 spaces.
+				\lstinputlisting[title=abstract from method ``handleNoAuth'',numbers=left,firstnumber=379,firstline=379,lastline=381,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
 			\item \textbf{No tabs are used to indent.}\smallskip \\
 				The following example shows how tabs are often used, sometimes mixed with spaces too.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=488,firstline=488,lastline=489,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
-				One should avoid using tabs to indent code also because the interpretation of tabs varies with different IDEs or text editors.
+				One should avoid using tabs to indent code also because the interpretation of tabs varies with different IDEs or text editors.\\
+				Another example is at line 387 where 2 tabs are used, while at line 388 1 tab and 4 spaces, and since tabs (in this case) are associated with 4 spaces the two lines appear aligned even though theoretically they are not at the same level of indentation.
+				\lstinputlisting[title=abstract from method ``handleNoAuth'',numbers=left,firstnumber=383,firstline=383,lastline=389,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
 		\end{enumerate}
 		
 		\subsection*{Braces}\begin{enumerate}[resume]
@@ -178,6 +187,7 @@ Assignment 3: Code Inspection\\
 			\item \textbf{A new statement is aligned with the beginning of the expression at the same level as the previous line.}\smallskip \\
 				The whole method ``processConstraints'' lacks a level of indentation (is at the same level of the external code); an example of this is the opening of the method itself at line 488 (it is evident when the number of spaces associated to a tab is 4).
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=492,language=Java,frame=single,breaklines=false,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same goes for method ``handleNoAuth'' which lacks one level of indentation, from line 381 to 399.\\
 				Other examples are \texttt{while} loops or \texttt{if} statements at the same level of the upper-level code, like at line 541, where one level of indention is missing.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=539,firstline=539,lastline=544,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
 				The same is for line 548 and 564.
@@ -255,7 +265,7 @@ Assignment 3: Code Inspection\\
 			\item \textbf{Check that constructors are called when a new object is desired.}\smallskip \\
 				The following example represents a case in which the declaration (line 494) may be split in declaration and assignment.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=494,firstline=494,lastline=497,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
-				The same is for lines: 510, 541, 548, 560, 566.
+				The same is for lines: 382, 384, 510, 541, 548, 560, 566.
 			\item Check that all object references are initialized before use.
 			\item Variables are initialized where they are declared, unless dependent upon a computation.
 			\item \textbf{Declarations appear at the beginning of blocks (A block is any code surrounded by curly braces `\texttt{\{}' and `\texttt{\}}'). The exception is a variable can be declared in a \texttt{for} loop.} \smallskip \\

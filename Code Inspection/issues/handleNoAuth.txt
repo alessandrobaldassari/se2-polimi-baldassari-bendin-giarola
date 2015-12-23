@@ -5,7 +5,7 @@
 	- WRONG: line 380 there are 3 tabs and 5 spaces, while usually there are 4 spaces
 
 9.
-	- WRONG: line 387 2 tabs are used while line 388 1 tab and 4 spaces for the same level of indentation, so yes tabs are used
+	- WRONG: at line 387 2 tabs are used, while at line 388 1 tab and 4 spaces, and since tabs (in this case) are associated with 4 spaces the two lines appear aligned even though theoretically they are not at the same level of indentation
 	
 10.
 	- CORRECT: the Kernighan and Ritchie style is used consistently
