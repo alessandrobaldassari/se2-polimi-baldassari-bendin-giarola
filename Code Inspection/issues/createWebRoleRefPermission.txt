@@ -1,0 +1,15 @@
+2.	Correct
+
+8.	609, 628, 630 (3 spaces, usually 4)
+
+9.	from 580 to 633
+
+10.	583 not "Kernighan and Ritchie"
+
+11.	Correct
+
+13.	586, 608, 609, 615, 620, 627, 629, 672 (Practical??? Logger)
+
+14. 	586, 608, 609, 615
+
+15.
