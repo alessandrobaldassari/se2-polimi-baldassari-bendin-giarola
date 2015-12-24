@@ -44,7 +44,7 @@
 	- CORRECT
 	
 36.
-	- CORRECT??? (Line 391 else is really needed? The return of line 392 too?)
+	- CORRECT
 	
 37.
 	- CORRECT: no arrays in the method
