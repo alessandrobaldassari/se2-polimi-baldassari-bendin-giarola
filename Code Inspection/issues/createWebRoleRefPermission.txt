@@ -10,6 +10,70 @@
 
 13.	586, 608, 609, 615, 620, 627, 629, 672 (Practical??? Logger)
 
-14. 	586, 608, 609, 615
+14.	586, 608, 609, 615
 
-15.
+15.	629, 659, 667, 671
+
+17.	592, 594, 597, 598, 600, 607, 614, 617, 626, 655,
+
+30.	Correct
+
+31.	Correct
+
+32.	Correct
+
+33. 662, 663, 664
+
+34.	Correct
+
+35. Correct
+
+36. Correct
+
+37. Correct
+
+38. Correct
+
+39. Correct
+
+40. Correct
+
+41.	Correct
+
+42. Correct
+
+43. Correct
+
+44. Correct
+
+45. Correct
+
+46.	637
+
+47. Correct
+
+48. Correct
+
+49. Correct
+
+50.	Correct
+
+51. Correct
+
+52. Correct
+
+53. Correct
+
+54. Correct
+
+55. Correct
+
+56. Correct
+
+57.	Correct
+
+58. Correct
+
+59. Correct
+
+60. Correct
