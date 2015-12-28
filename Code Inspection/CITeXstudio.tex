@@ -153,18 +153,21 @@ Assignment 3: Code Inspection\\
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=490,firstline=490,lastline=491,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
 				Another example is at line 380 where there are 3 tabs and 5 spaces.
 				\lstinputlisting[title=abstract from method ``handleNoAuth'',numbers=left,firstnumber=379,firstline=379,lastline=381,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same goes for lines 609, 628, 630.
 			\item \textbf{No tabs are used to indent.}\smallskip \\
 				The following example shows how tabs are often used, sometimes mixed with spaces too.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=488,firstline=488,lastline=489,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
 				One should avoid using tabs to indent code also because the interpretation of tabs varies with different IDEs or text editors.\\
 				Another example is at line 387 where 2 tabs are used, while at line 388 1 tab and 4 spaces, and since tabs (in this case) are associated with 4 spaces the two lines appear aligned even though theoretically they are not at the same level of indentation.
 				\lstinputlisting[title=abstract from method ``handleNoAuth'',numbers=left,firstnumber=383,firstline=383,lastline=389,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,showtabs=true,showspaces=true,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The whole package uses randomly tabs for indentation.
 		\end{enumerate}
 		
 		\subsection*{Braces}\begin{enumerate}[resume]
 			\item \textbf{Consistent bracing style is used, either the preferred ``Allman'' style (first brace goes underneath the opening block) or the ``Kernighan and Ritchie'' style (first brace is on the same line of the instruction that opens the new block).}\smallskip \\
 				In the following example line 487 opens the method using the "Allman" style, all the other blocks follow the "Kernighan and Ritchie" style.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=484,firstline=484,lastline=492,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same is for the opening of the method at line 583.
 			\item All \texttt{if}, \texttt{while}, \texttt{do-while}, \texttt{try-catch}, and \texttt{for} statements that have only one statement to execute are surrounded by curly braces.			
 		\end{enumerate}
 		
@@ -172,16 +175,18 @@ Assignment 3: Code Inspection\\
 %			\item Blank lines and optional comments are used to separate subsections (beginning comments, package/import statements, class/interface declarations which include class variable/attributes declarations, constructors, and methods).
 			\setcounter{enumi}{12}
 			\item \textbf{Where practical, line length does not exceed 80 characters.}\smallskip \\
-				In the following example lines 503 and 504 could have been broken in three lines instead of two. The same can be applied to other lines facing the same problem.
+				In the following example lines 503 and 504 could have been broken in three lines instead of two.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=501,firstline=501,lastline=508,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same can be applied to other lines facing the same problem, for instance lines 586, 608, 609, 615, 620 and many others.
 			\item \textbf{When line length must exceed 80 characters, it does NOT exceed 120 characters.}\smallskip \\
-				All the lines which (even if arguable) reasonably exceed 80 characters never violate the limit of 120 characters.
+				All the lines which (even if arguable) reasonably exceed 80 characters never violate the limit of 120 characters. Other lines that trespass the limit fall within the lines that should be wrapped in the point 13 of this checklist.
 		\end{enumerate}
 		
 		\subsection*{Wrapping Lines}\begin{enumerate}[resume]
 			\item \textbf{Line break occurs after a comma or an operator.}\smallskip \\
 				In the following example line 503 is written wrong because the line-break precedes the "+" operator.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=503,firstline=503,lastline=504,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The same goes for lines 629, 659, 667, 671.
 %			\item Higher-level breaks are used.
 			\setcounter{enumi}{16}
 			\item \textbf{A new statement is aligned with the beginning of the expression at the same level as the previous line.}\smallskip \\
@@ -190,7 +195,10 @@ Assignment 3: Code Inspection\\
 				The same goes for method ``handleNoAuth'' which lacks one level of indentation, from line 381 to 399.\\
 				Other examples are \texttt{while} loops or \texttt{if} statements at the same level of the upper-level code, like at line 541, where one level of indention is missing.
 				\lstinputlisting[title=abstract from method ``processConstraints'',numbers=left,firstnumber=539,firstline=539,lastline=544,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
-				The same is for line 548 and 564.
+				The same is for line 548, 564, 597, 601, 608, 615, 618, 627.\\
+				Lines 592 and 594 are wrongly aligned with respect to the previous lines:
+				\lstinputlisting[title=abstract from method ``createWebRoleRefPermission'',numbers=left,firstnumber=590,firstline=590,lastline=595,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\footnotesize,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
+				The \texttt{for} statement at line 594 closes at line 640, but it is almost impossible to read unless with the help of parentheses highlight; the closing bracket is wrongly aligned.
 		\end{enumerate}
 		
 		\subsection*{Comments}\begin{enumerate}[resume]
@@ -275,6 +283,7 @@ Assignment 3: Code Inspection\\
 				\begin{itemize}
 					\item line 539 must be before line 537
 					\item line 564 must be before line 561
+					\item lines 662 and 663 must be before line 657
 				\end{itemize}
 		\end{enumerate}
 		
@@ -303,7 +312,9 @@ Assignment 3: Code Inspection\\
 		\subsection*{Computation, Comparisons and Assignments}\begin{enumerate}[resume]
 			\item Check that the implementation avoids ``brutish programming'': (see \url{http://users.csc.calpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html}). 
 			\item Check order of computation/evaluation, operator precedence and parenthesizing.
-			\item Check the liberal use of parenthesis is used to avoid operator precedence problems.
+			\item \textbf{Check the liberal use of parenthesis is used to avoid operator precedence problems.}\smallskip \\
+				At line 637 some parentheses could be used as in the first part of the line.
+				\lstinputlisting[title=abstract from method ``createWebRoleRefPermission'',numbers=left,firstnumber=637,firstline=637,lastline=638,language=Java,frame=single,breaklines=true,backgroundcolor=\color{aliceblue},basicstyle=\small,xleftmargin=17pt,showstringspaces=false,tabsize=4]{"Code/WebPermissionUtil.java"}
 			\item Check that all denominators of a division are prevented from being zero.
 			\item Check that integer arithmetic, especially division, are used appropriately to avoid causing unexpected truncation/rounding.
 			\item Check that the comparison and Boolean operators are correct.
