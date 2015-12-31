@@ -1,0 +1,121 @@
+2.
+	- WRONG: line 402 variable "m" should have been named with a more meaninful name since it is not a throwaway variable
+	
+8.
+	- CORRECT
+
+9.
+	- WRONG: tabs are used like in row 404, also sometimes mixed with spaces, like in row 410.
+	
+10.
+	- CORRECT: the Kernighan and Ritchie style is used consistently
+	
+11.
+	- CORRECT
+
+13.
+	- WRONG: line 456 could have been brokwen in two parts not to exceed 80 characters
+	
+14.
+	- WRONG: line 456 could have been brokwen in two parts not to exceed 120 characters
+	
+15.
+	- CORRECT
+	
+17.
+	- WRONG: the whole method lacks one level of indentation
+	- WRONG: lines 415, 420, 424, 431, 441, 445, 447, 456 lacks one level of indentation
+	
+30.
+	- WRONG: line 413, 438 declaration may be split in declaration and assignment
+	- WRONG: line 415 no constructor call before assignment
+	
+31. 
+	- CORRECT
+	
+32.
+	- CORRECT
+	
+33.
+	- WRONG: line 451 declaration should occur at line 412
+	
+34.
+	- CORRECT
+	
+35.
+	- CORRECT
+	
+36.
+	- CORRECT
+	
+37.
+	- CORRECT
+
+38.
+	- CORRECT
+	
+39.
+	- CORRECT
+
+40.
+	- WRONG: line 450 "==" operator is used with a String
+	
+41.
+	- CORRECT
+	
+42.
+	- CORRECT
+	
+43.
+	- CORRECT
+	
+44.
+	- CORRECT
+
+45.
+	- CORRECT
+	
+46.
+	- CORRECT
+
+47.
+	- CORRECT: no division in the method
+	
+48.
+	- CORRECT: no arithmetic operations in the method
+	
+49.
+	- CORRECT
+	
+50.
+	- CORRECT: no throw-catch expressions in the method
+	
+51.
+	- CORRECT
+	
+52.
+	- CORRECT
+	
+53.
+	- CORRECT: no catch block in the method
+	
+54.
+	- CORRECT: no "switch" statement in the method
+	
+55.
+	- CORRECT: no "switch" statement in the method
+	
+56.
+	- CORRECT
+	
+57.
+	- CORRECT: no Files are used in the method
+	
+58.
+	- CORRECT: no Files are used in the method	
+	
+59.
+	- CORRECT: no Files are used in the method
+	
+60.
+	- CORRECT: no Files are used in the method
