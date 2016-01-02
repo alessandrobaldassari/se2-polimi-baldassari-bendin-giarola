@@ -58,7 +58,7 @@
 	- CORRECT
 
 40.
-	- WRONG: line 450 "==" operator is used with a String
+	- CORRECT
 	
 41.
 	- CORRECT
