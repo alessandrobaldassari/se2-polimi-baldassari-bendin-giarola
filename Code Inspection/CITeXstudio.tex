@@ -81,6 +81,11 @@ Assignment 3: Code Inspection\\
 	}
 	\setcounter{secnumdepth}{4}
 	\setcounter{tocdepth}{4}
+	
+	%to set the right arrow in the listing environment (code) when line is wrapped by latex (red arrow in new line)
+	\lstset{
+		postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+	}	    
 		
 	
 	%to change the page numbering from roman in the toc to arabic
