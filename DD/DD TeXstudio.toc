@@ -22,24 +22,30 @@
 \contentsline {subsubsection}{\numberline {2.3.7}Payment Manager}{20}{subsubsection.0.2.3.7}
 \contentsline {subsection}{\numberline {2.4}Deployment view}{21}{subsection.0.2.4}
 \contentsline {subsection}{\numberline {2.5}Runtime view}{22}{subsection.0.2.5}
-\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{22}{subsection.0.2.6}
-\contentsline {section}{\numberline {3}Algorithm design}{23}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Queue managing and taxi assignment}{23}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Zone assignment}{25}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Taxi availability}{26}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Ride creation}{27}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Payment}{29}{subsection.0.3.5}
-\contentsline {section}{\numberline {4}User Interface Design}{31}{section.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.1}Sign-up}{32}{paragraph.0.4.0.0.1}
-\contentsline {paragraph}{\numberline {4.0.0.2}Login}{33}{paragraph.0.4.0.0.2}
-\contentsline {paragraph}{\numberline {4.0.0.3}Call a taxi}{34}{paragraph.0.4.0.0.3}
-\contentsline {paragraph}{\numberline {4.0.0.4}Plan a ride}{35}{paragraph.0.4.0.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.5}Your reservations}{36}{paragraph.0.4.0.0.5}
-\contentsline {paragraph}{\numberline {4.0.0.6}Your profile}{37}{paragraph.0.4.0.0.6}
-\contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{38}{paragraph.0.4.0.0.7}
-\contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{39}{paragraph.0.4.0.0.8}
-\contentsline {section}{\numberline {5}Requirements Traceability}{40}{section.0.5}
-\contentsline {section}{\numberline {6}References}{41}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{41}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{41}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{42}{subsection.0.7.2}
+\contentsline {subsubsection}{\numberline {2.5.1}Runtime units}{22}{subsubsection.0.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Sequence diagrams}{23}{subsubsection.0.2.5.2}
+\contentsline {paragraph}{\numberline {2.5.2.1}Login}{23}{paragraph.0.2.5.2.1}
+\contentsline {paragraph}{\numberline {2.5.2.2}Taxi request}{24}{paragraph.0.2.5.2.2}
+\contentsline {paragraph}{\numberline {2.5.2.3}Delete reservation}{24}{paragraph.0.2.5.2.3}
+\contentsline {paragraph}{\numberline {2.5.2.4}Driver's job proposal}{25}{paragraph.0.2.5.2.4}
+\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{26}{subsection.0.2.6}
+\contentsline {section}{\numberline {3}Algorithm design}{26}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Queue managing and taxi assignment}{26}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Zone assignment}{28}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Taxi availability}{29}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Ride creation}{30}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Payment}{32}{subsection.0.3.5}
+\contentsline {section}{\numberline {4}User Interface Design}{34}{section.0.4}
+\contentsline {paragraph}{\numberline {4.0.0.1}Sign-up}{35}{paragraph.0.4.0.0.1}
+\contentsline {paragraph}{\numberline {4.0.0.2}Login}{36}{paragraph.0.4.0.0.2}
+\contentsline {paragraph}{\numberline {4.0.0.3}Call a taxi}{37}{paragraph.0.4.0.0.3}
+\contentsline {paragraph}{\numberline {4.0.0.4}Plan a ride}{38}{paragraph.0.4.0.0.4}
+\contentsline {paragraph}{\numberline {4.0.0.5}Your reservations}{39}{paragraph.0.4.0.0.5}
+\contentsline {paragraph}{\numberline {4.0.0.6}Your profile}{40}{paragraph.0.4.0.0.6}
+\contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{41}{paragraph.0.4.0.0.7}
+\contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{42}{paragraph.0.4.0.0.8}
+\contentsline {section}{\numberline {5}Requirements Traceability}{43}{section.0.5}
+\contentsline {section}{\numberline {6}References}{45}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{45}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{45}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{45}{subsection.0.7.2}

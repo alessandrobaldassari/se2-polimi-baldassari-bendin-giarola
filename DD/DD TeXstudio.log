@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.21)  4 DEC 2015 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.28)  8 JAN 2016 21:35
 entering extended mode
-**"DD TeXstudio.tex"
+**"./DD TeXstudio.tex"
 ("DD TeXstudio.tex"
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 68 languages loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,31 +22,31 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
@@ -54,7 +54,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip43
 \subfigcapskip=\skip44
@@ -70,24 +70,24 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
 \subfig@top=\skip47
 \subfig@bottom=\skip48
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks15
 \AP@partial=\box26
 \AP@footins=\box27
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -128,25 +128,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen107
 \Hy@linkcounter=\count93
 \Hy@pagecounter=\count94
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count95
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -158,7 +158,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count96
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -183,25 +183,25 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count101
 \c@bookmark@seq@number=\count102
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip49
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -215,14 +215,14 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen111
 \captionmargin@=\dimen112
@@ -236,7 +236,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\soul\soul.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\soul\soul.sty"
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks16
 \SOUL@lasttoken=\toks17
@@ -248,7 +248,7 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen119
 \SOUL@ulht=\dimen120
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count104
 \Gm@cntv=\count105
@@ -263,14 +263,14 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutvoffset=\dimen128
 \Gm@dimlist=\toks21
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
-Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count107
 \calc@Bcount=\count108
@@ -278,36 +278,34 @@ Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen130
 \calc@Askip=\skip51
 \calc@Bskip=\skip52
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count109
 \calc@Cskip=\skip53
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
-Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
-File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+\AM@pagewidth=\dimen131
+\AM@pageheight=\dimen132
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box28
 \AM@toc@title=\toks22
 \c@AM@survey=\count110
 \AM@templatesizebox=\box29
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\stackengine\stackengine.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\stackengine\stackengine.sty"
 Package: stackengine 2014/01/06 v3.24\ Stacking text and objects in convenient 
 ways
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
-Package: etoolbox 2015/03/10 v2.1b e-TeX tools for LaTeX (JAW)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
-Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
-\et@xins=\count111
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count111
 )
-\etb@tempcnta=\count112
-)
-\c@@stackindex=\count113
+\c@@stackindex=\count112
 \@boxshift=\skip54
 \stack@tmplength=\skip55
 \temp@stkl=\skip56
@@ -316,9 +314,9 @@ Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
 \@anchorbox=\box31
 \stackedbox=\box32
 \@centerbox=\box33
-\c@ROWcellindex@=\count114
+\c@ROWcellindex@=\count113
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip58
 \f@ncyO@elh=\skip59
 \f@ncyO@erh=\skip60
@@ -329,55 +327,55 @@ Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
 \f@ncyO@olf=\skip65
 \f@ncyO@orf=\skip66
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyphenat\hyphenat.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyphenat\hyphenat.sty"
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
-\langwohyphens=\language69
+\langwohyphens=\language70
 LaTeX Info: Redefining \_ on input line 43.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count115
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count114
 \lst@gtempboxa=\box34
 \lst@token=\toks23
-\lst@length=\count116
-\lst@currlwidth=\dimen131
-\lst@column=\count117
-\lst@pos=\count118
-\lst@lostspace=\dimen132
-\lst@width=\dimen133
-\lst@newlines=\count119
-\lst@lineno=\count120
-\lst@maxwidth=\dimen134
+\lst@length=\count115
+\lst@currlwidth=\dimen133
+\lst@column=\count116
+\lst@pos=\count117
+\lst@lostspace=\dimen134
+\lst@width=\dimen135
+\lst@newlines=\count118
+\lst@lineno=\count119
+\lst@maxwidth=\dimen136
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count121
-\lst@skipnumbers=\count122
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count120
+\lst@skipnumbers=\count121
 \lst@framebox=\box35
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
-File: listings.cfg 2014/09/06 1.5e listings configuration
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2014/09/06 1.5e (Carsten Heinz)
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip67
 \LTright=\skip68
 \LTpre=\skip69
 \LTpost=\skip70
-\LTchunksize=\count123
-\LTcapwidth=\dimen135
+\LTchunksize=\count122
+\LTcapwidth=\dimen137
 \LT@head=\box36
 \LT@firsthead=\box37
 \LT@foot=\box38
 \LT@lastfoot=\box39
-\LT@cols=\count124
-\LT@rows=\count125
-\c@LT@tables=\count126
-\c@LT@chunks=\count127
+\LT@cols=\count123
+\LT@rows=\count124
+\c@LT@tables=\count125
+\c@LT@chunks=\count126
 \LT@p@ftn=\toks24
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
 \cftparskip=\skip71
@@ -422,7 +420,10 @@ Package tocloft Info: The document has chapter divisions on input line 44.
 \cftsubtabnumwidth=\skip110
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 38.
- ("DD TeXstudio.aux")
+
+("DD TeXstudio.aux")
+\openout1 = `"DD TeXstudio.aux"'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
@@ -437,29 +438,30 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count128
-\scratchdimen=\dimen136
+\scratchcounter=\count127
+\scratchdimen=\dimen138
 \scratchbox=\box40
-\nofMPsegments=\count129
-\nofMParguments=\count130
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count131
-\MPscratchDim=\dimen137
-\MPnumerator=\count132
-\makeMPintoPDFobject=\count133
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen139
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks26
 )
 \AtBeginShipoutBox=\box41
 Package hyperref Info: Link coloring ON on input line 54.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count134
+\c@section@level=\count133
 )
 LaTeX Info: Redefining \ref on input line 54.
 LaTeX Info: Redefining \pageref on input line 54.
@@ -467,12 +469,14 @@ LaTeX Info: Redefining \nameref on input line 54.
 
 ("DD TeXstudio.out") ("DD TeXstudio.out")
 \@outlinefile=\write3
+\openout3 = `"DD TeXstudio.out"'.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
-Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
@@ -510,8 +514,17 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count135
-<"Pictures/polimi-logo".png, id=179, 803.0pt x 501.875pt>
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
+\c@lstlisting=\count134
+
+<"Pictures/polimi-logo".png, id=203, 803.0pt x 501.875pt>
 File: "Pictures/polimi-logo".png Graphic file (type png)
 
 <use "Pictures/polimi-logo".png>
@@ -525,9 +538,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 66.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictures/polimi-logo.pn
-g>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
-as been already used, duplicate ignored
+{C:/Users/alber/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictures/
+polimi-logo.png>]pdfTeX warning (ext4): destination with the same identifier (n
+ame{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.70 	\clearpage\mbox{}\clearpage
@@ -540,6 +553,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ])
 \tf@toc=\write4
+\openout4 = `"DD TeXstudio.toc"'.
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -554,7 +569,7 @@ Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -649,7 +664,7 @@ Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
- <Pictures/4tier.jpg, id=265, 564.56465pt x 573.20029pt>
+ <Pictures/4tier.jpg, id=295, 564.56465pt x 573.20029pt>
 File: Pictures/4tier.jpg Graphic file (type jpg)
 
 <use Pictures/4tier.jpg>
@@ -668,7 +683,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3 <./Pictures/4tier.jpg>]
-<Pictures/VisioSystemComponentsHighLevel.png, id=275, 362.0727pt x 308.71335pt>
+<Pictures/VisioSystemComponentsHighLevel.png, id=305, 362.0727pt x 308.71335pt>
 File: Pictures/VisioSystemComponentsHighLevel.png Graphic file (type png)
 <use Pictures/VisioSystemComponentsHighLevel.png>
 Package pdftex.def Info: Pictures/VisioSystemComponentsHighLevel.png used on in
@@ -739,7 +754,7 @@ Missing character: There is no   in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no   in font cmr10!
 
-<Pictures/Packages.png, id=280, 645.3711pt x 317.988pt>
+<Pictures/Packages.png, id=310, 645.3711pt x 317.988pt>
 File: Pictures/Packages.png Graphic file (type png)
 
 <use Pictures/Packages.png>
@@ -750,7 +765,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-<Pictures/PackagesDetails.png, id=281, 407.3619pt x 822.9144pt>
+<Pictures/PackagesDetails.png, id=311, 407.3619pt x 822.9144pt>
 File: Pictures/PackagesDetails.png Graphic file (type png)
 
 <use Pictures/PackagesDetails.png>
@@ -764,7 +779,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5 <./Pictures/Packages.png>]
-<Pictures/HighLevelComponent.png, id=287, 1271.7111pt x 727.518pt>
+<Pictures/HighLevelComponent.png, id=317, 1271.7111pt x 727.518pt>
 File: Pictures/HighLevelComponent.png Graphic file (type png)
 
 <use Pictures/HighLevelComponent.png>
@@ -786,7 +801,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./Pictures/HighLevelComponent.png>]
-<Pictures/CVAccountManager.png, id=298, 721.4955pt x 438.438pt>
+<Pictures/CVAccountManager.png, id=328, 721.4955pt x 438.438pt>
 File: Pictures/CVAccountManager.png Graphic file (type png)
 
 <use Pictures/CVAccountManager.png>
@@ -826,7 +841,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] <Pictures/CVRequestManager.png, id=313, 845.0772pt x 435.5472pt>
+[10] <Pictures/CVRequestManager.png, id=343, 845.0772pt x 435.5472pt>
 File: Pictures/CVRequestManager.png Graphic file (type png)
 
 <use Pictures/CVRequestManager.png>
@@ -840,7 +855,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11 <./Pictures/CVRequestManager.png>]
-<Pictures/CVRideManager.png, id=319, 845.0772pt x 495.7722pt>
+<Pictures/CVRideManager.png, id=349, 845.0772pt x 495.7722pt>
 File: Pictures/CVRideManager.png Graphic file (type png)
 
 <use Pictures/CVRideManager.png>
@@ -874,7 +889,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15] <Pictures/CVNotificationManager.png, id=338, 496.7358pt x 191.5155pt>
+[15] <Pictures/CVNotificationManager.png, id=368, 496.7358pt x 191.5155pt>
 File: Pictures/CVNotificationManager.png Graphic file (type png)
 
 <use Pictures/CVNotificationManager.png>
@@ -889,7 +904,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16 <./Pictures/CVNotificationManager.png>]
-<Pictures/CVTaxiManager.png, id=344, 359.1819pt x 287.8755pt>
+<Pictures/CVTaxiManager.png, id=374, 359.1819pt x 287.8755pt>
 File: Pictures/CVTaxiManager.png Graphic file (type png)
 
 <use Pictures/CVTaxiManager.png>
@@ -903,7 +918,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17 <./Pictures/CVTaxiManager.png>]
-<Pictures/CVZoneManager.png, id=350, 665.3658pt x 362.3136pt>
+<Pictures/CVZoneManager.png, id=380, 665.3658pt x 362.3136pt>
 File: Pictures/CVZoneManager.png Graphic file (type png)
 
 <use Pictures/CVZoneManager.png>
@@ -927,7 +942,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19] <Pictures/CVPaymentManager.png, id=360, 478.6683pt x 203.5605pt>
+[19] <Pictures/CVPaymentManager.png, id=390, 478.6683pt x 203.5605pt>
 File: Pictures/CVPaymentManager.png Graphic file (type png)
 
 <use Pictures/CVPaymentManager.png>
@@ -941,7 +956,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [20 <./Pictures/CVPaymentManager.png>]
-<Pictures/DeploymentView.png, id=366, 1069.8369pt x 795.9336pt>
+<Pictures/DeploymentView.png, id=396, 1069.8369pt x 795.9336pt>
 File: Pictures/DeploymentView.png Graphic file (type png)
 
 <use Pictures/DeploymentView.png>
@@ -959,11 +974,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21 <./Pictures/DeploymentView.png>]
-<Pictures/RuntimeView.png, id=373, 1568.7408pt x 940.4736pt>
+<Pictures/RuntimeView.png, id=403, 1568.7408pt x 940.4736pt>
 File: Pictures/RuntimeView.png Graphic file (type png)
 
 <use Pictures/RuntimeView.png>
-Package pdftex.def Info: Pictures/RuntimeView.png used on input line 606.
+Package pdftex.def Info: Pictures/RuntimeView.png used on input line 607.
 (pdftex.def)             Requested size: 549.0675pt x 329.17068pt.
 
 
@@ -973,24 +988,75 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [22 <./Pictures/RuntimeView.png>]
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2014/09/06 1.5e listings language file
+<Pictures/SDLogin.png, id=409, 933.4875pt x 699.36281pt>
+File: Pictures/SDLogin.png Graphic file (type png)
+
+<use Pictures/SDLogin.png>
+Package pdftex.def Info: Pictures/SDLogin.png used on input line 619.
+(pdftex.def)             Requested size: 494.74602pt x 370.66052pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23 <./Pictures/SDLogin.png>]
+<Pictures/SDRequest.png, id=415, 879.285pt x 542.025pt>
+File: Pictures/SDRequest.png Graphic file (type png)
+
+<use Pictures/SDRequest.png>
+Package pdftex.def Info: Pictures/SDRequest.png used on input line 628.
+(pdftex.def)             Requested size: 483.60825pt x 298.11467pt.
+
+<Pictures/SDDeleteReservation.png, id=416, 1256.44406pt x 768.62157pt>
+File: Pictures/SDDeleteReservation.png Graphic file (type png)
+
+<use Pictures/SDDeleteReservation.png>
+Package pdftex.def Info: Pictures/SDDeleteReservation.png used on input line 63
+6.
+(pdftex.def)             Requested size: 515.1454pt x 315.13689pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24 <./Pictures/SDRequest.png> <./Pictures/SDDeleteReservation.png>]
+<Pictures/SDDriverJobProposal.png, id=423, 957.5775pt x 1124.70187pt>
+File: Pictures/SDDriverJobProposal.png Graphic file (type png)
+
+<use Pictures/SDDriverJobProposal.png>
+Package pdftex.def Info: Pictures/SDDriverJobProposal.png used on input line 64
+5.
+(pdftex.def)             Requested size: 478.78758pt x 562.34956pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 <./Pictures/SDDriverJobProposal.png>]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 663--665
 
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 626.
+nput line 665.
 (Pseudocode/QueueManager.c)
-<Pictures/QueueManager.png, id=379, 304.0158pt x 781.7205pt>
+<Pictures/QueueManager.png, id=429, 304.0158pt x 781.7205pt>
 File: Pictures/QueueManager.png Graphic file (type png)
 
 <use Pictures/QueueManager.png>
-Package pdftex.def Info: Pictures/QueueManager.png used on input line 630.
+Package pdftex.def Info: Pictures/QueueManager.png used on input line 669.
 (pdftex.def)             Requested size: 212.8096pt x 547.20062pt.
 
 
@@ -999,24 +1065,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23]
+[26]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24 <./Pictures/QueueManager.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 636--638
+[27 <./Pictures/QueueManager.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
 
  []
 
 (Pseudocode/ZoneAssignment.c)
-<Pictures/ZoneAssignment.png, id=399, 311.0019pt x 659.3433pt>
+<Pictures/ZoneAssignment.png, id=450, 311.0019pt x 659.3433pt>
 File: Pictures/ZoneAssignment.png Graphic file (type png)
 
 <use Pictures/ZoneAssignment.png>
-Package pdftex.def Info: Pictures/ZoneAssignment.png used on input line 642.
+Package pdftex.def Info: Pictures/ZoneAssignment.png used on input line 681.
 (pdftex.def)             Requested size: 217.69984pt x 461.53717pt.
 
 
@@ -1025,25 +1091,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25 <./Pictures/ZoneAssignment.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 648--650
+[28 <./Pictures/ZoneAssignment.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 687--689
 
  []
 
 (Pseudocode/Availability.c
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 2.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 2.
 )
-<Pictures/Availability.png, id=411, 359.1819pt x 628.2672pt>
+<Pictures/Availability.png, id=462, 359.1819pt x 628.2672pt>
 File: Pictures/Availability.png Graphic file (type png)
 
 <use Pictures/Availability.png>
-Package pdftex.def Info: Pictures/Availability.png used on input line 654.
+Package pdftex.def Info: Pictures/Availability.png used on input line 693.
 (pdftex.def)             Requested size: 251.42561pt x 439.78403pt.
 
 
@@ -1052,8 +1118,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26 <./Pictures/Availability.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 660--662
+[29 <./Pictures/Availability.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 699--701
 
  []
 
@@ -1062,11 +1128,11 @@ Overfull \hbox (39.78723pt too wide) in paragraph at lines 9--10
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-) <Pictures/RideCreation.png, id=426, 407.3619pt x 975.645pt>
+) <Pictures/RideCreation.png, id=477, 407.3619pt x 975.645pt>
 File: Pictures/RideCreation.png Graphic file (type png)
 
 <use Pictures/RideCreation.png>
-Package pdftex.def Info: Pictures/RideCreation.png used on input line 666.
+Package pdftex.def Info: Pictures/RideCreation.png used on input line 705.
 (pdftex.def)             Requested size: 285.15137pt x 682.94685pt.
 
 
@@ -1075,8 +1141,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 670--673
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 709--712
 
  []
 
@@ -1086,12 +1152,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <./Pictures/RideCreation.png>] (Pseudocode/Payment.c)
-<Pictures/Payment.png, id=451, 504.6855pt x 909.3975pt>
+[31 <./Pictures/RideCreation.png>] (Pseudocode/Payment.c)
+<Pictures/Payment.png, id=501, 504.6855pt x 909.3975pt>
 File: Pictures/Payment.png Graphic file (type png)
 
 <use Pictures/Payment.png>
-Package pdftex.def Info: Pictures/Payment.png used on input line 677.
+Package pdftex.def Info: Pictures/Payment.png used on input line 716.
 (pdftex.def)             Requested size: 353.27744pt x 636.57393pt.
 
 
@@ -1100,30 +1166,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29]
+[32]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30 <./Pictures/Payment.png>]
+[33 <./Pictures/Payment.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31]
+[34]
 
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 685.
+(hyperref)                than one, level fixed on input line 724.
 
-<Pictures/Signup.png, id=477, 653.44125pt x 1024.82875pt>
+<Pictures/Signup.png, id=528, 653.44125pt x 1024.82875pt>
 File: Pictures/Signup.png Graphic file (type png)
 
 <use Pictures/Signup.png>
-Package pdftex.def Info: Pictures/Signup.png used on input line 687.
+Package pdftex.def Info: Pictures/Signup.png used on input line 726.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1132,16 +1198,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32 <./Pictures/Signup.png>]
+[35 <./Pictures/Signup.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 691.
+(hyperref)                than one, level fixed on input line 730.
 
-<Pictures/Login.png, id=483, 653.44125pt x 1024.82875pt>
+<Pictures/Login.png, id=534, 653.44125pt x 1024.82875pt>
 File: Pictures/Login.png Graphic file (type png)
 
 <use Pictures/Login.png>
-Package pdftex.def Info: Pictures/Login.png used on input line 693.
+Package pdftex.def Info: Pictures/Login.png used on input line 732.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1150,12 +1216,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33 <./Pictures/Login.png>]
-<Pictures/CallATaxi.png, id=490, 653.44125pt x 1024.82875pt>
+[36 <./Pictures/Login.png>]
+<Pictures/CallATaxi.png, id=540, 653.44125pt x 1024.82875pt>
 File: Pictures/CallATaxi.png Graphic file (type png)
 
 <use Pictures/CallATaxi.png>
-Package pdftex.def Info: Pictures/CallATaxi.png used on input line 700.
+Package pdftex.def Info: Pictures/CallATaxi.png used on input line 739.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1164,12 +1230,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34 <./Pictures/CallATaxi.png>]
-<Pictures/PlanAndBookARide.png, id=496, 653.44125pt x 1028.84375pt>
+[37 <./Pictures/CallATaxi.png>]
+<Pictures/PlanAndBookARide.png, id=546, 653.44125pt x 1028.84375pt>
 File: Pictures/PlanAndBookARide.png Graphic file (type png)
 
 <use Pictures/PlanAndBookARide.png>
-Package pdftex.def Info: Pictures/PlanAndBookARide.png used on input line 706.
+Package pdftex.def Info: Pictures/PlanAndBookARide.png used on input line 745.
 (pdftex.def)             Requested size: 407.66833pt x 641.86406pt.
 
 
@@ -1178,12 +1244,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35 <./Pictures/PlanAndBookARide.png>]
-<Pictures/YourReservations.png, id=502, 653.44125pt x 1024.82875pt>
+[38 <./Pictures/PlanAndBookARide.png>]
+<Pictures/YourReservations.png, id=552, 653.44125pt x 1024.82875pt>
 File: Pictures/YourReservations.png Graphic file (type png)
 
 <use Pictures/YourReservations.png>
-Package pdftex.def Info: Pictures/YourReservations.png used on input line 712.
+Package pdftex.def Info: Pictures/YourReservations.png used on input line 751.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1192,12 +1258,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36 <./Pictures/YourReservations.png>]
-<Pictures/AccountPage.png, id=508, 653.44125pt x 1024.82875pt>
+[39 <./Pictures/YourReservations.png>]
+<Pictures/AccountPage.png, id=559, 653.44125pt x 1024.82875pt>
 File: Pictures/AccountPage.png Graphic file (type png)
 
 <use Pictures/AccountPage.png>
-Package pdftex.def Info: Pictures/AccountPage.png used on input line 718.
+Package pdftex.def Info: Pictures/AccountPage.png used on input line 757.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1206,12 +1272,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37 <./Pictures/AccountPage.png>]
-<Pictures/DriverPage.png, id=514, 283.0575pt x 575.14874pt>
+[40 <./Pictures/AccountPage.png>]
+<Pictures/DriverPage.png, id=565, 283.0575pt x 575.14874pt>
 File: Pictures/DriverPage.png Graphic file (type png)
 
 <use Pictures/DriverPage.png>
-Package pdftex.def Info: Pictures/DriverPage.png used on input line 724.
+Package pdftex.def Info: Pictures/DriverPage.png used on input line 763.
 (pdftex.def)             Requested size: 181.18439pt x 368.16415pt.
 
 
@@ -1220,12 +1286,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38 <./Pictures/DriverPage.png>]
-<Pictures/AdminPage.png, id=520, 653.44125pt x 1024.82875pt>
+[41 <./Pictures/DriverPage.png>]
+<Pictures/AdminPage.png, id=571, 653.44125pt x 1024.82875pt>
 File: Pictures/AdminPage.png Graphic file (type png)
 
 <use Pictures/AdminPage.png>
-Package pdftex.def Info: Pictures/AdminPage.png used on input line 730.
+Package pdftex.def Info: Pictures/AdminPage.png used on input line 769.
 (pdftex.def)             Requested size: 407.66833pt x 639.3592pt.
 
 
@@ -1234,13 +1300,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 <./Pictures/AdminPage.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[42 <./Pictures/AdminPage.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 784--784
 \OT1/cmr/m/n/10.95 count-Man-ager) of-fers the Lo-gin in-ter-face
  []
 
 
-Underfull \vbox (badness 10000) detected at line 758
+Underfull \vbox (badness 10000) detected at line 797
  []
 
 
@@ -1249,15 +1315,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40]
+[43]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 794.
+[44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 834.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1265,35 +1331,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 794.
+[45]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 834.
  ("DD TeXstudio.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 794.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 794.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 834.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 834.
 Package rerunfilecheck Info: File `"DD TeXstudio".out' has not changed.
-(rerunfilecheck)             Checksum: 01E980322CCCDBF8EC54B584C1B3DD06;3244.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 794.
+(rerunfilecheck)             Checksum: E87FC6B384890F19F630B7B9B09EBEC4;3732.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 834.
  ) 
 Here is how much of TeX's memory you used:
- 10810 strings out of 493698
- 161142 string characters out of 3144411
- 295434 words of memory out of 3000000
- 13822 multiletter control sequences out of 15000+200000
+ 10845 strings out of 493634
+ 163076 string characters out of 3141313
+ 298635 words of memory out of 3000000
+ 13901 multiletter control sequences out of 15000+200000
  11083 words of font info for 38 fonts, out of 3000000 for 9000
  1026 hyphenation exceptions out of 8191
- 36i,11n,52p,891b,1150s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "DD TeXstudio.pdf" (46 pages, 3586911 bytes).
+ 36i,11n,52p,893b,1150s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "DD TeXstudio.pdf" (49 pages, 3729338 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 151 named destinations out of 1000 (max. 500000)
- 493 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 669 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
 

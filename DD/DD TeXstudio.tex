@@ -599,6 +599,7 @@
 	
 	\pagebreak
 	\subsection{Runtime view}
+	\subsubsection{Runtime units}
 	The schema below describes the behavior and interaction of the system's building blocks as runtime elements.\\
 	\begin{minipage}{\linewidth}
 		%		\vspace*{-0.35cm}
@@ -607,6 +608,44 @@
 	\end{minipage}
 	The diagram clarifies which are the elements that at runtime exist possibly as multiple instances (on multiple threads) such as ProfileManager (one for each logged in user), RequestWorker (one for each request), RideWorker (one for each active ride), QueueManager (one for each zone of the city) and which are the components running on single processes.
 	
+	\pagebreak
+	\subsubsection{Sequence diagrams}
+	Below are presented some meaningful sequence diagrams that show the interaction between components at runtime.
+	\paragraph{Login} \mbox{}\\ %mbox is to break the line after the title of the paragraph!
+	Below is represented what happens when a registered user logins.\smallskip \\
+		\begin{minipage}{\linewidth}
+			%		\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.53]{Pictures/SDLogin}}
+		\end{minipage}
+		
+	\pagebreak	
+	\paragraph{Taxi request} \mbox{}\\
+	Below is represented the interaction between components when an user asks for a taxi.\\	
+		\begin{minipage}{\linewidth}
+			%		\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.55]{Pictures/SDRequest}}
+		\end{minipage}	
+	
+	\paragraph{Delete reservation} \mbox{}\\
+	Below is represented the interaction between components when an user deletes a request or reservation for a taxi.	\\
+		\begin{minipage}{\linewidth}
+			%		\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.41]{Pictures/SDDeleteReservation}}
+		\end{minipage}	
+		
+	\pagebreak	
+	\paragraph{Driver's job proposal} \mbox{}\\
+	Below is represented the interaction between components when the system has to find a driver to be assigned to a specific ride.\\		
+		\begin{minipage}{\linewidth}
+			%		\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/SDDriverJobProposal}}
+		\end{minipage}	
+	
+	\pagebreak
 	\subsection{Selected architectural styles and patterns}
 
 	The decision of using the classical client-server architecture was straightforward. In a system like \mts{} it is important to have one single point of failure (the server) and control, with respect to distributed architectures. This decision is also compatible with the fact of having only one centralized database which sustains the whole service.\\
@@ -758,6 +797,7 @@
 		\end{longtable}
 	\end{center} 
 	
+	\pagebreak
 	\section{References}
 	\begin{itemize}
 		\item Text: \textit{Principi di Ingegneria del Software} 5ed, Roger S. Pressman, McGraw-Hill
