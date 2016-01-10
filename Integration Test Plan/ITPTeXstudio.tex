@@ -1,0 +1,136 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[a4paper,11pt]{report} %article
+
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb}
+
+
+%\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
+
+%command to substitute "{\em MyTaxyService}" with "\mts"
+\newcommand{\mts}{\mbox{\normalfont\itshape myTaxiService}}
+\geometry{margin=1in}
+
+%header & footer style
+\fancyhead{}
+\fancyhead[C]{\iffloatpage{}{\slshape\rightmark}}
+\fancyfoot{}
+\fancyfoot[C]{\iffloatpage{}{\thepage}}
+\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\renewcommand{\footrulewidth}{\iffloatpage{0pt}{0.4pt}}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\ #1}}
+
+%tOC style: sections bold 
+\usepackage[subfigure]{tocloft}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}% page numbers in bold
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+%to keep the links of the TOC invisible
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+
+\title{Politecnico di Milano\\A.A. 2015/2016\\Software Engineering 2\\ \bigskip 
+Assignment 4: Integration Test Plan\\
+{\normalsize Version 1.0}}
+\author{Alessandro Baldassari (mat. 841561) \\ Alberto Bendin (mat. 841734) \\ Francesco Giarola (mat. 840554)}
+
+
+%to set the nested bullet lists style
+\renewcommand{\labelitemii}{$\circ$}
+%\renewcommand{\labelitemii}{}
+\renewcommand{\labelitemiii}{$\diamond$}
+
+%to avoid the hyphenation of the name of the software
+\hyphenation{myTaxyService}
+
+\begin{document}
+	
+	%fIRSTPAGE
+	
+	%pOLIMI-LOGO
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=1\linewidth]{"Pictures/polimi-logo"}
+		\label{fig:polimi-logo}
+	\end{figure}
+	
+	\maketitle
+		
+	
+	%bLANK-PAGE
+	\thispagestyle{empty}
+	\clearpage\mbox{}\clearpage
+
+	
+	
+	
+	%to number the section from 1 instead of 0.1 with the report class, without using the article class. Avoid the forced use of chapters to number from 1. Tailored for REPORT class!!!
+	\renewcommand*\thesection{\arabic{section}}
+	\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}}
+	\renewcommand*\thesubsubsection{%
+	\arabic{section}.\arabic{subsection}.\arabic{subsubsection}%
+	}
+	\setcounter{secnumdepth}{4}
+	\setcounter{tocdepth}{4}
+	
+
+	
+	%to change the page numbering from roman in the toc to arabic
+	\pagenumbering{roman}
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	
+	
+	%to insert the writing "Page" above page numbers in the TOC
+	\addtocontents{toc}{~\hfill\textrm{Page}\par}
+	
+	\section{Introduction} 
+	\subsection{Revision History}
+	\subsection{Purpose and Scope}
+	\subsection{List of Definitions and Abbreviations}
+	\subsection{List of Reference Documents}
+	
+	
+	\section{Integration Strategy}
+	\subsection{Entry Criteria}
+	\subsection{Elements to be Integrated}
+	\subsection{Integration Testing Strategy}
+	\subsection{Sequence of Component/Function Integration}
+	\subsubsection{Software Integration Sequence}
+	\subsubsection{Subsystem Integration Sequence}
+	
+	
+	\section{Individual Steps and Test Description}
+	
+	
+	\section{Tools and Test Equipment Required}
+	
+	
+	\section{Program Stubs and Test Data Required}
+	
+	
+	\section{Appendix}
+	
+	\subsection{Software and tools used}
+	\begin{itemize}
+		\item TeXstudio 2.10.6 (\href{http://www.texstudio.org/}{http://www.texstudio.org/}) to redact and format this document.
+	\end{itemize}
+	
+	\subsection{Hours of work} The time spent to redact this document:
+	\begin{itemize}
+		\item Baldassari Alessandro: 20 hours.
+		\item Bendin Alberto: 20 hours.
+		\item Giarola Francesco: 20 hours.
+	\end{itemize}
+
+\end{document}
