@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb,textcomp}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -94,11 +94,14 @@ Assignment 4: Integration Test Plan\\
 	%to insert the writing "Page" above page numbers in the TOC
 	\addtocontents{toc}{~\hfill\textrm{Page}\par}
 	
+	%tables style
+	\renewcommand{\arraystretch}{1.2}
+	\setlength{\tabcolsep}{12pt}
+	
 	\section{Introduction} 
 	\subsection{Revision History}
 		This is the first version of the document. There are no previous versions.
-		\renewcommand{\arraystretch}{1.5}
-		\setlength{\tabcolsep}{6pt}
+		
 		\begin{center}
 			\begin{tabular}{| l | p{2.5cm} | p{9cm} |}\hline
 				\multicolumn{1}{|c|}{\textbf{Revision}} & \multicolumn{1}{|c|}{\textbf{Last Edited}} & \textbf{Changes}\\\hline
@@ -119,7 +122,11 @@ Assignment 4: Integration Test Plan\\
 			\item DD: Design Document
 		\end{itemize}
 		The following definitions are used in this document:
-		
+			\begin{itemize}
+				\item Driver: are considered dummy modules which are always distinguished as "calling programs” that are handled in bottom up integration testing; they are only used when main programs are under construction.
+				\item Stub: in computer science, test stubs are programs that simulate the behaviors of software components (or modules) that a module undergoing tests depends on. Test stubs are mainly used in incremental testing's top-down approach.
+				\item Oracle: in computing, software testers and software engineers can use an oracle as a mechanism for determining whether a test has passed or failed. The use of oracles involves comparing the output(s) of the system under test, for a given test-case input, to the output(s) that the oracle determines that product should have.
+			\end{itemize}
 	\subsection{List of Reference Documents}
 		\begin{itemize}
 			\item Specification document: myTaxiService project
@@ -132,24 +139,70 @@ Assignment 4: Integration Test Plan\\
 	\subsection{Entry Criteria}
 		It is supposed that the unit testing phase has already been completed successfully.
 	\subsection{Elements to be Integrated}
+		The scheme below show the main components of the system.\\
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=1]{Pictures/ComponentView.png}}
+			\end{minipage}
+			\begin{center}
+				\begin{tabular}{ l | p{2.5cm} | p{9cm} }\hline
+					\multicolumn{1}{c|}{\textbf{ID}} & \multicolumn{1}{|c|}{\textbf{Integration Test}} & \textbf{Paragraphs}\\\hline
+					 & & \\\hline
+					& & \\\hline
+				\end{tabular}
+			\end{center}			
 	\subsection{Integration Testing Strategy}
+		The bottom-up approach will be used to accomplish the analysis. This means that first the interactions inside the sub-systems of the components will be considered and consequently the integrations between the components themselves.
 	\subsection{Sequence of Component/Function Integration}
 	\subsubsection{Software Integration Sequence}
 	\subsubsection{Subsystem Integration Sequence}
 	
 	
 	\section{Individual Steps and Test Description}
+		\subsection{Integration test X}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager.png}}
+		\end{minipage}
+		\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & ID X\\\hline
+				\textbf{Test item(s)} & Request Handler \textrightarrow Request Worker\\\hline
+				\textbf{Input specification} & Request Handler assigns a task to a Request Worker \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
+				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (creation or modification of request/reservation)\\\hline
+			\end{tabular}
+		\end{center}	
+		\bigskip	
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & ID X\\\hline
+				\textbf{Test item(s)} & Request Engine \textrightarrow Request Worker\\\hline
+				\textbf{Input specification} & Request Engine assigns a task to a Request Worker \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
+				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (browsing history of rides)\\\hline
+			\end{tabular}
+		\end{center}			
 	
 	
 	\section{Tools and Test Equipment Required}
+		Mockito, Arquillian, JMeter
 	
 	
 	\section{Program Stubs and Test Data Required}
 	
+	\pagebreak
 	\section{References}
 		Material from Wikipedia
 		\begin{itemize}
 			\item Integration testing: \href{https://en.wikipedia.org/wiki/Integration_testing}{https://en.wikipedia.org/wiki/Integration\_testing}
+			\item Oracles: \href{https://en.wikipedia.org/wiki/Oracle_(software_testing)}{https://en.wikipedia.org/wiki/Oracle\_(software\_testing)}
 		\end{itemize}
 	
 	\section{Appendix}
@@ -157,6 +210,7 @@ Assignment 4: Integration Test Plan\\
 	\subsection{Software and tools used}
 	\begin{itemize}
 		\item TeXstudio 2.10.6 (\href{http://www.texstudio.org/}{http://www.texstudio.org/}) to redact and format this document.
+		\item Astah Professional 7.0 (\href{http://astah.net/editions/professional}{http://astah.net/editions/professional}) 
 	\end{itemize}
 	
 	\subsection{Hours of work} The time spent to redact this document:
