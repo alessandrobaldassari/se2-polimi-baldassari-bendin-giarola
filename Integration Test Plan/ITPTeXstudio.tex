@@ -96,13 +96,41 @@ Assignment 4: Integration Test Plan\\
 	
 	\section{Introduction} 
 	\subsection{Revision History}
+		This is the first version of the document. There are no previous versions.
+		\renewcommand{\arraystretch}{1.5}
+		\setlength{\tabcolsep}{6pt}
+		\begin{center}
+			\begin{tabular}{| l | p{2.5cm} | p{9cm} |}\hline
+				\multicolumn{1}{|c|}{\textbf{Revision}} & \multicolumn{1}{|c|}{\textbf{Last Edited}} & \textbf{Changes}\\\hline
+				\multicolumn{1}{|c|}{1.0} & \multicolumn{1}{|c|}{xx/01/2016} & Document redaction\\\hline
+				 & & \\\hline
+			\end{tabular}
+		\end{center}
+		
 	\subsection{Purpose and Scope}
+		The Test Plan Document (ITPD) describes the plan to accomplish the  integration  test.  This  document  is  supposed  to  be  written  before  the  integration  test  really  happens and  takes  the  architectural  description  of  the  software  system  as  a  starting point, for this reason it is often redacted in parallel with the Design Document. It explain to the development team what to test, in which sequence, which tools are needed for testing (if any), which stubs/drivers/oracles need to be developed.\\		
+		The purpose of integration testing is to verify functional, performance, and reliability requirements of individual software modules of the product when they are combined and tested as a group; i.e., units (or groups of units) are exercised through their interfaces. The aim is to test the modules interactions incrementally, with success and error cases being simulated via appropriate parameter and data inputs. Simulated usage of shared data areas and inter-process communication is tested and individual subsystems are exercised through their input interface. Test cases are constructed to test whether all the components interact correctly, for example across procedure calls or process activations.\\
+		This is done after testing individual modules, i.e., unit testing; the overall idea is a "building block" approach, in which verified assemblages are added to a verified base which is then used to support the integration testing of further assemblages up to the complete final system (the testing on the complete system is not part of this integration testing phase).
+		
 	\subsection{List of Definitions and Abbreviations}
+		The following acronyms are used in this document:
+		\begin{itemize}
+			\item RASD: Requirements Analysis and Specification Document
+			\item DD: Design Document
+		\end{itemize}
+		The following definitions are used in this document:
+		
 	\subsection{List of Reference Documents}
+		\begin{itemize}
+			\item Specification document: myTaxiService project
+			\item Requirements Analysis and Specification Document (RASD) for myTaxiService
+			\item Design Document (DD) for myTaxiService
+		\end{itemize}
 	
 	
 	\section{Integration Strategy}
 	\subsection{Entry Criteria}
+		It is supposed that the unit testing phase has already been completed successfully.
 	\subsection{Elements to be Integrated}
 	\subsection{Integration Testing Strategy}
 	\subsection{Sequence of Component/Function Integration}
@@ -118,6 +146,11 @@ Assignment 4: Integration Test Plan\\
 	
 	\section{Program Stubs and Test Data Required}
 	
+	\section{References}
+		Material from Wikipedia
+		\begin{itemize}
+			\item Integration testing: \href{https://en.wikipedia.org/wiki/Integration_testing}{https://en.wikipedia.org/wiki/Integration\_testing}
+		\end{itemize}
 	
 	\section{Appendix}
 	
