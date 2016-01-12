@@ -8,13 +8,21 @@
 \BOOKMARK [2][-]{subsection.0.2.2}{Elements to be Integrated}{section.0.2}% 8
 \BOOKMARK [2][-]{subsection.0.2.3}{Integration Testing Strategy}{section.0.2}% 9
 \BOOKMARK [2][-]{subsection.0.2.4}{Sequence of Component/Function Integration}{section.0.2}% 10
-\BOOKMARK [3][-]{subsubsection.0.2.4.1}{Software Integration Sequence}{subsection.0.2.4}% 11
-\BOOKMARK [3][-]{subsubsection.0.2.4.2}{Subsystem Integration Sequence}{subsection.0.2.4}% 12
-\BOOKMARK [1][-]{section.0.3}{Individual Steps and Test Description}{}% 13
-\BOOKMARK [2][-]{subsection.0.3.1}{Integration test X}{section.0.3}% 14
-\BOOKMARK [1][-]{section.0.4}{Tools and Test Equipment Required}{}% 15
-\BOOKMARK [1][-]{section.0.5}{Program Stubs and Test Data Required}{}% 16
-\BOOKMARK [1][-]{section.0.6}{References}{}% 17
-\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 18
-\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 19
-\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 20
+\BOOKMARK [3][-]{subsubsection.0.2.4.1}{Sequence of integration for Account Manager}{subsection.0.2.4}% 11
+\BOOKMARK [3][-]{subsubsection.0.2.4.2}{Sequence of integration for Request Manager}{subsection.0.2.4}% 12
+\BOOKMARK [3][-]{subsubsection.0.2.4.3}{Sequence of integration for Ride Manager}{subsection.0.2.4}% 13
+\BOOKMARK [3][-]{subsubsection.0.2.4.4}{Sequence of integration for Zone Manager}{subsection.0.2.4}% 14
+\BOOKMARK [3][-]{subsubsection.0.2.4.5}{Sequence of integration for Client}{subsection.0.2.4}% 15
+\BOOKMARK [1][-]{section.0.3}{Individual Steps and Test Description}{}% 16
+\BOOKMARK [2][-]{subsection.0.3.1}{Integration tests for Account Manager}{section.0.3}% 17
+\BOOKMARK [2][-]{subsection.0.3.2}{Integration tests for Request Manager}{section.0.3}% 18
+\BOOKMARK [2][-]{subsection.0.3.3}{Integration tests for Ride Manager}{section.0.3}% 19
+\BOOKMARK [2][-]{subsection.0.3.4}{Integration tests for Zone Manager}{section.0.3}% 20
+\BOOKMARK [2][-]{subsection.0.3.5}{Integration tests for Client and Account Manager}{section.0.3}% 21
+\BOOKMARK [2][-]{subsection.0.3.6}{Integration tests for Client and Payment Manager}{section.0.3}% 22
+\BOOKMARK [1][-]{section.0.4}{Tools and Test Equipment Required}{}% 23
+\BOOKMARK [1][-]{section.0.5}{Program Stubs and Test Data Required}{}% 24
+\BOOKMARK [1][-]{section.0.6}{References}{}% 25
+\BOOKMARK [1][-]{section.0.7}{Appendix}{}% 26
+\BOOKMARK [2][-]{subsection.0.7.1}{Software and tools used}{section.0.7}% 27
+\BOOKMARK [2][-]{subsection.0.7.2}{Hours of work}{section.0.7}% 28

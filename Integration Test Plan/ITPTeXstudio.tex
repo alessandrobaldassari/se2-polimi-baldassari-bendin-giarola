@@ -105,7 +105,7 @@ Assignment 4: Integration Test Plan\\
 		\begin{center}
 			\begin{tabular}{| l | p{2.5cm} | p{9cm} |}\hline
 				\multicolumn{1}{|c|}{\textbf{Revision}} & \multicolumn{1}{|c|}{\textbf{Last Edited}} & \textbf{Changes}\\\hline
-				\multicolumn{1}{|c|}{1.0} & \multicolumn{1}{|c|}{xx/01/2016} & Document redaction\\\hline
+				\multicolumn{1}{|c|}{1.0} & \multicolumn{1}{|c|}{21/01/2016} & Document redaction\\\hline
 				 & & \\\hline
 			\end{tabular}
 		\end{center}
@@ -120,6 +120,7 @@ Assignment 4: Integration Test Plan\\
 		\begin{itemize}
 			\item RASD: Requirements Analysis and Specification Document
 			\item DD: Design Document
+			\item DB: DataBase
 		\end{itemize}
 		The following definitions are used in this document:
 			\begin{itemize}
@@ -145,36 +146,91 @@ Assignment 4: Integration Test Plan\\
 				\makebox[\linewidth]{
 					\includegraphics[keepaspectratio=true,scale=1]{Pictures/ComponentView.png}}
 			\end{minipage}
+			Starting from I8 test will be focused on integration of higher level components.
 			\begin{center}
-				\begin{tabular}{ l | p{2.5cm} | p{9cm} }\hline
+				\begin{tabular}{ l | p{7cm} | p{5cm} }\hline
 					\multicolumn{1}{c|}{\textbf{ID}} & \multicolumn{1}{|c|}{\textbf{Integration Test}} & \textbf{Paragraphs}\\\hline
-					 & & \\\hline
-					& & \\\hline
+					 I1 & Login Manager \textrightarrow Account Factory & 2.4.1 \hspace{20pt} 3.1\\\hline
+					 I2 & Profile Manager \textrightarrow Login Manager & 2.4.1\\\hline
+					 I3 & Request Handler \textrightarrow Request Worker & 2.4.2\\\hline
+					 I4 & Request Worker \textrightarrow Request Engine & 2.4.2\\\hline
+					 I5 & Ride Handler \textrightarrow Ride Worker & 2.4.3\\\hline
+					 I6 & Ride Worker \textrightarrow Ride Engine & 2.4.3\\\hline
+					 I7 & Zone Engine \textrightarrow Queue Manager & 2.4.4\\\hline					 					 					 	
+					 I8 & Client \textrightarrow Account Manager & 2.4.5\\\hline		
+					 I9 & Client \textrightarrow Payment Manager & 2.4.5\\\hline					 					 					 	
+					 I10 & Client \textrightarrow Request Manager & 2.4.5\\\hline					 					 				
+					 I11 & Client \textrightarrow Ride Manager & 2.4.5\\\hline					 					 					 	
+					 I12 & Client \textrightarrow Zone Manager & 2.4.5\\\hline					 					 					 	
+					 I13 & Request Manager \textrightarrow Ride Manager & \\\hline		
+					 I14 & Request Manager \textrightarrow Notification Manager & \\\hline					 					 					 					
+					 I15 & Ride Manager \textrightarrow Zone Manager & \\\hline					 					 					 	
+					 I16 & Ride Manager \textrightarrow Payment Manager & \\\hline					 	 			 				
+					 I17 & Ride Manager \textrightarrow Notification Manager & \\\hline					 					 					 		 					 	
+					 I18 & Zone Manager \textrightarrow Taxi Manager & \\\hline					 					 					 	
+					 I19 & Zone Manager \textrightarrow Notification Manager & \\\hline					 					 					 	
+					 					 					 					 					 	
+					 					 			 					 					 	
 				\end{tabular}
 			\end{center}			
 	\subsection{Integration Testing Strategy}
 		The bottom-up approach will be used to accomplish the analysis. This means that first the interactions inside the sub-systems of the components will be considered and consequently the integrations between the components themselves.
 	\subsection{Sequence of Component/Function Integration}
-	\subsubsection{Software Integration Sequence}
-	\subsubsection{Subsystem Integration Sequence}
-	
-	
-	\section{Individual Steps and Test Description}
-		\subsection{Integration test X}
+		\subsubsection{Sequence of integration for Account Manager}
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceAccount.png}}
+			\end{minipage}
+			
+		\subsubsection{Sequence of integration for Request Manager}
 		\begin{minipage}{\linewidth}
 			%			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager.png}}
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceRequest.png}}
+		\end{minipage}
+		
+		\subsubsection{Sequence of integration for Ride Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceRide.png}}
+		\end{minipage}
+		
+		\subsubsection{Sequence of integration for Zone Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceZone.png}}
+		\end{minipage}		
+		
+		\subsubsection{Sequence of integration for Client}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceClientAccount.png}}
+		\end{minipage}			
+	
+	
+	\section{Individual Steps and Test Description}
+		\subsection{Integration tests for Account Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVAccountManager.png}}
 		\end{minipage}
 		\begin{center}
-				\renewcommand{\arraystretch}{1.2}
-				\setlength{\tabcolsep}{24pt}
+			Figure taken from paragraph 2.3.1 of the DD
+		\end{center} 
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
 			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & ID X\\\hline
-				\textbf{Test item(s)} & Request Handler \textrightarrow Request Worker\\\hline
-				\textbf{Input specification} & Request Handler assigns a task to a Request Worker \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
-				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (creation or modification of request/reservation)\\\hline
+				\textbf{Test case identifier} & I1\\\hline
+				\textbf{Test item(s)} & Login Manager \textrightarrow Account Factory\\\hline
+				\textbf{Input specification} & Create typical Login Manager input \\\hline
+				\textbf{Output specification} & Check if the correct methods are called in the Account Factory\\\hline
+				\textbf{Environmental needs} & Client driver\\\hline
 			\end{tabular}
 		\end{center}	
 		\bigskip	
@@ -182,14 +238,130 @@ Assignment 4: Integration Test Plan\\
 			\renewcommand{\arraystretch}{1.2}
 			\setlength{\tabcolsep}{24pt}
 			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & ID X\\\hline
-				\textbf{Test item(s)} & Request Engine \textrightarrow Request Worker\\\hline
-				\textbf{Input specification} & Request Engine assigns a task to a Request Worker \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
-				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (browsing history of rides)\\\hline
+				\textbf{Test case identifier} & I2\\\hline
+				\textbf{Test item(s)} & Profile Manager \textrightarrow Login Manager\\\hline
+				\textbf{Input specification} & Create typical Profile Manager input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Login Manager\\\hline
+				\textbf{Environmental needs} & Client driver\\\hline
 			\end{tabular}
-		\end{center}			
+		\end{center}
+				
+		\subsection{Integration tests for Request Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager.png}}
+		\end{minipage}
+		\begin{center}
+			Figure taken from paragraph 2.3.2 of the DD
+		\end{center} 
+		\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I3\\\hline
+				\textbf{Test item(s)} & Request Handler \textrightarrow Request Worker\\\hline
+				\textbf{Input specification} & Create typical Request Handler input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
+				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (creation or modification of request/reservation), the stubs for Ride Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}	
+		\bigskip	
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I4\\\hline
+				\textbf{Test item(s)} & Request Worker \textrightarrow Request Engine\\\hline
+				\textbf{Input specification} & Create typical Request Worker input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Request Engine\\\hline
+				\textbf{Environmental needs} & I3 succeeded, the stub for the DB to satisfy the component inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}	
+
+		\subsection{Integration tests for Ride Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRideManager.png}}
+		\end{minipage}
+		\begin{center}
+			Figure taken from paragraph 2.3.3 of the DD
+		\end{center} 
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I5\\\hline
+				\textbf{Test item(s)} & Ride Handler \textrightarrow Ride Worker\\\hline
+				\textbf{Input specification} & Create typical Ride Handler input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Ride Worker\\\hline
+				\textbf{Environmental needs} & Request Manager driver to simulate a typical communication input (creation or modification of ride), the stubs for Payment Manager, Zone Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}	
+		\bigskip	
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I6\\\hline
+				\textbf{Test item(s)} & Ride Worker \textrightarrow Ride Engine\\\hline
+				\textbf{Input specification} & Create typical Ride Worker input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Ride Engine\\\hline
+				\textbf{Environmental needs} & I5 succeeded, the stub for the DB to satisfy the component inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}				
+		
+		\subsection{Integration tests for Zone Manager}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVZoneManager.png}}
+		\end{minipage}
+		\begin{center}
+			Figure taken from paragraph 2.3.6 of the DD
+		\end{center} 
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I7\\\hline
+				\textbf{Test item(s)} & Zone Engine \textrightarrow Queue Manager\\\hline
+				\textbf{Input specification} & Create typical Zone Engine input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Queue Manager\\\hline
+				\textbf{Environmental needs} & Ride Manager driver to simulate a typical communication input (allocation of taxis), the stubs for Taxi Manager, DB and Notification Manager to satisfy the components inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}	
+		
+		\subsection{Integration tests for Client and Account Manager}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I8\\\hline
+				\textbf{Test item(s)} & Client \textrightarrow Account Manager\\\hline
+				\textbf{Input specification} & Create typical Client input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Account Manager\\\hline
+				\textbf{Environmental needs} &  I1, I2 succeeded, the stubs for DB and Notification Manager to satisfy the components inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}	
+
+		\subsection{Integration tests for Client and Payment Manager}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\setlength{\tabcolsep}{24pt}
+			\begin{tabular}{ l  p{9cm}}\hline
+				\textbf{Test case identifier} & I9\\\hline
+				\textbf{Test item(s)} & Client \textrightarrow Payment Manager\\\hline
+				\textbf{Input specification} & Create typical Client input \\\hline
+				\textbf{Output specification} & Check if the correct functions are called in the Payment Manager\\\hline
+				\textbf{Environmental needs} &  The stub for Public Payment Service to satisfy the components inter-dependencies\\\hline
+			\end{tabular}
+		\end{center}				
+			
+	tp sequence come ale per i 4 macro blocchi account, request,ride, zone.
 	
+	magari incollare i 4 sequence diagrams e per ogniuno fare la tp
 	
 	\section{Tools and Test Equipment Required}
 		Mockito, Arquillian, JMeter
