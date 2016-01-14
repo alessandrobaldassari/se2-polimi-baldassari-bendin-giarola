@@ -119,7 +119,7 @@ Assignment 4: Integration Test Plan\\
 		\begin{itemize}
 			\item RASD: Requirements Analysis and Specification Document
 			\item DD: Design Document
-			\item DB: DataBase
+			\item DB: DataBase. It is a test Database filled with test data. See section 5. \textcolor{red}{link}
 		\end{itemize}
 		The following definitions are used in this document:
 			\begin{itemize}
@@ -137,27 +137,36 @@ Assignment 4: Integration Test Plan\\
 	
 	\section{Integration Strategy}
 	\subsection{Entry Criteria}
-		It is supposed that the unit testing phase has already been completed successfully.
+		It is supposed that the unit testing phase has already been completed successfully.\\
+		In particular the following components are considered already tested and thus trusted as working:
+		\begin{itemize}
+			\item Payment Manager
+			\item Notification Manager
+			\item Taxi Manager
+			\item DB
+			\item Google Maps APIs
+		\end{itemize}
 	\subsection{Elements to be Integrated}
 		The scheme below show the main high level components of the system.\\
 			\begin{minipage}{\linewidth}
 				%			\vspace*{-0.35cm}
 				\makebox[\linewidth]{
-					\includegraphics[keepaspectratio=true,scale=1.2]{Pictures/ComponentView.png}}
+					\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/ComponentView.png}}
 			\end{minipage}
 			\bigskip \\
 			From test I1 up to test I7 the integration is related to sub-systems.\\
 			Starting from I8 tests will be focused on integration of higher level components.
+			\bigskip
 			\begin{center}
 				\begin{tabular}{ l | p{7cm} | p{5cm} }\hline
 					\multicolumn{1}{c|}{\textbf{ID}} & \multicolumn{1}{|c|}{\textbf{Integration Test}} & \multicolumn{1}{|c}{\textbf{Paragraphs}}\\\hline
 					 I1 & Login Manager \textrightarrow Account Factory & \ref{sec:2.4.1} \hspace{25pt} \ref{sec:3.1.1} \hspace{25pt} \ref{sec:3.2.1}\\\hline
 					 I2 & Profile Manager \textrightarrow Login Manager & \ref{sec:2.4.1} \hspace{25pt} \ref{sec:3.1.1} \hspace{25pt} \ref{sec:3.2.1}\\\hline
-					 I3 & Request Handler \textrightarrow Request Worker & \ref{sec:2.4.2} \hspace{25pt} \ref{sec:3.1.2} \hspace{25pt} \ref{sec:3.2.2}\\\hline
-					 I4 & Request Worker \textrightarrow Request Engine & \ref{sec:2.4.2} \hspace{25pt} \ref{sec:3.1.2} \hspace{25pt} \ref{sec:3.2.2}\\\hline
-					 I5 & Ride Handler \textrightarrow Ride Worker & \ref{sec:2.4.3} \hspace{25pt} \ref{sec:3.1.3} \hspace{25pt} \ref{sec:3.2.3}\\\hline
-					 I6 & Ride Worker \textrightarrow Ride Engine & \ref{sec:2.4.3} \hspace{25pt} \ref{sec:3.1.3} \hspace{25pt} \ref{sec:3.2.3}\\\hline
-					 I7 & Zone Engine \textrightarrow Queue Manager & \ref{sec:2.4.4} \hspace{25pt} \ref{sec:3.1.4} \hspace{25pt} \ref{sec:3.2.4}\\\hline					 					 					 	
+					 I3 & Zone Engine \textrightarrow Queue Manager & \ref{sec:2.4.2} \hspace{25pt} \ref{sec:3.1.2} \hspace{25pt} \ref{sec:3.2.4}\\\hline
+					 I4 & Ride Handler \textrightarrow Ride Worker & \ref{sec:2.4.3} \hspace{25pt} \ref{sec:3.1.3} \hspace{25pt} \ref{sec:3.2.3}\\\hline
+					 I5 & Ride Worker \textrightarrow Ride Engine & \ref{sec:2.4.3} \hspace{25pt} \ref{sec:3.1.3} \hspace{25pt} \ref{sec:3.2.3}\\\hline						 
+					 I6 & Request Handler \textrightarrow Request Worker & \ref{sec:2.4.4} \hspace{25pt} \ref{sec:3.1.4} \hspace{25pt} \ref{sec:3.2.2}\\\hline
+					 I7 & Request Worker \textrightarrow Request Engine & \ref{sec:2.4.4} \hspace{25pt} \ref{sec:3.1.4} \hspace{25pt} \ref{sec:3.2.2}\\\hline		 					 					 	
 					 I8 & Client \textrightarrow Account Manager & \ref{sec:2.4.5} \hspace{25pt} \ref{sec:3.1.5}\\\hline		
 					 I9 & Client \textrightarrow Payment Manager & \ref{sec:2.4.5} \hspace{25pt} \ref{sec:3.1.6}\\\hline					 					 					 	
 					 I10 & Client \textrightarrow Request Manager & \ref{sec:2.4.5} \hspace{25pt} \ref{sec:3.1.7}\\\hline					 					 				
@@ -173,7 +182,7 @@ Assignment 4: Integration Test Plan\\
 				\end{tabular}
 			\end{center}			
 	\subsection{Integration Testing Strategy}
-		The bottom-up approach will be used to accomplish the analysis. This means that first the interactions inside the sub-systems of the components will be considered and consequently the integrations between the components themselves.
+		An hybrid approach will be used to accomplish the analysis. At the beginning the integration inside the sub-systems of the high level components will be taken into account and consequently the integration between the high level components themselves.
 	\subsection{Sequence of Component/Function Integration}
 		\subsubsection{Sequence of integration for Account Manager sub-system} \label{sec:2.4.1}
 			\begin{minipage}{\linewidth}
@@ -181,27 +190,27 @@ Assignment 4: Integration Test Plan\\
 				\makebox[\linewidth]{
 					\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceAccount.png}}
 			\end{minipage}
-			
-		\subsubsection{Sequence of integration for Request Manager sub-system} \label{sec:2.4.2}
+		
+		\subsubsection{Sequence of integration for Zone Manager sub-system} \label{sec:2.4.2}
 		\begin{minipage}{\linewidth}
 			%			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceRequest.png}}
-		\end{minipage}
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceZone.png}}
+		\end{minipage}		
 		
 		\subsubsection{Sequence of integration for Ride Manager sub-system} \label{sec:2.4.3}
 		\begin{minipage}{\linewidth}
 			%			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
 				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceRide.png}}
-		\end{minipage}
-		
-		\subsubsection{Sequence of integration for Zone Manager sub-system} \label{sec:2.4.4}
+		\end{minipage}				
+			
+		\subsubsection{Sequence of integration for Request Manager sub-system} \label{sec:2.4.4}
 		\begin{minipage}{\linewidth}
 			%			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceZone.png}}
-		\end{minipage}		
+				\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/IntegrationSequence-SequenceRequest.png}}
+		\end{minipage}
 		
 		\subsubsection{Sequence of integration for Client} \label{sec:2.4.5}
 		\begin{minipage}{\linewidth}
@@ -251,7 +260,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Login Manager \textrightarrow Account Factory\\\hline
 				\textbf{Input specification} & Create typical Login Manager input \\\hline
 				\textbf{Output specification} & Check if the correct methods are called in the Account Factory\\\hline
-				\textbf{Environmental needs} & Client driver\\\hline
+				\textbf{Environmental needs} & Client driver and the DB\\\hline
 			\end{tabular}
 		\end{center}	
 		\bigskip	
@@ -263,77 +272,11 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Profile Manager \textrightarrow Login Manager\\\hline
 				\textbf{Input specification} & Create typical Profile Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Login Manager\\\hline
-				\textbf{Environmental needs} & Client driver\\\hline
+				\textbf{Environmental needs} & Client driver and the DB\\\hline
 			\end{tabular}
 		\end{center}
-				
-		\subsubsection{Integration tests for Request Manager} \label{sec:3.1.2}
-		\begin{minipage}{\linewidth}
-			%			\vspace*{-0.35cm}
-			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager.png}}
-		\end{minipage}
-		\begin{center}
-			Figure taken from paragraph 2.3.2 of the DD
-		\end{center} 
-		\begin{center}
-				\renewcommand{\arraystretch}{1.2}
-				\setlength{\tabcolsep}{24pt}
-			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & I3\\\hline
-				\textbf{Test item(s)} & Request Handler \textrightarrow Request Worker\\\hline
-				\textbf{Input specification} & Create typical Request Handler input \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
-				\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (creation or modification of request/reservation), the stubs for Ride Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
-			\end{tabular}
-		\end{center}	
-		\bigskip	
-		\begin{center}
-			\renewcommand{\arraystretch}{1.2}
-			\setlength{\tabcolsep}{24pt}
-			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & I4\\\hline
-				\textbf{Test item(s)} & Request Worker \textrightarrow Request Engine\\\hline
-				\textbf{Input specification} & Create typical Request Worker input \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Request Engine\\\hline
-				\textbf{Environmental needs} & I3 succeeded, the stub for the DB to satisfy the component inter-dependencies\\\hline
-			\end{tabular}
-		\end{center}	
-
-		\subsubsection{Integration tests for Ride Manager} \label{sec:3.1.3}
-		\begin{minipage}{\linewidth}
-			%			\vspace*{-0.35cm}
-			\makebox[\linewidth]{
-				\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRideManager.png}}
-		\end{minipage}
-		\begin{center}
-			Figure taken from paragraph 2.3.3 of the DD
-		\end{center} 
-		\begin{center}
-			\renewcommand{\arraystretch}{1.2}
-			\setlength{\tabcolsep}{24pt}
-			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & I5\\\hline
-				\textbf{Test item(s)} & Ride Handler \textrightarrow Ride Worker\\\hline
-				\textbf{Input specification} & Create typical Ride Handler input \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Ride Worker\\\hline
-				\textbf{Environmental needs} & Request Manager driver to simulate a typical communication input (creation or modification of ride), the stubs for Payment Manager, Zone Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
-			\end{tabular}
-		\end{center}	
-		\bigskip	
-		\begin{center}
-			\renewcommand{\arraystretch}{1.2}
-			\setlength{\tabcolsep}{24pt}
-			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & I6\\\hline
-				\textbf{Test item(s)} & Ride Worker \textrightarrow Ride Engine\\\hline
-				\textbf{Input specification} & Create typical Ride Worker input \\\hline
-				\textbf{Output specification} & Check if the correct functions are called in the Ride Engine\\\hline
-				\textbf{Environmental needs} & I5 succeeded, the stub for the DB to satisfy the component inter-dependencies\\\hline
-			\end{tabular}
-		\end{center}				
 		
-		\subsubsection{Integration tests for Zone Manager} \label{sec:3.1.4}
+		\subsubsection{Integration tests for Zone Manager} \label{sec:3.1.2}
 		\begin{minipage}{\linewidth}
 			%			\vspace*{-0.35cm}
 			\makebox[\linewidth]{
@@ -346,13 +289,81 @@ Assignment 4: Integration Test Plan\\
 			\renewcommand{\arraystretch}{1.2}
 			\setlength{\tabcolsep}{24pt}
 			\begin{tabular}{ l  p{9cm}}\hline
-				\textbf{Test case identifier} & I7\\\hline
+				\textbf{Test case identifier} & I3\\\hline
 				\textbf{Test item(s)} & Zone Engine \textrightarrow Queue Manager\\\hline
 				\textbf{Input specification} & Create typical Zone Engine input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Queue Manager\\\hline
-				\textbf{Environmental needs} & Ride Manager driver to simulate a typical communication input (allocation of taxis), the stubs for Taxi Manager, DB and Notification Manager to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} & Ride Manager driver\\\hline
 			\end{tabular}
-		\end{center}	
+		\end{center}				
+
+		\pagebreak
+		\subsubsection{Integration tests for Ride Manager} \label{sec:3.1.3}
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRideManager.png}}
+			\end{minipage}
+			\begin{center}
+				Figure taken from paragraph 2.3.3 of the DD
+			\end{center} 
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+				\begin{tabular}{ l  p{9cm}}\hline
+					\textbf{Test case identifier} & I4\\\hline
+					\textbf{Test item(s)} & Ride Handler \textrightarrow Ride Worker\\\hline
+					\textbf{Input specification} & Create typical Ride Handler input \\\hline
+					\textbf{Output specification} & Check if the correct functions are called in the Ride Worker\\\hline
+					\textbf{Environmental needs} & Request Manager driver to simulate a typical communication input (creation or modification of ride), the stubs for Payment Manager, Zone Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
+				\end{tabular}
+			\end{center}	
+			\bigskip	
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+				\begin{tabular}{ l  p{9cm}}\hline
+					\textbf{Test case identifier} & I5\\\hline
+					\textbf{Test item(s)} & Ride Worker \textrightarrow Ride Engine\\\hline
+					\textbf{Input specification} & Create typical Ride Worker input \\\hline
+					\textbf{Output specification} & Check if the correct functions are called in the Ride Engine\\\hline
+					\textbf{Environmental needs} & I4 succeeded, the DB\\\hline
+				\end{tabular}
+			\end{center}			
+			
+		\pagebreak
+		\subsubsection{Integration tests for Request Manager} \label{sec:3.1.4}
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/CVRequestManager.png}}
+			\end{minipage}
+			\begin{center}
+				Figure taken from paragraph 2.3.2 of the DD
+			\end{center} 
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+				\begin{tabular}{ l  p{9cm}}\hline
+					\textbf{Test case identifier} & I6\\\hline
+					\textbf{Test item(s)} & Request Handler \textrightarrow Request Worker\\\hline
+					\textbf{Input specification} & Create typical Request Handler input \\\hline
+					\textbf{Output specification} & Check if the correct functions are called in the Request Worker\\\hline
+					\textbf{Environmental needs} & Client (Passenger) driver to simulate a typical communication input (creation or modification of request/reservation), the stubs for Ride Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
+				\end{tabular}
+			\end{center}	
+			\bigskip	
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{24pt}
+				\begin{tabular}{ l  p{9cm}}\hline
+					\textbf{Test case identifier} & I7\\\hline
+					\textbf{Test item(s)} & Request Worker \textrightarrow Request Engine\\\hline
+					\textbf{Input specification} & Create typical Request Worker input \\\hline
+					\textbf{Output specification} & Check if the correct functions are called in the Request Engine\\\hline
+					\textbf{Environmental needs} & I6 succeeded, the DB\\\hline
+				\end{tabular}
+			\end{center}				
 		
 		\smallskip
 		\subsubsection{Integration tests for Client and Account Manager} \label{sec:3.1.5}
@@ -369,7 +380,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Client \textrightarrow Account Manager\\\hline
 				\textbf{Input specification} & Create typical Client input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Account Manager\\\hline
-				\textbf{Environmental needs} &  I1, I2 succeeded, the stub for DB and Notification Manager to satisfy the components inter-dependencies \textcolor{red}{stubs Client???}\\\hline
+				\textbf{Environmental needs} &  I1, I2 succeeded, the DB, the stub for Notification Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}	
 
@@ -387,7 +398,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Client \textrightarrow Payment Manager\\\hline
 				\textbf{Input specification} & Create typical Client input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Payment Manager\\\hline
-				\textbf{Environmental needs} &  The stubs for \textcolor{red}{Account Manager and }Public Payment Service to satisfy the components inter-dependencies \textcolor{red}{stubs Client???}\\\hline
+				\textbf{Environmental needs} &  The stub for Public Payment Service to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}
 		
@@ -406,7 +417,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Client \textrightarrow Request Manager\\\hline
 				\textbf{Input specification} & Create typical Client input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Request Manager\\\hline
-				\textbf{Environmental needs} &  I3, I4 succeeded, the stubs for \textcolor{red}{Account Manager, }DB, Ride Manager and Notification Manager to satisfy the components inter-dependencies \textcolor{red}{stubs Client???}\\\hline
+				\textbf{Environmental needs} &  I6, I7 succeeded, the DB and the stubs for Ride Manager, Notification Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}
 		
@@ -425,7 +436,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Client \textrightarrow Ride Manager\\\hline
 				\textbf{Input specification} & Create typical Client input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Ride Manager\\\hline
-				\textbf{Environmental needs} &  I5, I6 succeeded, the stubs for \textcolor{red}{Account Manager, }DB, Payment Manager, Zone Manager and Notification Manager to satisfy the components inter-dependencies \textcolor{red}{stubs Client???}\\\hline
+				\textbf{Environmental needs} &  I4, I5 succeeded, the DB and the stubs for Payment Manager, Zone Manager, Notification Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}
 		
@@ -444,7 +455,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Client \textrightarrow Zone Manager\\\hline
 				\textbf{Input specification} & Create typical Client input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Zone Manager\\\hline
-				\textbf{Environmental needs} &  I7 succeeded, the stubs for \textcolor{red}{Account Manager, }DB, Taxi Manager and Notification Manager to satisfy the components inter-dependencies \textcolor{red}{stubs Client???}\\\hline
+				\textbf{Environmental needs} &  I3 succeeded, the DB and the stubs for Taxi Manager, Notification Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}	
 
@@ -463,7 +474,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Request Manager \textrightarrow Ride Manager\\\hline
 				\textbf{Input specification} & Create typical Request Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Ride Manager\\\hline
-				\textbf{Environmental needs} & I3, I4, I5, I6 succeeded, the stubs for DB, Notification Manager, ZoneManager and Payment Manager to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} & I4, I5, I6, I7 succeeded, the DB, the stubs for Notification Manager, Zone Manager, Payment Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}		
 		
@@ -482,7 +493,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Request Manager \textrightarrow Notification Manager\\\hline
 				\textbf{Input specification} & Create typical Request Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Notification Manager\\\hline
-				\textbf{Environmental needs} &  I3, I4 succeeded, the stubs for DB, Ride Manager, SMS, Email and Push notification to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} &  I6, I7 succeeded, the stubs for SMS, Email, Push notification to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}	
 		
@@ -500,7 +511,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Ride Manager \textrightarrow Zone Manager\\\hline
 				\textbf{Input specification} & Create typical Ride Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Zone Manager\\\hline
-				\textbf{Environmental needs} & I5, I6, I7 succeeded, the stubs for DB, Payment Manager, Notification Manager and Taxi Manager to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} & I3, I4, I5 succeeded, the DB, the stub Taxi Manager to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}	
 		
@@ -519,7 +530,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Ride Manager \textrightarrow Payment Manager\\\hline
 				\textbf{Input specification} & Create typical Ride Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Payment Manager\\\hline
-				\textbf{Environmental needs} & I5, I6 succeeded, the stubs for Public Payment Service, DB, Zone Manager and Notification Manager to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} & I4, I5 succeeded, the stub for Public Payment Service to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}
 
@@ -538,7 +549,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Ride Manager \textrightarrow Notification Manager\\\hline
 				\textbf{Input specification} & Create typical Ride Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Notification Manager\\\hline
-				\textbf{Environmental needs} & I5, I6 succeeded, the stubs for Payment Manager, DB, Zone Manager, SMS, Email and Push notification to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} & I4, I5 succeeded, the stubs for SMS, Email, Push notification to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}
 		
@@ -557,7 +568,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Zone Manager \textrightarrow Taxi Manager\\\hline
 				\textbf{Input specification} & Create typical Zone Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Taxi Manager\\\hline
-				\textbf{Environmental needs} &  I7 succeeded, the stubs for DB and Notification Manager to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} &  I3 succeeded, the DB\\\hline
 			\end{tabular}
 		\end{center}
 		
@@ -576,7 +587,7 @@ Assignment 4: Integration Test Plan\\
 				\textbf{Test item(s)} & Zone Manager \textrightarrow Notification Manager\\\hline
 				\textbf{Input specification} & Create typical Zone Manager input \\\hline
 				\textbf{Output specification} & Check if the correct functions are called in the Notification Manager\\\hline
-				\textbf{Environmental needs} &  I7 succeeded, the stub for DB, Taxi Manager, SMS, Email and Push notification to satisfy the components inter-dependencies\\\hline
+				\textbf{Environmental needs} &  I3 succeeded, the stubs for SMS, Email, Push notification to satisfy the components inter-dependencies\\\hline
 			\end{tabular}
 		\end{center}	
 		
@@ -584,7 +595,7 @@ Assignment 4: Integration Test Plan\\
 		\subsection{Test procedures}		
 			\subsubsection{Test procedure for Account Manager sub-system} \label{sec:3.2.1}
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP1\\\hline
 						\textbf{Purpose} & This test verifies that the Account Manager component: \begin{itemize}
 							\item Can handle the Visitor input
@@ -599,7 +610,7 @@ Assignment 4: Integration Test Plan\\
 		\pagebreak				
 			\subsubsection{Test procedure for Request Manager sub-system} \label{sec:3.2.2}
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP2\\\hline
 						\textbf{Purpose} & This test verifies that the Request Manager component: \begin{itemize}
 							\item Can handle the Passenger input (creation/modification of requests/reservations and user's history)
@@ -609,13 +620,13 @@ Assignment 4: Integration Test Plan\\
 							\item Can modify and delete requests, thus it can retrieve information about the requests from the DB
 							\item Can retrieve the correct information about a user
 						\end{itemize}\\\hline
-						\textbf{Procedure steps} & Execute I4 after I3 \\\hline
+						\textbf{Procedure steps} & Execute I7 after I6 \\\hline
 					\end{tabular}
 				\end{center}	
 			\bigskip	
 			\subsubsection{Test procedure for Ride Manager sub-system} \label{sec:3.2.3}
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP3\\\hline
 						\textbf{Purpose} & This test verifies that the Ride Manager component: \begin{itemize}
 							\item Can handle the creation, modification and cancellation of rides
@@ -624,15 +635,16 @@ Assignment 4: Integration Test Plan\\
 							\item Can output the requested information to a Taxi driver
 							\item Can retrieve information about the rides from the DB
 							\item Can retrieve the correct information about a user
+							\item Can launch a payment process
 						\end{itemize}\\\hline
-						\textbf{Procedure steps} & Execute I6 after I5 \\\hline
+						\textbf{Procedure steps} & Execute I5 after I4 \\\hline
 					\end{tabular}
 				\end{center}
 			
 		\pagebreak				
 			\subsubsection{Test procedure for Zone Manager sub-system} \label{sec:3.2.4}
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP4\\\hline
 						\textbf{Purpose} & This test verifies that the Zone Manager component: \begin{itemize}
 							\item Can handle the Administrator input		
@@ -640,9 +652,10 @@ Assignment 4: Integration Test Plan\\
 							\item Can manage the queues of taxis in the zones
 							\item Can forward a request to the correct queue
 							\item Can retrieve information about the queues from the DB
-							\item Can retrieve the correct information about a user
+							\item Can retrieve the correct information about a specific Taxi driver
+							\item Can send job proposals to taxi drivers
 						\end{itemize}\\\hline
-						\textbf{Procedure steps} & Execute I7 \\\hline
+						\textbf{Procedure steps} & Execute I3 \\\hline
 					\end{tabular}
 				\end{center}
 		\pagebreak				
@@ -656,17 +669,10 @@ Assignment 4: Integration Test Plan\\
 					Figure taken from paragraph 2.5.2.1 of the DD
 				\end{center} 			
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP5\\\hline
-%						\textbf{Purpose} & This test verifies that the Zone Manager component: \begin{itemize}
-%							\item Can handle the Administrator input		
-%							\item Can output the requested information to the Administrator										
-%							\item Can manage the queues of taxis in the zones
-%							\item Can forward a request to the correct queue
-%							\item Can retrieve information about the queues from the DB
-%							\item Can retrieve the correct information about a user
-%						\end{itemize}\\\hline
-%						\textbf{Procedure steps} & Execute I7 \\\hline
+						\textbf{Purpose} & This test verifies the login procedure in order to check the correct integration of all the involved components.\\\hline
+						\textbf{Procedure steps} & Execute in order I1 and I2 \\\hline
 					\end{tabular}
 				\end{center}
 			\subsubsection{Test procedure for components involved in Passenger request}
@@ -679,17 +685,10 @@ Assignment 4: Integration Test Plan\\
 					Figure taken from paragraph 2.5.2.2 of the DD
 				\end{center} 			
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP6\\\hline
-						%						\textbf{Purpose} & This test verifies that the Zone Manager component: \begin{itemize}
-						%							\item Can handle the Administrator input		
-						%							\item Can output the requested information to the Administrator										
-						%							\item Can manage the queues of taxis in the zones
-						%							\item Can forward a request to the correct queue
-						%							\item Can retrieve information about the queues from the DB
-						%							\item Can retrieve the correct information about a user
-						%						\end{itemize}\\\hline
-						%						\textbf{Procedure steps} & Execute I7 \\\hline
+												\textbf{Purpose} & This test verifies the procedure activated when a passenger asks for a taxi in order to check the correct integration of all the involved components.\\\hline
+												\textbf{Procedure steps} & Execute in order I10, I13, I15 and I17 \\\hline
 					\end{tabular}
 				\end{center}			
 		\pagebreak				
@@ -703,48 +702,53 @@ Assignment 4: Integration Test Plan\\
 					Figure taken from paragraph 2.5.2.3 of the DD
 				\end{center} 			
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
 						\textbf{Test procedure identifier} & TP7\\\hline
-						%						\textbf{Purpose} & This test verifies that the Zone Manager component: \begin{itemize}
-						%							\item Can handle the Administrator input		
-						%							\item Can output the requested information to the Administrator										
-						%							\item Can manage the queues of taxis in the zones
-						%							\item Can forward a request to the correct queue
-						%							\item Can retrieve information about the queues from the DB
-						%							\item Can retrieve the correct information about a user
-						%						\end{itemize}\\\hline
-						%						\textbf{Procedure steps} & Execute I7 \\\hline
+												\textbf{Purpose} & This test verifies the procedure activated when a passenger deletes a request or reservation for a taxi (when the [outAllowedTimeFrame] condition is not satisfied) in order to check the correct integration of all the involved components.\\\hline
+												\textbf{Procedure steps} & Execute in order I10 and I14 \\\hline
 					\end{tabular}
-				\end{center}	
+				\end{center}
+				\begin{center}
+					\begin{tabular}{| l | p{9.5cm} |}\hline
+						\textbf{Test procedure identifier} & TP8\\\hline
+						\textbf{Purpose} & This test verifies the procedure activated when a passenger deletes a request or reservation for a taxi (when the [outAllowedTimeFrame] condition is satisfied) in order to check the correct integration of all the involved components.\\\hline
+						\textbf{Procedure steps} & Execute in order I10, I13, I15, I19, I16 and I14 \\\hline
+					\end{tabular}
+				\end{center}					
 		\pagebreak					
 			\subsubsection{Test procedure for components involved in Driver's job assignation}
 				\begin{minipage}{\linewidth}
 					%			\vspace*{-0.35cm}
 					\makebox[\linewidth]{
-						\includegraphics[keepaspectratio=true,scale=0.5]{Pictures/SDDriverJobProposal.png}}
+						\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/SDDriverJobProposal.png}}
 				\end{minipage}
 				\begin{center}
 					Figure taken from paragraph 2.5.2.4 of the DD
 				\end{center} 			
 				\begin{center}
-					\begin{tabular}{| l | p{10cm} |}\hline
-						\textbf{Test procedure identifier} & TP8\\\hline
-						%						\textbf{Purpose} & This test verifies that the Zone Manager component: \begin{itemize}
-						%							\item Can handle the Administrator input		
-						%							\item Can output the requested information to the Administrator										
-						%							\item Can manage the queues of taxis in the zones
-						%							\item Can forward a request to the correct queue
-						%							\item Can retrieve information about the queues from the DB
-						%							\item Can retrieve the correct information about a user
-						%						\end{itemize}\\\hline
-						%						\textbf{Procedure steps} & Execute I7 \\\hline
+					\begin{tabular}{| l | p{9.5cm} |}\hline
+						\textbf{Test procedure identifier} & TP9\\\hline
+												\textbf{Purpose} & This test verifies the procedure activated when the system assigns a job to a driver (when the [Reject proposal] branch is taken) in order to check the correct integration of all the involved components.\\\hline
+												\textbf{Procedure steps} & Execute in order I15 and I19 \\\hline
 					\end{tabular}
-				\end{center}																																	
+				\end{center}	
+				\begin{center}
+					\begin{tabular}{| l | p{9.5cm} |}\hline
+						\textbf{Test procedure identifier} & TP10\\\hline
+						\textbf{Purpose} & This test verifies the procedure activated when the system assigns a job to a driver (when the [Accept proposal] branch is taken) in order to check the correct integration of all the involved components.\\\hline
+						\textbf{Procedure steps} & Execute in order I15, I19 and I17 \\\hline
+					\end{tabular}
+				\end{center}																																					
 									
 
 	
 	\section{Tools and Test Equipment Required}
-		Mockito, Arquillian, JMeter
+		To perform in a reliable way the integration testing, the following tools and testing environments are needed.
+In order to accomplish the integration testing at sub-component level (e.g. integration of the components in the Account Manager) we are going to use the integration framework of Mockito's library. We made this choice because this tool offers the possibility to implement the stubs and the drivers needed for the testing. We are going to use Mockito also in the integration testing of mobile clients.\\
+To perform the integration testing at component level (e.g. integration of Zone Manager with Ride Manager) we are going to use the Arquillan framework. This is due to the fact that we have several runtime units that are going to run in different software containers inside the same virtual machine and this framework provides the tools to test software containers integration.
+We take in consideration manual testing to test the integration between the web client and the other components of the system.\\
+The testing environment consists in a virtual machine for the application logic and another one for the DBMS running both Ubuntu Server 14.04 LTS. Concerning the client side we need a mobile terminal running Android  6.0.1, another mobile terminal running iOS 9.2 and a desktop PC running Google Chrome.
+
 	
 	
 	\section{Program Stubs and Test Data Required}

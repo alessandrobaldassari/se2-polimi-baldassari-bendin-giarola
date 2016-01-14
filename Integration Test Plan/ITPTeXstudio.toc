@@ -6,47 +6,47 @@
 \contentsline {subsection}{\numberline {1.4}List of Reference Documents}{2}{subsection.0.1.4}
 \contentsline {section}{\numberline {2}Integration Strategy}{2}{section.0.2}
 \contentsline {subsection}{\numberline {2.1}Entry Criteria}{2}{subsection.0.2.1}
-\contentsline {subsection}{\numberline {2.2}Elements to be Integrated}{2}{subsection.0.2.2}
-\contentsline {subsection}{\numberline {2.3}Integration Testing Strategy}{3}{subsection.0.2.3}
-\contentsline {subsection}{\numberline {2.4}Sequence of Component/Function Integration}{3}{subsection.0.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Sequence of integration for Account Manager sub-system}{3}{subsubsection.0.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Sequence of integration for Request Manager sub-system}{3}{subsubsection.0.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Sequence of integration for Ride Manager sub-system}{4}{subsubsection.0.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Sequence of integration for Zone Manager sub-system}{4}{subsubsection.0.2.4.4}
-\contentsline {subsubsection}{\numberline {2.4.5}Sequence of integration for Client}{4}{subsubsection.0.2.4.5}
-\contentsline {subsubsection}{\numberline {2.4.6}Sequence of integration for Request Manager}{5}{subsubsection.0.2.4.6}
-\contentsline {subsubsection}{\numberline {2.4.7}Sequence of integration for Ride Manager}{5}{subsubsection.0.2.4.7}
-\contentsline {subsubsection}{\numberline {2.4.8}Sequence of integration for Zone Manager}{5}{subsubsection.0.2.4.8}
-\contentsline {section}{\numberline {3}Individual Steps and Test Description}{6}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Test Case Specifications}{6}{subsection.0.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Integration tests for Account Manager}{6}{subsubsection.0.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Integration tests for Request Manager}{7}{subsubsection.0.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Integration tests for Ride Manager}{8}{subsubsection.0.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Integration tests for Zone Manager}{9}{subsubsection.0.3.1.4}
-\contentsline {subsubsection}{\numberline {3.1.5}Integration tests for Client and Account Manager}{9}{subsubsection.0.3.1.5}
-\contentsline {subsubsection}{\numberline {3.1.6}Integration tests for Client and Payment Manager}{10}{subsubsection.0.3.1.6}
-\contentsline {subsubsection}{\numberline {3.1.7}Integration tests for Client and Request Manager}{11}{subsubsection.0.3.1.7}
-\contentsline {subsubsection}{\numberline {3.1.8}Integration tests for Client and Ride Manager}{12}{subsubsection.0.3.1.8}
-\contentsline {subsubsection}{\numberline {3.1.9}Integration tests for Client and Zone Manager}{13}{subsubsection.0.3.1.9}
-\contentsline {subsubsection}{\numberline {3.1.10}Integration tests for Request Manager and Ride Manager}{14}{subsubsection.0.3.1.10}
-\contentsline {subsubsection}{\numberline {3.1.11}Integration tests for Request Manager and Notification Manager}{14}{subsubsection.0.3.1.11}
-\contentsline {subsubsection}{\numberline {3.1.12}Integration tests for Ride Manager and Zone Manager}{15}{subsubsection.0.3.1.12}
-\contentsline {subsubsection}{\numberline {3.1.13}Integration tests for Ride Manager and Payment Manager}{15}{subsubsection.0.3.1.13}
-\contentsline {subsubsection}{\numberline {3.1.14}Integration tests for Ride Manager and Notification Manager}{16}{subsubsection.0.3.1.14}
-\contentsline {subsubsection}{\numberline {3.1.15}Integration tests for Zone Manager and Taxi Manager}{16}{subsubsection.0.3.1.15}
-\contentsline {subsubsection}{\numberline {3.1.16}Integration tests for Zone Manager and Notification Manager}{17}{subsubsection.0.3.1.16}
-\contentsline {subsection}{\numberline {3.2}Test procedures}{17}{subsection.0.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Test procedure for Account Manager sub-system}{17}{subsubsection.0.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Test procedure for Request Manager sub-system}{18}{subsubsection.0.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Test procedure for Ride Manager sub-system}{18}{subsubsection.0.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Test procedure for Zone Manager sub-system}{19}{subsubsection.0.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Test procedure for components involved in User login}{20}{subsubsection.0.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Test procedure for components involved in Passenger request}{21}{subsubsection.0.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}Test procedure for components involved in Request cancellation}{22}{subsubsection.0.3.2.7}
-\contentsline {subsubsection}{\numberline {3.2.8}Test procedure for components involved in Driver's job assignation}{23}{subsubsection.0.3.2.8}
-\contentsline {section}{\numberline {4}Tools and Test Equipment Required}{23}{section.0.4}
-\contentsline {section}{\numberline {5}Program Stubs and Test Data Required}{24}{section.0.5}
-\contentsline {section}{\numberline {6}References}{25}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{25}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{25}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{25}{subsection.0.7.2}
+\contentsline {subsection}{\numberline {2.2}Elements to be Integrated}{3}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Integration Testing Strategy}{4}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Sequence of Component/Function Integration}{4}{subsection.0.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Sequence of integration for Account Manager sub-system}{4}{subsubsection.0.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Sequence of integration for Zone Manager sub-system}{4}{subsubsection.0.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Sequence of integration for Ride Manager sub-system}{5}{subsubsection.0.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Sequence of integration for Request Manager sub-system}{5}{subsubsection.0.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Sequence of integration for Client}{5}{subsubsection.0.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}Sequence of integration for Request Manager}{6}{subsubsection.0.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}Sequence of integration for Ride Manager}{6}{subsubsection.0.2.4.7}
+\contentsline {subsubsection}{\numberline {2.4.8}Sequence of integration for Zone Manager}{6}{subsubsection.0.2.4.8}
+\contentsline {section}{\numberline {3}Individual Steps and Test Description}{7}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Test Case Specifications}{7}{subsection.0.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Integration tests for Account Manager}{7}{subsubsection.0.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Integration tests for Zone Manager}{8}{subsubsection.0.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Integration tests for Ride Manager}{9}{subsubsection.0.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Integration tests for Request Manager}{10}{subsubsection.0.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Integration tests for Client and Account Manager}{11}{subsubsection.0.3.1.5}
+\contentsline {subsubsection}{\numberline {3.1.6}Integration tests for Client and Payment Manager}{11}{subsubsection.0.3.1.6}
+\contentsline {subsubsection}{\numberline {3.1.7}Integration tests for Client and Request Manager}{12}{subsubsection.0.3.1.7}
+\contentsline {subsubsection}{\numberline {3.1.8}Integration tests for Client and Ride Manager}{13}{subsubsection.0.3.1.8}
+\contentsline {subsubsection}{\numberline {3.1.9}Integration tests for Client and Zone Manager}{14}{subsubsection.0.3.1.9}
+\contentsline {subsubsection}{\numberline {3.1.10}Integration tests for Request Manager and Ride Manager}{15}{subsubsection.0.3.1.10}
+\contentsline {subsubsection}{\numberline {3.1.11}Integration tests for Request Manager and Notification Manager}{15}{subsubsection.0.3.1.11}
+\contentsline {subsubsection}{\numberline {3.1.12}Integration tests for Ride Manager and Zone Manager}{16}{subsubsection.0.3.1.12}
+\contentsline {subsubsection}{\numberline {3.1.13}Integration tests for Ride Manager and Payment Manager}{16}{subsubsection.0.3.1.13}
+\contentsline {subsubsection}{\numberline {3.1.14}Integration tests for Ride Manager and Notification Manager}{17}{subsubsection.0.3.1.14}
+\contentsline {subsubsection}{\numberline {3.1.15}Integration tests for Zone Manager and Taxi Manager}{17}{subsubsection.0.3.1.15}
+\contentsline {subsubsection}{\numberline {3.1.16}Integration tests for Zone Manager and Notification Manager}{18}{subsubsection.0.3.1.16}
+\contentsline {subsection}{\numberline {3.2}Test procedures}{18}{subsection.0.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Test procedure for Account Manager sub-system}{18}{subsubsection.0.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Test procedure for Request Manager sub-system}{19}{subsubsection.0.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Test procedure for Ride Manager sub-system}{19}{subsubsection.0.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Test procedure for Zone Manager sub-system}{20}{subsubsection.0.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Test procedure for components involved in User login}{21}{subsubsection.0.3.2.5}
+\contentsline {subsubsection}{\numberline {3.2.6}Test procedure for components involved in Passenger request}{22}{subsubsection.0.3.2.6}
+\contentsline {subsubsection}{\numberline {3.2.7}Test procedure for components involved in Request cancellation}{23}{subsubsection.0.3.2.7}
+\contentsline {subsubsection}{\numberline {3.2.8}Test procedure for components involved in Driver's job assignation}{24}{subsubsection.0.3.2.8}
+\contentsline {section}{\numberline {4}Tools and Test Equipment Required}{25}{section.0.4}
+\contentsline {section}{\numberline {5}Program Stubs and Test Data Required}{25}{section.0.5}
+\contentsline {section}{\numberline {6}References}{26}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{26}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{26}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{26}{subsection.0.7.2}
