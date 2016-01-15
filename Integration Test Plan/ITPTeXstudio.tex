@@ -744,14 +744,41 @@ Assignment 4: Integration Test Plan\\
 	
 	\section{Tools and Test Equipment Required}
 		To perform in a reliable way the integration testing, the following tools and testing environments are needed.
-In order to accomplish the integration testing at sub-component level (e.g. integration of the components in the Account Manager) we are going to use the integration framework of Mockito's library. We made this choice because this tool offers the possibility to implement the stubs and the drivers needed for the testing. We are going to use Mockito also in the integration testing of mobile clients.\\
-To perform the integration testing at component level (e.g. integration of Zone Manager with Ride Manager) we are going to use the Arquillan framework. This is due to the fact that we have several runtime units that are going to run in different software containers inside the same virtual machine and this framework provides the tools to test software containers integration.
-We take in consideration manual testing to test the integration between the web client and the other components of the system.\\
-The testing environment consists in a virtual machine for the application logic and another one for the DBMS running both Ubuntu Server 14.04 LTS. Concerning the client side we need a mobile terminal running Android  6.0.1, another mobile terminal running iOS 9.2 and a desktop PC running Google Chrome.
-
+		In order to accomplish the integration testing at sub-component level (e.g. integration of the components in the Account Manager) we are going to use the integration framework of Mockito's library. We made this choice because this tool offers the possibility to implement the stubs and the drivers needed for the testing. We are going to use Mockito also in the integration testing of mobile clients.\\
+		To perform the integration testing at component level (e.g. integration of Zone Manager with Ride Manager) we are going to use the Arquillan framework. This is due to the fact that we have several runtime units that are going to run in different software containers inside the same virtual machine and this framework provides the tools to test software containers integration.
+		We take in consideration manual testing to test the integration between the web client and the other components of the system.\\
+		The testing environment consists in a virtual machine for the application logic and another one for the DBMS running both Ubuntu Server 14.04 LTS. Concerning the client side we need a mobile terminal running Android  6.0.1, another mobile terminal running iOS 9.2 and a desktop PC running Google Chrome.
 	
-	
+	\pagebreak
 	\section{Program Stubs and Test Data Required}
+		\subsection{Stubs}
+			\begin{itemize}
+				\item Payment Manager
+				\item Zone Manager
+				\item Notification Manager
+				\item Ride Manager
+				\item Public Payment Service
+				\item Taxi Manager
+				\item SMS service
+				\item Mail service
+				\item Push service
+			\end{itemize}
+		\subsection{Drivers}
+			\begin{itemize}
+				\item Client (Administrator, Taxi Driver, Passenger)
+				\item Ride Manager
+				\item Request Manager
+			\end{itemize}
+		\subsection{Data required}
+			To perform a correct integration testing it is necessary to implement a dummy DB populated with the following data:
+			\begin{itemize}
+				\item Some user data for each user type (Administrator, Taxi Driver, Passenger)
+				\item A set of requests for shared and non-shared trips
+				\item A set of rides
+				\item A set of city zones
+				\item A set of taxis to populate each zone’s taxi queue
+			\end{itemize}
+			All this data elements must match together to perform correctly the integration testing. In order for a request and its associated ride to be correct, at least a taxi driver and one or more passengers should appear. The taxi driver should match with his taxi and the taxi should be in the starting zone of the ride.
 	
 	\pagebreak
 	\section{References}
