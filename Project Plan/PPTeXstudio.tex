@@ -119,19 +119,57 @@ Assignment 5: Project Plan\\
 			\begin{itemize}
 				\item FP: Function Points
 				\item COCOMO: COnstructive COst MOdel
+				\item ILF: Internal Logic File
+				\item EIF: External Interface File
+				\item PM: Person-Months
+				\item SLOC: Source Lines of Code
+				\item KSLOC: Thousands of SLOC
+				\item SD: Scale Drivers
 			\end{itemize}
 			The following definitions are used in this document:
 			\begin{itemize}
 				\item Deliverables: are work that are delivered to the customer, e.g. a requirement document for the system.
 			\end{itemize}
-			
-	\section{Function Point analysis}
 	
-	\section{COCOMO II analysis}			
+	\pagebreak		
+	\section{Function Point analysis}
+		\subsection{Introduction}
+			The Function Point estimation approach is based on the amount of functionalities in a software and their complexity. Indeed the effort to develop a software project grows with the number of external inputs and outputs, user interactions, files and interfaces used by the system; therefore a weight is associated to all these functionalities and the total effort is computed summing all the partial values.\bigskip \\
+			The parameters used to perform this estimation are summarized in the following tables, taken from COCOMO II, Model Definition Manual at:\smallskip\\ \href{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}\bigskip\\
+			This first schema is used to determine the complexity-level function counts. It classifies each functionality into Low, Average and High complexity levels.\smallskip\\
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/TableComplexity.png}}
+			\end{minipage}		
+			\bigskip\\
+			\smallskip\\
+			This second one, defines the weights assigned to every level of complexity for all the FP types.\smallskip\\
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.3]{Pictures/TableWeights.png}}
+			\end{minipage}
+			\pagebreak	\\	
+			Here is a brief explanation of the FP types:
+			\begin{itemize}
+				\item Internal Logic File: homogeneous set of data used and managed by the application
+				\item External Interface File: homogeneous set of data used by the application but generated and maintained by other applications
+				\item External Input: elementary operation to elaborate data coming from the external environment
+				\item External Output: elementary operation that generates data for the external environment (it usually includes the elaboration of data from logic files)
+				\item External Inquiry: Elementary operation that involves input and output (without significant elaboration of data from logic files)
+				
+			\end{itemize}
+		\subsection{FP types estimation}	
+	
+	\section{COCOMO II analysis}
+		\subsection{Introduction}	
+			This estimation is achieved through a complex, statistical model that takes in account the characteristics of the product but also of people and process. The result of this technique is the estimation of Person-Months required to develop the project.\\
+			The COCOMO II calculations are based on the estimated of the software dimension in source lines of code (SLOC).
 	
 	\section{Tasks identification and schedule}	
 	
-	\section{References allocation}	
+	\section{Resources allocation}	
 	
 	\section{Risk planning and management}	
 
