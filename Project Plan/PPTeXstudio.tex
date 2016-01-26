@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb,textcomp}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb,textcomp,eurosym}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -125,6 +125,7 @@ Assignment 5: Project Plan\\
 				\item SLOC: Source Lines of Code
 				\item KSLOC: Thousands of SLOC
 				\item SD: Scale Drivers
+				\item EAF: Effort Adjustment Factor
 			\end{itemize}
 			The following definitions are used in this document:
 			\begin{itemize}
@@ -135,7 +136,7 @@ Assignment 5: Project Plan\\
 	\section{Function Point analysis}
 		\subsection{Introduction}
 			The Function Point estimation approach is based on the amount of functionalities in a software and their complexity. Indeed the effort to develop a software project grows with the number of external inputs and outputs, user interactions, files and interfaces used by the system; therefore a weight is associated to all these functionalities and the total effort is computed summing all the partial values.\bigskip \\
-			The parameters used to perform this estimation are summarized in the following tables, taken from COCOMO II, Model Definition Manual at:\smallskip\\ \href{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}\bigskip\\
+			The parameters used to perform this estimation are summarized in the following tables, taken from COCOMO II, Model Definition Manual at:\smallskip\\ \href{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf.}\bigskip\\
 %			This first schema is used to determine the complexity-level function counts. It classifies each functionality into Low, Average and High complexity levels.\smallskip\\
 %			\begin{minipage}{\linewidth}
 %				%			\vspace*{-0.35cm}
@@ -162,6 +163,7 @@ Assignment 5: Project Plan\\
 			\end{itemize}
 	
 		\subsection{FP types estimation}
+			The assignation of the complexity to each functionality is based on the number of fields and interactions with other components required to implement it. 
 			\begin{itemize}
 				\item ILF
 							\renewcommand{\arraystretch}{1.2}
@@ -237,15 +239,96 @@ Assignment 5: Project Plan\\
 						Zone & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{10}\\\hline																						
 						\multicolumn{2}{|l|}{Total:} & \multicolumn{1}{|c|}{17}\\\hline
 					\end{tabular}
-				\end{center}																	
-			\end{itemize}	
-			The total number of FPs it then 153.
-	
+				\end{center}
+				\pagebreak
+				\item Total and conclusions
+				\renewcommand{\arraystretch}{1.2}
+				\setlength{\tabcolsep}{12pt}
+				\begin{center}
+					\begin{tabular}{| p{7cm} | p{2cm} |}\hline
+						\textbf{FP types} & \multicolumn{1}{|c|}{\textbf{Value}}\\\hline
+						ILF & \multicolumn{1}{|c|}{56}\\\hline
+						EIF & \multicolumn{1}{|c|}{19}\\\hline
+						Ext. INPUT & \multicolumn{1}{|c|}{44}\\\hline
+						Ext. INQUIRY & \multicolumn{1}{|c|}{17}\\\hline		
+						Ext. OUTPUT & \multicolumn{1}{|c|}{17}\\\hline																						
+						Total: & \multicolumn{1}{|c|}{153}\\\hline
+					\end{tabular}
+				\end{center}																					
+			\end{itemize}
+			\bigskip	
+			The total number of FPs it then 153.\bigskip\\
+			We can use this number to estimate the number of lines of code needed for the project; to do this a conversion factor is used: 46.\\
+			This value is obtained from the average value for J2EE language from the table at\\ \href{http://www.qsm.com/resources/function-point-languages-table}{http://www.qsm.com/resources/function-point-languages-table.}\bigskip\\
+			Thus the estimate of SLOC will be: \begin{center}\(153FPs * 46 = 7038 \ SLOC\)\end{center}
+			This result is the starting point for the next evaluation technique, the COCOMO approach.
+	\pagebreak		
 	\section{COCOMO II analysis}
 		\subsection{Introduction}	
 			This estimation is achieved through a complex, statistical model that takes in account the characteristics of the product but also of people and process. The result of this technique is the estimation of Person-Months required to develop the project.\\
 			The COCOMO II calculations are based on the estimated of the software dimension in source lines of code (SLOC).
-	
+			Two very important metrics are used for this evaluation:
+			\begin{itemize}
+				\item Scale Drivers: the 5 SD determine the exponent used in the ``effort equation''
+				\item Cost Drivers: the 17 Cost Drivers represent the multiplicative factors that determine the effort required to complete the project
+			\end{itemize}
+			The result, the so-called ``\textit{Effort equation}'' is:
+			\begin{center}\($\euro$ffort = 2.94 * EAF * (KSLOC)^E \ [Person$-$Months]\)\end{center}
+			Where:
+			\begin{itemize}
+				\item \textit{EAF}: Effort Adjustment Factor derived from Cost Drivers (product of the effort multipliers corresponding to each of the cost drivers for the project)
+				\item \textit{E}: Exponent derived from SD
+				\item \textit{KSLOC}: SLOC measured in thousands
+			\end{itemize}
+			Once the effort has been computed it is possible to calculate the number of months required to complete the project with the duration equation:
+			\begin{center}\(Duration = 3.67 * ($\euro$ffort)^E \ [Months]\)\end{center}
+			Where:
+			\begin{itemize}
+				\item \textit{\euro ffort}: is the effort computed above
+				\item \textit{E}: is the schedule equation exponent derived from the five Scale Drivers
+			\end{itemize}	
+			When both the \textit{\euro ffort} and the \textit{Duration} are available then the number of people required to complete the project is:
+			\begin{center}\(N_{people} = \lceil $\euro$ / D \rceil \ [People]\)\end{center}
+		\subsection{Parameters choice and estimation}
+			A first estimation is carried out considering a project with all “nominal” Cost Drivers and Scale Drivers: this means an \textit{EAF} of 1.00 and exponent \textit{E} of 1.0997. The effort equation thus becomes: 
+			\begin{center}\($\euro$ffort = 2.94 * 1.0 * (7.038)^{1.0997} = 25.13 \ Person$-$Months\)\end{center}
+			Proceeding with the computation of the schedule equation the formula with the nominal parameter of \textit{E} = 0.3179 becomes:
+			\begin{center}\(Duration = 3.67 * (25.13)^{0.3179} = 10.23 \ Months\)\end{center}
+			The size of the team is then:
+			\begin{center}\(N_{people} = \lceil 25.13 / 10.23 \rceil = \lceil 2.45 \rceil = 3 \ People\)\end{center}
+			The analysis gives the following result: it takes about 10 months of 3 people-work to finish this project.
+			\bigskip\\
+		\subsection{Second analysis with automated tool}
+			A second analysis is here presented; it has been done with the help of an online tool \linebreak \href{http://csse.usc.edu/tools/COCOMOII.php}{(http://csse.usc.edu/tools/COCOMOII.php)}, where it is easier and immediate to evaluate the difference in effort and scheduling as parameters of drivers change.\bigskip\\
+			In particular the variations with respect to the nominal case are the following:
+			\begin{itemize}
+				\item Precedentedness: LOW, because the team has not much experience on large scale Java Enterprise projects with such high quality and reliability requirements
+				\item Architecture/Risk Resolution: HIGH, since the team wants to avoid mistakes that can be raised during the development at a late stage that could involve the feasibility of the project itself; this is achieved through a thorough analysis of the architecture and the possible risks.
+				\item Required Software Reliability: HIGH, since the expected quality of the system is very high, and on it depend a lot of processes (passenger clients, drivers, the public transportation for whole cities...)
+			\end{itemize}\bigskip
+			Below are the settings of this analysis.\bigskip\\
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.36]{Pictures/COCOMOparameters.png}}
+			\end{minipage}
+			\pagebreak\\
+			Below is the output of the analysis.\bigskip\\
+			\begin{minipage}{\linewidth}
+				%			\vspace*{-0.35cm}
+				\makebox[\linewidth]{
+					\includegraphics[keepaspectratio=true,scale=0.45]{Pictures/COCOMOoutput.png}}
+			\end{minipage}
+			\bigskip\\
+			The slight variation due to the different parameters does not really change the estimation:
+			\begin{itemize}
+				\item Duration: from about 10 to 11 months.
+				\item Size of the team: always 3 people required  (\(N_{people} = \lceil 27.6 / 11 \rceil = \lceil 2.5 \rceil = 3 \ People\))
+			\end{itemize}
+			\bigskip
+			This obvious result is a direct consequence of the increase in risk control and high-quality-software objectives prefixed with the parameters.
+			
+	\pagebreak
 	\section{Tasks identification and schedule}	
 	
 	\section{Resources allocation}	
