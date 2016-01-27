@@ -329,8 +329,8 @@ Assignment 5: Project Plan\\
 			This obvious result is a direct consequence of the increase in risk control and high-quality-software objectives prefixed with the parameters.
 			
 	\pagebreak
-	\section{Tasks identification and schedule}	
-		seguiamo diagramma a cascata....
+	\section{Tasks identification}	
+		The ``Waterfall Model'' of the software life-cycle is used as a guideline for the choice of the tasks and their order of execution.
 		\renewcommand{\arraystretch}{1.2}
 		\setlength{\tabcolsep}{12pt}
 		\begin{center}
@@ -342,64 +342,115 @@ Assignment 5: Project Plan\\
 				
 %				\textbf{ID} & \textbf{Task} & \parbox{3cm}{Effort \\  [Person-Days]} & \textbf{Duration [Days]} & \textbf{Dependencies}		
 					
-				\multicolumn{1}{|c|}{T1} & \multicolumn{1}{|c|}{Stakeholders identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				\multicolumn{1}{|c|}{T1} & \multicolumn{1}{|c|}{Stakeholders identification} & \multicolumn{1}{|c|}{5} & \multicolumn{1}{|c|}{2} & \multicolumn{1}{|c|}{}\\\hline
 				
-				\multicolumn{1}{|c|}{T2} & \multicolumn{1}{|c|}{Actors identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T2} & \multicolumn{1}{|c|}{Actors identification} & \multicolumn{1}{|c|}{5} & \multicolumn{1}{|c|}{2} & \multicolumn{1}{|c|}{T1}\\\hline	
 				
-				\multicolumn{1}{|c|}{T3} & \multicolumn{1}{|c|}{Goals identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline							
+				\multicolumn{1}{|c|}{T3} & \multicolumn{1}{|c|}{Goals identification} & \multicolumn{1}{|c|}{12} & \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{T2}\\\hline							
 
-				\multicolumn{1}{|c|}{T4} & \multicolumn{1}{|c|}{Requirements identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				\multicolumn{1}{|c|}{T4} & \multicolumn{1}{|c|}{Requirements identification} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{6} & \multicolumn{1}{|c|}{T3}\\\hline
 				
-				\multicolumn{1}{|c|}{T5} & \multicolumn{1}{|c|}{Use Case and Scenarios} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				\multicolumn{1}{|c|}{T5} & \multicolumn{1}{|c|}{Use Case and Scenarios} & \multicolumn{1}{|c|}{11} & \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{T4}\\\hline
 				
-				\multicolumn{1}{|c|}{T7} & \multicolumn{1}{|c|}{Class diagram} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T6} & \multicolumn{1}{|c|}{Class diagram} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{6} & \multicolumn{1}{|c|}{T5}\\\hline	
 				
-				\multicolumn{1}{|c|}{T8} & \multicolumn{1}{|c|}{Alloy model} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T7} & \multicolumn{1}{|c|}{Alloy model} & \multicolumn{1}{|c|}{10} & \multicolumn{1}{|c|}{5} & \multicolumn{1}{|c|}{T6}\\\hline	
 				
-				\multicolumn{1}{|c|}{T9} & \multicolumn{1}{|c|}{Components and interfaces} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				\multicolumn{1}{|c|}{T8} & \multicolumn{1}{|c|}{Components and interfaces} & \multicolumn{1}{|c|}{24} & \multicolumn{1}{|c|}{12} & \multicolumn{1}{|c|}{T7}\\\hline		
 				
-				\multicolumn{1}{|c|}{T10} & \multicolumn{1}{|c|}{Deployment architecture} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline			
+				\multicolumn{1}{|c|}{T9} & \multicolumn{1}{|c|}{Deployment architecture} & \multicolumn{1}{|c|}{17} & \multicolumn{1}{|c|}{9} & \multicolumn{1}{|c|}{T8}\\\hline			
 				
-				\multicolumn{1}{|c|}{T11} & \multicolumn{1}{|c|}{Runtime elements} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline			
+				\multicolumn{1}{|c|}{T10} & \multicolumn{1}{|c|}{Runtime elements} & \multicolumn{1}{|c|}{15} & \multicolumn{1}{|c|}{8} & \multicolumn{1}{|c|}{T9}\\\hline			
 				
-				\multicolumn{1}{|c|}{T12} & \multicolumn{1}{|c|}{Algorithms design} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T11} & \multicolumn{1}{|c|}{Algorithms design} & \multicolumn{1}{|c|}{28} & \multicolumn{1}{|c|}{10} & \multicolumn{1}{|c|}{T8}\\\hline	
 				
-				\multicolumn{1}{|c|}{T13} & \multicolumn{1}{|c|}{Sequence diagrams} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline				
+				\multicolumn{1}{|c|}{T12} & \multicolumn{1}{|c|}{Sequence diagrams} & \multicolumn{1}{|c|}{19} & \multicolumn{1}{|c|}{7} & \multicolumn{1}{|c|}{T8}\\\hline				
 		
-				\multicolumn{1}{|c|}{T14} & \multicolumn{1}{|c|}{User interface mock-up} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				\multicolumn{1}{|c|}{T13} & \multicolumn{1}{|c|}{User interface mock-up} & \multicolumn{1}{|c|}{25} & \multicolumn{1}{|c|}{25} & \multicolumn{1}{|c|}{T5}\\\hline		
 				
-				\multicolumn{1}{|c|}{T15} & \multicolumn{1}{|c|}{Client manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T14} & \multicolumn{1}{|c|}{Client manager development} & \multicolumn{1}{|c|}{30} & \multicolumn{1}{|c|}{15} & \multicolumn{1}{|c|}{T10, T11, T12, T13}\\\hline	
 				
-				\multicolumn{1}{|c|}{T16} & \multicolumn{1}{|c|}{Account manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				\multicolumn{1}{|c|}{T15} & \multicolumn{1}{|c|}{Account manager development} & \multicolumn{1}{|c|}{32} & \multicolumn{1}{|c|}{16} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline
 				
-				\multicolumn{1}{|c|}{T17} & \multicolumn{1}{|c|}{Request manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				\multicolumn{1}{|c|}{T16} & \multicolumn{1}{|c|}{Request manager development} & \multicolumn{1}{|c|}{65} & \multicolumn{1}{|c|}{22} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline		
 				
-				\multicolumn{1}{|c|}{T18} & \multicolumn{1}{|c|}{Ride manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T17} & \multicolumn{1}{|c|}{Ride manager development} & \multicolumn{1}{|c|}{38} & \multicolumn{1}{|c|}{19} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline	
 				
-				\multicolumn{1}{|c|}{T19} & \multicolumn{1}{|c|}{Zone manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T18} & \multicolumn{1}{|c|}{Zone manager development} & \multicolumn{1}{|c|}{73} & \multicolumn{1}{|c|}{25} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline	
 				
-				\multicolumn{1}{|c|}{T20} & \multicolumn{1}{|c|}{Taxi manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T19} & \multicolumn{1}{|c|}{Taxi manager development} & \multicolumn{1}{|c|}{15} & \multicolumn{1}{|c|}{15} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline	
 				
-				\multicolumn{1}{|c|}{T21} & \multicolumn{1}{|c|}{Notification manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T20} & \multicolumn{1}{|c|}{Notification manager development} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline	
 				
-				\multicolumn{1}{|c|}{T22} & \multicolumn{1}{|c|}{Payment manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T21} & \multicolumn{1}{|c|}{Payment manager development} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{18} & \multicolumn{1}{|c|}{T10, T11, T12}\\\hline	
 				
-				\multicolumn{1}{|c|}{T23} & \multicolumn{1}{|c|}{Integration testing strategy} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T22} & \multicolumn{1}{|c|}{Integration testing strategy} & \multicolumn{1}{|c|}{35} & \multicolumn{1}{|c|}{12} & \multicolumn{1}{|c|}{from T14 to T21}\\\hline	
 				
-				\multicolumn{1}{|c|}{T24} & \multicolumn{1}{|c|}{Integration testing execution} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				\multicolumn{1}{|c|}{T23} & \multicolumn{1}{|c|}{Integration testing execution} & \multicolumn{1}{|c|}{40} & \multicolumn{1}{|c|}{14} & \multicolumn{1}{|c|}{T22}\\\hline	
 				
-				\multicolumn{1}{|c|}{T25} & \multicolumn{1}{|c|}{Software deployment} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
-				
-								
-				
-
+				\multicolumn{1}{|c|}{T24} & \multicolumn{1}{|c|}{Software deployment} & \multicolumn{1}{|c|}{10} & \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{T23}\\\hline	
 			\end{tabular}
 		\end{minipage} }
-		
 		\end{center}
+		The effort measured in Person-Months can be converted in Person-Days taking into account that in a months there are about 21 working days, so the 27.6 Person-Months are equivalent to \(27.6 * 21 = 580 \ Person$-$Days \). The sum of the column ``Effort'' of the table above should match that figure.
 	
-	\section{Resources allocation}	
+	\section{Task scheduling and Resources allocation}	
+		Below are shown the Gantt diagrams representing the guideline for the scheduling of the project which helps respecting the deadlines and deliverables.\\
+		First is presented an overall view of the whole project, later on the focus is on the particular of every section of the project.\\
+		The meaning of the colors is:
+		\begin{itemize}
+			\item GREEN: all the 3 members of the team are working on the task
+			\item ORANGE: two member of the project are working on the task
+			\item PURPLE: just one member of the group is working on that task.
+		\end{itemize}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.6,angle=90,origin=c]{Pictures/PlanOverall.png}}
+		\end{minipage}			
+		\begin{center}
+			Scheduling and resources allocation for RASD document
+		\end{center}		
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.43,angle=90,origin=c]{Pictures/PlanRASD.png}}
+		\end{minipage}
+		\begin{center}
+			Scheduling and resources allocation for Design document
+		\end{center}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.47,angle=90,origin=c]{Pictures/PlanDD.png}}
+		\end{minipage}		
+		\begin{center}
+			Scheduling and resources allocation for the development phase
+		\end{center}
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.355,angle=90,origin=c]{Pictures/PlanDevelopment.png}}
+		\end{minipage}	
+		\begin{center}
+			Scheduling and resources allocation for integration testing
+		\end{center}		
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.47,angle=90,origin=c]{Pictures/PlanIntegration.png}}
+		\end{minipage}	
+		\begin{center}
+			Scheduling and resources allocation for deployment of the final product
+		\end{center}	
+		\begin{minipage}{\linewidth}
+			%			\vspace*{-0.35cm}
+			\makebox[\linewidth]{
+				\includegraphics[keepaspectratio=true,scale=0.67,angle=90,origin=c]{Pictures/PlanDeployment.png}}
+		\end{minipage}		
 	
+	
+	\pagebreak
 	\section{Risk planning and management}	
 
 	\pagebreak

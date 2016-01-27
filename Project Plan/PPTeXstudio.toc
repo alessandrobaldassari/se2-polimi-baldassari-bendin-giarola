@@ -9,10 +9,10 @@
 \contentsline {subsection}{\numberline {3.1}Introduction}{5}{subsection.0.3.1}
 \contentsline {subsection}{\numberline {3.2}Parameters choice and estimation}{5}{subsection.0.3.2}
 \contentsline {subsection}{\numberline {3.3}Second analysis with automated tool}{6}{subsection.0.3.3}
-\contentsline {section}{\numberline {4}Tasks identification and schedule}{8}{section.0.4}
-\contentsline {section}{\numberline {5}Resources allocation}{8}{section.0.5}
-\contentsline {section}{\numberline {6}Risk planning and management}{8}{section.0.6}
-\contentsline {section}{\numberline {7}References}{9}{section.0.7}
-\contentsline {section}{\numberline {8}Appendix}{9}{section.0.8}
-\contentsline {subsection}{\numberline {8.1}Software and tools used}{9}{subsection.0.8.1}
-\contentsline {subsection}{\numberline {8.2}Hours of work}{9}{subsection.0.8.2}
+\contentsline {section}{\numberline {4}Tasks identification}{8}{section.0.4}
+\contentsline {section}{\numberline {5}Task scheduling and Resources allocation}{8}{section.0.5}
+\contentsline {section}{\numberline {6}Risk planning and management}{15}{section.0.6}
+\contentsline {section}{\numberline {7}References}{16}{section.0.7}
+\contentsline {section}{\numberline {8}Appendix}{16}{section.0.8}
+\contentsline {subsection}{\numberline {8.1}Software and tools used}{16}{subsection.0.8.1}
+\contentsline {subsection}{\numberline {8.2}Hours of work}{16}{subsection.0.8.2}

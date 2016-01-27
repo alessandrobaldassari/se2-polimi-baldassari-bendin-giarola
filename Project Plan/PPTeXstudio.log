@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.11)  27 JAN 2016 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.11)  28 JAN 2016 00:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -768,9 +768,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./Pictures/COCOMOoutput.png>]
-Overfull \hbox (50.66579pt too wide) in paragraph at lines 397--397
+Overfull \hbox (71.03638pt too wide) in paragraph at lines 393--393
 [][] 
  []
+
+<Pictures/PlanOverall.png, id=156, 1152.305pt x 623.32875pt>
+File: Pictures/PlanOverall.png Graphic file (type png)
+
+<use Pictures/PlanOverall.png>
+Package pdftex.def Info: Pictures/PlanOverall.png used on input line 409.
+(pdftex.def)             Requested size: 691.38834pt x 374.00014pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -779,7 +786,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./Pictures/PlanOverall.png>]
+<Pictures/PlanRASD.png, id=167, 1596.96625pt x 282.05376pt>
+File: Pictures/PlanRASD.png Graphic file (type png)
+
+<use Pictures/PlanRASD.png>
+Package pdftex.def Info: Pictures/PlanRASD.png used on input line 417.
+(pdftex.def)             Requested size: 686.68211pt x 121.28075pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -787,20 +806,92 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
+[10 <./Pictures/PlanRASD.png>]
+<Pictures/PlanDD.png, id=174, 1450.41875pt x 261.97874pt>
+File: Pictures/PlanDD.png Graphic file (type png)
+
+<use Pictures/PlanDD.png>
+Package pdftex.def Info: Pictures/PlanDD.png used on input line 425.
+(pdftex.def)             Requested size: 681.69691pt x 123.13002pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <./Pictures/PlanDD.png>]
+<Pictures/PlanDevelopment.png, id=180, 1932.21875pt x 302.12875pt>
+File: Pictures/PlanDevelopment.png Graphic file (type png)
+
+<use Pictures/PlanDevelopment.png>
+Package pdftex.def Info: Pictures/PlanDevelopment.png used on input line 433.
+(pdftex.def)             Requested size: 685.92772pt x 107.25415pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./Pictures/PlanDevelopment.png>]
+<Pictures/PlanIntegration.png, id=186, 1450.41875pt x 181.67876pt>
+File: Pictures/PlanIntegration.png Graphic file (type png)
+
+<use Pictures/PlanIntegration.png>
+Package pdftex.def Info: Pictures/PlanIntegration.png used on input line 441.
+(pdftex.def)             Requested size: 681.69691pt x 85.389pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <./Pictures/PlanIntegration.png>]
+<Pictures/PlanDeployment.png, id=192, 1006.76125pt x 161.60374pt>
+File: Pictures/PlanDeployment.png Graphic file (type png)
+
+<use Pictures/PlanDeployment.png>
+Package pdftex.def Info: Pictures/PlanDeployment.png used on input line 449.
+(pdftex.def)             Requested size: 674.52654pt x 108.27394pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14 <./Pictures/PlanDeployment.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 477.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 477.
  (./PPTeXstudio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 426.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 477.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 477.
 Package rerunfilecheck Info: File `PPTeXstudio.out' has not changed.
-(rerunfilecheck)             Checksum: 0A6431FA0DD3466E854FABF1D2AF359A;1133.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
+(rerunfilecheck)             Checksum: E46B554045192782D9B491A411BE39F2;1140.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 477.
  ) 
 Here is how much of TeX's memory you used:
- 11418 strings out of 493089
- 171921 string characters out of 6134842
- 297413 words of memory out of 5000000
- 14729 multiletter control sequences out of 15000+600000
+ 11455 strings out of 493089
+ 172765 string characters out of 6134842
+ 298413 words of memory out of 5000000
+ 14753 multiletter control sequences out of 15000+600000
  11004 words of font info for 39 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,474b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -819,10 +910,10 @@ live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/eurosym/feymo10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on PPTeXstudio.pdf (12 pages, 637084 bytes).
+Output written on PPTeXstudio.pdf (19 pages, 731258 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
