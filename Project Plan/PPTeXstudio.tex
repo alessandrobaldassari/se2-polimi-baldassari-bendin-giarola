@@ -1,7 +1,7 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[a4paper,11pt]{report} %article
 
-\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb,textcomp,eurosym}
+\usepackage{graphicx,subfigure,afterpage,hyperref,xspace,xcolor,caption,soul,geometry,pdfpages,stackengine,eso-pic,fancyhdr,hyphenat,listings,longtable,url,enumitem,fancyvrb,textcomp,eurosym,pbox}
 
 
 %\usepackage[utf8]{inputenc} %to make the single quote appear correct after the encoding inserted above!
@@ -203,10 +203,10 @@ Assignment 5: Project Plan\\
 						Create request & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{3}\\\hline					
 						Pay & \multicolumn{1}{|c|}{Medium} & \multicolumn{1}{|c|}{4}\\\hline		
 						Delete request & \multicolumn{1}{|c|}{Complex} & \multicolumn{1}{|c|}{6}\\\hline	
-						Set taxi availability & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{6}\\\hline					
+						Set taxi availability & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{3}\\\hline					
 						Accept/reject ride request & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{3}\\\hline			
 						Update taxi position & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{3}\\\hline				
-						Managers taxi drivers & \multicolumn{1}{|c|}{Medium} & \multicolumn{1}{|c|}{4}\\\hline				
+						Manage taxi drivers & \multicolumn{1}{|c|}{Medium} & \multicolumn{1}{|c|}{4}\\\hline				
 						Create ride & \multicolumn{1}{|c|}{Complex} & \multicolumn{1}{|c|}{6}\\\hline		
 						Allocate taxi & \multicolumn{1}{|c|}{Complex} & \multicolumn{1}{|c|}{6}\\\hline																																																												
 						\multicolumn{2}{|l|}{Total:} & \multicolumn{1}{|c|}{44}\\\hline
@@ -233,10 +233,10 @@ Assignment 5: Project Plan\\
 				\begin{center}
 					\begin{tabular}{| p{7cm} | p{2.5cm} | p{2cm} |}\hline
 						\textbf{Functionalities} & \multicolumn{1}{|c|}{\textbf{Complexity}} & \textbf{FP Count}\\\hline
-						SMS & \multicolumn{1}{|c|}{Medium} & \multicolumn{1}{|c|}{4}\\\hline
+						SMS & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{4}\\\hline
 						Email & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{4}\\\hline
 						PushNotification & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{4}\\\hline		
-						Zone & \multicolumn{1}{|c|}{Simple} & \multicolumn{1}{|c|}{10}\\\hline																						
+						Monitor Zone & \multicolumn{1}{|c|}{Medium} & \multicolumn{1}{|c|}{5}\\\hline																						
 						\multicolumn{2}{|l|}{Total:} & \multicolumn{1}{|c|}{17}\\\hline
 					\end{tabular}
 				\end{center}
@@ -317,7 +317,7 @@ Assignment 5: Project Plan\\
 			\begin{minipage}{\linewidth}
 				%			\vspace*{-0.35cm}
 				\makebox[\linewidth]{
-					\includegraphics[keepaspectratio=true,scale=0.45]{Pictures/COCOMOoutput.png}}
+					\includegraphics[keepaspectratio=true,scale=0.4]{Pictures/COCOMOoutput.png}}
 			\end{minipage}
 			\bigskip\\
 			The slight variation due to the different parameters does not really change the estimation:
@@ -330,6 +330,73 @@ Assignment 5: Project Plan\\
 			
 	\pagebreak
 	\section{Tasks identification and schedule}	
+		seguiamo diagramma a cascata....
+		\renewcommand{\arraystretch}{1.2}
+		\setlength{\tabcolsep}{12pt}
+		\begin{center}
+			\resizebox{0.85\textwidth}{!}{\begin{minipage}{\textwidth}
+			\begin{tabular}{| c | c | c | c | c |}\hline
+				\multicolumn{1}{|c|}{\textbf{ID}} & \multicolumn{1}{|c|}{\textbf{Task}} & {\textbf{Effort}} & \multicolumn{1}{|c|}{\textbf{Duration}} & \multicolumn{1}{|c|}{\textbf{Dependencies}}\\
+				
+				 &  & {\textbf{[Person-Days]}} & \multicolumn{1}{|c|}{\textbf{[Days]}} &\\\hline				
+				
+%				\textbf{ID} & \textbf{Task} & \parbox{3cm}{Effort \\  [Person-Days]} & \textbf{Duration [Days]} & \textbf{Dependencies}		
+					
+				\multicolumn{1}{|c|}{T1} & \multicolumn{1}{|c|}{Stakeholders identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				
+				\multicolumn{1}{|c|}{T2} & \multicolumn{1}{|c|}{Actors identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T3} & \multicolumn{1}{|c|}{Goals identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline							
+
+				\multicolumn{1}{|c|}{T4} & \multicolumn{1}{|c|}{Requirements identification} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				
+				\multicolumn{1}{|c|}{T5} & \multicolumn{1}{|c|}{Use Case and Scenarios} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				
+				\multicolumn{1}{|c|}{T7} & \multicolumn{1}{|c|}{Class diagram} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T8} & \multicolumn{1}{|c|}{Alloy model} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T9} & \multicolumn{1}{|c|}{Components and interfaces} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				
+				\multicolumn{1}{|c|}{T10} & \multicolumn{1}{|c|}{Deployment architecture} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline			
+				
+				\multicolumn{1}{|c|}{T11} & \multicolumn{1}{|c|}{Runtime elements} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline			
+				
+				\multicolumn{1}{|c|}{T12} & \multicolumn{1}{|c|}{Algorithms design} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T13} & \multicolumn{1}{|c|}{Sequence diagrams} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline				
+		
+				\multicolumn{1}{|c|}{T14} & \multicolumn{1}{|c|}{User interface mock-up} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				
+				\multicolumn{1}{|c|}{T15} & \multicolumn{1}{|c|}{Client manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T16} & \multicolumn{1}{|c|}{Account manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline
+				
+				\multicolumn{1}{|c|}{T17} & \multicolumn{1}{|c|}{Request manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline		
+				
+				\multicolumn{1}{|c|}{T18} & \multicolumn{1}{|c|}{Ride manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T19} & \multicolumn{1}{|c|}{Zone manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T20} & \multicolumn{1}{|c|}{Taxi manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T21} & \multicolumn{1}{|c|}{Notification manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T22} & \multicolumn{1}{|c|}{Payment manager development} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T23} & \multicolumn{1}{|c|}{Integration testing strategy} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T24} & \multicolumn{1}{|c|}{Integration testing execution} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+				\multicolumn{1}{|c|}{T25} & \multicolumn{1}{|c|}{Software deployment} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{}\\\hline	
+				
+								
+				
+
+			\end{tabular}
+		\end{minipage} }
+		
+		\end{center}
 	
 	\section{Resources allocation}	
 	

@@ -36,16 +36,16 @@
 \contentsline {subsection}{\numberline {3.4}Ride creation}{30}{subsection.0.3.4}
 \contentsline {subsection}{\numberline {3.5}Payment}{32}{subsection.0.3.5}
 \contentsline {section}{\numberline {4}User Interface Design}{34}{section.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.1}Sign-up}{35}{paragraph.0.4.0.0.1}
-\contentsline {paragraph}{\numberline {4.0.0.2}Login}{36}{paragraph.0.4.0.0.2}
-\contentsline {paragraph}{\numberline {4.0.0.3}Call a taxi}{37}{paragraph.0.4.0.0.3}
-\contentsline {paragraph}{\numberline {4.0.0.4}Plan a ride}{38}{paragraph.0.4.0.0.4}
-\contentsline {paragraph}{\numberline {4.0.0.5}Your reservations}{39}{paragraph.0.4.0.0.5}
-\contentsline {paragraph}{\numberline {4.0.0.6}Your profile}{40}{paragraph.0.4.0.0.6}
-\contentsline {paragraph}{\numberline {4.0.0.7}Manage jobs}{41}{paragraph.0.4.0.0.7}
-\contentsline {paragraph}{\numberline {4.0.0.8}Administrator panel}{42}{paragraph.0.4.0.0.8}
-\contentsline {section}{\numberline {5}Requirements Traceability}{43}{section.0.5}
-\contentsline {section}{\numberline {6}References}{45}{section.0.6}
-\contentsline {section}{\numberline {7}Appendix}{45}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Software and tools used}{45}{subsection.0.7.1}
-\contentsline {subsection}{\numberline {7.2}Hours of work}{45}{subsection.0.7.2}
+\contentsline {subsection}{\numberline {4.1}Sign-up}{35}{subsection.0.4.1}
+\contentsline {subsection}{\numberline {4.2}Login}{37}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {4.3}Call a taxi}{38}{subsection.0.4.3}
+\contentsline {subsection}{\numberline {4.4}Plan a ride}{40}{subsection.0.4.4}
+\contentsline {subsection}{\numberline {4.5}Your reservations}{41}{subsection.0.4.5}
+\contentsline {subsection}{\numberline {4.6}Your profile}{42}{subsection.0.4.6}
+\contentsline {subsection}{\numberline {4.7}Manage jobs}{43}{subsection.0.4.7}
+\contentsline {subsection}{\numberline {4.8}Administrator panel}{44}{subsection.0.4.8}
+\contentsline {section}{\numberline {5}Requirements Traceability}{45}{section.0.5}
+\contentsline {section}{\numberline {6}References}{47}{section.0.6}
+\contentsline {section}{\numberline {7}Appendix}{47}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Software and tools used}{47}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Hours of work}{47}{subsection.0.7.2}
