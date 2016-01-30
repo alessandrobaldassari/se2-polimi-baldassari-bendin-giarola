@@ -1,0 +1,94 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["timeline"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    var container = document.getElementById('example3.1');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Position' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+      [ 'Alessandro', 'T1', new Date(2015, 9, 7), new Date(2015, 9, 8) ],
+      [ 'Alessandro', 'T2', new Date(2015, 9, 9), new Date(2015, 9, 12) ],
+      [ 'Alessandro', 'T3', new Date(2015, 9, 13), new Date(2015, 9, 16) ],
+      [ 'Alessandro', 'T4', new Date(2015, 9, 17), new Date(2015, 9, 23) ],
+      [ 'Alessandro', 'T5', new Date(2015, 9, 24), new Date(2015, 9, 28) ],
+      [ 'Alessandro', 'T6', new Date(2015, 9, 29), new Date(2015, 10, 5) ],
+
+      [ 'Alessandro', 'T8', new Date(2015, 10, 13), new Date(2015, 10, 30) ],
+      [ 'Alessandro', 'T9', new Date(2015, 11, 1), new Date(2015, 11, 11) ],
+      [ 'Alessandro', 'T10', new Date(2015, 11, 12), new Date(2015, 11, 22) ],
+      [ 'Alessandro', 'T11', new Date(2015, 11, 23), new Date(2016, 0, 5) ],
+      [ 'Alessandro', 'T12', new Date(2016, 0, 6), new Date(2016, 0, 14) ],
+
+      [ 'Alessandro', 'T14', new Date(2016, 0, 15), new Date(2016, 1, 4) ],
+      [ 'Alessandro', 'T15', new Date(2016, 2, 3), new Date(2016, 2, 24) ],
+      [ 'Alessandro', 'T16', new Date(2016, 2, 25), new Date(2016, 3, 25) ],
+      [ 'Alessandro', 'T17', new Date(2016, 1, 5), new Date(2016, 2, 2) ],
+      [ 'Alessandro', 'T18', new Date(2016, 3, 26), new Date(2016, 4, 30) ],
+
+      [ 'Alessandro', 'T22', new Date(2016, 4, 31), new Date(2016, 5, 15) ],
+      [ 'Alessandro', 'T23', new Date(2016, 5, 16), new Date(2016, 6, 5) ],
+
+      [ 'Alessandro', 'T24', new Date(2016, 6, 6), new Date(2016, 6, 11) ],
+
+
+      [ 'Alberto', 'T1', new Date(2015, 9, 7), new Date(2015, 9, 8)],
+      [ 'Alberto', 'T2', new Date(2015, 9, 9), new Date(2015, 9, 12)],
+      [ 'Alberto', 'T3', new Date(2015, 9, 13), new Date(2015, 9, 16)],
+      [ 'Alberto', 'T4', new Date(2015, 9, 17), new Date(2015, 9, 23)],
+      [ 'Alberto', 'T5', new Date(2015, 9, 24), new Date(2015, 9, 28)],
+      [ 'Alberto', 'T6', new Date(2015, 9, 29), new Date(2015, 10, 5)],
+      [ 'Alberto', 'T7', new Date(2015, 10, 6), new Date(2015, 10, 12)],
+
+      [ 'Alberto', 'T8', new Date(2015, 10, 13), new Date(2015, 10, 30)],
+      [ 'Alberto', 'T9', new Date(2015, 11, 1), new Date(2015, 11, 11)],
+      [ 'Alberto', 'T10', new Date(2015, 11, 12), new Date(2015, 11, 22)],
+      [ 'Alberto', 'T11', new Date(2015, 11, 23), new Date(2016, 0, 5)],
+      [ 'Alberto', 'T12', new Date(2016, 0, 6), new Date(2016, 0, 14)],
+
+      [ 'Alberto', 'T16', new Date(2016, 2, 25), new Date(2016, 3, 25)],
+      [ 'Alberto', 'T18', new Date(2016, 3, 26), new Date(2016, 4, 30)],
+      [ 'Alberto', 'T19', new Date(2016, 2, 5), new Date(2016, 2, 24) ],
+      [ 'Alberto', 'T20', new Date(2016, 0, 15), new Date(2016, 1, 9) ],
+      [ 'Alberto', 'T21', new Date(2016, 1, 10), new Date(2016, 2, 4) ],
+
+      [ 'Alberto', 'T22', new Date(2016, 4, 31), new Date(2016, 5, 15) ],
+      [ 'Alberto', 'T23', new Date(2016, 5, 16), new Date(2016, 6, 5) ],
+
+      [ 'Alberto', 'T24', new Date(2016, 6, 6), new Date(2016, 6, 11) ],            
+
+      [ 'Francesco', 'T1', new Date(2015, 9, 7), new Date(2015, 9, 8)],
+      [ 'Francesco', 'T2', new Date(2015, 9, 9), new Date(2015, 9, 12)],
+      [ 'Francesco', 'T3', new Date(2015, 9, 13), new Date(2015, 9, 16)],
+      [ 'Francesco', 'T4', new Date(2015, 9, 17), new Date(2015, 9, 23)],
+      [ 'Francesco', 'T5', new Date(2015, 9, 24), new Date(2015, 9, 28)],
+      [ 'Francesco', 'T6', new Date(2015, 9, 29), new Date(2015, 10, 5)],
+      [ 'Francesco', 'T7', new Date(2015, 10, 6), new Date(2015, 10, 12)],
+
+      [ 'Francesco', 'T14', new Date(2016, 0, 15), new Date(2016, 1, 4) ],
+      [ 'Francesco', 'T15', new Date(2016, 2, 3), new Date(2016, 2, 24) ],
+      [ 'Francesco', 'T16', new Date(2016, 2, 25), new Date(2016, 3, 25) ],
+      [ 'Francesco', 'T17', new Date(2016, 1, 5), new Date(2016, 2, 2) ],
+      [ 'Francesco', 'T18', new Date(2016, 3, 26), new Date(2016, 4, 30) ],
+
+      [ 'Francesco', 'T11', new Date(2015, 11, 23), new Date(2016, 0, 5)],
+      [ 'Francesco', 'T12', new Date(2016, 0, 6), new Date(2016, 0, 14)],
+      [ 'Francesco', 'T13', new Date(2015, 10, 15), new Date(2015, 11, 17)],
+
+      [ 'Francesco', 'T22', new Date(2016, 4, 31), new Date(2016, 5, 15) ],
+      [ 'Francesco', 'T23', new Date(2016, 5, 16), new Date(2016, 6, 5) ],
+
+      [ 'Francesco', 'T24', new Date(2016, 6, 6), new Date(2016, 6, 11) ],
+    ]);
+
+    chart.draw(dataTable);
+  }
+</script>
+
+<div id="example3.1" style="height: 200px;"></div>
