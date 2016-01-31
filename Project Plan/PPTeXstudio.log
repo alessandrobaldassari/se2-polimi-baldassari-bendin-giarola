@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.11)  30 JAN 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.11)  31 JAN 2016 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,13 +690,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 	\section
+l.137 	\section
                {Function Point analysis} [1]
 <Pictures/TableWeights.png, id=117, 900.36375pt x 340.27126pt>
 File: Pictures/TableWeights.png Graphic file (type png)
 
 <use Pictures/TableWeights.png>
-Package pdftex.def Info: Pictures/TableWeights.png used on input line 152.
+Package pdftex.def Info: Pictures/TableWeights.png used on input line 153.
 (pdftex.def)             Requested size: 270.1112pt x 102.08215pt.
 
 
@@ -721,7 +721,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 LaTeX Font Info:    Font shape `U/eurosym/m/it' in size <10.95> not available
-(Font)              Font shape `U/eurosym/m/sl' tried instead on input line 287
+(Font)              Font shape `U/eurosym/m/sl' tried instead on input line 288
 .
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
@@ -730,7 +730,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
 
  []
 
@@ -744,14 +744,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/COCOMOparameters.png Graphic file (type png)
 
 <use Pictures/COCOMOparameters.png>
-Package pdftex.def Info: Pictures/COCOMOparameters.png used on input line 313.
+Package pdftex.def Info: Pictures/COCOMOparameters.png used on input line 314.
 (pdftex.def)             Requested size: 449.1577pt x 337.50064pt.
 
 <Pictures/COCOMOoutput.png, id=145, 1175.39125pt x 974.64125pt>
 File: Pictures/COCOMOoutput.png Graphic file (type png)
 
 <use Pictures/COCOMOoutput.png>
-Package pdftex.def Info: Pictures/COCOMOoutput.png used on input line 320.
+Package pdftex.def Info: Pictures/COCOMOoutput.png used on input line 321.
 (pdftex.def)             Requested size: 470.14818pt x 389.8496pt.
 
 
@@ -768,7 +768,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./Pictures/COCOMOoutput.png>]
-Overfull \hbox (21.03638pt too wide) in paragraph at lines 393--393
+Overfull \hbox (21.03638pt too wide) in paragraph at lines 394--394
 [][] 
  []
 
@@ -776,7 +776,7 @@ Overfull \hbox (21.03638pt too wide) in paragraph at lines 393--393
 File: Pictures/PlanOverall.png Graphic file (type png)
 
 <use Pictures/PlanOverall.png>
-Package pdftex.def Info: Pictures/PlanOverall.png used on input line 410.
+Package pdftex.def Info: Pictures/PlanOverall.png used on input line 411.
 (pdftex.def)             Requested size: 691.38834pt x 374.00014pt.
 
 
@@ -797,7 +797,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanRASD.png Graphic file (type png)
 
 <use Pictures/PlanRASD.png>
-Package pdftex.def Info: Pictures/PlanRASD.png used on input line 418.
+Package pdftex.def Info: Pictures/PlanRASD.png used on input line 419.
 (pdftex.def)             Requested size: 686.68211pt x 121.28075pt.
 
 
@@ -811,7 +811,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanDD.png Graphic file (type png)
 
 <use Pictures/PlanDD.png>
-Package pdftex.def Info: Pictures/PlanDD.png used on input line 426.
+Package pdftex.def Info: Pictures/PlanDD.png used on input line 427.
 (pdftex.def)             Requested size: 681.69691pt x 123.13002pt.
 
 
@@ -825,7 +825,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanDevelopment.png Graphic file (type png)
 
 <use Pictures/PlanDevelopment.png>
-Package pdftex.def Info: Pictures/PlanDevelopment.png used on input line 434.
+Package pdftex.def Info: Pictures/PlanDevelopment.png used on input line 435.
 (pdftex.def)             Requested size: 685.92772pt x 107.25415pt.
 
 
@@ -839,7 +839,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanIntegration.png Graphic file (type png)
 
 <use Pictures/PlanIntegration.png>
-Package pdftex.def Info: Pictures/PlanIntegration.png used on input line 442.
+Package pdftex.def Info: Pictures/PlanIntegration.png used on input line 443.
 (pdftex.def)             Requested size: 681.69691pt x 85.389pt.
 
 
@@ -853,7 +853,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Pictures/PlanDeployment.png Graphic file (type png)
 
 <use Pictures/PlanDeployment.png>
-Package pdftex.def Info: Pictures/PlanDeployment.png used on input line 450.
+Package pdftex.def Info: Pictures/PlanDeployment.png used on input line 451.
 (pdftex.def)             Requested size: 674.52654pt x 108.27394pt.
 
 <Pictures/ResourcesAllocation.png, id=193, 1927.2pt x 172.645pt>
@@ -861,7 +861,7 @@ File: Pictures/ResourcesAllocation.png Graphic file (type png)
 
 <use Pictures/ResourcesAllocation.png>
 Package pdftex.def Info: Pictures/ResourcesAllocation.png used on input line 45
-6.
+7.
 (pdftex.def)             Requested size: 674.53012pt x 60.42664pt.
 
 
@@ -892,7 +892,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 509.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -901,22 +901,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 509.
  (./PPTeXstudio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 509.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 509.
 Package rerunfilecheck Info: File `PPTeXstudio.out' has not changed.
 (rerunfilecheck)             Checksum: E46B554045192782D9B491A411BE39F2;1140.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 488.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 509.
  ) 
 Here is how much of TeX's memory you used:
- 11462 strings out of 493089
- 172949 string characters out of 6134842
+ 11478 strings out of 493089
+ 173091 string characters out of 6134842
  298413 words of memory out of 5000000
- 14757 multiletter control sequences out of 15000+600000
+ 14761 multiletter control sequences out of 15000+600000
  11004 words of font info for 39 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 36i,11n,43p,474b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,838b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -932,10 +932,10 @@ live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/eurosym/feymo10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on PPTeXstudio.pdf (21 pages, 760127 bytes).
+Output written on PPTeXstudio.pdf (21 pages, 763667 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
