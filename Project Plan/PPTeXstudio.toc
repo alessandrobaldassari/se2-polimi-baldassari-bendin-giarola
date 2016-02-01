@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {4}Tasks identification}{8}{section.0.4}
 \contentsline {section}{\numberline {5}Task scheduling and Resources allocation}{8}{section.0.5}
 \contentsline {section}{\numberline {6}Risk planning and management}{17}{section.0.6}
-\contentsline {section}{\numberline {7}References}{18}{section.0.7}
-\contentsline {section}{\numberline {8}Appendix}{18}{section.0.8}
-\contentsline {subsection}{\numberline {8.1}Software and tools used}{18}{subsection.0.8.1}
-\contentsline {subsection}{\numberline {8.2}Hours of work}{18}{subsection.0.8.2}
+\contentsline {section}{\numberline {7}References}{19}{section.0.7}
+\contentsline {section}{\numberline {8}Appendix}{19}{section.0.8}
+\contentsline {subsection}{\numberline {8.1}Software and tools used}{19}{subsection.0.8.1}
+\contentsline {subsection}{\numberline {8.2}Hours of work}{19}{subsection.0.8.2}
